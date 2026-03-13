@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CrabRushManager : MonoBehaviour
 {
     [SerializeField] private float rushDuration = 60f;
+    [SerializeField] private String sceneName;
 
     private float timer;
     private bool finished = false;
@@ -29,6 +31,6 @@ public class CrabRushManager : MonoBehaviour
     private void EndRush()
     {
         PlayerEnterState.movementMode = PlayerMovementMode.Free;
-        SceneManager.LoadScene("CrabAreaScene");
+        SceneManager.LoadScene(sceneName);
     }
 }

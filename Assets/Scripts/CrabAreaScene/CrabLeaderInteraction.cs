@@ -1,39 +1,83 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CrabLeaderInteraction : MonoBehaviour, IInteractable
+public class CrabLeaderInteraction : NpcDialogueInteractionBase
 {
+    [SerializeField] private string speakerName = "Crab Leader";
     [SerializeField] private string returnSceneName = "RQScene";
     [SerializeField] private string returnSpawnPointName = "Spawn_CrabReturn";
 
-    public void Interact()
+    [Header("Accept Quest Dialogue")]
+    [TextArea(2, 5)]
+    [SerializeField] private string[] acceptQuestDialogueLines;
+
+    [Header("Quest In Progress Dialogue")]
+    [TextArea(2, 5)]
+    [SerializeField] private string[] questInProgressDialogueLines;
+
+    [Header("Turn In Quest Dialogue")]
+    [TextArea(2, 5)]
+    [SerializeField] private string[] turnInQuestDialogueLines;
+
+    [Header("Invalid Dialogue")]
+    [TextArea(2, 5)]
+    [SerializeField] private string[] invalidDialogueLines =
     {
-        if (GameProgress.crabCompleted)
-        {
-            Debug.Log("Crab Leader: Hi my lovely soldier!");
-            return;
-        }
+        "Hi my lovely soldier!"
+    };
+
+    private DialoguePhase activePhase = DialoguePhase.Invalid;
+
+    protected override string GetSpeakerName()
+    {
+        return speakerName;
+    }
+
+    protected override List<string> GetDialogueLinesForCurrentState()
+    {
         if (CrabQuestManager.Instance == null)
         {
             Debug.LogWarning("CrabQuestManager not found.");
-            return;
+            return null;
+        }
+
+        if (GameProgress.crabCompleted)
+        {
+            activePhase = DialoguePhase.Invalid;
+            return BuildDialogueList(invalidDialogueLines);
         }
 
         if (!CrabQuestManager.Instance.QuestAccepted)
         {
-            CrabQuestManager.Instance.AcceptQuest();
-            Debug.Log("Crab Leader: Please help us clear the trash.");
-            return;
+            activePhase = DialoguePhase.AcceptQuest;
+            return BuildDialogueList(acceptQuestDialogueLines);
         }
 
         if (!CrabQuestManager.Instance.AllTrashCleared)
         {
-            Debug.Log("Crab Leader: There are still " + CrabQuestManager.Instance.RemainingTrash + " trash left.");
-            return;
+            activePhase = DialoguePhase.InProgress;
+            return BuildDialogueList(questInProgressDialogueLines);
         }
-        
 
-        CompleteQuestAndReturn();
+        activePhase = DialoguePhase.TurnIn;
+        return BuildDialogueList(turnInQuestDialogueLines);
+    }
+
+    protected override void OnDialogueFinished()
+    {
+        switch (activePhase)
+        {
+            case DialoguePhase.AcceptQuest:
+                if (CrabQuestManager.Instance != null)
+                {
+                    CrabQuestManager.Instance.AcceptQuest();
+                }
+                break;
+            case DialoguePhase.TurnIn:
+                CompleteQuestAndReturn();
+                break;
+        }
     }
 
     private void CompleteQuestAndReturn()
@@ -42,5 +86,13 @@ public class CrabLeaderInteraction : MonoBehaviour, IInteractable
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
         SceneManager.LoadScene(returnSceneName);
+    }
+
+    private enum DialoguePhase
+    {
+        AcceptQuest,
+        InProgress,
+        TurnIn,
+        Invalid
     }
 }

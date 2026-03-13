@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &171963749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lvl2 dophin
+  m_text: lvl2 dolphin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -829,6 +829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9154b25ffc18f724a822d49fe9affce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapUI
+  crabPortalButton: {fileID: 1645923808}
+  dolphinPortalButton: {fileID: 1738380320}
+  sharkPortalButton: {fileID: 1111104046}
+  octopusPortalButton: {fileID: 884950807}
+  seaCucumberPortalButton: {fileID: 961912519}
 --- !u!4 &708080827
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &884950808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1402,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1111104047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1645923809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1822,7 +1827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1738380321
 RectTransform:
   m_ObjectHideFlags: 0

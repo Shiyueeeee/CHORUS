@@ -6,12 +6,14 @@ public class CrabQuestManager : MonoBehaviour
 
     [Header("Quest State")]
     [SerializeField] private bool questAccepted = false;
+    [SerializeField] private int initialTrashCount = 10;
     [SerializeField] private int remainingTrash = 10;
 
     [Header("Trash Root")]
     [SerializeField] private GameObject trashGroup;
 
     public bool QuestAccepted => questAccepted;
+    public int InitialTrashCount => initialTrashCount;
     public int RemainingTrash => remainingTrash;
     public bool AllTrashCleared => questAccepted && remainingTrash <= 0;
 
@@ -39,14 +41,14 @@ public class CrabQuestManager : MonoBehaviour
         if (questAccepted) return;
 
         questAccepted = true;
-        remainingTrash = 10;
+        remainingTrash = initialTrashCount;
 
         if (trashGroup != null)
         {
             trashGroup.SetActive(true);
         }
 
-        Debug.Log("Crab quest accepted. 10 trash remaining.");
+        Debug.Log("Crab quest accepted. " + initialTrashCount + " trash remaining.");
     }
 
     public void ClearOneTrash()

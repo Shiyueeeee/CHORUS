@@ -3,11 +3,41 @@ using UnityEngine.SceneManagement;
 
 public class MapUI : MonoBehaviour
 {
+    [Header("Portal Buttons")]
+    [SerializeField] private GameObject crabPortalButton;
+    [SerializeField] private GameObject dolphinPortalButton;
+    [SerializeField] private GameObject sharkPortalButton;
+    [SerializeField] private GameObject octopusPortalButton;
+    [SerializeField] private GameObject seaCucumberPortalButton;
+
+    private void Start()
+    {
+        RefreshPortalButtons();
+    }
+
+    private void RefreshPortalButtons()
+    {
+        SetPortalActive(crabPortalButton, GameProgress.whaleIntroDialogueCompleted);
+        SetPortalActive(dolphinPortalButton, GameProgress.whalePostCrabDialogueCompleted);
+        SetPortalActive(sharkPortalButton, GameProgress.whalePostDolphinDialogueCompleted);
+        SetPortalActive(octopusPortalButton, GameProgress.whalePostSharkDialogueCompleted);
+        SetPortalActive(seaCucumberPortalButton, GameProgress.whalePostOctopusDialogueCompleted);
+    }
+
+    private void SetPortalActive(GameObject portalButton, bool isUnlocked)
+    {
+        if (portalButton != null)
+        {
+            portalButton.SetActive(isUnlocked);
+        }
+    }
+
     public void OnClickClose()
     {
         Debug.Log("Close clicked");
         SceneManager.LoadScene("RQScene");
     }
+
     public void OnClickCrabArea()
     {
         Debug.Log("Crab Area clicked");
@@ -25,6 +55,15 @@ public class MapUI : MonoBehaviour
     public void OnClickDolphinArea()
     {
         Debug.Log("Dolphin Area clicked");
+        if (GameProgress.dolphinCompleted)
+        {
+            SceneManager.LoadScene("DolphinAreaScene");
+        }
+        else
+        {
+            PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
+            SceneManager.LoadScene("DolphinRushScene");
+        }
     }
 
     public void OnClickSharkArea()
