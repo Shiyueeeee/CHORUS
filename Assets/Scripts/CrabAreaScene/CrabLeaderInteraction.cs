@@ -9,22 +9,18 @@ public class CrabLeaderInteraction : NpcDialogueInteractionBase
     [SerializeField] private string returnSpawnPointName = "Spawn_CrabReturn";
 
     [Header("Accept Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] acceptQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] acceptQuestDialogueLines;
 
     [Header("Quest In Progress Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] questInProgressDialogueLines;
+    [SerializeField] private DialogueLineData[] questInProgressDialogueLines;
 
     [Header("Turn In Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] turnInQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] turnInQuestDialogueLines;
 
     [Header("Invalid Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] invalidDialogueLines =
+    [SerializeField] private DialogueLineData[] invalidDialogueLines =
     {
-        "Hi my lovely soldier!"
+        new DialogueLineData { text = "Hi my lovely soldier!" }
     };
 
     private DialoguePhase activePhase = DialoguePhase.Invalid;
@@ -34,7 +30,7 @@ public class CrabLeaderInteraction : NpcDialogueInteractionBase
         return speakerName;
     }
 
-    protected override List<string> GetDialogueLinesForCurrentState()
+    protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
         if (CrabQuestManager.Instance == null)
         {
@@ -45,23 +41,23 @@ public class CrabLeaderInteraction : NpcDialogueInteractionBase
         if (GameProgress.crabCompleted)
         {
             activePhase = DialoguePhase.Invalid;
-            return BuildDialogueList(invalidDialogueLines);
+            return BuildDialogueList(invalidDialogueLines, speakerName);
         }
 
         if (!CrabQuestManager.Instance.QuestAccepted)
         {
             activePhase = DialoguePhase.AcceptQuest;
-            return BuildDialogueList(acceptQuestDialogueLines);
+            return BuildDialogueList(acceptQuestDialogueLines, speakerName);
         }
 
         if (!CrabQuestManager.Instance.AllTrashCleared)
         {
             activePhase = DialoguePhase.InProgress;
-            return BuildDialogueList(questInProgressDialogueLines);
+            return BuildDialogueList(questInProgressDialogueLines, speakerName);
         }
 
         activePhase = DialoguePhase.TurnIn;
-        return BuildDialogueList(turnInQuestDialogueLines);
+        return BuildDialogueList(turnInQuestDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

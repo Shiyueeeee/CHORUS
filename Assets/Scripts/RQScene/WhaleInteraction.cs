@@ -6,19 +6,16 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [SerializeField] private string speakerName = "Whale";
 
     [Header("Post Crab Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postCrabQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postCrabQuestDialogueLines;
 
     [Header("Repeat Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] repeatDialogueLines =
+    [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
-        "......"
+        new DialogueLineData { text = "......" }
     };
 
     [Header("Post Dolphin Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postDolphinQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
 
     [SerializeField] private GameObject objectToActivate;
 
@@ -29,22 +26,22 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         return speakerName;
     }
 
-    protected override List<string> GetDialogueLinesForCurrentState()
+    protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
         if (!GameProgress.whaleIntroDialogueCompleted)
         {
             activePhase = DialoguePhase.PostCrabQuest;
-            return BuildDialogueList(postCrabQuestDialogueLines);
+            return BuildDialogueList(postCrabQuestDialogueLines, speakerName);
         }
 
         if (GameProgress.crabCompleted && !GameProgress.whalePostCrabDialogueCompleted)
         {
             activePhase = DialoguePhase.PostDolphinQuest;
-            return BuildDialogueList(postDolphinQuestDialogueLines);
+            return BuildDialogueList(postDolphinQuestDialogueLines, speakerName);
         }
 
         activePhase = DialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines);
+        return BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

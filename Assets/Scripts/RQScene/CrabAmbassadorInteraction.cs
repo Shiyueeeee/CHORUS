@@ -6,30 +6,24 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
     [SerializeField] private string speakerName = "Crab Ambassador";
 
     [Header("Post Crab Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postCrabQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postCrabQuestDialogueLines;
 
     [Header("Post Dolphin Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postDolphinQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
 
     [Header("Post Shark Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postSharkQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postSharkQuestDialogueLines;
 
     [Header("Post Octopus Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postOctopusQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postOctopusQuestDialogueLines;
 
     [Header("Post Sea Cucumber Quest Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] postSeaCucumberQuestDialogueLines;
+    [SerializeField] private DialogueLineData[] postSeaCucumberQuestDialogueLines;
 
     [Header("Repeat Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] repeatDialogueLines =
+    [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
-        "......"
+        new DialogueLineData { text = "......" }
     };
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
@@ -39,40 +33,40 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
         return speakerName;
     }
 
-    protected override List<string> GetDialogueLinesForCurrentState()
+    protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
         if (!GameProgress.crabAmbassadorIntroDialogueCompleted)
         {
             activePhase = DialoguePhase.PostCrabQuest;
-            return BuildDialogueList(postCrabQuestDialogueLines);
+            return BuildDialogueList(postCrabQuestDialogueLines, speakerName);
         }
 
         if (GameProgress.dolphinCompleted && !GameProgress.crabAmbassadorPostDolphinDialogueCompleted)
         {
             activePhase = DialoguePhase.PostDolphinQuest;
-            return BuildDialogueList(postDolphinQuestDialogueLines);
+            return BuildDialogueList(postDolphinQuestDialogueLines, speakerName);
         }
 
         if (GameProgress.sharkCompleted && !GameProgress.crabAmbassadorPostSharkDialogueCompleted)
         {
             activePhase = DialoguePhase.PostSharkQuest;
-            return BuildDialogueList(postSharkQuestDialogueLines);
+            return BuildDialogueList(postSharkQuestDialogueLines, speakerName);
         }
 
         if (GameProgress.octopusCompleted && !GameProgress.crabAmbassadorPostOctopusDialogueCompleted)
         {
             activePhase = DialoguePhase.PostOctopusQuest;
-            return BuildDialogueList(postOctopusQuestDialogueLines);
+            return BuildDialogueList(postOctopusQuestDialogueLines, speakerName);
         }
 
         if (GameProgress.seaCucumberCompleted && !GameProgress.crabAmbassadorPostSeaCucumberDialogueCompleted)
         {
             activePhase = DialoguePhase.PostSeaCucumberQuest;
-            return BuildDialogueList(postSeaCucumberQuestDialogueLines);
+            return BuildDialogueList(postSeaCucumberQuestDialogueLines, speakerName);
         }
 
         activePhase = DialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines);
+        return BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

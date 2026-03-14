@@ -8,7 +8,7 @@ public abstract class NpcDialogueInteractionBase : MonoBehaviour, IInteractable
         if (DialogueManager.IsDialogueActive)
             return;
 
-        List<string> linesToUse = GetDialogueLinesForCurrentState();
+        List<DialogueLineData> linesToUse = GetDialogueLinesForCurrentState();
         if (linesToUse == null || linesToUse.Count == 0)
         {
             Debug.LogWarning(GetMissingDialogueWarning());
@@ -16,24 +16,27 @@ public abstract class NpcDialogueInteractionBase : MonoBehaviour, IInteractable
         }
 
         DialogueManager.Instance.StartDialogue(
-            GetSpeakerName(),
             linesToUse,
             OnDialogueFinished
         );
     }
 
-    protected List<string> BuildDialogueList(string[] sourceLines)
+    protected List<DialogueLineData> BuildDialogueList(DialogueLineData[] sourceLines, string fallbackSpeaker)
     {
         if (sourceLines == null || sourceLines.Length == 0)
             return null;
 
-        List<string> lines = new List<string>();
-        foreach (string line in sourceLines)
+        List<DialogueLineData> lines = new List<DialogueLineData>();
+        foreach (DialogueLineData line in sourceLines)
         {
-            if (!string.IsNullOrWhiteSpace(line))
+            if (line == null || string.IsNullOrWhiteSpace(line.text))
+                continue;
+
+            lines.Add(new DialogueLineData
             {
-                lines.Add(line);
-            }
+                speaker = string.IsNullOrWhiteSpace(line.speaker) ? fallbackSpeaker : line.speaker,
+                text = line.text
+            });
         }
 
         return lines.Count > 0 ? lines : null;
@@ -45,6 +48,6 @@ public abstract class NpcDialogueInteractionBase : MonoBehaviour, IInteractable
     }
 
     protected abstract string GetSpeakerName();
-    protected abstract List<string> GetDialogueLinesForCurrentState();
+    protected abstract List<DialogueLineData> GetDialogueLinesForCurrentState();
     protected abstract void OnDialogueFinished();
 }

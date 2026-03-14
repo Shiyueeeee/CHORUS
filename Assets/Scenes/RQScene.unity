@@ -955,19 +955,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WhaleInteraction
   speakerName: Whale
   postCrabQuestDialogueLines:
-  - Mr. Jones!
-  - ...
-  - Mr. Jones?
-  - ...
-  - "..\u2026\u2026(gasp)"
-  - MR.JONES!!!!
-  - (The heavy movement of the moving belt stirred up sand, and Mr. Jones opened
-    his eyes.)
+  - speaker: Seahorse
+    text: Mr. Jones!
+  - speaker: Mr. Jones
+    text: ...
+  - speaker: Seahorse
+    text: Mr. Jones?
+  - speaker: Mr. Jones
+    text: ...
+  - speaker: Mr. Jones
+    text: "..\u2026\u2026(gasp)"
+  - speaker: Seahorse
+    text: MR.JONES!!!!
+  - speaker: Mr. Jones
+    text: (The heavy movement of the moving belt stirred up sand, and Mr. Jones opened
+      his eyes.)
   repeatDialogueLines:
-  - ......
+  - speaker: Mr. Jones
+    text: ......
   postDolphinQuestDialogueLines:
-  - hi
-  - take this quest!
+  - speaker: Mr. Jones
+    text: You saved the crabs!
+  - speaker: Mr. Jones
+    text: Now go help the dophins
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:
@@ -1117,12 +1127,18 @@ MonoBehaviour:
   mapPortal: {fileID: 85474048}
   seahorseSpeakerName: Seahorse
   firstEnterDialogueLines:
-  - Ughhhh!!! No!!!! My house!!!!!
-  - The coral is bleaching and falling apart!
-  - Even my plants are died!
-  - What should I do?!
-  - ...
-  - I know! Mr.Jones must know what to do.
+  - speaker: Seahorse
+    text: Ughhhh!!! No!!!! My house!!!!!
+  - speaker: Seahorse
+    text: The coral is bleaching and falling apart!
+  - speaker: Seahorse
+    text: Even my plants are died!
+  - speaker: Seahorse
+    text: What should I do?!
+  - speaker: Seahorse
+    text: ...
+  - speaker: Seahorse
+    text: I know! Mr.Jones must know what to do.
 --- !u!4 &1605839789
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,18 +1264,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrabAmbassadorInteraction
   speakerName: Crab Ambassador
   postCrabQuestDialogueLines:
-  - Bro love your place
-  - Bye
+  - speaker: Crab Ambassador
+    text: Bro love your place
+  - speaker: Crab Ambassador
+    text: Cya
   postDolphinQuestDialogueLines:
-  - Dophin bro is nigga
+  - speaker: 
+    text: 
   postSharkQuestDialogueLines:
-  - Shark  bro is nigga
+  - speaker: 
+    text: 
   postOctopusQuestDialogueLines:
-  - Octopus  bro is nigga
+  - speaker: 
+    text: 
   postSeaCucumberQuestDialogueLines:
-  - Sea Cucumber  bro is nigga
+  - speaker: 
+    text: 
   repeatDialogueLines:
-  - ......
+  - speaker: 
+    text: ......
 --- !u!1 &1988941340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
@@ -1367,6 +1390,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+--- !u!114 &51250664451568043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9139613970128878820, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+  m_PrefabInstance: {fileID: 51250664451568042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &378847313689508041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1501,6 +1535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+      propertyPath: speakerText
+      value: 
+      objectReference: {fileID: 51250664451568043}
     - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
       propertyPath: dialogueText
       value: 

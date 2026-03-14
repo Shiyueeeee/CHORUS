@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
@@ -11,13 +11,15 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text speakerText;
 
-    private List<string> currentLines = new List<string>();
+    private readonly List<DialogueLineData> currentLines = new List<DialogueLineData>();
     private int currentLineIndex = 0;
 
     private string currentSpeaker = "";
 
     private System.Action onDialogueFinished;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,6 +33,12 @@ public class DialogueManager : MonoBehaviour
 
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
+
+        if (dialogueText != null)
+            dialogueText.text = "";
+
+        if (speakerText != null)
+            speakerText.text = "";
     }
 
     private void Update()
@@ -44,7 +52,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string speaker, List<string> lines, System.Action onFinish = null)
+    public void StartDialogue(List<DialogueLineData> lines, System.Action onFinish = null)
     {
         if (lines == null || lines.Count == 0)
         {
@@ -55,8 +63,8 @@ public class DialogueManager : MonoBehaviour
         if (IsDialogueActive)
             return;
 
-        currentSpeaker = speaker;
-        currentLines = lines;
+        currentLines.Clear();
+        currentLines.AddRange(lines);
         currentLineIndex = 0;
 
         onDialogueFinished = onFinish;
@@ -66,8 +74,7 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
 
-        if (dialogueText != null)
-            dialogueText.text = currentLines[currentLineIndex];
+        ApplyCurrentLine();
     }
 
     private void ShowNextLine()
@@ -76,12 +83,27 @@ public class DialogueManager : MonoBehaviour
 
         if (currentLineIndex < currentLines.Count)
         {
-            dialogueText.text = currentLines[currentLineIndex];
+            ApplyCurrentLine();
         }
         else
         {
             EndDialogue();
         }
+    }
+
+    private void ApplyCurrentLine()
+    {
+        if (currentLineIndex < 0 || currentLineIndex >= currentLines.Count)
+            return;
+
+        DialogueLineData line = currentLines[currentLineIndex];
+        currentSpeaker = line != null ? line.speaker : string.Empty;
+
+        if (speakerText != null)
+            speakerText.text = currentSpeaker;
+
+        if (dialogueText != null)
+            dialogueText.text = line != null ? line.text : string.Empty;
     }
 
     public void EndDialogue()
@@ -93,6 +115,9 @@ public class DialogueManager : MonoBehaviour
 
         if (dialogueText != null)
             dialogueText.text = "";
+
+        if (speakerText != null)
+            speakerText.text = "";
 
         currentLines.Clear();
         currentLineIndex = 0;

@@ -9,9 +9,7 @@ public class RQSceneStateController : MonoBehaviour
 
     [Header("Seahorse Intro Dialogue")]
     [SerializeField] private string seahorseSpeakerName = "Seahorse";
-
-    [TextArea(2, 5)]
-    [SerializeField] private string[] firstEnterDialogueLines;
+    [SerializeField] private DialogueLineData[] firstEnterDialogueLines;
 
     private void Start()
     {
@@ -41,7 +39,7 @@ public class RQSceneStateController : MonoBehaviour
         if (DialogueManager.Instance == null || DialogueManager.IsDialogueActive)
             yield break;
 
-        List<string> lines = BuildDialogueList(firstEnterDialogueLines);
+        List<DialogueLineData> lines = BuildDialogueList(firstEnterDialogueLines);
         if (lines == null || lines.Count == 0)
         {
             Debug.LogWarning("RQScene first-enter dialogue is not configured.");
@@ -49,24 +47,27 @@ public class RQSceneStateController : MonoBehaviour
         }
 
         DialogueManager.Instance.StartDialogue(
-            seahorseSpeakerName,
             lines,
             OnFirstEnterDialogueFinished
         );
     }
 
-    private List<string> BuildDialogueList(string[] sourceLines)
+    private List<DialogueLineData> BuildDialogueList(DialogueLineData[] sourceLines)
     {
         if (sourceLines == null || sourceLines.Length == 0)
             return null;
 
-        List<string> lines = new List<string>();
-        foreach (string line in sourceLines)
+        List<DialogueLineData> lines = new List<DialogueLineData>();
+        foreach (DialogueLineData line in sourceLines)
         {
-            if (!string.IsNullOrWhiteSpace(line))
+            if (line == null || string.IsNullOrWhiteSpace(line.text))
+                continue;
+
+            lines.Add(new DialogueLineData
             {
-                lines.Add(line);
-            }
+                speaker = string.IsNullOrWhiteSpace(line.speaker) ? seahorseSpeakerName : line.speaker,
+                text = line.text
+            });
         }
 
         return lines.Count > 0 ? lines : null;

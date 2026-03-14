@@ -644,14 +644,19 @@ MonoBehaviour:
   returnSceneName: RQScene
   returnSpawnPointName: Spawn_CrabReturn
   acceptQuestDialogueLines:
-  - clean my garbage
-  - GO!!!!
+  - speaker: Kirby The Crab
+    text: Hey little bro
+  - speaker: Kirby The Crab
+    text: Clean ma garbage
   questInProgressDialogueLines:
-  - hey u nigga still garbage left
+  - speaker: Kirby The Crab
+    text: Bro not done yet nigga
   turnInQuestDialogueLines:
-  - 3Q MY GOAT BRO
+  - speaker: Kirby The Crab
+    text: 3Q MA GOAT BRO
   invalidDialogueLines:
-  - Hi my lovely soldier!
+  - speaker: Kirby The Crab
+    text: Hi my lovely soldier!
 --- !u!1001 &583179002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1064,6 +1069,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
   m_PrefabInstance: {fileID: 914177818}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &914177822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9139613970128878820, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+  m_PrefabInstance: {fileID: 914177818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &930712357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1772,6 +1788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabQuestManager
   questAccepted: 0
+  initialTrashCount: 10
   remainingTrash: 10
   trashGroup: {fileID: 1971915445}
 --- !u!4 &1780724002
@@ -2286,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+      propertyPath: speakerText
+      value: 
+      objectReference: {fileID: 914177822}
     - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
       propertyPath: dialogueText
       value: 
