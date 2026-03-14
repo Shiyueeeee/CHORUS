@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CrabAreaScene.unity
     guid: f53bf05b3c2bc2347a309d80e5775f1a
+  - enabled: 1
+    path: Assets/Scenes/DolphinRushScene.unity
+    guid: 3d2849e9d98d3a64cbbdbb332a637fc8
+  - enabled: 1
+    path: Assets/Scenes/DolphinAreaScene.unity
+    guid: e0255ff2883c98445917f8aa2ca7ce43
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
