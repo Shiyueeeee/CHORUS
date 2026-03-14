@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f25296bba6b65641bb1331a2284d945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabRushReplay
-  sceneName: CrabRushScene
+  sceneName: DolphinRushScene
 --- !u!114 &949638559
 MonoBehaviour:
   m_ObjectHideFlags: 0
