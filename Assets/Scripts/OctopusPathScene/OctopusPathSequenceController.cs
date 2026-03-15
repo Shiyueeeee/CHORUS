@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OctopusPathSequenceController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class OctopusPathSequenceController : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private string defaultSpeakerName = "Shark";
     [SerializeField] private DialogueLineData[] travelDialogueLines;
+    [SerializeField] private string nextSceneName = "OctopusAreaScene";
 
     private bool sequenceStarted;
 
@@ -44,7 +46,7 @@ public class OctopusPathSequenceController : MonoBehaviour
         }
 
         yield return MovePairToTarget(exitTarget, exitSpeed);
-        Debug.Log("OctopusPathScene travel dialogue finished. TODO: Load next scene.");
+        SceneManager.LoadScene(nextSceneName);
     }
 
     private IEnumerator MovePairToTarget(Transform target, float moveSpeed)

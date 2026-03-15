@@ -74,6 +74,7 @@ public class MapUI : MonoBehaviour
     public void OnClickOctopusArea()
     {
         Debug.Log("Octopus Area clicked");
+        SceneManager.LoadScene("OctopusAreaScene");
     }
 
     public void OnClickSeaCucumberArea()
