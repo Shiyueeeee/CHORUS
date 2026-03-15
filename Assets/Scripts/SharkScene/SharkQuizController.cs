@@ -98,8 +98,6 @@ public class SharkQuizController : MonoBehaviour
 
     private void CompleteQuiz()
     {
-        GameProgress.sharkCompleted = true;
-
         if (encounterManager != null)
             encounterManager.CompleteEncounter();
 

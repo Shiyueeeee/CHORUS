@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SharkEncounterManager : MonoBehaviour
 {
@@ -11,6 +13,13 @@ public class SharkEncounterManager : MonoBehaviour
     [SerializeField] private GameObject[] attackPhaseObjects;
     [SerializeField] private GameObject[] quizPhaseObjects;
     [SerializeField] private GameObject[] completedPhaseObjects;
+
+    [Header("Completed Dialogue")]
+    [SerializeField] private string completedDialogueSpeakerName = "Shark";
+    [SerializeField] private DialogueLineData[] completedDialogueLines;
+    [SerializeField] private string nextSceneName = "OctopusPathScene";
+
+    private bool isResolvingCompletion;
 
     private void Start()
     {
@@ -45,9 +54,14 @@ public class SharkEncounterManager : MonoBehaviour
 
     public void CompleteEncounter()
     {
+        if (isResolvingCompletion)
+            return;
+
         CurrentPhase = SharkEncounterPhase.Completed;
         ApplyPhaseState();
         Debug.Log("Shark encounter completed.");
+
+        StartCompletionSequence();
     }
 
     private void ApplyPhaseState()
@@ -70,6 +84,47 @@ public class SharkEncounterManager : MonoBehaviour
                 obj.SetActive(isActive);
             }
         }
+    }
+
+    private void StartCompletionSequence()
+    {
+        isResolvingCompletion = true;
+
+        List<DialogueLineData> linesToUse = BuildDialogueList(completedDialogueLines, completedDialogueSpeakerName);
+        if (linesToUse.Count > 0 && DialogueManager.Instance != null)
+        {
+            DialogueManager.Instance.StartDialogue(linesToUse, FinalizeEncounterCompletion);
+            return;
+        }
+
+        FinalizeEncounterCompletion();
+    }
+
+    private void FinalizeEncounterCompletion()
+    {
+        GameProgress.sharkCompleted = true;
+        SceneManager.LoadScene(nextSceneName);
+    }
+
+    private static List<DialogueLineData> BuildDialogueList(DialogueLineData[] sourceLines, string fallbackSpeaker)
+    {
+        List<DialogueLineData> lines = new List<DialogueLineData>();
+        if (sourceLines == null)
+            return lines;
+
+        foreach (DialogueLineData line in sourceLines)
+        {
+            if (line == null || string.IsNullOrWhiteSpace(line.text))
+                continue;
+
+            lines.Add(new DialogueLineData
+            {
+                speaker = string.IsNullOrWhiteSpace(line.speaker) ? fallbackSpeaker : line.speaker,
+                text = line.text
+            });
+        }
+
+        return lines;
     }
 }
 

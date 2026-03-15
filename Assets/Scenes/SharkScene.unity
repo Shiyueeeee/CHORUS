@@ -805,13 +805,13 @@ MonoBehaviour:
     answers:
     - 1
     - 2
-    - 3
+    - 0
     correctAnswerIndex: 1
   - question: 1x1=?
     answers:
     - 1
     - 2
-    - 3
+    - 0
     correctAnswerIndex: 0
   - question: 1-1=?
     answers:
@@ -2033,6 +2033,13 @@ MonoBehaviour:
   quizPhaseObjects:
   - {fileID: 309142069}
   completedPhaseObjects: []
+  completedDialogueSpeakerName: Shark
+  completedDialogueLines:
+  - speaker: Shrauk the Shark
+    text: Ok fine
+  - speaker: Shrauk the Shark
+    text: We can go
+  nextSceneName: OctopusPathScene
 --- !u!4 &1079634191
 Transform:
   m_ObjectHideFlags: 0
