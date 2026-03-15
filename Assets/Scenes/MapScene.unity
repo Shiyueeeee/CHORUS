@@ -832,8 +832,8 @@ MonoBehaviour:
   crabPortalButton: {fileID: 1645923808}
   dolphinPortalButton: {fileID: 1738380320}
   sharkPortalButton: {fileID: 1111104046}
-  octopusPortalButton: {fileID: 884950807}
-  seaCucumberPortalButton: {fileID: 961912519}
+  octopusPortalButton: {fileID: 171963748}
+  seaCucumberPortalButton: {fileID: 884950807}
 --- !u!4 &708080827
 Transform:
   m_ObjectHideFlags: 0

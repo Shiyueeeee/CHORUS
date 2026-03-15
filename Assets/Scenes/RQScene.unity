@@ -978,6 +978,13 @@ MonoBehaviour:
     text: You saved the crabs!
   - speaker: Mr. Jones
     text: Now go help the dophins
+  postSharkQuestDialogueLines:
+  - speaker: Mr. Jones
+    text: You helped the dolphins!
+  - speaker: Mr. Jones
+    text: Go find octopus
+  - speaker: Mr. Jones
+    text: Deep ocean is dangerous
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:
@@ -1380,6 +1387,14 @@ PrefabInstance:
     - target: {fileID: 3845787786231308989, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130966909707008802, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139613970128878820, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_Name

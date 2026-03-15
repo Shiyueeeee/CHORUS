@@ -17,6 +17,9 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [Header("Post Dolphin Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
 
+    [Header("Post Shark Quest Dialogue")]
+    [SerializeField] private DialogueLineData[] postSharkQuestDialogueLines;
+
     [SerializeField] private GameObject objectToActivate;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
@@ -38,6 +41,12 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         {
             activePhase = DialoguePhase.PostDolphinQuest;
             return BuildDialogueList(postDolphinQuestDialogueLines, speakerName);
+        }
+
+        if (GameProgress.dolphinCompleted && !GameProgress.whalePostDolphinDialogueCompleted)
+        {
+            activePhase = DialoguePhase.PostSharkQuest;
+            return BuildDialogueList(postSharkQuestDialogueLines, speakerName);
         }
 
         activePhase = DialoguePhase.Repeat;
@@ -63,12 +72,18 @@ public class WhaleInteraction : NpcDialogueInteractionBase
             GameProgress.whalePostCrabDialogueCompleted = true;
             Debug.Log("Dolphin quest accepted. Placeholder only.");
         }
+        else if (activePhase == DialoguePhase.PostSharkQuest)
+        {
+            GameProgress.whalePostDolphinDialogueCompleted = true;
+            Debug.Log("Octopus route task accepted. Shark encounter on the way. Placeholder only.");
+        }
     }
 
     private enum DialoguePhase
     {
         PostCrabQuest,
         Repeat,
-        PostDolphinQuest
+        PostDolphinQuest,
+        PostSharkQuest
     }
 }
