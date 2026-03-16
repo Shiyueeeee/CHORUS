@@ -21,6 +21,8 @@ namespace Seahorse
         [Header("Debug")]
         [SerializeField] private float debugSpeed;
 
+        private float speedMultiplier = 1f;
+
         private const float EdgeEpsilon = 0.01f;
 
         private void Awake()
@@ -39,7 +41,9 @@ namespace Seahorse
             float dt = Time.fixedDeltaTime;
             Vector2 vel = rb.linearVelocity;
             Vector2 move = seahorseController != null ? seahorseController.Move : Vector2.zero;
-            Vector2 targetVel = move * maxSpeed;
+            float currentSpeedMultiplier = Mathf.Max(0f, speedMultiplier);
+            float currentMaxSpeed = maxSpeed * currentSpeedMultiplier;
+            Vector2 targetVel = move * maxSpeed * currentSpeedMultiplier;
 
             if (TryGetPlayableBounds(out float minX, out float maxX, out float minY, out float maxY))
             {
@@ -51,13 +55,18 @@ namespace Seahorse
                 if (pos.y >= maxY - EdgeEpsilon && targetVel.y > 0f) targetVel.y = 0f;
             }
 
-            vel = Vector2.MoveTowards(vel, targetVel, acceleration * dt);
-            vel = Vector2.ClampMagnitude(vel, maxSpeed);
+            vel = Vector2.MoveTowards(vel, targetVel, acceleration * currentSpeedMultiplier * dt);
+            vel = Vector2.ClampMagnitude(vel, currentMaxSpeed);
             rb.linearVelocity = vel;
 
             ClampInsideOceanBounds();
 
             debugSpeed = rb.linearVelocity.magnitude;
+        }
+
+        public void SetSpeedMultiplier(float multiplier)
+        {
+            speedMultiplier = multiplier;
         }
 
         private bool TryGetPlayableBounds(out float minX, out float maxX, out float minY, out float maxY)
