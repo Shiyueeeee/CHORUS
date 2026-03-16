@@ -50,6 +50,11 @@ namespace Seahorse
             {
                 x = 0f;
             }
+            // disable left
+            if (movementMode == PlayerMovementMode.DisableLeft)
+            {
+                x = Mathf.Clamp(x, 0f, x);
+            }
 
             var v = new Vector2(x, y);
             v = Vector2.ClampMagnitude(v, 1f);
