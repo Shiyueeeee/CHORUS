@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OctopusTaskAreaPortal : MonoBehaviour
 {
+    [SerializeField] private string targetSceneName = "OctopusQuestArea";
+
     private void Start()
     {
         gameObject.SetActive(GameProgress.octopusQuestAccepted);
@@ -12,6 +15,6 @@ public class OctopusTaskAreaPortal : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        Debug.Log("Octopus task area portal entered. Placeholder only.");
+        SceneManager.LoadScene(targetSceneName);
     }
 }

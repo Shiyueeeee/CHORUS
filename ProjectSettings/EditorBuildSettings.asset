@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SharkScene.unity
     guid: 98685543fb4cfcd40a7a16b8c409012d
+  - enabled: 1
+    path: Assets/Scenes/OctopusQuestAreaScene.unity
+    guid: a4450f44604695740ae7c31ad3f5ad6b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
