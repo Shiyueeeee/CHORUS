@@ -17,7 +17,7 @@ public class ScreenshotSystem : MonoBehaviour
     [SerializeField] private int superSize = 1;
 
     [Header("Scene Filter")]
-    [SerializeField] private bool onlyInTargetScene = true;
+    [SerializeField] private bool exceptInTargetScene = true;
     [SerializeField] private string[] targetScenes = { "RQScene", "TitleScene" };
 
     private bool isCapturing;
@@ -47,7 +47,7 @@ public class ScreenshotSystem : MonoBehaviour
     private void Update()
     {
         if (isCapturing) return;
-        if (onlyInTargetScene && !targetScenes.Contains(SceneManager.GetActiveScene().name)) return;
+        if (exceptInTargetScene && targetScenes.Contains(SceneManager.GetActiveScene().name)) return;
         if (GlobalUIRoot.Instance != null && GlobalUIRoot.Instance.IsSettingsOpen) return;
 
         Keyboard kb = Keyboard.current;

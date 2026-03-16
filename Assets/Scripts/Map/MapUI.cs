@@ -6,7 +6,6 @@ public class MapUI : MonoBehaviour
     [Header("Portal Buttons")]
     [SerializeField] private GameObject crabPortalButton;
     [SerializeField] private GameObject dolphinPortalButton;
-    [SerializeField] private GameObject sharkPortalButton;
     [SerializeField] private GameObject octopusPortalButton;
     [SerializeField] private GameObject seaCucumberPortalButton;
 
@@ -19,8 +18,7 @@ public class MapUI : MonoBehaviour
     {
         SetPortalActive(crabPortalButton, GameProgress.whaleIntroDialogueCompleted);
         SetPortalActive(dolphinPortalButton, GameProgress.whalePostCrabDialogueCompleted);
-        SetPortalActive(sharkPortalButton, GameProgress.whalePostDolphinDialogueCompleted);
-        SetPortalActive(octopusPortalButton, GameProgress.whalePostSharkDialogueCompleted);
+        SetPortalActive(octopusPortalButton, GameProgress.whalePostDolphinDialogueCompleted);
         SetPortalActive(seaCucumberPortalButton, GameProgress.whalePostOctopusDialogueCompleted);
     }
 
@@ -66,15 +64,17 @@ public class MapUI : MonoBehaviour
         }
     }
 
-    public void OnClickSharkArea()
-    {
-        Debug.Log("Shark Area clicked");
-    }
 
     public void OnClickOctopusArea()
     {
         Debug.Log("Octopus Area clicked");
-        SceneManager.LoadScene("OctopusAreaScene");
+        if (GameProgress.sharkCompleted)
+        {
+            SceneManager.LoadScene("OctopusAreaScene");
+            return;
+        }
+
+        SceneManager.LoadScene("SharkScene");
     }
 
     public void OnClickSeaCucumberArea()

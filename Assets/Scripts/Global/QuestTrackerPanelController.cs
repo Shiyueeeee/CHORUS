@@ -115,7 +115,7 @@ public class QuestTrackerPanelController : MonoBehaviour
 
         if (!GameProgress.dolphinCompleted)
         {
-            questLabel = "Talk to Dolphin";
+            questLabel = GameProgress.dolphinQuestAccepted ? "Find Their Mom" : "Talk to Dolphin";
             return true;
         }
 
@@ -123,6 +123,32 @@ public class QuestTrackerPanelController : MonoBehaviour
         {
             questLabel = "Talk to Whale";
             return true;
+        }
+
+        SharkEncounterManager sharkEncounterManager = Object.FindFirstObjectByType<SharkEncounterManager>();
+        if (sceneName == "SharkScene" && !GameProgress.sharkCompleted)
+        {
+            if (sharkEncounterManager == null || sharkEncounterManager.CurrentPhase == SharkEncounterPhase.WaitingForInteraction)
+            {
+                questLabel = "Talk to Shark";
+                return true;
+            }
+
+            if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.AttackChallenge)
+            {
+                questLabel = "Fight the Shark";
+                return true;
+            }
+            if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.Quiz)
+            {
+                questLabel = "Answer to the Shark";
+                return true;
+            }
+            if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.Completed)
+            {
+                questLabel = "Talk to Octopus";
+                return true;
+            }
         }
 
         if (!GameProgress.sharkCompleted)
@@ -133,7 +159,13 @@ public class QuestTrackerPanelController : MonoBehaviour
 
         if (!GameProgress.octopusCompleted)
         {
-            questLabel = "Talk to Octopus";
+            if (!GameProgress.octopusQuestAccepted || GameProgress.octopusTaskReadyToTurnIn)
+            {
+                questLabel = "Talk to Octopus";
+                return true;
+            }
+
+            questLabel = "Close the Oil Wells";
             return true;
         }
 

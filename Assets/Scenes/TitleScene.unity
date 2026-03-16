@@ -2382,11 +2382,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScreenshotSystem
   captureKey: 105
   superSize: 1
-  onlyInTargetScene: 1
+  exceptInTargetScene: 1
   targetScenes:
-  - RQScene
-  - CrabAreaScene
-  - CrabRushScene
+  - TitleScene
+  - MapScene
 --- !u!114 &1827214519
 MonoBehaviour:
   m_ObjectHideFlags: 0

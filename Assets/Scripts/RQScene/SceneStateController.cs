@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class RQSceneStateController : MonoBehaviour
 {
+    [Header("Residents")]
     [SerializeField] private GameObject crab;
+    [SerializeField] private GameObject dolphinAmbassador;
+    [SerializeField] private GameObject sharkAmbassador;
+    [SerializeField] private GameObject octopusAmbassador;
+    [SerializeField] private GameObject seaCucumberAmbassador;
+
     [SerializeField] private GameObject mapPortal;
 
     [Header("Seahorse Intro Dialogue")]
@@ -16,6 +22,26 @@ public class RQSceneStateController : MonoBehaviour
         if (crab != null)
         {
             crab.SetActive(GameProgress.crabCompleted);
+        }
+
+        if (dolphinAmbassador != null)
+        {
+            dolphinAmbassador.SetActive(GameProgress.dolphinCompleted);
+        }
+
+        if (sharkAmbassador != null)
+        {
+            sharkAmbassador.SetActive(GameProgress.sharkCompleted);
+        }
+
+        if (octopusAmbassador != null)
+        {
+            octopusAmbassador.SetActive(GameProgress.octopusCompleted);
+        }
+
+        if (seaCucumberAmbassador != null)
+        {
+            seaCucumberAmbassador.SetActive(GameProgress.seaCucumberCompleted);
         }
 
         if (mapPortal != null)

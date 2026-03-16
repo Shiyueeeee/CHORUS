@@ -843,6 +843,7 @@ RectTransform:
   - {fileID: 780526266}
   - {fileID: 1280977045}
   - {fileID: 309142072}
+  - {fileID: 1877640091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3100,6 +3101,116 @@ MonoBehaviour:
     text: HI
   - speaker: Shrauk the Shark
     text: Fight me
+--- !u!1001 &1877640090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 301705559}
+    m_Modifications:
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 204.0585
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 124.7849
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -789
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -422
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537980833481253928, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: animalQuestType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537980833481253928, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: returnSceneName
+      value: OctopusPathScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753575211164915382, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_Name
+      value: ClickToComplete
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+--- !u!224 &1877640091 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 296645904615827719, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+  m_PrefabInstance: {fileID: 1877640090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885777531
 GameObject:
   m_ObjectHideFlags: 0

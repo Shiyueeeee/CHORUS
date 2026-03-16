@@ -1,6 +1,7 @@
 public static class GameProgress
 {
     public static bool crabCompleted = false;
+    public static bool dolphinQuestAccepted = false;
     public static bool dolphinCompleted = false;
     public static bool sharkCompleted = false;
     public static bool octopusQuestAccepted = false;
@@ -20,6 +21,12 @@ public static class GameProgress
     public static bool crabAmbassadorPostSharkDialogueCompleted = false;
     public static bool crabAmbassadorPostOctopusDialogueCompleted = false;
     public static bool crabAmbassadorPostSeaCucumberDialogueCompleted = false;
+
+    public static int crabResidentAmbassadorDialogueFlags = 0;
+    public static int dolphinAmbassadorDialogueFlags = 0;
+    public static int sharkAmbassadorDialogueFlags = 0;
+    public static int octopusAmbassadorDialogueFlags = 0;
+    public static int seaCucumberAmbassadorDialogueFlags = 0;
 
     public static bool rqIntroDialogueCompleted = false;
 }

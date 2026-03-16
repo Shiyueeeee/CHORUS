@@ -89,6 +89,8 @@ public class DolphinInteraction : NpcDialogueInteractionBase
     {
         if (activePhase == DialoguePhase.Init)
         {
+            GameProgress.dolphinQuestAccepted = true;
+
             // after init start follow
             dolphinFollowPositionController.canFollow = true;
             dolphinFollowPositionController.isFollowing = true;
