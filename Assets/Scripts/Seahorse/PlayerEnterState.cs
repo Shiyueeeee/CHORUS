@@ -1,6 +1,7 @@
 public enum PlayerMovementMode
 {
     Free,
+    DisableLeft,
     VerticalOnly
 }
 

@@ -21,9 +21,17 @@ public class TrashMover : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            DolphinHealth dolphinHealth = other.GetComponent<DolphinHealth>();
             if (playerHealth != null)
             {
+                Debug.Log("playerHealth");
                 playerHealth.TakeDamage(damage);
+            }
+
+            if (dolphinHealth != null)
+            {
+                Debug.Log("dolphinHealth");
+                dolphinHealth.TakeDamage(damage);
             }
 
             Destroy(gameObject);
