@@ -11,19 +11,16 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
     private DialoguePhase activePhase = DialoguePhase.Init;
     
     [Header("Init Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] initDialogueLines;
+    [SerializeField] private DialogueLineData[] initDialogueLines;
 
     [Header("Repeat Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] repeatDialogueLines =
+    [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
-        "......"
+        new DialogueLineData { text = "......" }
     };
 
     [Header("Finished Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] finishedDialogueLines;
+    [SerializeField] private DialogueLineData[] finishedDialogueLines;
 
     
     protected override string GetSpeakerName()
@@ -31,18 +28,18 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
         return speakerName;
     }
 
-    protected override List<string> GetDialogueLinesForCurrentState()
+    protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
         switch (activePhase)
         {
             case DialoguePhase.Init:
-                return BuildDialogueList(initDialogueLines);
+                return BuildDialogueList(initDialogueLines, speakerName);
             case DialoguePhase.Repeat:
-                return BuildDialogueList(repeatDialogueLines);
+                return BuildDialogueList(repeatDialogueLines, speakerName);
             case DialoguePhase.Finish:
-                return BuildDialogueList(finishedDialogueLines);
+                return BuildDialogueList(finishedDialogueLines, speakerName);
             default:
-                return BuildDialogueList(null);
+                return null;
         }
     }
 
@@ -64,7 +61,7 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
     
     private void CompleteQuestAndReturn()
     {
-        GameProgress.crabCompleted = true;
+        GameProgress.dolphinCompleted = true;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
         SceneManager.LoadScene(returnSceneName);

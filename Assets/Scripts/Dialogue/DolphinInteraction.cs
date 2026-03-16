@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,27 +7,22 @@ public class DolphinInteraction : NpcDialogueInteractionBase
     [SerializeField] private string speakerName = "Dolphin";
 
     [Header("Init Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] initDialogueLines;
+    [SerializeField] private DialogueLineData[] initDialogueLines;
 
     [Header("Repeat Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] repeatDialogueLines =
+    [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
-        "......"
+        new DialogueLineData { text = "......" }
     };
 
     [Header("Ship section Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] shipDialogueLines;
+    [SerializeField] private DialogueLineData[] shipDialogueLines;
     
     [Header("Rush section Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] rushDialogueLines;
+    [SerializeField] private DialogueLineData[] rushDialogueLines;
     
     [Header("End section Dialogue")]
-    [TextArea(2, 5)]
-    [SerializeField] private string[] endDialogueLines;
+    [SerializeField] private DialogueLineData[] endDialogueLines;
 
     [SerializeField] private GameObject objectToActivate;
 
@@ -44,7 +38,7 @@ public class DolphinInteraction : NpcDialogueInteractionBase
         {
             activePhase = DialoguePhase.Init;
         }
-        else if (SceneManager.GetActiveScene().name != "ShipScene")
+        else if (SceneManager.GetActiveScene().name == "ShipScene")
         {
             activePhase = DialoguePhase.Ship;
         }
@@ -59,24 +53,36 @@ public class DolphinInteraction : NpcDialogueInteractionBase
         return  speakerName;
     }
 
-    protected override List<string> GetDialogueLinesForCurrentState()
+    protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
+        List<DialogueLineData> selectedLines;
+
         switch (activePhase)
         {
             case DialoguePhase.Repeat:
-                return BuildDialogueList(repeatDialogueLines);
+                selectedLines = BuildDialogueList(repeatDialogueLines, speakerName);
+                break;
             case DialoguePhase.Init:
-                return BuildDialogueList(initDialogueLines);
+                selectedLines = BuildDialogueList(initDialogueLines, speakerName);
+                break;
             case DialoguePhase.Ship:
-                return BuildDialogueList(shipDialogueLines);
+                selectedLines = BuildDialogueList(shipDialogueLines, speakerName);
+                break;
             case DialoguePhase.Rush:
-                return BuildDialogueList(rushDialogueLines);
+                selectedLines = BuildDialogueList(rushDialogueLines, speakerName);
+                break;
             case DialoguePhase.End:
-                return BuildDialogueList(endDialogueLines);
+                selectedLines = BuildDialogueList(endDialogueLines, speakerName);
+                break;
             default:
-                return null;
+                selectedLines = null;
+                break;
         }
-        
+
+        if (selectedLines != null && selectedLines.Count > 0)
+            return selectedLines;
+
+        return BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()
