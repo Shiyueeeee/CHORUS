@@ -8,6 +8,7 @@ public class CrabRushReplay : MonoBehaviour
     public void Replay()
     {
         Time.timeScale = 1f;
+        PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
         SceneManager.LoadScene(sceneName);
     }
 }

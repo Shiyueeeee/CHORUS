@@ -6,7 +6,10 @@ public class Interactable : MonoBehaviour
     [SerializeField] private GameObject promptObject;
 
     private bool playerInRange = false;
+    private bool interactionEnabled = true;
     private IInteractable interactAction;
+
+    public bool InteractionEnabled => interactionEnabled;
 
     private void Start()
     {
@@ -18,7 +21,7 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange) return;
+        if (!interactionEnabled || !playerInRange) return;
 
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
@@ -31,12 +34,12 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!interactionEnabled) return;
+
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-
-            if (promptObject != null)
-                promptObject.SetActive(true);
+            ShowPrompt();
         }
     }
 
@@ -45,9 +48,36 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-
-            if (promptObject != null)
-                promptObject.SetActive(false);
+            HidePrompt();
         }
+    }
+
+    public void SetInteractionEnabled(bool enabled)
+    {
+        interactionEnabled = enabled;
+
+        if (!interactionEnabled)
+        {
+            playerInRange = false;
+            HidePrompt();
+            return;
+        }
+
+        if (playerInRange)
+        {
+            ShowPrompt();
+        }
+    }
+
+    private void ShowPrompt()
+    {
+        if (promptObject != null)
+            promptObject.SetActive(true);
+    }
+
+    private void HidePrompt()
+    {
+        if (promptObject != null)
+            promptObject.SetActive(false);
     }
 }

@@ -29,10 +29,12 @@ public class DolphinInteraction : NpcDialogueInteractionBase
     private DialoguePhase activePhase = DialoguePhase.Init;
     
     private DolphinFollowPositionController dolphinFollowPositionController;
+    private Interactable interactable;
 
     private void Awake()
     {
         dolphinFollowPositionController = GetComponent<DolphinFollowPositionController>();
+        interactable = GetComponent<Interactable>();
 
         if (SceneManager.GetActiveScene().name == "DolphinAreaScene")
         {
@@ -45,6 +47,11 @@ public class DolphinInteraction : NpcDialogueInteractionBase
         else
         {
             activePhase = DialoguePhase.Repeat;
+        }
+
+        if (GameProgress.dolphinQuestAccepted)
+        {
+            DisableInteraction();
         }
     }
 
@@ -94,8 +101,17 @@ public class DolphinInteraction : NpcDialogueInteractionBase
             // after init start follow
             dolphinFollowPositionController.canFollow = true;
             dolphinFollowPositionController.isFollowing = true;
+            DisableInteraction();
         }
         activePhase = DialoguePhase.Repeat;
+    }
+
+    private void DisableInteraction()
+    {
+        if (interactable != null)
+        {
+            interactable.SetInteractionEnabled(false);
+        }
     }
 
     private enum DialoguePhase

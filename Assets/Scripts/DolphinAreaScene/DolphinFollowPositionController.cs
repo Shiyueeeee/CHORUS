@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Seahorse;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ public class DolphinFollowPositionController : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private SeahorseController playerController;
     [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private Rigidbody2D dolphinRigidbody;
 
     [Header("Offsets")]
     [SerializeField] private Vector2 leftOffset = new Vector2(-2.2f, 0f);
@@ -26,21 +28,31 @@ public class DolphinFollowPositionController : MonoBehaviour
     [SerializeField] private float followSmooth = 8f;
     [SerializeField] private float inputThreshold = 0.1f;
     [SerializeField] private float sideSwitchThreshold = 0.75f;
+    [SerializeField] private float rushFollowDelay = 0.1f;
     
     [Header("Bounds")]
     [SerializeField] private OceanBound oceanBound;
     [SerializeField] private Collider2D bodyCollider;
+    [SerializeField] private float wallCastPadding = 0.02f;
+    [SerializeField] private int overlapResolutionIterations = 4;
 
     private int horizontalSide = 1;
+    private readonly Collider2D[] overlapResults = new Collider2D[16];
+    private readonly RaycastHit2D[] castResults = new RaycastHit2D[16];
+    private readonly Queue<FollowSample> followSamples = new Queue<FollowSample>();
+    private ContactFilter2D solidWallFilter;
+    private bool useRushTrailFollow;
 
     private void Awake()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
         AutoAssignReferences();
+        ConfigureRigidbody();
+        ConfigureCollisionFilter();
         InitializeSide();
-        isFollowing = SceneManager.GetActiveScene().name != "DolphinAreaScene";
-        canFollow = SceneManager.GetActiveScene().name != "DolphinAreaScene";
-        
-        if (bodyCollider == null) bodyCollider = GetComponent<Collider2D>();
+        useRushTrailFollow = sceneName == "DolphinFinalRushScene";
+        isFollowing = sceneName != "DolphinAreaScene";
+        canFollow = sceneName != "DolphinAreaScene";
     }
     
 
@@ -55,39 +67,72 @@ public class DolphinFollowPositionController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerTransform == null)
+        AutoAssignReferences();
+
+        if (playerTransform == null || bodyCollider == null || dolphinRigidbody == null)
             return;
 
-        UpdateHorizontalSide();
+        RecordFollowSample();
+        ResolveCurrentWallOverlaps();
 
         Vector2 move = GetMoveDirection();
-        Vector3 targetPosition = playerTransform.position + (Vector3)GetTargetOffset(move);
-        
-        targetPosition = GetClampedTargetPosition(targetPosition);
+        UpdateHorizontalSide(move);
 
-        if (isFollowing)
-        {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, followSmooth * Time.deltaTime);
-        }
-        
-        // ClampInsideOceanBounds();
-        
+        if (!isFollowing)
+            return;
+
+        Vector2 currentPosition = dolphinRigidbody.position;
+        Vector2 targetPosition = GetFollowTargetPosition(move);
+        targetPosition = GetConstrainedTargetPosition(targetPosition);
+
+        float lerpFactor = 1f - Mathf.Exp(-followSmooth * Time.fixedDeltaTime);
+        Vector2 desiredPosition = Vector2.Lerp(currentPosition, targetPosition, lerpFactor);
+        desiredPosition = GetConstrainedTargetPosition(desiredPosition);
+        desiredPosition = PreventWallPenetration(currentPosition, desiredPosition);
+
+        dolphinRigidbody.MovePosition(desiredPosition);
     }
 
     private void AutoAssignReferences()
     {
-        if (playerTransform != null)
-            return;
+        GameObject player = null;
+        if (playerTransform == null || playerController == null || playerRigidbody == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null)
-            return;
+        if (playerTransform == null && player != null)
+            playerTransform = player.transform;
 
-        playerTransform = player.transform;
         if (playerController == null)
-            playerController = player.GetComponent<SeahorseController>();
+        {
+            if (playerTransform != null)
+                playerController = playerTransform.GetComponent<SeahorseController>();
+            else if (player != null)
+                playerController = player.GetComponent<SeahorseController>();
+        }
+
         if (playerRigidbody == null)
-            playerRigidbody = player.GetComponent<Rigidbody2D>();
+        {
+            if (playerTransform != null)
+                playerRigidbody = playerTransform.GetComponent<Rigidbody2D>();
+            else if (player != null)
+                playerRigidbody = player.GetComponent<Rigidbody2D>();
+        }
+
+        if (oceanBound == null)
+            oceanBound = FindFirstObjectByType<OceanBound>();
+
+        if (bodyCollider == null)
+            bodyCollider = GetComponent<Collider2D>();
+
+        if (dolphinRigidbody == null)
+        {
+            dolphinRigidbody = GetComponent<Rigidbody2D>();
+
+            if (dolphinRigidbody == null)
+                dolphinRigidbody = gameObject.AddComponent<Rigidbody2D>();
+        }
     }
 
     private void InitializeSide()
@@ -98,39 +143,49 @@ public class DolphinFollowPositionController : MonoBehaviour
         horizontalSide = transform.position.x < playerTransform.position.x ? -1 : 1;
     }
 
-    private void UpdateHorizontalSide()
+    private void ConfigureRigidbody()
     {
-        if (playerController == null) return;
-        var dir = playerController.Move.x;
+        if (dolphinRigidbody == null)
+            return;
 
-        if (dir > 0)
+        dolphinRigidbody.bodyType = RigidbodyType2D.Kinematic;
+        dolphinRigidbody.gravityScale = 0f;
+        dolphinRigidbody.interpolation = RigidbodyInterpolation2D.Interpolate;
+        dolphinRigidbody.linearDamping = 0f;
+        dolphinRigidbody.angularDamping = 0f;
+        dolphinRigidbody.freezeRotation = true;
+    }
+
+    private void ConfigureCollisionFilter()
+    {
+        solidWallFilter = new ContactFilter2D
+        {
+            useTriggers = false,
+            useLayerMask = false,
+            useDepth = false
+        };
+    }
+
+    private void UpdateHorizontalSide(Vector2 move)
+    {
+        if (move.x > inputThreshold)
         {
             horizontalSide = -1;
         }
-        else if (dir < 0)
+        else if (move.x < -inputThreshold)
         {
             horizontalSide = 1;
         }
-        // float relativeX = transform.position.x - playerTransform.position.x;
-        //
-        // if (relativeX < -sideSwitchThreshold)
-        // {
-        //     horizontalSide = -1;
-        // }
-        // else if (relativeX > sideSwitchThreshold)
-        // {
-        //     horizontalSide = 1;
-        // }
     }
 
     private Vector2 GetMoveDirection()
     {
-        if (playerController != null)
+        if (playerController != null && playerController.Move.sqrMagnitude > inputThreshold * inputThreshold)
         {
             return playerController.Move;
         }
 
-        if (playerRigidbody != null)
+        if (playerRigidbody != null && playerRigidbody.linearVelocity.sqrMagnitude > 0.0001f)
         {
             return playerRigidbody.linearVelocity.normalized;
         }
@@ -152,10 +207,43 @@ public class DolphinFollowPositionController : MonoBehaviour
 
         return horizontalSide < 0 ? leftOffset : rightOffset;
     }
-    
-    private Vector3 GetClampedTargetPosition(Vector3 targetPos)
+
+    private Vector2 GetFollowTargetPosition(Vector2 move)
     {
-        if (oceanBound == null) return targetPos;
+        if (!useRushTrailFollow)
+            return (Vector2)playerTransform.position + GetTargetOffset(move);
+
+        Vector2 delayedPlayerPosition = GetDelayedPlayerPosition();
+        float horizontalOffset = horizontalSide < 0 ? leftOffset.x : rightOffset.x;
+        return delayedPlayerPosition + new Vector2(horizontalOffset, 0f);
+    }
+
+    private void RecordFollowSample()
+    {
+        if (!useRushTrailFollow || playerTransform == null)
+            return;
+
+        float now = Time.time;
+        followSamples.Enqueue(new FollowSample(now, playerTransform.position));
+
+        while (followSamples.Count > 1 && now - followSamples.Peek().time > rushFollowDelay)
+        {
+            followSamples.Dequeue();
+        }
+    }
+
+    private Vector2 GetDelayedPlayerPosition()
+    {
+        if (!useRushTrailFollow || followSamples.Count == 0)
+            return playerTransform != null ? (Vector2)playerTransform.position : Vector2.zero;
+
+        return followSamples.Peek().position;
+    }
+    
+    private Vector2 GetConstrainedTargetPosition(Vector2 targetPos)
+    {
+        if (oceanBound == null)
+            return targetPos;
 
         Bounds b = oceanBound.OceanBounds;
         float halfW = 0f;
@@ -173,10 +261,108 @@ public class DolphinFollowPositionController : MonoBehaviour
         float minY = b.min.y + halfH;
         float maxY = b.max.y - halfH;
 
-        float clampedX = Mathf.Clamp(targetPos.x, minX, maxX);
-        float clampedY = Mathf.Clamp(targetPos.y, minY, maxY);
-        
-        return new Vector3(clampedX, clampedY, targetPos.z);
+        Vector2 clampedTarget = new Vector2(
+            Mathf.Clamp(targetPos.x, minX, maxX),
+            Mathf.Clamp(targetPos.y, minY, maxY)
+        );
+
+        if (oceanBound.TryClampPointInsideShape(clampedTarget, out Vector2 shapeClamped))
+        {
+            clampedTarget = shapeClamped;
+        }
+
+        return clampedTarget;
+    }
+
+    private Vector2 PreventWallPenetration(Vector2 currentPosition, Vector2 desiredPosition)
+    {
+        if (bodyCollider == null)
+            return desiredPosition;
+
+        Vector2 delta = desiredPosition - currentPosition;
+        float distance = delta.magnitude;
+        if (distance <= Mathf.Epsilon)
+            return desiredPosition;
+
+        Vector2 direction = delta / distance;
+        int hitCount = bodyCollider.Cast(direction, solidWallFilter, castResults, distance + wallCastPadding);
+        float allowedDistance = distance;
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            RaycastHit2D hit = castResults[i];
+            if (ShouldIgnoreCollider(hit.collider))
+                continue;
+
+            allowedDistance = Mathf.Min(allowedDistance, Mathf.Max(0f, hit.distance - wallCastPadding));
+        }
+
+        return currentPosition + (direction * allowedDistance);
+    }
+
+    private void ResolveCurrentWallOverlaps()
+    {
+        if (bodyCollider == null || dolphinRigidbody == null)
+            return;
+
+        for (int iteration = 0; iteration < overlapResolutionIterations; iteration++)
+        {
+            int overlapCount = bodyCollider.Overlap(solidWallFilter, overlapResults);
+            if (overlapCount == 0)
+                break;
+
+            Vector2 correction = Vector2.zero;
+
+            for (int i = 0; i < overlapCount; i++)
+            {
+                Collider2D other = overlapResults[i];
+                if (ShouldIgnoreCollider(other))
+                    continue;
+
+                ColliderDistance2D distance = bodyCollider.Distance(other);
+                if (!distance.isOverlapped)
+                    continue;
+
+                correction += distance.normal * distance.distance;
+            }
+
+            if (correction.sqrMagnitude <= Mathf.Epsilon)
+                break;
+
+            dolphinRigidbody.position += correction;
+        }
+    }
+
+    private bool ShouldIgnoreCollider(Collider2D other)
+    {
+        if (other == null || other.isTrigger)
+            return true;
+
+        if (other.attachedRigidbody == dolphinRigidbody)
+            return true;
+
+        if (playerRigidbody != null && other.attachedRigidbody == playerRigidbody)
+            return true;
+
+        if (other.CompareTag("Player"))
+            return true;
+
+        if (other.attachedRigidbody != null && other.attachedRigidbody.CompareTag("Player"))
+            return true;
+
+        return false;
+    }
+
+    private readonly struct FollowSample
+    {
+        public FollowSample(float time, Vector2 position)
+        {
+            this.time = time;
+            this.position = position;
+        }
+
+        public float time { get; }
+        public Vector2 position { get; }
     }
     
 }
