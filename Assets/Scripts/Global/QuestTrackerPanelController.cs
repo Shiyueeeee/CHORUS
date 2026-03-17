@@ -183,6 +183,18 @@ public class QuestTrackerPanelController : MonoBehaviour
 
         if (!GameProgress.seaCucumberCompleted)
         {
+            if (!GameProgress.seaCucumberQuestAccepted)
+            {
+                questLabel = "Talk to Sea Cucumber";
+                return true;
+            }
+
+            if (!GameProgress.seaCucumberTriageCompleted)
+            {
+                questLabel = "Sort the Patients";
+                return true;
+            }
+
             questLabel = "Talk to Sea Cucumber";
             return true;
         }

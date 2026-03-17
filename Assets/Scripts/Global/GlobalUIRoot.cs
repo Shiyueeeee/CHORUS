@@ -22,6 +22,7 @@ public class GlobalUIRoot : MonoBehaviour
 
     private float cachedTimeScale = 1f;
     private bool ownsPause;
+    private int externalModalLockCount;
 
     public bool IsSettingsOpen => settingsTabPanel != null && settingsTabPanel.activeInHierarchy;
 
@@ -99,7 +100,27 @@ public class GlobalUIRoot : MonoBehaviour
         if (settingsTabPanel != null) settingsTabPanel.SetActive(open);
         if (!open && galleryPanel != null) galleryPanel.SetActive(false);
 
-        ApplyInputLock(open);
+        RefreshModalLockState();
+    }
+
+    public void SetExternalModalInputLock(bool locked)
+    {
+        if (locked)
+        {
+            externalModalLockCount++;
+        }
+        else
+        {
+            externalModalLockCount = Mathf.Max(0, externalModalLockCount - 1);
+        }
+
+        RefreshModalLockState();
+    }
+
+    private void RefreshModalLockState()
+    {
+        bool shouldLock = IsSettingsOpen || externalModalLockCount > 0;
+        ApplyInputLock(shouldLock);
     }
 
     private void ApplyInputLock(bool locked)
