@@ -650,11 +650,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550c78b0d1e6aec42b9793afd37e44fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
-  residentType: 0
+  residentType: 3
   speakerName: Octopus Ambassador
   aboutBaseDialogueLines:
   - speaker: Octopus Ambassador
     text: cute base
+  requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Octopus Ambassador
     text: cute crab
@@ -1170,11 +1171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550c78b0d1e6aec42b9793afd37e44fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
-  residentType: 0
+  residentType: 4
   speakerName: Sea Cucumber Ambassador
   aboutBaseDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy base
+  requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy crab
@@ -1686,13 +1688,16 @@ MonoBehaviour:
     text: You saved the crabs!
   - speaker: Mr. Jones
     text: Now go help the dophins
-  postSharkQuestDialogueLines:
+  postOctopusQuestDialogueLines:
   - speaker: Mr. Jones
-    text: You helped the dolphins!
+    text: You saved the dophins!
   - speaker: Mr. Jones
-    text: Go find octopus
+    text: Now go help the octopus.
+  postSeaCucumberQuestDialogueLines:
   - speaker: Mr. Jones
-    text: Deep ocean is dangerous
+    text: WOW you also found shark
+  - speaker: Mr. Jones
+    text: now go to sea cucumber
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:
@@ -2019,6 +2024,7 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice place
+  requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice crab
@@ -2126,6 +2132,7 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur base
+  requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
   - speaker: Crab Ambassador
@@ -2233,6 +2240,11 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Shark Ambassador
     text: weak base
+  requestSeaCucumberEscortDialogueLines:
+  - speaker: Sea horse
+    text: Please take me to sea cucumber
+  - speaker: Shark Ambassador
+    text: ok fine
   aboutCrabDialogueLines:
   - speaker: Shark Ambassador
     text: weak crab

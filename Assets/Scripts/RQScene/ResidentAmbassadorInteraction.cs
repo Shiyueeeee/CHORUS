@@ -9,6 +9,9 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
     [Header("Base Dialogue")]
     [SerializeField] private DialogueLineData[] aboutBaseDialogueLines;
 
+    [Header("Priority Dialogue")]
+    [SerializeField] private DialogueLineData[] requestSeaCucumberEscortDialogueLines;
+
     [Header("Neighbor Dialogues")]
     [SerializeField] private DialogueLineData[] aboutCrabDialogueLines;
     [SerializeField] private DialogueLineData[] aboutDolphinDialogueLines;
@@ -35,6 +38,18 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
         {
             activeTopic = ResidentDialogueTopic.Repeat;
             return BuildDialogueList(repeatDialogueLines, speakerName);
+        }
+
+        if (residentType == RQResidentType.Shark &&
+            GameProgress.whalePostOctopusDialogueCompleted &&
+            !GameProgress.sharkEscortToSeaCucumberRequested)
+        {
+            List<DialogueLineData> escortLines = BuildDialogueList(requestSeaCucumberEscortDialogueLines, speakerName);
+            if (escortLines != null && escortLines.Count > 0)
+            {
+                activeTopic = ResidentDialogueTopic.RequestSeaCucumberEscort;
+                return escortLines;
+            }
         }
 
         if (!HasSeenTopic(ResidentDialogueTopic.AboutBase))
@@ -105,6 +120,13 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
     {
         if (activeTopic == ResidentDialogueTopic.Repeat)
             return;
+
+        if (activeTopic == ResidentDialogueTopic.RequestSeaCucumberEscort)
+        {
+            GameProgress.sharkEscortToSeaCucumberRequested = true;
+            Debug.Log("Shark escort to Sea Cucumber requested. Placeholder only.");
+            return;
+        }
 
         SetSeenTopic(activeTopic);
     }
@@ -192,7 +214,8 @@ public enum ResidentDialogueTopic
     AboutDolphin = 1 << 2,
     AboutShark = 1 << 3,
     AboutOctopus = 1 << 4,
-    AboutSeaCucumber = 1 << 5
+    AboutSeaCucumber = 1 << 5,
+    RequestSeaCucumberEscort = 1 << 6
 }
 
 public enum RQResidentType

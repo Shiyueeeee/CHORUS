@@ -19,7 +19,7 @@ public class MapUI : MonoBehaviour
         SetPortalActive(crabPortalButton, GameProgress.whaleIntroDialogueCompleted);
         SetPortalActive(dolphinPortalButton, GameProgress.whalePostCrabDialogueCompleted);
         SetPortalActive(octopusPortalButton, GameProgress.whalePostDolphinDialogueCompleted);
-        SetPortalActive(seaCucumberPortalButton, GameProgress.whalePostOctopusDialogueCompleted);
+        SetPortalActive(seaCucumberPortalButton, GameProgress.whalePostOctopusDialogueCompleted && GameProgress.sharkEscortToSeaCucumberRequested);
     }
 
     private void SetPortalActive(GameObject portalButton, bool isUnlocked)
@@ -80,5 +80,6 @@ public class MapUI : MonoBehaviour
     public void OnClickSeaCucumberArea()
     {
         Debug.Log("Sea Cucumber Area clicked");
+        SceneManager.LoadScene("SeaCucumberAreaScene");
     }
 }

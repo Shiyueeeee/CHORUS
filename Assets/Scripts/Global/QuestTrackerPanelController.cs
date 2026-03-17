@@ -169,6 +169,18 @@ public class QuestTrackerPanelController : MonoBehaviour
             return true;
         }
 
+        if (!GameProgress.whalePostOctopusDialogueCompleted)
+        {
+            questLabel = "Talk to Whale";
+            return true;
+        }
+
+        if (!GameProgress.sharkEscortToSeaCucumberRequested)
+        {
+            questLabel = "Talk to Shark";
+            return true;
+        }
+
         if (!GameProgress.seaCucumberCompleted)
         {
             questLabel = "Talk to Sea Cucumber";

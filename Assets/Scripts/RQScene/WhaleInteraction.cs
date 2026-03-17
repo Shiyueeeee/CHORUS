@@ -17,8 +17,11 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [Header("Post Dolphin Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
 
-    [Header("Post Shark Quest Dialogue")]
-    [SerializeField] private DialogueLineData[] postSharkQuestDialogueLines;
+    [Header("Post Octopus Quest Dialogue")]
+    [SerializeField] private DialogueLineData[] postOctopusQuestDialogueLines;
+
+    [Header("Post Sea Cucumber Quest Dialogue")]
+    [SerializeField] private DialogueLineData[] postSeaCucumberQuestDialogueLines;
 
     [SerializeField] private GameObject objectToActivate;
 
@@ -45,8 +48,14 @@ public class WhaleInteraction : NpcDialogueInteractionBase
 
         if (GameProgress.dolphinCompleted && !GameProgress.whalePostDolphinDialogueCompleted)
         {
-            activePhase = DialoguePhase.PostSharkQuest;
-            return BuildDialogueList(postSharkQuestDialogueLines, speakerName);
+            activePhase = DialoguePhase.PostOctopusQuest;
+            return BuildDialogueList(postOctopusQuestDialogueLines, speakerName);
+        }
+
+        if (GameProgress.octopusCompleted && !GameProgress.whalePostOctopusDialogueCompleted)
+        {
+            activePhase = DialoguePhase.PostSeaCucumberQuest;
+            return BuildDialogueList(postSeaCucumberQuestDialogueLines, speakerName);
         }
 
         activePhase = DialoguePhase.Repeat;
@@ -72,10 +81,15 @@ public class WhaleInteraction : NpcDialogueInteractionBase
             GameProgress.whalePostCrabDialogueCompleted = true;
             Debug.Log("Dolphin quest accepted. Placeholder only.");
         }
-        else if (activePhase == DialoguePhase.PostSharkQuest)
+        else if (activePhase == DialoguePhase.PostOctopusQuest)
         {
             GameProgress.whalePostDolphinDialogueCompleted = true;
             Debug.Log("Octopus route task accepted. Shark encounter on the way. Placeholder only.");
+        }
+        else if (activePhase == DialoguePhase.PostSeaCucumberQuest)
+        {
+            GameProgress.whalePostOctopusDialogueCompleted = true;
+            Debug.Log("Sea cucumber quest accepted. Placeholder only.");
         }
     }
 
@@ -84,6 +98,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         PostCrabQuest,
         Repeat,
         PostDolphinQuest,
-        PostSharkQuest
+        PostOctopusQuest,
+        PostSeaCucumberQuest
     }
 }
