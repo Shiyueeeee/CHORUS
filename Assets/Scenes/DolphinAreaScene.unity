@@ -1493,6 +1493,7 @@ MonoBehaviour:
   playerTransform: {fileID: 335672986}
   playerController: {fileID: 0}
   playerRigidbody: {fileID: 0}
+  dolphinRigidbody: {fileID: 0}
   leftOffset: {x: -2.2, y: 0}
   rightOffset: {x: 2.2, y: 0}
   upLeftOffset: {x: -1.8, y: -1.8}
@@ -1504,8 +1505,11 @@ MonoBehaviour:
   followSmooth: 8
   inputThreshold: 0.1
   sideSwitchThreshold: 0.75
+  rushFollowDelay: 0.5
   oceanBound: {fileID: 0}
   bodyCollider: {fileID: 0}
+  wallCastPadding: 0.02
+  overlapResolutionIterations: 4
 --- !u!212 &1632839073
 SpriteRenderer:
   serializedVersion: 2
@@ -2175,6 +2179,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 335672986}
+    - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushFollowDelay
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
       propertyPath: playerController
       value: 

@@ -10,6 +10,7 @@ namespace Environments.Ocean
     public class OceanBound : MonoBehaviour
     {
         public Bounds OceanBounds {get; private set;}
+        public Collider2D OceanCollider => oceanCollider;
         
         [Header("References")]
         [SerializeField] private OceanResistance oceanResistance;
@@ -26,6 +27,25 @@ namespace Environments.Ocean
             if (oceanResistance == null) oceanResistance = GetComponent<OceanResistance>();
             
             OceanBounds = oceanCollider.bounds;
+        }
+
+        public bool TryClampPointInsideShape(Vector2 point, out Vector2 clampedPoint)
+        {
+            clampedPoint = point;
+
+            if (oceanCollider == null)
+            {
+                return false;
+            }
+
+            if (oceanCollider.OverlapPoint(point))
+            {
+                clampedPoint = point;
+                return true;
+            }
+
+            clampedPoint = oceanCollider.ClosestPoint(point);
+            return true;
         }
 
         private void FixedUpdate()
