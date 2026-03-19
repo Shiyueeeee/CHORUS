@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuestTrackerPanelController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class QuestTrackerPanelController : MonoBehaviour
     private bool lastVisibility;
     private bool hasInitializedVisibility;
     private bool hasLoggedMissingReferences;
+    private bool hasConfiguredRaycasts;
 
     private void Start()
     {
@@ -35,6 +37,8 @@ public class QuestTrackerPanelController : MonoBehaviour
     {
         if (!HasRequiredReferences())
             return;
+
+        EnsurePanelDoesNotBlockRaycasts();
 
         bool shouldShow = TryGetCurrentQuestText(out string questLabel);
         if (!hasInitializedVisibility || shouldShow != lastVisibility)
@@ -67,6 +71,28 @@ public class QuestTrackerPanelController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void EnsurePanelDoesNotBlockRaycasts()
+    {
+        if (hasConfiguredRaycasts || panelObject == null)
+            return;
+
+        Graphic[] graphics = panelObject.GetComponentsInChildren<Graphic>(true);
+        foreach (Graphic graphic in graphics)
+        {
+            if (graphic != null)
+                graphic.raycastTarget = false;
+        }
+
+        CanvasGroup[] canvasGroups = panelObject.GetComponentsInChildren<CanvasGroup>(true);
+        foreach (CanvasGroup canvasGroup in canvasGroups)
+        {
+            if (canvasGroup != null)
+                canvasGroup.blocksRaycasts = false;
+        }
+
+        hasConfiguredRaycasts = true;
     }
 
     private bool TryGetCurrentQuestText(out string questLabel)
@@ -216,6 +242,12 @@ public class QuestTrackerPanelController : MonoBehaviour
             }
 
             questLabel = "Talk to Sea Cucumber";
+            return true;
+        }
+
+        if (!GameProgress.whalePostSeaCucumberDialogueCompleted)
+        {
+            questLabel = "Talk to Whale";
             return true;
         }
 

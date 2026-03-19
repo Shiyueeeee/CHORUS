@@ -1728,6 +1728,9 @@ MonoBehaviour:
     text: now go to sea cucumber
   - speaker: Mr. Jones
     text: let shark take you there
+  afterSeaCucumberCompletedDialogueLines:
+  - speaker: Mr. Jones
+    text: You did them all
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:

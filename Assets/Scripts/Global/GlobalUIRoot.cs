@@ -119,21 +119,29 @@ public class GlobalUIRoot : MonoBehaviour
 
     private void RefreshModalLockState()
     {
-        bool shouldLock = IsSettingsOpen || externalModalLockCount > 0;
-        ApplyInputLock(shouldLock);
+        bool shouldLockInput = IsSettingsOpen || externalModalLockCount > 0;
+        bool shouldBlockExternalUi = IsSettingsOpen;
+        ApplyInputLock(shouldLockInput, shouldBlockExternalUi);
     }
 
-    private void ApplyInputLock(bool locked)
+    private void ApplyInputLock(bool locked, bool blockExternalUi)
     {
         IsModalInputLocked = locked;
 
         EnsureModalBlocker();
-        if (modalBlocker != null) modalBlocker.SetActive(locked);
+        if (modalBlocker != null) modalBlocker.SetActive(blockExternalUi);
 
         if (locked)
         {
             PauseGameIfNeeded();
-            CacheAndDisableExternalSelectables();
+            if (blockExternalUi)
+            {
+                CacheAndDisableExternalSelectables();
+            }
+            else
+            {
+                RestoreSelectables();
+            }
         }
         else
         {

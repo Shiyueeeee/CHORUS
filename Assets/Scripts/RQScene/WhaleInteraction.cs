@@ -23,6 +23,9 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [Header("Post Sea Cucumber Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postSeaCucumberQuestDialogueLines;
 
+    [Header("After Sea Cucumber Completed Dialogue")]
+    [SerializeField] private DialogueLineData[] afterSeaCucumberCompletedDialogueLines;
+
     [SerializeField] private GameObject objectToActivate;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
@@ -58,6 +61,12 @@ public class WhaleInteraction : NpcDialogueInteractionBase
             return BuildDialogueList(postSeaCucumberQuestDialogueLines, speakerName);
         }
 
+        if (GameProgress.seaCucumberCompleted && !GameProgress.whalePostSeaCucumberDialogueCompleted)
+        {
+            activePhase = DialoguePhase.AfterSeaCucumberCompleted;
+            return BuildDialogueList(afterSeaCucumberCompletedDialogueLines, speakerName);
+        }
+
         activePhase = DialoguePhase.Repeat;
         return BuildDialogueList(repeatDialogueLines, speakerName);
     }
@@ -91,6 +100,10 @@ public class WhaleInteraction : NpcDialogueInteractionBase
             GameProgress.whalePostOctopusDialogueCompleted = true;
             Debug.Log("Sea cucumber quest accepted. Placeholder only.");
         }
+        else if (activePhase == DialoguePhase.AfterSeaCucumberCompleted)
+        {
+            GameProgress.whalePostSeaCucumberDialogueCompleted = true;
+        }
     }
 
     private enum DialoguePhase
@@ -99,6 +112,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         Repeat,
         PostDolphinQuest,
         PostOctopusQuest,
-        PostSeaCucumberQuest
+        PostSeaCucumberQuest,
+        AfterSeaCucumberCompleted
     }
 }
