@@ -195,6 +195,26 @@ public class QuestTrackerPanelController : MonoBehaviour
                 return true;
             }
 
+            bool needsInternalTreatment = !GameProgress.seaCucumberInternalTreatmentCompleted;
+            bool needsExternalTreatment = !GameProgress.seaCucumberExternalTreatmentCompleted;
+            if (needsInternalTreatment && needsExternalTreatment)
+            {
+                questLabel = "Treat Internal Patients\nTreat External Patients";
+                return true;
+            }
+
+            if (needsInternalTreatment)
+            {
+                questLabel = "Treat Internal Patients";
+                return true;
+            }
+
+            if (needsExternalTreatment)
+            {
+                questLabel = "Treat External Patients";
+                return true;
+            }
+
             questLabel = "Talk to Sea Cucumber";
             return true;
         }

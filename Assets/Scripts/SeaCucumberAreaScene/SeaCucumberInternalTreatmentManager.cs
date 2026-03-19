@@ -30,7 +30,7 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
 
     public void TryOpenPanel()
     {
-        if (!GameProgress.seaCucumberTriageCompleted || isResolvingCase)
+        if (!GameProgress.seaCucumberTriageCompleted || isResolvingCase || AreAllCasesCompleted())
             return;
 
         if (treatmentPanel != null)
@@ -106,7 +106,15 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
 
         CloseCurrentZoomPanel();
         currentCase = null;
-        lesionsRemainingText.text = string.Empty;
+        if (lesionsRemainingText != null)
+            lesionsRemainingText.text = string.Empty;
+
+        if (AreAllCasesCompleted())
+        {
+            GameProgress.seaCucumberInternalTreatmentCompleted = true;
+            ClosePanel();
+        }
+
         isResolvingCase = false;
     }
 
@@ -132,5 +140,16 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
 
         int remaining = Mathf.Max(0, currentCase.RequiredLesionCount - clickedLesionCount);
         lesionsRemainingText.text = "Remaining: " + remaining;
+    }
+
+    private bool AreAllCasesCompleted()
+    {
+        foreach (SeaCucumberInternalPatientCase patientCase in patientCases)
+        {
+            if (patientCase != null && !patientCase.IsCompleted)
+                return false;
+        }
+
+        return true;
     }
 }
