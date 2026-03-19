@@ -204,7 +204,7 @@ MonoBehaviour:
   movingPart: {fileID: 5135744810223899644}
   leftPoint: {fileID: 7679764737282643255}
   rightPoint: {fileID: 6819763803082222021}
-  moveSpeed: 3
+  moveSpeed: 4.5
   arrivalThreshold: 0.02
 --- !u!1 &7602965838080250623
 GameObject:
