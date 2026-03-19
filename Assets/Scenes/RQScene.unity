@@ -2291,6 +2291,68 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
+--- !u!1 &1931277874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5859069686327908759, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+  m_PrefabInstance: {fileID: 861194473972542695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931277875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931277874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4cb2681df54fa4a75bda3417d2ef16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseDash
+  seahorseController: {fileID: 1931277876}
+  seahorseMotor: {fileID: 1931277877}
+  rb: {fileID: 1931277878}
+  bodyCollider: {fileID: 1931277879}
+  oceanBound: {fileID: 1694403618}
+  dashDistance: 4
+  dashDuration: 0.08
+  dashCooldown: 1
+  longCooldown: 2.5
+  dashesBeforeLongCooldown: 2
+  chainedDashResetDelay: 4
+  defaultDashDirection: {x: 1, y: 0}
+  directionDeadzone: 0.01
+--- !u!114 &1931277876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2165891866971566691, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+  m_PrefabInstance: {fileID: 861194473972542695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931277874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775345f2eb780d1478c69b634c172232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseController
+--- !u!114 &1931277877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+  m_PrefabInstance: {fileID: 861194473972542695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931277874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9b9a863eaa4c7458ab11b56d5a687f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseMotor
+--- !u!50 &1931277878 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7147292426397052274, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+  m_PrefabInstance: {fileID: 861194473972542695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1931277879 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7642752358889465651, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+  m_PrefabInstance: {fileID: 861194473972542695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1988941340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
@@ -2537,7 +2599,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5859069686327908759, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1931277875}
   m_SourcePrefab: {fileID: 100100000, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
 --- !u!1001 &6955178374368005372
 PrefabInstance:
