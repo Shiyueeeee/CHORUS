@@ -10,6 +10,7 @@ namespace Seahorse
         [SerializeField] private float deadzone;
 
         [SerializeField] private bool isFacingRight = true;
+        [SerializeField] private bool positiveScaleFacesRight = false;
 
         private void Awake()
         {
@@ -40,7 +41,10 @@ namespace Seahorse
         {
             isFacingRight = right;
             Vector3 s = transform.localScale;
-            s.x = Mathf.Abs(s.x) * (isFacingRight ? 1f : -1f);
+            float facingSign = isFacingRight
+                ? (positiveScaleFacesRight ? 1f : -1f)
+                : (positiveScaleFacesRight ? -1f : 1f);
+            s.x = Mathf.Abs(s.x) * facingSign;
             transform.localScale = s;
         }
     }

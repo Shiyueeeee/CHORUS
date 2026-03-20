@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OctopusLeaderInteraction : NpcDialogueInteractionBase
 {
     [Header("Dialogue")]
     [SerializeField] private string speakerName = "Octopus Leader";
+    [SerializeField] private string returnSceneName = "RQScene";
+    [SerializeField] private string returnSpawnPointName = "Spawn_OctopusReturn";
     [SerializeField] private DialogueLineData[] acceptQuestDialogueLines;
     [SerializeField] private DialogueLineData[] questInProgressDialogueLines;
     [SerializeField] private DialogueLineData[] turnInQuestDialogueLines;
@@ -63,7 +66,8 @@ public class OctopusLeaderInteraction : NpcDialogueInteractionBase
         {
             GameProgress.octopusTaskReadyToTurnIn = false;
             GameProgress.octopusCompleted = true;
-            Debug.Log("Octopus quest turned in. Placeholder only.");
+            SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
+            SceneManager.LoadScene(returnSceneName);
         }
     }
 

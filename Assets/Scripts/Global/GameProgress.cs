@@ -6,6 +6,7 @@ public static class GameProgress
     public static bool sharkCompleted = false;
     public static bool octopusQuestAccepted = false;
     public static bool octopusTaskReadyToTurnIn = false;
+    public static bool octopusDyingNpcHintDialogueCompleted = false;
     public static bool octopusCompleted = false;
     public static bool sharkEscortToSeaCucumberRequested = false;
     public static bool seaCucumberQuestAccepted = false;

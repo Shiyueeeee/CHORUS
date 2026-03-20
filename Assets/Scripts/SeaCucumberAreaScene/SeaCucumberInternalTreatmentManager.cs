@@ -33,6 +33,9 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
         if (!GameProgress.seaCucumberTriageCompleted || isResolvingCase || AreAllCasesCompleted())
             return;
 
+        if (treatmentPanel != null && treatmentPanel.activeSelf)
+            return;
+
         if (treatmentPanel != null)
             treatmentPanel.SetActive(true);
 
@@ -42,6 +45,9 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
 
     public void ClosePanel()
     {
+        if (treatmentPanel != null && !treatmentPanel.activeSelf)
+            return;
+
         CloseCurrentZoomPanel();
 
         if (treatmentPanel != null)
