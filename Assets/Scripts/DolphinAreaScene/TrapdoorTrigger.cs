@@ -9,6 +9,7 @@ public class TrapdoorTrigger : MonoBehaviour
     [SerializeField] private GameObject trapdoor;
     [SerializeField] private bool isPlayerInRange = false;
     [SerializeField] private bool isInteracted = false;
+    [SerializeField] private DolphinFollowPositionController dolphinFollowPositionController;
     private Interactable _interactable;
     private void Awake()
     {
@@ -21,13 +22,16 @@ public class TrapdoorTrigger : MonoBehaviour
     {
         if (isPlayerInRange && !isInteracted)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (dolphinFollowPositionController != null && dolphinFollowPositionController.isFollowing)
             {
-                if (trapdoor != null)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    trapdoor.SetActive(false);
-                    isInteracted = true;
-                    _interactable.SetInteractionEnabled(false);
+                    if (trapdoor != null)
+                    {
+                        trapdoor.SetActive(false);
+                        isInteracted = true;
+                        _interactable.SetInteractionEnabled(false);
+                    }
                 }
             }
         }

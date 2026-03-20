@@ -1164,6 +1164,7 @@ MonoBehaviour:
   trapdoor: {fileID: 20418792}
   isPlayerInRange: 0
   isInteracted: 0
+  dolphinFollowPositionController: {fileID: 0}
 --- !u!1001 &489913802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2242,6 +2243,7 @@ MonoBehaviour:
   trapdoor: {fileID: 20418792}
   isPlayerInRange: 0
   isInteracted: 0
+  dolphinFollowPositionController: {fileID: 127009462}
 --- !u!1 &995164091
 GameObject:
   m_ObjectHideFlags: 0
