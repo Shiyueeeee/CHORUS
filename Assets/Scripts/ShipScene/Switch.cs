@@ -8,11 +8,13 @@ public class Switch : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private DolphinFollowPositionController dolphinFollowPositionController;
     [SerializeField] private bool isPlayerInRange;
+    private Interactable _interactable;
     
     private bool isInteracted = false;
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
+        _interactable = GetComponent<Interactable>();
     }
 
     private void Update()
@@ -24,6 +26,7 @@ public class Switch : MonoBehaviour
         {
             Debug.Log("Switched");
             if (door != null) door.SetActive(false);
+            _interactable.SetInteractionEnabled(false);
             isInteracted = true;
             if (dolphinFollowPositionController != null) 
                 dolphinFollowPositionController.canFollow = true;

@@ -18,9 +18,9 @@ public class U : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            dolphinFollowPositionController.isFollowing = false;
             if (door.activeSelf)
             {
+                dolphinFollowPositionController.isFollowing = false;
                 dolphinFollowPositionController.canFollow = false;
             }
         }
