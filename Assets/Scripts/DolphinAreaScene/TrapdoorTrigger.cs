@@ -9,22 +9,25 @@ public class TrapdoorTrigger : MonoBehaviour
     [SerializeField] private GameObject trapdoor;
     [SerializeField] private bool isPlayerInRange = false;
     [SerializeField] private bool isInteracted = false;
+    private Interactable _interactable;
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
         _collider.isTrigger = true;
+        _interactable = GetComponent<Interactable>();
     }
 
     private void Update()
     {
         if (isPlayerInRange && !isInteracted)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (trapdoor != null)
                 {
                     trapdoor.SetActive(false);
                     isInteracted = true;
+                    _interactable.SetInteractionEnabled(false);
                 }
             }
         }

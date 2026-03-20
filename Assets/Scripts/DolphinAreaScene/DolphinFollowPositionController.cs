@@ -41,6 +41,7 @@ public class DolphinFollowPositionController : MonoBehaviour
     private readonly RaycastHit2D[] castResults = new RaycastHit2D[16];
     private readonly Queue<FollowSample> followSamples = new Queue<FollowSample>();
     private ContactFilter2D solidWallFilter;
+    private bool useDelayedVerticalFollow;
     private bool useRushTrailFollow;
 
     private void Awake()
@@ -51,6 +52,7 @@ public class DolphinFollowPositionController : MonoBehaviour
         ConfigureCollisionFilter();
         InitializeSide();
         useRushTrailFollow = sceneName == "DolphinFinalRushScene";
+        useDelayedVerticalFollow = !useRushTrailFollow;
         isFollowing = sceneName != "DolphinAreaScene";
         canFollow = sceneName != "DolphinAreaScene";
     }
@@ -210,17 +212,27 @@ public class DolphinFollowPositionController : MonoBehaviour
 
     private Vector2 GetFollowTargetPosition(Vector2 move)
     {
-        if (!useRushTrailFollow)
-            return (Vector2)playerTransform.position + GetTargetOffset(move);
+        Vector2 targetOffset = GetTargetOffset(move);
 
-        Vector2 delayedPlayerPosition = GetDelayedPlayerPosition();
-        float horizontalOffset = horizontalSide < 0 ? leftOffset.x : rightOffset.x;
-        return delayedPlayerPosition + new Vector2(horizontalOffset, 0f);
+        if (useRushTrailFollow)
+        {
+            Vector2 delayedPlayerPosition = GetDelayedPlayerPosition();
+            float horizontalOffset = horizontalSide < 0 ? leftOffset.x : rightOffset.x;
+            return delayedPlayerPosition + new Vector2(horizontalOffset, 0f);
+        }
+
+        if (useDelayedVerticalFollow)
+        {
+            Vector2 delayedPlayerPosition = GetDelayedPlayerPosition();
+            return new Vector2(playerTransform.position.x + targetOffset.x, delayedPlayerPosition.y);
+        }
+
+        return (Vector2)playerTransform.position + targetOffset;
     }
 
     private void RecordFollowSample()
     {
-        if (!useRushTrailFollow || playerTransform == null)
+        if (!UsesDelayedPlayerSamples() || playerTransform == null)
             return;
 
         float now = Time.time;
@@ -234,10 +246,15 @@ public class DolphinFollowPositionController : MonoBehaviour
 
     private Vector2 GetDelayedPlayerPosition()
     {
-        if (!useRushTrailFollow || followSamples.Count == 0)
+        if (!UsesDelayedPlayerSamples() || followSamples.Count == 0)
             return playerTransform != null ? (Vector2)playerTransform.position : Vector2.zero;
 
         return followSamples.Peek().position;
+    }
+
+    private bool UsesDelayedPlayerSamples()
+    {
+        return useRushTrailFollow || useDelayedVerticalFollow;
     }
     
     private Vector2 GetConstrainedTargetPosition(Vector2 targetPos)
