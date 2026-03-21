@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WhaleInteraction : NpcDialogueInteractionBase
 {
@@ -27,6 +28,8 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [Header("After Sea Cucumber Completed Dialogue")]
     [SerializeField] private DialogueLineData[] afterSeaCucumberCompletedDialogueLines;
 
+    [Header("Ending")]
+    [SerializeField] private string endingSceneName = "EndingScene";
     [SerializeField] private GameObject objectToActivate;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
@@ -104,6 +107,8 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         else if (activePhase == DialoguePhase.AfterSeaCucumberCompleted)
         {
             GameProgress.whalePostSeaCucumberDialogueCompleted = true;
+            if (!string.IsNullOrWhiteSpace(endingSceneName))
+                SceneManager.LoadScene(endingSceneName);
         }
     }
 
