@@ -1154,12 +1154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UITitleFloat
   targetRect: {fileID: 768419116}
-  verticalAmplitude: 18
-  horizontalAmplitude: 6
+  verticalAmplitude: 6
+  horizontalAmplitude: 4
   verticalFrequency: 0.8
   horizontalFrequency: 0.45
   phaseOffset: 0.15
-  rotationAmplitude: 2.5
+  rotationAmplitude: 0
   rotationFrequency: 1
   useUnscaledTime: 1
 --- !u!114 &768419118
@@ -1807,7 +1807,7 @@ MonoBehaviour:
   targetCanvasGroup: {fileID: 945733585}
   targetGraphic: {fileID: 945733587}
   minAlpha: 0.2
-  maxAlpha: 0.65
+  maxAlpha: 1
   pulseFrequency: 0.45
   secondaryWaveStrength: 0.15
   animateScale: 1
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -53,6 +53,12 @@ TagManager:
   - name: Player
     uniqueID: 2276514087
     locked: 0
+  - name: PlayerCover
+    uniqueID: 1559078311
+    locked: 0
+  - name: Light
+    uniqueID: 912895083
+    locked: 0
   - name: Prompt
     uniqueID: 124249167
     locked: 0
