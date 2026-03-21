@@ -9,22 +9,29 @@ public class TrapdoorTrigger : MonoBehaviour
     [SerializeField] private GameObject trapdoor;
     [SerializeField] private bool isPlayerInRange = false;
     [SerializeField] private bool isInteracted = false;
+    [SerializeField] private DolphinFollowPositionController dolphinFollowPositionController;
+    private Interactable _interactable;
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
         _collider.isTrigger = true;
+        _interactable = GetComponent<Interactable>();
     }
 
     private void Update()
     {
         if (isPlayerInRange && !isInteracted)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (dolphinFollowPositionController != null && dolphinFollowPositionController.isFollowing)
             {
-                if (trapdoor != null)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    trapdoor.SetActive(false);
-                    isInteracted = true;
+                    if (trapdoor != null)
+                    {
+                        trapdoor.SetActive(false);
+                        isInteracted = true;
+                        _interactable.SetInteractionEnabled(false);
+                    }
                 }
             }
         }
