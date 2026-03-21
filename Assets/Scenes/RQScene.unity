@@ -305,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &85474049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -340,17 +340,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.7542591, y: 1.4749951}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 24.2, y: 16.684767}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.922146, y: 8.173842}
   m_EdgeRadius: 0
 --- !u!212 &85474050
 SpriteRenderer:
@@ -401,7 +401,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dda8d4f6158f4524f84dd7eebaf4086f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -420,8 +420,8 @@ Transform:
   m_GameObject: {fileID: 85474048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.76, y: 8.39, z: -0.66}
-  m_LocalScale: {x: 2.561693, y: 2.6994622, z: 1}
+  m_LocalPosition: {x: 20.52, y: 9.66, z: -0.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -700,6 +700,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Octopus Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &426899642
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 627642944}
+  - component: {fileID: 627642945}
   m_Layer: 0
   m_Name: Spawn_CrabReturn
   m_TagString: Untagged
@@ -822,6 +824,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627642945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627642943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
 --- !u!1 &641788395
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +928,52 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11407784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &760714099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760714101}
+  - component: {fileID: 760714100}
+  m_Layer: 0
+  m_Name: Spawn_SeaCucumberReturn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &760714100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760714099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
+--- !u!4 &760714101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760714099}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.97, y: 5.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875718882
 GameObject:
@@ -1013,6 +1075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 908295318}
+  - component: {fileID: 908295319}
   m_Layer: 0
   m_Name: Spawn_DolphinReturn
   m_TagString: Untagged
@@ -1035,6 +1098,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &908295319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908295317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
 --- !u!1 &919741653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1298,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &1036169164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1821,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Mr. Jones
     text: ......
+  randomRepeatDialogueBlocks: []
   postDolphinQuestDialogueLines:
   - speaker: Mr. Jones
     text: You saved the crabs!
@@ -1778,6 +1857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430363827}
+  - component: {fileID: 1430363828}
   m_Layer: 0
   m_Name: Spawn_OctopusReturn
   m_TagString: Untagged
@@ -1800,6 +1880,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430363828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430363826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 1
 --- !u!1 &1451127524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1459230610}
+  - component: {fileID: 1459230611}
   m_Layer: 0
   m_Name: Spawn_MapReturn
   m_TagString: Untagged
@@ -1904,12 +1999,26 @@ Transform:
   m_GameObject: {fileID: 1459230609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.78, y: 7.96, z: 0}
+  m_LocalPosition: {x: 14.58, y: 8.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1459230611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459230609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
 --- !u!1 &1605839787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,6 +2246,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Dolphin Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1001 &1877554224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,6 +2355,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Crab Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1001 &1898014368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2357,6 +2468,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &1931277874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5859069686327908759, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
@@ -2545,6 +2657,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1001 &262865240075329617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8665055925481950, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_Name
+      value: SceneFacingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.62057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
 --- !u!1001 &378847313689508041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2773,6 +2942,7 @@ SceneRoots:
   - {fileID: 627642944}
   - {fileID: 908295318}
   - {fileID: 1430363827}
+  - {fileID: 760714101}
   - {fileID: 1389522803}
   - {fileID: 11407784}
   - {fileID: 1617224565}
@@ -2783,3 +2953,4 @@ SceneRoots:
   - {fileID: 1605839789}
   - {fileID: 6955178374368005372}
   - {fileID: 1451127527}
+  - {fileID: 262865240075329617}

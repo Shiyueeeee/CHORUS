@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -12,9 +13,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
 
     private bool isDead = false;
+    private bool pendingCheckpointRespawn = false;
+    private Rigidbody2D playerRigidbody;
 
     private void Start()
     {
+        playerRigidbody = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
         UpdateHPBar();
 
@@ -63,6 +67,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        pendingCheckpointRespawn = HasCheckpointRespawnAvailable();
+
         isDead = true;
 
         if (gameOverPanel != null)
@@ -71,5 +77,51 @@ public class PlayerHealth : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+    }
+
+    public void Replay()
+    {
+        Time.timeScale = 1f;
+
+        if (pendingCheckpointRespawn && HasCheckpointRespawnAvailable())
+        {
+            RespawnAtCheckpoint();
+            return;
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private bool HasCheckpointRespawnAvailable()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        return SceneSpawnData.HasCheckpointForScene(sceneName);
+    }
+
+    private void RespawnAtCheckpoint()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        Vector3 checkpointPosition = SceneSpawnData.checkpointPosition;
+        transform.position = checkpointPosition;
+
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.linearVelocity = Vector2.zero;
+            playerRigidbody.angularVelocity = 0f;
+            playerRigidbody.position = checkpointPosition;
+        }
+
+        if (SceneSpawnData.TryGetCheckpointFacing(sceneName, out bool facingRight))
+            PlayerFacingUtility.TryApplyFacing(transform, facingRight);
+
+        currentHP = maxHP;
+        isDead = false;
+        pendingCheckpointRespawn = false;
+        UpdateHPBar();
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 }

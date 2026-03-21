@@ -36,6 +36,10 @@ public class CrusherHitZone2D : MonoBehaviour
             playerRigidbody.position = respawnPosition;
         }
 
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (PlayerFacingUtility.TryResolveRespawnFacing(sceneName, fallbackRespawnPoint, out bool facingRight))
+            PlayerFacingUtility.TryApplyFacing(playerTransform, facingRight);
+
         hitCooldownTimer = Mathf.Max(0f, hitCooldown);
     }
 

@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &137176119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +390,8 @@ Transform:
   m_GameObject: {fileID: 137176118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7, y: 12.38, z: 0}
-  m_LocalScale: {x: 4.62, y: 1, z: 1}
+  m_LocalPosition: {x: 9.26, y: 7.9, z: 0}
+  m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54224203}
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.59
+      value: -18.8
       objectReference: {fileID: 0}
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -614,6 +614,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1319026688070532047, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
   m_PrefabInstance: {fileID: 335672985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &458735781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1002497894}
+    m_Modifications:
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569579411161339952, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_Name
+      value: Portal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+--- !u!4 &458735782 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+  m_PrefabInstance: {fileID: 458735781}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &680618019
 PrefabInstance:
@@ -829,6 +891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OctopusLeaderInteraction
   speakerName: Octopus Leader
+  returnSceneName: RQScene
+  returnSpawnPointName: Spawn_OctopusReturn
   acceptQuestDialogueLines:
   - speaker: 'Oliver The Octopus '
     text: please help me
@@ -841,7 +905,54 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: 'Oliver The Octopus '
     text: ...
+  randomRepeatDialogueBlocks: []
   taskAreaPortal: {fileID: 137176118}
+--- !u!1 &903749412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903749413}
+  - component: {fileID: 903749414}
+  m_Layer: 0
+  m_Name: Spawn_OctopusQuestShortcutReturn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903749413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903749412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.97, y: 23.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903749414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903749412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
 --- !u!1001 &914177818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1046,6 +1157,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1863956461}
+  - {fileID: 458735782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073172741 stripped
@@ -1189,6 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245035157}
+  - component: {fileID: 1245035158}
   m_Layer: 0
   m_Name: Spawn_OctopusQuestReturn
   m_TagString: Untagged
@@ -1205,12 +1318,87 @@ Transform:
   m_GameObject: {fileID: 1245035156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.67, y: 9.59, z: 0}
+  m_LocalPosition: {x: 6.24, y: 7.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1245035158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245035156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e037ba4e5d7d5446af29279dd458ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointFacing
+  overrideFacing: 1
+  facingRight: 0
+--- !u!1001 &1261707893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8665055925481950, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_Name
+      value: SceneFacingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.62101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.15483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270996166982700437, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: facingRight
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
 --- !u!1 &1714159578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,8 +1995,10 @@ SceneRoots:
   - {fileID: 335672985}
   - {fileID: 680618019}
   - {fileID: 6710268564234138064}
-  - {fileID: 26682990}
-  - {fileID: 1934523754}
-  - {fileID: 1932894460}
   - {fileID: 1245035157}
+  - {fileID: 903749413}
   - {fileID: 999281467}
+  - {fileID: 1261707893}
+  - {fileID: 1934523754}
+  - {fileID: 26682990}
+  - {fileID: 1932894460}

@@ -34,7 +34,11 @@ public class CheckpointTrigger2D : MonoBehaviour
             ? SceneSpawnData.checkpointOrder
             : -1;
 
-        SceneSpawnData.SetCheckpoint(sceneName, checkpointPoint.position, checkpointOrder);
+        bool facingRight = true;
+        if (!PlayerFacingUtility.TryGetCurrentFacing(other.transform, out facingRight))
+            PlayerFacingUtility.TryResolveRespawnFacing(sceneName, checkpointPoint, out facingRight);
+
+        SceneSpawnData.SetCheckpoint(sceneName, checkpointPoint.position, checkpointOrder, facingRight);
 
         if (SceneSpawnData.checkpointOrder == checkpointOrder && checkpointOrder >= previousOrder)
             hasBeenActivated = true;

@@ -13,6 +13,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     [Header("Post Dolphin Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
@@ -68,7 +69,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = DialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

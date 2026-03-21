@@ -16,11 +16,24 @@ namespace Seahorse
         {
             seahorseController = GetComponentInParent<SeahorseController>();
             rb = GetComponentInParent<Rigidbody2D>();
+            SyncFacingFromScale();
+        }
+
+        private void Start()
+        {
+            if (PlayerFacingUtility.TryGetSceneDefaultFacing(out bool facingRight))
+                SetFacingImmediate(facingRight);
         }
 
         private void Update()
         {
             if (seahorseController == null) return;
+
+            if (seahorseController.MovementMode == PlayerMovementMode.VerticalOnly)
+            {
+                if (!isFacingRight) SetFacing(true);
+                return;
+            }
             
             float x = 0f;
 
@@ -46,6 +59,22 @@ namespace Seahorse
                 : (positiveScaleFacesRight ? -1f : 1f);
             s.x = Mathf.Abs(s.x) * facingSign;
             transform.localScale = s;
+        }
+
+        public bool IsFacingRight => isFacingRight;
+
+        public void SetFacingImmediate(bool right)
+        {
+            SetFacing(right);
+        }
+
+        private void SyncFacingFromScale()
+        {
+            float xScale = transform.localScale.x;
+            if (Mathf.Approximately(xScale, 0f)) return;
+
+            bool hasPositiveScale = xScale > 0f;
+            isFacingRight = positiveScaleFacesRight ? hasPositiveScale : !hasPositiveScale;
         }
     }
 }

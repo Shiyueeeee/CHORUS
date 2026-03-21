@@ -42,6 +42,29 @@ public abstract class NpcDialogueInteractionBase : MonoBehaviour, IInteractable
         return lines.Count > 0 ? lines : null;
     }
 
+    protected List<DialogueLineData> BuildRandomDialogueList(DialogueBlockData[] sourceBlocks, string fallbackSpeaker)
+    {
+        if (sourceBlocks == null || sourceBlocks.Length == 0)
+            return null;
+
+        List<DialogueBlockData> validBlocks = new List<DialogueBlockData>();
+        foreach (DialogueBlockData block in sourceBlocks)
+        {
+            if (block == null)
+                continue;
+
+            List<DialogueLineData> builtLines = BuildDialogueList(block.Lines, fallbackSpeaker);
+            if (builtLines != null && builtLines.Count > 0)
+                validBlocks.Add(block);
+        }
+
+        if (validBlocks.Count == 0)
+            return null;
+
+        DialogueBlockData selectedBlock = validBlocks[Random.Range(0, validBlocks.Count)];
+        return BuildDialogueList(selectedBlock.Lines, fallbackSpeaker);
+    }
+
     protected virtual string GetMissingDialogueWarning()
     {
         return GetType().Name + " has no dialogue configured for the current state.";

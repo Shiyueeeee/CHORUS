@@ -25,6 +25,7 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
 
@@ -66,7 +67,7 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = DialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

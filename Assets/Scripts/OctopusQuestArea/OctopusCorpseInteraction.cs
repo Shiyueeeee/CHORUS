@@ -8,6 +8,7 @@ public class OctopusCorpseInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     protected override string GetSpeakerName()
     {
@@ -16,7 +17,7 @@ public class OctopusCorpseInteraction : NpcDialogueInteractionBase
 
     protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

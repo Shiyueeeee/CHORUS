@@ -7,17 +7,15 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
     [SerializeField] private string speakerName = "Dolphin Leader";
     [SerializeField] private string returnSceneName = "RQScene";
     [SerializeField] private string returnSpawnPointName = "Spawn_DolphinReturn";
-    
-    private DialoguePhase activePhase = DialoguePhase.Init;
-    
-    [Header("Init Dialogue")]
-    [SerializeField] private DialogueLineData[] initDialogueLines;
+
+    private DialoguePhase activePhase = DialoguePhase.Repeat;
 
     [Header("Repeat Dialogue")]
     [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     [Header("Finished Dialogue")]
     [SerializeField] private DialogueLineData[] finishedDialogueLines;
@@ -30,33 +28,20 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
 
     protected override List<DialogueLineData> GetDialogueLinesForCurrentState()
     {
-        switch (activePhase)
+        if (!GameProgress.dolphinCompleted)
         {
-            case DialoguePhase.Init:
-                return BuildDialogueList(initDialogueLines, speakerName);
-            case DialoguePhase.Repeat:
-                return BuildDialogueList(repeatDialogueLines, speakerName);
-            case DialoguePhase.Finish:
-                return BuildDialogueList(finishedDialogueLines, speakerName);
-            default:
-                return null;
+            activePhase = DialoguePhase.Finish;
+            return BuildDialogueList(finishedDialogueLines, speakerName);
         }
+
+        activePhase = DialoguePhase.Repeat;
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()
     {
-        switch (activePhase)
-        {
-            case DialoguePhase.Init:
-                activePhase = DialoguePhase.Finish;
-                break;
-            case DialoguePhase.Finish:
-                activePhase = DialoguePhase.Repeat;
-                CompleteQuestAndReturn();
-                break;
-            default:
-                break;
-        }
+        if (activePhase == DialoguePhase.Finish && !GameProgress.dolphinCompleted)
+            CompleteQuestAndReturn();
     }
     
     private void CompleteQuestAndReturn()
@@ -69,7 +54,6 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
 
     private enum DialoguePhase
     {
-        Init, 
         Repeat,
         Finish
     }

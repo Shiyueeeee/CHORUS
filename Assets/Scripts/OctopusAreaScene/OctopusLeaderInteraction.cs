@@ -12,6 +12,7 @@ public class OctopusLeaderInteraction : NpcDialogueInteractionBase
     [SerializeField] private DialogueLineData[] questInProgressDialogueLines;
     [SerializeField] private DialogueLineData[] turnInQuestDialogueLines;
     [SerializeField] private DialogueLineData[] repeatDialogueLines;
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     [Header("Portal")]
     [SerializeField] private GameObject taskAreaPortal;
@@ -49,7 +50,7 @@ public class OctopusLeaderInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = OctopusLeaderDialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

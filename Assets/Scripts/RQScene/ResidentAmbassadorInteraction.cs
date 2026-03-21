@@ -24,6 +24,7 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     private ResidentDialogueTopic activeTopic = ResidentDialogueTopic.Repeat;
 
@@ -113,7 +114,7 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
         }
 
         activeTopic = ResidentDialogueTopic.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

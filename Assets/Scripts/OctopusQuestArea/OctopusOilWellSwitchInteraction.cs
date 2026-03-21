@@ -16,10 +16,12 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     [Header("Affected Objects")]
     [SerializeField] private GameObject oilGroupObject;
     [SerializeField] private GameObject radiationGroupObject;
+    [SerializeField] private GameObject wallObjectToDisable;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
 
@@ -37,7 +39,7 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = DialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()
@@ -52,5 +54,8 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
 
         if (radiationGroupObject != null)
             radiationGroupObject.SetActive(false);
+
+        if (wallObjectToDisable != null)
+            wallObjectToDisable.SetActive(false);
     }
 }

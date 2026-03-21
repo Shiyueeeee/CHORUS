@@ -12,6 +12,7 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
     [SerializeField] private string returnSceneName = "RQScene";
 
     private SeaCucumberDialoguePhase activePhase = SeaCucumberDialoguePhase.Repeat;
@@ -39,7 +40,7 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = SeaCucumberDialoguePhase.Repeat;
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

@@ -1156,7 +1156,7 @@ MonoBehaviour:
   targetRect: {fileID: 768419116}
   verticalAmplitude: 6
   horizontalAmplitude: 4
-  verticalFrequency: 0.8
+  verticalFrequency: 0.5
   horizontalFrequency: 0.45
   phaseOffset: 0.15
   rotationAmplitude: 0

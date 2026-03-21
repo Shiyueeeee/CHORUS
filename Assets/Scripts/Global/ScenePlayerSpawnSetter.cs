@@ -6,13 +6,30 @@ public class ScenePlayerSpawnSetter : MonoBehaviour
 
     private void Start()
     {
-        if (playerTransform == null || string.IsNullOrEmpty(SceneSpawnData.returnSpawnPointName))
+        if (playerTransform == null)
             return;
 
-        GameObject spawnPoint = GameObject.Find(SceneSpawnData.returnSpawnPointName);
-        if (spawnPoint != null)
-            playerTransform.position = spawnPoint.transform.position;
+        bool hasFacing = false;
+        bool facingRight = true;
 
-        SceneSpawnData.returnSpawnPointName = null;
+        if (!string.IsNullOrEmpty(SceneSpawnData.returnSpawnPointName))
+        {
+            GameObject spawnPoint = GameObject.Find(SceneSpawnData.returnSpawnPointName);
+            if (spawnPoint != null)
+                playerTransform.position = spawnPoint.transform.position;
+
+            if (SceneSpawnData.TryConsumeReturnFacing(out facingRight))
+                hasFacing = true;
+            else if (PlayerFacingUtility.TryGetFacingFromSpawnPoint(spawnPoint, out facingRight))
+                hasFacing = true;
+
+            SceneSpawnData.returnSpawnPointName = null;
+        }
+
+        if (!hasFacing && PlayerFacingUtility.TryGetSceneDefaultFacing(out facingRight))
+            hasFacing = true;
+
+        if (hasFacing)
+            PlayerFacingUtility.TryApplyFacing(playerTransform, facingRight);
     }
 }

@@ -14,6 +14,7 @@ public class DolphinInteraction : NpcDialogueInteractionBase
     {
         new DialogueLineData { text = "......" }
     };
+    [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
 
     [Header("Ship section Dialogue")]
     [SerializeField] private DialogueLineData[] shipDialogueLines;
@@ -67,7 +68,7 @@ public class DolphinInteraction : NpcDialogueInteractionBase
         switch (activePhase)
         {
             case DialoguePhase.Repeat:
-                selectedLines = BuildDialogueList(repeatDialogueLines, speakerName);
+                selectedLines = BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
                 break;
             case DialoguePhase.Init:
                 selectedLines = BuildDialogueList(initDialogueLines, speakerName);
@@ -89,7 +90,7 @@ public class DolphinInteraction : NpcDialogueInteractionBase
         if (selectedLines != null && selectedLines.Count > 0)
             return selectedLines;
 
-        return BuildDialogueList(repeatDialogueLines, speakerName);
+        return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
     protected override void OnDialogueFinished()

@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d86f0d4808939a45986450b3c1583ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabRushManager
-  rushDuration: 30
+  rushDuration: 4
   sceneName: DolphinFinalAreaScene
 --- !u!4 &1441306238
 Transform:
@@ -2259,10 +2259,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DolphinInteraction
   speakerName: Dolphin
   initDialogueLines:
-  - Hi, I dont have mother
-  - Help me find my mother
+  - speaker: 
+    text: 
+  - speaker: 
+    text: 
   repeatDialogueLines:
-  - ......
+  - speaker: 
+    text: ......
+  randomRepeatDialogueBlocks: []
   shipDialogueLines: []
   rushDialogueLines: []
   endDialogueLines: []
@@ -2282,6 +2286,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1712687669}
   playerController: {fileID: 0}
   playerRigidbody: {fileID: 0}
+  dolphinRigidbody: {fileID: 0}
   leftOffset: {x: -2.2, y: 0}
   rightOffset: {x: 2.2, y: 0}
   upLeftOffset: {x: -1.8, y: -1.8}
@@ -2293,8 +2298,11 @@ MonoBehaviour:
   followSmooth: 8
   inputThreshold: 0.1
   sideSwitchThreshold: 0.75
+  rushFollowDelay: 0.1
   oceanBound: {fileID: 0}
   bodyCollider: {fileID: 1949601499}
+  wallCastPadding: 0.02
+  overlapResolutionIterations: 4
 --- !u!70 &1949601499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

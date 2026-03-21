@@ -6,6 +6,7 @@ namespace Seahorse
     public class SeahorseController : MonoBehaviour
     {
         public Vector2 Move { get; private set; }
+        public PlayerMovementMode MovementMode => movementMode;
 
         [Tooltip("If true, normalizes diagonal input so speed is consistent.")]
         [SerializeField] private bool normalize = true;

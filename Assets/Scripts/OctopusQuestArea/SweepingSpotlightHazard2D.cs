@@ -158,6 +158,10 @@ public class SweepingSpotlightHazard2D : MonoBehaviour
             playerRigidbody.position = targetPosition;
         }
 
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (PlayerFacingUtility.TryResolveRespawnFacing(sceneName, respawnPoint, out bool facingRight))
+            PlayerFacingUtility.TryApplyFacing(playerTransform, facingRight);
+
         hitCooldownTimer = Mathf.Max(0f, hitCooldown);
     }
 

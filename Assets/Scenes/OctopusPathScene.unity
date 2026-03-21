@@ -693,6 +693,7 @@ MonoBehaviour:
     text: hi4
   - speaker: Shrauk the Shark
     text: hi5
+  nextSceneName: OctopusAreaScene
 --- !u!4 &1188582673
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,6 +1163,67 @@ Transform:
   - {fileID: 1485253161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1632549938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8665055925481950, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_Name
+      value: SceneFacingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.62101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.15483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375837246426949957, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270996166982700437, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
+      propertyPath: facingRight
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0129c79cd5ef5c1438589c5e822d5d3d, type: 3}
 --- !u!1 &1661857441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,3 +1452,4 @@ SceneRoots:
   - {fileID: 1188582673}
   - {fileID: 182738901}
   - {fileID: 1674393467}
+  - {fileID: 1632549938}
