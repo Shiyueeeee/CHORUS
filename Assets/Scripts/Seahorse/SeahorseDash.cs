@@ -90,7 +90,7 @@ namespace Seahorse
                 return;
 
             Keyboard kb = Keyboard.current;
-            if (kb != null && kb.spaceKey.wasPressedThisFrame)
+            if (kb != null && kb.shiftKey.wasPressedThisFrame)
                 StartDash();
         }
 
