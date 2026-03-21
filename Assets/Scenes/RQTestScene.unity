@@ -1732,6 +1732,7 @@ MonoBehaviour:
   - speaker: Mr. Jones
     text: let shark take you there
   afterSeaCucumberCompletedDialogueLines: []
+  endingSceneName: EndingScene
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:
@@ -2492,6 +2493,18 @@ PrefabInstance:
     - target: {fileID: 781234567890123452, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
       propertyPath: radiusScale
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 781234567890123452, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
+      propertyPath: minimumRadius
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 781234567890123452, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
+      propertyPath: thicknessRatio
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 781234567890123452, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
+      propertyPath: verticalPadding
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
