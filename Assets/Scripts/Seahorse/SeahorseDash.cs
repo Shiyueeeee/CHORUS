@@ -27,11 +27,16 @@ namespace Seahorse
 
         public bool IsDashing => dashTimer > 0f;
         public float CooldownRemaining => cooldownTimer;
+        public float CooldownDuration => currentCooldownDuration;
+        public float CooldownProgress01 => cooldownTimer > 0f && currentCooldownDuration > 0f
+            ? 1f - (cooldownTimer / currentCooldownDuration)
+            : 1f;
 
         private Vector2 lastDashDirection = Vector2.right;
         private Vector2 dashDirection = Vector2.right;
         private float dashTimer;
         private float cooldownTimer;
+        private float currentCooldownDuration;
         private float lastDashTime = float.NegativeInfinity;
         private int chainedDashes;
         private bool disabledMotorForDash;
@@ -54,6 +59,7 @@ namespace Seahorse
         {
             dashTimer = 0f;
             cooldownTimer = 0f;
+            currentCooldownDuration = 0f;
             chainedDashes = 0;
             lastDashTime = float.NegativeInfinity;
             disabledMotorForDash = false;
@@ -70,6 +76,7 @@ namespace Seahorse
 
             disabledMotorForDash = false;
             dashTimer = 0f;
+            currentCooldownDuration = 0f;
 
             if (wasDashing && rb != null)
                 rb.linearVelocity = Vector2.zero;
@@ -130,7 +137,8 @@ namespace Seahorse
             chainedDashes++;
 
             bool useLongCooldown = chainedDashes >= Mathf.Max(2, dashesBeforeLongCooldown);
-            cooldownTimer = useLongCooldown ? longCooldown : dashCooldown;
+            currentCooldownDuration = useLongCooldown ? longCooldown : dashCooldown;
+            cooldownTimer = currentCooldownDuration;
             if (useLongCooldown)
                 chainedDashes = 0;
 

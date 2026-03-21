@@ -700,6 +700,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Octopus Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &426899642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1222,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &1036169164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1713,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Mr. Jones
     text: ......
+  randomRepeatDialogueBlocks: []
   postDolphinQuestDialogueLines:
   - speaker: Mr. Jones
     text: You saved the crabs!
@@ -1728,6 +1731,7 @@ MonoBehaviour:
     text: now go to sea cucumber
   - speaker: Mr. Jones
     text: let shark take you there
+  afterSeaCucumberCompletedDialogueLines: []
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1405224964 stripped
 Transform:
@@ -2071,6 +2075,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Dolphin Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1001 &1877554224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2179,6 +2184,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Crab Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1001 &1898014368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2291,6 +2297,7 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
+  randomRepeatDialogueBlocks: []
 --- !u!1 &1988941340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
@@ -2474,6 +2481,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
+--- !u!1001 &781234567890123459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 781234567890123452, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
+      propertyPath: radiusScale
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86ce50e6ee404cb7a84900d025e233d7, type: 3}
 --- !u!1001 &861194473972542695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2663,4 +2687,5 @@ SceneRoots:
   - {fileID: 919741655}
   - {fileID: 1605839789}
   - {fileID: 6955178374368005372}
+  - {fileID: 781234567890123459}
   - {fileID: 1451127527}
