@@ -15,6 +15,14 @@ public class SeaCucumberTrashPiece : MonoBehaviour, IBeginDragHandler, IDragHand
     private bool isRemoved;
 
     public bool IsRemoved => isRemoved;
+    public RectTransform TrashRectTransform
+    {
+        get
+        {
+            CacheReferences();
+            return rectTransform;
+        }
+    }
 
     private void Awake()
     {
@@ -43,7 +51,7 @@ public class SeaCucumberTrashPiece : MonoBehaviour, IBeginDragHandler, IDragHand
     {
         CacheReferences();
 
-        if (isRemoved || rectTransform == null || manager == null || !manager.IsTreatmentOpen)
+        if (isRemoved || rectTransform == null || manager == null || !manager.IsTreatmentOpen || !manager.IsTrashInteractionAllowed(this))
             return;
 
         dragOriginParent = rectTransform.parent;
@@ -73,7 +81,7 @@ public class SeaCucumberTrashPiece : MonoBehaviour, IBeginDragHandler, IDragHand
     {
         CacheReferences();
 
-        if (isRemoved || rectTransform == null || manager == null || !manager.IsTreatmentOpen)
+        if (isRemoved || rectTransform == null || manager == null || !manager.IsTreatmentOpen || !manager.IsTrashInteractionAllowed(this))
             return;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(

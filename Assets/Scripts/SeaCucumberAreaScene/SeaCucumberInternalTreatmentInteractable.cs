@@ -7,21 +7,16 @@ public class SeaCucumberInternalTreatmentInteractable : MonoBehaviour, IInteract
     [SerializeField] private string nurseSpeakerName = "Sea Cucumber Nurse";
     [SerializeField] private DialogueLineData[] guideDialogueLines;
 
-    private bool hasShownGuideDialogue;
-
     public void Interact()
     {
         if (DialogueManager.IsDialogueActive || treatmentManager == null)
             return;
 
-        if (!hasShownGuideDialogue)
+        List<DialogueLineData> guideLines = BuildDialogueList(guideDialogueLines, nurseSpeakerName);
+        if (guideLines != null && guideLines.Count > 0)
         {
-            List<DialogueLineData> guideLines = BuildDialogueList(guideDialogueLines, nurseSpeakerName);
-            if (guideLines != null && guideLines.Count > 0)
-            {
-                DialogueManager.Instance.StartDialogue(guideLines, OnGuideDialogueFinished);
-                return;
-            }
+            DialogueManager.Instance.StartDialogue(guideLines, OnGuideDialogueFinished);
+            return;
         }
 
         treatmentManager.TryOpenPanel();
@@ -29,7 +24,6 @@ public class SeaCucumberInternalTreatmentInteractable : MonoBehaviour, IInteract
 
     private void OnGuideDialogueFinished()
     {
-        hasShownGuideDialogue = true;
         treatmentManager.TryOpenPanel();
     }
 

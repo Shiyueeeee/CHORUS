@@ -28,7 +28,7 @@ public class SeaCucumberPatientDropZone : MonoBehaviour, IDropHandler
             ? eventData.pointerDrag.GetComponent<SeaCucumberPatientCard>() ?? eventData.pointerDrag.GetComponentInParent<SeaCucumberPatientCard>()
             : null;
 
-        if (card == null || card.IsAssigned || !card.CanBeDragged)
+        if (card == null || card.IsAssigned || !card.CanBeDragged || !triageManager.IsCardInteractionAllowed(card))
             return;
 
         if (card.PatientType != acceptedType)

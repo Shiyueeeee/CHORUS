@@ -23,6 +23,14 @@ public class SeaCucumberPatientCard : MonoBehaviour, IBeginDragHandler, IDragHan
     public bool CanBeDragged => hasBeenPreviewed;
     public Sprite PreviewSprite => previewSourceImage != null ? previewSourceImage.sprite : null;
     public Color PreviewColor => previewSourceImage != null ? previewSourceImage.color : Color.white;
+    public RectTransform CardRectTransform
+    {
+        get
+        {
+            CacheReferences();
+            return rectTransform;
+        }
+    }
 
     private void Awake()
     {
@@ -77,7 +85,7 @@ public class SeaCucumberPatientCard : MonoBehaviour, IBeginDragHandler, IDragHan
     {
         CacheReferences();
 
-        if (rectTransform == null || isAssigned || triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || !hasBeenPreviewed)
+        if (rectTransform == null || isAssigned || triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || !hasBeenPreviewed || !triageManager.IsCardInteractionAllowed(this))
             return;
 
         dragOriginParent = rectTransform.parent;
@@ -107,7 +115,7 @@ public class SeaCucumberPatientCard : MonoBehaviour, IBeginDragHandler, IDragHan
     {
         CacheReferences();
 
-        if (rectTransform == null || isAssigned || triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || !hasBeenPreviewed)
+        if (rectTransform == null || isAssigned || triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || !hasBeenPreviewed || !triageManager.IsCardInteractionAllowed(this))
             return;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -133,7 +141,7 @@ public class SeaCucumberPatientCard : MonoBehaviour, IBeginDragHandler, IDragHan
         if (eventData.button != PointerEventData.InputButton.Left)
             return;
 
-        if (triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || hasBeenPreviewed)
+        if (triageManager == null || !triageManager.IsPuzzleOpen || triageManager.IsPreviewOpen || hasBeenPreviewed || !triageManager.IsCardInteractionAllowed(this))
             return;
 
         triageManager.ShowPatientPreview(this);

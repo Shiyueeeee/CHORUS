@@ -6,6 +6,15 @@ using UnityEngine.UI;
 
 public class SeaCucumberTriageManager : MonoBehaviour
 {
+    private enum TriageTutorialStep
+    {
+        None,
+        ClickToZoom,
+        PreviewHint,
+        DragToZone,
+        Completed
+    }
+
     [Header("Scene Objects")]
     [SerializeField] private GameObject patientPileObject;
     [SerializeField] private GameObject sortedPatientsRoot;
@@ -27,14 +36,35 @@ public class SeaCucumberTriageManager : MonoBehaviour
     [SerializeField] private Vector2 leftZoneCellSpacing = new Vector2(120f, 120f);
     [SerializeField] private int leftZoneColumns = 2;
 
+    [Header("Tutorial")]
+    [SerializeField] private SeaCucumberPatientCard tutorialPatientCard;
+    [SerializeField] private RectTransform tutorialArrow;
+    [SerializeField] private RectTransform tutorialHintRoot;
+    [SerializeField] private TMP_Text tutorialHintText;
+    [SerializeField] private RectTransform previewCloseButtonTarget;
+    [SerializeField] private RectTransform previewHintTarget;
+    [SerializeField] private Vector2 tutorialArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 tutorialHintOffset = new Vector2(120f, 40f);
+    [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
+    [SerializeField] [TextArea] private string previewDiagnosisHintText = "This patient isn't tangled in trash. It should be an internal case.";
+    [SerializeField] [TextArea] private string dragToCorrectZoneHintText = "Drag to the correct zone";
+
     private int sortedCardCount;
     private bool isCompleting;
     private readonly List<SeaCucumberPatientCard> leftZoneCards = new List<SeaCucumberPatientCard>();
     private SeaCucumberPatientCard previewingCard;
+    private TriageTutorialStep tutorialStep = TriageTutorialStep.None;
+    private RectTransform currentArrowTarget;
+    private RectTransform currentHintTarget;
 
     public bool IsPuzzleOpen => puzzlePanel != null && puzzlePanel.activeSelf;
     public bool IsPreviewOpen => patientPreviewPanel != null && patientPreviewPanel.activeSelf;
     public RectTransform DragLayer => dragLayer;
+
+    private void Update()
+    {
+        RefreshTutorialVisualPositions();
+    }
 
     private void Start()
     {
@@ -50,6 +80,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         ResetCardsToLeftZone();
         SetPuzzleOpen(true);
+        BeginTutorial();
     }
 
     public void ReturnCardToLeftZone(SeaCucumberPatientCard card)
@@ -72,6 +103,8 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         card.SetAssigned(true);
         zone.AddCard(card);
+        if (card == GetTutorialPatientCard() && tutorialStep == TriageTutorialStep.DragToZone)
+            CompleteTutorial();
         NotifyCardSorted(card);
     }
 
@@ -110,6 +143,8 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         if (patientPreviewPanel != null)
             patientPreviewPanel.SetActive(false);
+
+        HideTutorialVisuals();
     }
 
     private IEnumerator CompletePuzzle()
@@ -147,6 +182,9 @@ public class SeaCucumberTriageManager : MonoBehaviour
         if (!isOpen && patientPreviewPanel != null)
             patientPreviewPanel.SetActive(false);
 
+        if (!isOpen)
+            HideTutorialVisuals();
+
         if (GlobalUIRoot.Instance != null)
             GlobalUIRoot.Instance.SetExternalModalInputLock(isOpen);
     }
@@ -166,10 +204,21 @@ public class SeaCucumberTriageManager : MonoBehaviour
         }
 
         patientPreviewPanel.SetActive(true);
+
+        if (card == GetTutorialPatientCard() && tutorialStep == TriageTutorialStep.ClickToZoom)
+        {
+            tutorialStep = TriageTutorialStep.PreviewHint;
+            ShowTutorial(
+                previewCloseButtonTarget,
+                previewHintTarget != null ? previewHintTarget : patientPreviewImage != null ? patientPreviewImage.rectTransform : null,
+                previewDiagnosisHintText);
+        }
     }
 
     public void ClosePatientPreview()
     {
+        SeaCucumberPatientCard closedCard = previewingCard;
+
         if (previewingCard != null)
         {
             previewingCard.UnlockDraggingAfterPreview();
@@ -178,6 +227,24 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         if (patientPreviewPanel != null)
             patientPreviewPanel.SetActive(false);
+
+        if (closedCard == GetTutorialPatientCard() && tutorialStep == TriageTutorialStep.PreviewHint)
+        {
+            tutorialStep = TriageTutorialStep.DragToZone;
+            RectTransform cardTarget = closedCard.CardRectTransform;
+            ShowTutorial(cardTarget, cardTarget, dragToCorrectZoneHintText);
+        }
+    }
+
+    public bool IsCardInteractionAllowed(SeaCucumberPatientCard card)
+    {
+        if (card == null)
+            return false;
+
+        if (!IsTutorialActive())
+            return true;
+
+        return card == GetTutorialPatientCard();
     }
 
     private void RefreshPatientCardsFromGroup()
@@ -191,6 +258,9 @@ public class SeaCucumberTriageManager : MonoBehaviour
     private void ResetCardsToLeftZone()
     {
         leftZoneCards.Clear();
+        tutorialStep = TriageTutorialStep.None;
+        previewingCard = null;
+        HideTutorialVisuals();
 
         foreach (SeaCucumberPatientDropZone zone in dropZones)
         {
@@ -228,5 +298,80 @@ public class SeaCucumberTriageManager : MonoBehaviour
             );
             card.PlaceIntoContainer(leftCardsRoot, anchoredPosition, i, false);
         }
+    }
+
+    private void BeginTutorial()
+    {
+        SeaCucumberPatientCard card = GetTutorialPatientCard();
+        if (card == null || !leftZoneCards.Contains(card))
+        {
+            tutorialStep = TriageTutorialStep.Completed;
+            HideTutorialVisuals();
+            return;
+        }
+
+        tutorialStep = TriageTutorialStep.ClickToZoom;
+        RectTransform cardTarget = card.CardRectTransform;
+        ShowTutorial(cardTarget, cardTarget, clickToZoomHintText);
+    }
+
+    private SeaCucumberPatientCard GetTutorialPatientCard()
+    {
+        if (tutorialPatientCard != null)
+            return tutorialPatientCard;
+
+        if (patientCards != null && patientCards.Length > 0)
+            return patientCards[0];
+
+        return null;
+    }
+
+    private bool IsTutorialActive()
+    {
+        return tutorialStep != TriageTutorialStep.None && tutorialStep != TriageTutorialStep.Completed;
+    }
+
+    private void CompleteTutorial()
+    {
+        tutorialStep = TriageTutorialStep.Completed;
+        HideTutorialVisuals();
+    }
+
+    private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText)
+    {
+        currentArrowTarget = arrowTarget;
+        currentHintTarget = hintTarget;
+
+        if (tutorialArrow != null)
+            tutorialArrow.gameObject.SetActive(currentArrowTarget != null);
+
+        if (tutorialHintRoot != null)
+            tutorialHintRoot.gameObject.SetActive(currentHintTarget != null && !string.IsNullOrWhiteSpace(hintText));
+
+        if (tutorialHintText != null)
+            tutorialHintText.text = hintText;
+
+        RefreshTutorialVisualPositions();
+    }
+
+    private void HideTutorialVisuals()
+    {
+        currentArrowTarget = null;
+        currentHintTarget = null;
+
+        if (tutorialArrow != null)
+            tutorialArrow.gameObject.SetActive(false);
+
+        if (tutorialHintRoot != null)
+            tutorialHintRoot.gameObject.SetActive(false);
+    }
+
+    private void RefreshTutorialVisualPositions()
+    {
+        if (tutorialArrow != null && tutorialArrow.gameObject.activeSelf && currentArrowTarget != null)
+            tutorialArrow.position = currentArrowTarget.position + (Vector3)tutorialArrowOffset;
+
+        if (tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf && currentHintTarget != null)
+            tutorialHintRoot.position = currentHintTarget.position + (Vector3)tutorialHintOffset;
     }
 }

@@ -8,6 +8,9 @@ public class SeaCucumberLesionSpot : MonoBehaviour
     private SeaCucumberInternalTreatmentManager manager;
     private bool isClicked;
 
+    public RectTransform SpotRectTransform => transform as RectTransform;
+    public bool IsClicked => isClicked;
+
     private void Awake()
     {
         if (button == null)
@@ -29,7 +32,7 @@ public class SeaCucumberLesionSpot : MonoBehaviour
 
     private void OnClicked()
     {
-        if (manager == null || isClicked)
+        if (manager == null || isClicked || !manager.IsLesionInteractionAllowed(this))
             return;
 
         isClicked = true;

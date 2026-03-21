@@ -13,6 +13,7 @@ public class SeaCucumberInternalPatientCase : MonoBehaviour
     public GameObject ZoomPanel => zoomPanel;
     public int RequiredLesionCount => requiredLesionCount;
     public bool IsCompleted => isCompleted;
+    public RectTransform CaseRectTransform => transform as RectTransform;
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class SeaCucumberInternalPatientCase : MonoBehaviour
 
     public void OpenCase()
     {
-        if (manager == null || isCompleted)
+        if (manager == null || isCompleted || !manager.IsCaseInteractionAllowed(this))
             return;
 
         manager.OpenPatientCase(this);

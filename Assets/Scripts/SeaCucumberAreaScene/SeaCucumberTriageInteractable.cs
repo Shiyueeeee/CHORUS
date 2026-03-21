@@ -7,21 +7,16 @@ public class SeaCucumberTriageInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string nurseSpeakerName = "Sea Cucumber Nurse";
     [SerializeField] private DialogueLineData[] guideDialogueLines;
 
-    private bool hasShownGuideDialogue;
-
     public void Interact()
     {
         if (DialogueManager.IsDialogueActive || triageManager == null)
             return;
 
-        if (!hasShownGuideDialogue)
+        List<DialogueLineData> guideLines = BuildDialogueList(guideDialogueLines, nurseSpeakerName);
+        if (guideLines != null && guideLines.Count > 0)
         {
-            List<DialogueLineData> guideLines = BuildDialogueList(guideDialogueLines, nurseSpeakerName);
-            if (guideLines != null && guideLines.Count > 0)
-            {
-                DialogueManager.Instance.StartDialogue(guideLines, OnGuideDialogueFinished);
-                return;
-            }
+            DialogueManager.Instance.StartDialogue(guideLines, OnGuideDialogueFinished);
+            return;
         }
 
         triageManager.TryOpenPuzzle();
@@ -29,7 +24,6 @@ public class SeaCucumberTriageInteractable : MonoBehaviour, IInteractable
 
     private void OnGuideDialogueFinished()
     {
-        hasShownGuideDialogue = true;
         triageManager.TryOpenPuzzle();
     }
 

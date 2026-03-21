@@ -19,7 +19,7 @@ public class SeaCucumberTrashBinDropZone : MonoBehaviour, IDropHandler
             ? eventData.pointerDrag.GetComponent<SeaCucumberTrashPiece>() ?? eventData.pointerDrag.GetComponentInParent<SeaCucumberTrashPiece>()
             : null;
 
-        if (trashPiece == null || trashPiece.IsRemoved)
+        if (trashPiece == null || trashPiece.IsRemoved || !manager.IsTrashInteractionAllowed(trashPiece))
             return;
 
         manager.NotifyTrashRemoved(trashPiece);
