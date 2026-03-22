@@ -8,6 +8,7 @@ public class OctopusBubbleShield : MonoBehaviour
     [SerializeField] private float activeDuration = 5f;
     [SerializeField] private float reuseCooldown = 12f;
     [SerializeField] private bool startsUnlocked = false;
+    [SerializeField] private PlayerHealth playerHealth;
 
     private float activeTimer;
     private float cooldownTimer;
@@ -22,6 +23,9 @@ public class OctopusBubbleShield : MonoBehaviour
 
     private void OnEnable()
     {
+        if (playerHealth == null)
+            playerHealth = GetComponent<PlayerHealth>();
+
         isUnlocked = startsUnlocked;
         tutorialCompleted = false;
         activeTimer = 0f;
@@ -31,7 +35,18 @@ public class OctopusBubbleShield : MonoBehaviour
 
     private void Update()
     {
-        bool canAcceptInput = IsUnlocked && !GlobalUIRoot.IsModalInputLocked && !DialogueManager.IsDialogueActive;
+        bool isGameOverVisible = playerHealth != null && playerHealth.IsGameOverVisible;
+        bool canAcceptInput = IsUnlocked
+            && !isGameOverVisible
+            && !GlobalUIRoot.IsModalInputLocked
+            && !DialogueManager.IsDialogueActive;
+
+        if (isGameOverVisible && activeTimer > 0f)
+        {
+            activeTimer = 0f;
+            RefreshBubbleVisual();
+        }
+
         if (canAcceptInput && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && cooldownTimer <= 0f)
         {
             ActivateShield();

@@ -9,6 +9,7 @@ public class OctopusBubbleShieldTutorialTrigger : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private OctopusBubbleShield bubbleShield;
+    [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private GameObject spacePromptObject;
     [SerializeField] private Collider2D triggerCollider;
 
@@ -30,6 +31,9 @@ public class OctopusBubbleShieldTutorialTrigger : MonoBehaviour
 
         if (bubbleShield == null)
             bubbleShield = FindFirstObjectByType<OctopusBubbleShield>();
+
+        if (playerHealth == null)
+            playerHealth = FindFirstObjectByType<PlayerHealth>();
 
         if (bubbleShield != null)
             bubbleShield.ShieldActivated += HandleShieldActivated;
@@ -75,6 +79,11 @@ public class OctopusBubbleShieldTutorialTrigger : MonoBehaviour
         RefreshPromptState();
     }
 
+    private void Update()
+    {
+        RefreshPromptState();
+    }
+
     private void RefreshPromptState()
     {
         if (spacePromptObject == null)
@@ -82,7 +91,8 @@ public class OctopusBubbleShieldTutorialTrigger : MonoBehaviour
 
         bool shouldShow = bubbleShield != null
             && bubbleShield.IsUnlocked
-            && !bubbleShield.IsTutorialCompleted;
+            && !bubbleShield.IsTutorialCompleted
+            && (playerHealth == null || !playerHealth.IsGameOverVisible);
 
         spacePromptObject.SetActive(shouldShow);
     }

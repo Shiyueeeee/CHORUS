@@ -10,8 +10,15 @@ namespace Seahorse
 
         [Tooltip("If true, normalizes diagonal input so speed is consistent.")]
         [SerializeField] private bool normalize = true;
+        [SerializeField] private PlayerHealth playerHealth;
 
         private PlayerMovementMode movementMode;
+
+        private void Awake()
+        {
+            if (playerHealth == null)
+                playerHealth = GetComponent<PlayerHealth>();
+        }
 
         private void Start()
         {
@@ -20,6 +27,12 @@ namespace Seahorse
 
         private void Update()
         {
+            if (playerHealth != null && playerHealth.IsGameOverVisible)
+            {
+                Move = Vector2.zero;
+                return;
+            }
+
             if (GlobalUIRoot.IsModalInputLocked)
             {
                 Move = Vector2.zero;

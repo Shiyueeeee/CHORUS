@@ -14,6 +14,7 @@ namespace Seahorse
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private Collider2D bodyCollider;
         [SerializeField] private OceanBound oceanBound;
+        [SerializeField] private PlayerHealth playerHealth;
 
         [Header("Dash")]
         [SerializeField] private float dashDistance = 4f;
@@ -47,6 +48,7 @@ namespace Seahorse
             seahorseMotor = GetComponent<SeahorseMotor>();
             rb = GetComponent<Rigidbody2D>();
             bodyCollider = GetComponent<Collider2D>();
+            playerHealth = GetComponent<PlayerHealth>();
 
             if (oceanBound == null)
                 oceanBound = FindFirstObjectByType<OceanBound>();
@@ -120,7 +122,8 @@ namespace Seahorse
 
         private bool CanUseDash()
         {
-            return !GlobalUIRoot.IsModalInputLocked && !DialogueManager.IsDialogueActive;
+            bool isGameOverVisible = playerHealth != null && playerHealth.IsGameOverVisible;
+            return !isGameOverVisible && !GlobalUIRoot.IsModalInputLocked && !DialogueManager.IsDialogueActive;
         }
 
         private void StartDash()

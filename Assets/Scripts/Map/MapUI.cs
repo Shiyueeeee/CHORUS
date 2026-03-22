@@ -55,7 +55,7 @@ public class MapUI : MonoBehaviour
         Debug.Log("Dolphin Area clicked");
         if (GameProgress.dolphinCompleted)
         {
-            SceneManager.LoadScene("DolphinAreaScene");
+            SceneManager.LoadScene("DolphinFinalAreaScene");
         }
         else
         {

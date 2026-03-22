@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     private bool pendingCheckpointRespawn = false;
     private Rigidbody2D playerRigidbody;
 
+    public bool IsGameOverVisible => gameOverPanel != null && gameOverPanel.activeSelf;
+
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
