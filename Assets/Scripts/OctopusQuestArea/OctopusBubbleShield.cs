@@ -6,14 +6,14 @@ public class OctopusBubbleShield : MonoBehaviour
     [Header("Shield")]
     [SerializeField] private GameObject bubbleVisual;
     [SerializeField] private float activeDuration = 5f;
-    [SerializeField] private float reuseCooldown = 12f;
+    [SerializeField] public float reuseCooldown = 12f;
     [SerializeField] private bool startsUnlocked = false;
     [SerializeField] private PlayerHealth playerHealth;
 
     private float activeTimer;
-    private float cooldownTimer;
+    public float cooldownTimer;
     private bool isUnlocked;
-    private bool tutorialCompleted;
+    public bool tutorialCompleted;
 
     public bool IsShieldActive => activeTimer > 0f;
     public bool IsUnlocked => isUnlocked;
