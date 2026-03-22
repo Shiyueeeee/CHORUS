@@ -28,8 +28,13 @@ public class WhaleInteraction : NpcDialogueInteractionBase
     [Header("After Sea Cucumber Completed Dialogue")]
     [SerializeField] private DialogueLineData[] afterSeaCucumberCompletedDialogueLines;
 
+    [Header("Ensemble Prompt Dialogue")]
+    [SerializeField] private DialogueLineData[] ensemblePromptDialogueLines;
+    [SerializeField] private string ensembleYesLabel = "Yes";
+    [SerializeField] private string ensembleNoLabel = "No";
+
     [Header("Ending")]
-    [SerializeField] private string endingSceneName = "EndingScene";
+    [SerializeField] private string endingSceneName = "ChorusScene";
     [SerializeField] private GameObject objectToActivate;
 
     private DialoguePhase activePhase = DialoguePhase.Repeat;
@@ -71,6 +76,12 @@ public class WhaleInteraction : NpcDialogueInteractionBase
             return BuildDialogueList(afterSeaCucumberCompletedDialogueLines, speakerName);
         }
 
+        if (GameProgress.whalePostSeaCucumberDialogueCompleted && !GameProgress.whaleEnsembleAccepted)
+        {
+            activePhase = DialoguePhase.EnsemblePrompt;
+            return BuildDialogueList(ensemblePromptDialogueLines, speakerName);
+        }
+
         activePhase = DialoguePhase.Repeat;
         return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
@@ -107,9 +118,41 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         else if (activePhase == DialoguePhase.AfterSeaCucumberCompleted)
         {
             GameProgress.whalePostSeaCucumberDialogueCompleted = true;
-            if (!string.IsNullOrWhiteSpace(endingSceneName))
-                SceneManager.LoadScene(endingSceneName);
         }
+        else if (activePhase == DialoguePhase.EnsemblePrompt)
+        {
+            string choiceQuestion = GetLastDialogueText(ensemblePromptDialogueLines, "Are you ready for the ensemble?");
+            DialogueManager.Instance.StartYesNoChoice(
+                speakerName,
+                choiceQuestion,
+                StartEnsemble,
+                null,
+                ensembleYesLabel,
+                ensembleNoLabel);
+        }
+    }
+
+    private void StartEnsemble()
+    {
+        GameProgress.whaleEnsembleAccepted = true;
+
+        if (!string.IsNullOrWhiteSpace(endingSceneName))
+            SceneManager.LoadScene(endingSceneName);
+    }
+
+    private string GetLastDialogueText(DialogueLineData[] sourceLines, string fallbackText)
+    {
+        if (sourceLines == null || sourceLines.Length == 0)
+            return fallbackText;
+
+        for (int i = sourceLines.Length - 1; i >= 0; i--)
+        {
+            DialogueLineData line = sourceLines[i];
+            if (line != null && !string.IsNullOrWhiteSpace(line.text))
+                return line.text;
+        }
+
+        return fallbackText;
     }
 
     private enum DialoguePhase
@@ -119,6 +162,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         PostDolphinQuest,
         PostOctopusQuest,
         PostSeaCucumberQuest,
-        AfterSeaCucumberCompleted
+        AfterSeaCucumberCompleted,
+        EnsemblePrompt
     }
 }

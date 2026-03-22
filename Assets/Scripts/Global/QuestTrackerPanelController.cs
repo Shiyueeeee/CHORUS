@@ -251,6 +251,12 @@ public class QuestTrackerPanelController : MonoBehaviour
             return true;
         }
 
+        if (!GameProgress.whaleEnsembleAccepted)
+        {
+            questLabel = "Talk to Whale";
+            return true;
+        }
+
         return false;
     }
 }

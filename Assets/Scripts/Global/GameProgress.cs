@@ -21,6 +21,7 @@ public static class GameProgress
     public static bool whalePostSharkDialogueCompleted = false;
     public static bool whalePostOctopusDialogueCompleted = false;
     public static bool whalePostSeaCucumberDialogueCompleted = false;
+    public static bool whaleEnsembleAccepted = false;
 
     public static bool crabAmbassadorIntroDialogueCompleted = false;
     public static bool crabAmbassadorPostDolphinDialogueCompleted = false;

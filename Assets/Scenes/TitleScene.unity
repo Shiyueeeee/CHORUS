@@ -173,7 +173,7 @@ MonoBehaviour:
   baseVolume: 1
   loop: 1
   playOnStart: 1
-  titleBgm: {fileID: 0}
+  titleBgm: {fileID: 8300000, guid: 77c2331c95049b641baa891c5788112c, type: 3}
   rqBaseBgm: {fileID: 8300000, guid: 5f569d58d524e6b44b92e3693514dfb1, type: 3}
   rqCrabBgm: {fileID: 8300000, guid: b3462128c7185454889f796e994e4808, type: 3}
   rqDolphinBgm: {fileID: 8300000, guid: 5bf35713c8d5e70428be3382af867684, type: 3}
