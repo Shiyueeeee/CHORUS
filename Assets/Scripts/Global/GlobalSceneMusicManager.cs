@@ -51,14 +51,9 @@ public class GlobalSceneMusicManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+     
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;

@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseController
   normalize: 0
+  playerHealth: {fileID: 0}
 --- !u!1 &8054778044272082927
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ GameObject:
   - component: {fileID: 2200405229942681927}
   m_Layer: 0
   m_Name: ---PLAYER---
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
