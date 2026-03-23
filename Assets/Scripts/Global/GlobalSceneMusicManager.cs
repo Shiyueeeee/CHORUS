@@ -146,6 +146,7 @@ public class GlobalSceneMusicManager : MonoBehaviour
                 return MusicCue.Title;
 
             case "RQScene":
+            case "MapScene":
                 return ResolveRqCueFromProgress();
 
             case "CrabAreaScene":
@@ -156,10 +157,10 @@ public class GlobalSceneMusicManager : MonoBehaviour
             case "DolphinRushScene":
             case "DolphinFinalAreaScene":
             case "DolphinFinalRushScene":
+            case "ShipScene":
                 return MusicCue.Dolphin;
 
             case "SharkScene":
-            case "ShipScene":
                 return MusicCue.Shark;
 
             case "OctopusAreaScene":

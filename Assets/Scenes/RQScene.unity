@@ -2494,6 +2494,11 @@ MonoBehaviour:
   - speaker: Shark Ambassador
     text: ......
   randomRepeatDialogueBlocks: []
+--- !u!4 &1898014372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+  m_PrefabInstance: {fileID: 1898014368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931277874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5859069686327908759, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
@@ -2993,9 +2998,29 @@ PrefabInstance:
       value: QuestGuideRefs
       objectReference: {fileID: 0}
     - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: defaultPortalTarget
+      value: 
+      objectReference: {fileID: 85474051}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: npcAnchors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: portalAnchors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
       propertyPath: npcAnchors.Array.data[0].Target
       value: 
       objectReference: {fileID: 1389522806}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: npcAnchors.Array.data[1].Target
+      value: 
+      objectReference: {fileID: 1898014372}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: npcAnchors.Array.data[1].AnchorId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
       propertyPath: portalAnchors.Array.data[0].Target
       value: 

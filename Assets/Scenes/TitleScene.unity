@@ -173,7 +173,7 @@ MonoBehaviour:
   baseVolume: 1
   loop: 1
   playOnStart: 1
-  titleBgm: {fileID: 8300000, guid: 77c2331c95049b641baa891c5788112c, type: 3}
+  titleBgm: {fileID: 8300000, guid: 758cf3875233cd540a72d36bc24762cb, type: 3}
   rqBaseBgm: {fileID: 8300000, guid: 5f569d58d524e6b44b92e3693514dfb1, type: 3}
   rqCrabBgm: {fileID: 8300000, guid: b3462128c7185454889f796e994e4808, type: 3}
   rqDolphinBgm: {fileID: 8300000, guid: 5bf35713c8d5e70428be3382af867684, type: 3}
@@ -961,7 +961,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 24, y: -24}
-  m_SizeDelta: {x: 340, y: 391.262}
+  m_SizeDelta: {x: 340, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &531735831
 MonoBehaviour:
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2655,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.077, y: 123}
+  m_AnchoredPosition: {x: -41.077, y: 129}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130491104

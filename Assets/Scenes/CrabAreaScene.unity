@@ -1358,6 +1358,10 @@ PrefabInstance:
       value: QuestGuideRefs
       objectReference: {fileID: 0}
     - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
+      propertyPath: defaultPortalTarget
+      value: 
+      objectReference: {fileID: 279968072}
+    - target: {fileID: 8674346573780519659, guid: 72be7cadd1b48df40b3dda76e219bae3, type: 3}
       propertyPath: portalAnchors.Array.size
       value: 0
       objectReference: {fileID: 0}

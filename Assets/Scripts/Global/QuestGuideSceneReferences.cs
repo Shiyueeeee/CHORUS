@@ -6,6 +6,10 @@ public class QuestGuideSceneReferences : MonoBehaviour
 {
     [SerializeField] private List<QuestGuideNpcAnchor> npcAnchors = new List<QuestGuideNpcAnchor>();
     [SerializeField] private List<QuestGuidePortalAnchor> portalAnchors = new List<QuestGuidePortalAnchor>();
+    [SerializeField] private Transform defaultPortalTarget;
+    [Header("Arrow Override")]
+    [SerializeField] private bool overrideArrowDistance;
+    [SerializeField] private float arrowDistanceFromPlayer = 1.5f;
 
     public bool TryGetNpcAnchor(QuestGuideAnchorId anchorId, out Transform target)
     {
@@ -35,6 +39,17 @@ public class QuestGuideSceneReferences : MonoBehaviour
 
         target = null;
         return false;
+    }
+
+    public bool TryGetDefaultPortalAnchor(out Transform target)
+    {
+        target = defaultPortalTarget;
+        return target != null;
+    }
+
+    public float GetArrowDistance(float fallbackDistance)
+    {
+        return overrideArrowDistance ? arrowDistanceFromPlayer : fallbackDistance;
     }
 }
 

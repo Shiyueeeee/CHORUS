@@ -80,8 +80,9 @@ public class QuestGuideWorldArrowController : MonoBehaviour
             return;
         }
 
+        float activeDistanceFromPlayer = sceneReferences.GetArrowDistance(distanceFromPlayer);
         float distanceToTarget = direction.magnitude;
-        float displayDistance = Mathf.Min(distanceFromPlayer, distanceToTarget);
+        float displayDistance = Mathf.Min(activeDistanceFromPlayer, distanceToTarget);
         Vector2 normalizedDirection = direction.normalized;
         Vector3 worldArrowPosition = new Vector3(
             playerPosition.x + normalizedDirection.x * displayDistance,
@@ -100,12 +101,17 @@ public class QuestGuideWorldArrowController : MonoBehaviour
 
     private bool TryResolveTargetTransform(QuestGuideObjective objective, out Transform targetTransform)
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (sceneReferences.TryGetNpcAnchor(objective.AnchorId, out targetTransform))
+            return true;
 
+        string currentSceneName = SceneManager.GetActiveScene().name;
         if (currentSceneName == objective.TargetSceneName)
             return sceneReferences.TryGetNpcAnchor(objective.AnchorId, out targetTransform);
 
-        return sceneReferences.TryGetPortalAnchor(objective.TargetSceneName, out targetTransform);
+        if (sceneReferences.TryGetPortalAnchor(objective.TargetSceneName, out targetTransform))
+            return true;
+
+        return sceneReferences.TryGetDefaultPortalAnchor(out targetTransform);
     }
 
     private void SetArrowVisible(bool visible)
