@@ -795,6 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &519525709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4436106742940478, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
@@ -817,18 +818,209 @@ MonoBehaviour:
   returnSpawnPointName: Spawn_CrabReturn
   acceptQuestDialogueLines:
   - speaker: Kirby The Crab
-    text: Hey little bro
+    text: Move it! Move it! Pick it up! Hurry Bob! I didn't pay you to stare at the
+      trash!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Little Crab Bob
+    text: "Boss\u2026 I swear it looked clean a second ago\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Kirby The Crab
-    text: Clean ma garbage
+    text: "You call that clean?! There\u2019s still junk everywhere!"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Left side! LEFT SIDE! Use your claws, not your eyes! You bunch of freeloaders!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea horse
+    text: "Um\u2026Hello?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "Wut! Who are you, the blue guy? Can\u2019t ya see we\u2019re busy here?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea horse
+    text: "Hi, I'm here to\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: "\uFF08A piece of trash drifted over and landed right on Kirby the Crab's
+      head.\uFF09"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Bob.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "BOB\u2014\u2014\u2014\u2014!!!!!!!"
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Little Crab Bob
+    text: "I, I, I'm sorry boss!! I couldn't see well, I didn't have my glasses today\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Kirby stared at Bob madly.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Hold on hold on. I think I can help. I can see these trash very clearly!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: You?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Kirby looked the seahorse up and down.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "We don\u2019t see well. Never did. Half this junk? Might as well be invisible."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: You spot it. We smash it. Simple.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Help us clean this up. Then we talk. After our job is done for today, I'll
+      have time to talk with ya about whatever reason make ya here.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "So\u2026 I just need to point them out?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Exactly.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   questInProgressDialogueLines:
   - speaker: Kirby The Crab
     text: Bro not done yet nigga
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   turnInQuestDialogueLines:
+  - speaker: Sea Horse
+    text: I cleaned everything I could find.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Kirby The Crab
-    text: 3Q MA GOAT BRO
+    text: "\u2026Took ya long enough."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Kirby looks around the area.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Huh.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Cleaner than usual.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "\u2026Alright. You did the work."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "So let\u2019s hear it. Why are ya really here?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "I\u2019m looking for help\u2026 My home is being destroyed."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "Yeah? Look around, kid. Ya think you\u2019re the only one?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "Trash everywhere. Water\u2019s getting worse every day."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: ' Mr. Jones told me you might be able to help.'
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: " \u2026Jones, huh?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: That old whale still talking, huh.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "\u2026Heh. Still believe that story, huh?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Most of us gave up on that a long time ago.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "Those humans, throwin\u2019 trash every day, and you expect \u2019em to
+      help us. Huh. "
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: Stubborn little thing.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: 'Fine. Take it. '
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Kirby taps the ground. A low rhythmic sound echoes through the water.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "This is our part of the melody. Don\u2019t waste it."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: I know you can't play it on your own. Bob, go with this little dude.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "Come back and tell me what a pitiful sight he\u2019ll be when he cries
+      because humans ignored him. Hehe."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "If you\u2019re serious\u2026Go find the others."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: See if they still believe in your little song.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   invalidDialogueLines:
   - speaker: Kirby The Crab
     text: Hi my lovely soldier!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!1001 &583179002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,6 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &1002497893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1001 &1404845414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1494,6 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &1483997310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4436106742940478, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
@@ -1516,6 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1001 &1529252996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1610,6 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &1627337559 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4436106742940478, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
@@ -1632,6 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &1714159578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +2126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1001 &1811694939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2185,6 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1 &1892999297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,6 +2723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e237ffecdf654f547a7f78bff81a1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashInteraction
+  cleanupSettings: {fileID: 0}
 --- !u!1001 &108361248480109330
 PrefabInstance:
   m_ObjectHideFlags: 0

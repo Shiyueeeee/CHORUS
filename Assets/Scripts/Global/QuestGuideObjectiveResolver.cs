@@ -169,7 +169,7 @@ public static class QuestGuideObjectiveResolver
 
         if (!GameProgress.whaleEnsembleAccepted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk("Play the Symphony", QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 

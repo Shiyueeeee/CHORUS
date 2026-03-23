@@ -7,4 +7,9 @@ public class DialogueLineData
 
     [TextArea(2, 5)]
     public string text;
+
+    public AudioClip sfxClip;
+
+    [Range(0f, 1f)]
+    public float sfxVolumeScale = 1f;
 }

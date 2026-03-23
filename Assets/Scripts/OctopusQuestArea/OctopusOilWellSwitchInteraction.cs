@@ -12,6 +12,7 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
     [Header("Dialogue")]
     [SerializeField] private string speakerName = "Switch";
     [SerializeField] private DialogueLineData[] completeOilWellsDialogueLines;
+    [SerializeField] private DialogueLineData[] completeOilWellsAfterDyingOctopusDialogueLines;
     [SerializeField] private DialogueLineData[] repeatDialogueLines =
     {
         new DialogueLineData { text = "......" }
@@ -35,6 +36,10 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
         if (!GameProgress.octopusTaskReadyToTurnIn && !GameProgress.octopusCompleted)
         {
             activePhase = DialoguePhase.CompleteOilWells;
+
+            if (GameProgress.octopusDyingNpcHintDialogueCompleted)
+                return BuildDialogueList(completeOilWellsAfterDyingOctopusDialogueLines, speakerName) ?? BuildDialogueList(completeOilWellsDialogueLines, speakerName);
+
             return BuildDialogueList(completeOilWellsDialogueLines, speakerName);
         }
 

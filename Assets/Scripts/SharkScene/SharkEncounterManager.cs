@@ -19,7 +19,12 @@ public class SharkEncounterManager : MonoBehaviour
     [SerializeField] private DialogueLineData[] completedDialogueLines;
     [SerializeField] private string nextSceneName = "OctopusPathScene";
 
+    [Header("Scene Intro Dialogue")]
+    [SerializeField] private string sceneIntroDialogueSpeakerName = "Seahorse";
+    [SerializeField] private DialogueLineData[] sceneIntroDialogueLines;
+
     private bool isResolvingCompletion;
+    private bool shouldPlaySceneIntroDialogue;
 
     private void Start()
     {
@@ -28,8 +33,13 @@ public class SharkEncounterManager : MonoBehaviour
             StartFromAttackPhaseOnLoad = false;
             CurrentPhase = SharkEncounterPhase.AttackChallenge;
         }
+        else
+        {
+            shouldPlaySceneIntroDialogue = true;
+        }
 
         ApplyPhaseState();
+        TryPlaySceneIntroDialogue();
     }
 
     public void BeginAttackPhase()
@@ -98,6 +108,19 @@ public class SharkEncounterManager : MonoBehaviour
         }
 
         FinalizeEncounterCompletion();
+    }
+
+    private void TryPlaySceneIntroDialogue()
+    {
+        if (!shouldPlaySceneIntroDialogue || DialogueManager.Instance == null)
+            return;
+
+        List<DialogueLineData> linesToUse = BuildDialogueList(sceneIntroDialogueLines, sceneIntroDialogueSpeakerName);
+        if (linesToUse.Count == 0)
+            return;
+
+        shouldPlaySceneIntroDialogue = false;
+        DialogueManager.Instance.StartDialogue(linesToUse);
     }
 
     private void FinalizeEncounterCompletion()

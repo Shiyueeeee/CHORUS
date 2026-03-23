@@ -1805,7 +1805,9 @@ MonoBehaviour:
   nurseSpeakerName: Sea Cucumber Nurse
   guideDialogueLines:
   - speaker: Sea Cucumber Nurse
-    text: help release them from trash
+    text: Careful now! Move all the trashes away from them!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
 --- !u!1 &399205820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,7 +4548,11 @@ MonoBehaviour:
   speakerName: Shark
   waitingDialogueLines:
   - speaker: Shrauk the Shark
-    text: Are you done yet???
+    text: Hmph, these weaklings who can't even dodge a piece of trash would have
+      been eliminated by the ocean currents long ago. Only a weird little seahorse
+      like you would meddle in such trivial matters.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!4 &1073172745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
@@ -4657,7 +4663,10 @@ MonoBehaviour:
   nurseSpeakerName: Sea Cucumber Nurse
   guideDialogueLines:
   - speaker: Sea Cucumber Nurse
-    text: mark the infection please
+    text: Look closely for the diseased spots on their bodies. You must find all
+      of them for a complete cure!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
 --- !u!1 &1161985142
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,14 +5407,114 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeaCucumberLeaderInteraction
   speakerName: Sea Cucumber Leader
   acceptQuestDialogueLines:
+  - speaker: Sea Horse
+    text: Wow, why is there such a massive line here... this must be the place.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Dr.Luma
-    text: help me
+    text: Next! Oh, wait a minute, you don't have red spots, nor are you tangled
+      in plastic. You look perfectly healthy! Out of the way, out of the way! Dr.
+      Luma is so busy his tentacles are tying themselves in knots!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Hello, Dr. Luma. To fight the coral bleaching, I'm collecting the melody
+      that humans can hear. I was hoping you could...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Humans? Speaking of humans, Dr. Luma just treated an old sea turtle yesterday.
+      And guess what? He had a plastic cotton swab stuck in his ear! Who uses cotton
+      swabs in the ocean?!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: The old guy thought he was going deaf. It took Dr. Luma three whole hours
+      to pull it out! And last month, some weird metal contraption fell from the
+      surface, blasting deafening heavy metal music every day. It gave Dr. Luma a
+      nervous breakdown... wait, where were we?
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Melody? Oh, that ancient pact old Mr. Jones talked about, right? Dr. Luma
+      possesses the most beautiful harp sound in these waters!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: But look around! Because of the warming water and this blasted trash, the
+      line of patients goes around the reef three times!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Dr. Luma doesn't even have time for a sip of kelp soup, let alone playing
+      the harp!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Then let me help you! If it's treating patients, what can I do?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: You? Hmm... little seahorse, you do look somewhat capable. Listen closely,
+      what Dr. Luma's clinic needs most right now is a triage nurse!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: 'See these poor folks behind me? You need to separate them into two categories
+      first: those who are sick from pollution, and those tangled in human trash.
+      Once sorted, we''ll treat them one by one.'
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Speaking of trash, you wouldn't believe the things Dr. Luma has seen lately!
+      Last week, a nearsighted pufferfish swallowed a golf ball thinking it was a
+      clam! A golf ball! Do you know how dangerous it is to perform the Heimlich
+      maneuver on a fully inflated pufferfish?!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Dr. Luma almost got blinded by its toxic spikes! And the day before yesterday,
+      a hermit crab insisted on using a rusty tin can as its new home and got stuck.
+      I had to... Ahem, sorry, Dr. Luma digresses.
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: If you can cure these patients, Dr. Luma will pack up his instrument and
+      go with you. Do we have a deal?
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Deal! Leave it to me.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   turnInQuestDialogueLines:
   - speaker: Dr.Luma
-    text: Thank You.
+    text: Phew... finally sent off the last patient. Not bad at all, little seahorse!
+      Dr. Luma officially declares you have graduated from the position of Chief
+      Assistant!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Thank you, Dr. Luma. I'm glad to see everyone healthy again. So, about
+      the melody...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Dr. Luma always keeps his word! This harp melody, representing life and
+      healing, is now yours. If old Mr. Jones's plan can really make the humans stop
+      this blasted destruction...
+    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dr.Luma
+    text: Let's go, take me to your base. The environment here is getting worse,
+      and it's about time Dr. Luma took a vacation in cleaner waters anyway!
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: 
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   returnSceneName: RQScene
 --- !u!1 &1217053458
@@ -8430,6 +8539,8 @@ MonoBehaviour:
   guideDialogueLines:
   - speaker: Sea Cucumber Nurse
     text: You have to look closer before sorting them
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
 --- !u!1001 &2880080456306979303
 PrefabInstance:
   m_ObjectHideFlags: 0

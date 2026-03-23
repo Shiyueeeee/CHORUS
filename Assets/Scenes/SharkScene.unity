@@ -332,9 +332,33 @@ MonoBehaviour:
   sharkSpeakerName: Shark
   phase2EndDialogueLines:
   - speaker: Shrauk the Shark
-    text: ok you got me.
+    text: Heh, you did survive.
+    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
-    text: But you have to answer these questions.
+    text: "Kid, I\u2019ll give you credit for that..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: You got some skills..
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Not useless.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "But survival isn\u2019t enough."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Words matter now.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Convince me.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   barrageDuration: 10
   initialDelay: 0.75
   attackCooldown: 1.25
@@ -2401,13 +2425,51 @@ MonoBehaviour:
   quizPhaseObjects:
   - {fileID: 309142069}
   completedPhaseObjects: []
-  completedDialogueSpeakerName: Shark
+  completedDialogueSpeakerName: Shrauk the Shark
   completedDialogueLines:
   - speaker: Shrauk the Shark
-    text: Ok fine
+    text: "\u2026So. You can think."
+    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
-    text: We can go
+    text: Not just swim.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: You understand the ocean. Enough.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "If the waters rot\u2026everything starves."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "\u2026Fine. I\u2019ll join your hunt."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: The octopus is far. Too far for you.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Follow me.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: If you can keep up.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   nextSceneName: OctopusPathScene
+  sceneIntroDialogueSpeakerName: Sea horse
+  sceneIntroDialogueLines:
+  - speaker: Narrator
+    text: (The water suddenly shifts. A force pulls you deeper.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  - speaker: Sea horse
+    text: What's happening?!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
 --- !u!4 &1079634191
 Transform:
   m_ObjectHideFlags: 0
@@ -3314,9 +3376,71 @@ MonoBehaviour:
   encounterManager: {fileID: 1079634190}
   introDialogueLines:
   - speaker: Shrauk the Shark
-    text: HI
+    text: Heh, so small...and weak.
+    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
-    text: Fight me
+    text: And you dare wander into my waters.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "Wait\u2014 I\u2019m not here to fight\u2014"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "Everything that enters\u2026is prey."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: 'No no no wait wait, I''m just passing by, I''m looking for the Octopus
+      to get their melody, so we can play a symphony to call for human. '
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: That stupid song...? Still believe in it?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Even I do held a part...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Wait, that means you could join us, we need your melody to save the ocean!
+      And my house...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: You think a song will save you?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Strength decides survival. Not sound.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: You want my part? Earn it.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: How...?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Survive my hunt.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "Fail\u2026 and you feed the ocean."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "\u2026Fine. I\u2019ll prove it."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "\u2026Good. At least you\u2019re not boring."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!1001 &1877640090
 PrefabInstance:
   m_ObjectHideFlags: 0

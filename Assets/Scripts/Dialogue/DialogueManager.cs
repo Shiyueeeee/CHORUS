@@ -17,10 +17,20 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Button yesButton;
     [SerializeField] private Button noButton;
 
+    [Header("Dialogue SFX")]
+    [SerializeField] private AudioSource dialogueSfxSource;
+    [SerializeField] [Range(0f, 1f)] private float dialogueSfxBaseVolume = 1f;
+
+    [Header("Typewriter")]
+    [SerializeField] [Min(0f)] private float characterRevealInterval = 0.02f;
+
     private readonly List<DialogueLineData> currentLines = new List<DialogueLineData>();
     private int currentLineIndex = 0;
 
     private string currentSpeaker = "";
+    private string currentFullText = "";
+    private Coroutine typingCoroutine;
+    private bool isTyping;
 
     private System.Action onDialogueFinished;
     private System.Action onYesSelected;
@@ -61,6 +71,8 @@ public class DialogueManager : MonoBehaviour
             noButton.onClick.RemoveAllListeners();
             noButton.onClick.AddListener(ChooseNo);
         }
+
+        EnsureDialogueSfxSource();
     }
 
     private void Update()
@@ -72,7 +84,7 @@ public class DialogueManager : MonoBehaviour
         var mouse = Mouse.current;
         if (mouse != null && mouse.leftButton.wasPressedThisFrame && IsPointerOverDialoguePanel(mouse.position.ReadValue()))
         {
-            ShowNextLine();
+            HandleDialoguePanelClick();
         }
     }
 
@@ -128,16 +140,19 @@ public class DialogueManager : MonoBehaviour
 
         DialogueLineData line = currentLines[currentLineIndex];
         currentSpeaker = line != null ? line.speaker : string.Empty;
+        currentFullText = line != null ? line.text ?? string.Empty : string.Empty;
 
         if (speakerText != null)
             speakerText.text = currentSpeaker;
 
-        if (dialogueText != null)
-            dialogueText.text = line != null ? line.text : string.Empty;
+        StartTypewriter(currentFullText);
+
+        PlayLineSfx(line);
     }
 
     public void EndDialogue()
     {
+        StopTypingCoroutine();
         IsDialogueActive = false;
         isChoiceActive = false;
 
@@ -155,6 +170,7 @@ public class DialogueManager : MonoBehaviour
 
         currentLines.Clear();
         currentLineIndex = 0;
+        currentFullText = "";
 
         Debug.Log($"Dialogue with {currentSpeaker} ended");
 
@@ -191,8 +207,9 @@ public class DialogueManager : MonoBehaviour
         if (!isChoiceActive)
             return;
 
+        System.Action callback = onYesSelected;
         CloseChoiceUi();
-        onYesSelected?.Invoke();
+        callback?.Invoke();
     }
 
     public void ChooseNo()
@@ -200,8 +217,9 @@ public class DialogueManager : MonoBehaviour
         if (!isChoiceActive)
             return;
 
+        System.Action callback = onNoSelected;
         CloseChoiceUi();
-        onNoSelected?.Invoke();
+        callback?.Invoke();
     }
 
     private void CloseChoiceUi()
@@ -236,5 +254,90 @@ public class DialogueManager : MonoBehaviour
             return false;
 
         return RectTransformUtility.RectangleContainsScreenPoint(panelRectTransform, screenPosition);
+    }
+
+    private void HandleDialoguePanelClick()
+    {
+        if (isTyping)
+        {
+            CompleteCurrentLineInstantly();
+            return;
+        }
+
+        ShowNextLine();
+    }
+
+    private void StartTypewriter(string fullText)
+    {
+        StopTypingCoroutine();
+
+        if (dialogueText != null)
+            dialogueText.text = "";
+
+        if (string.IsNullOrEmpty(fullText) || characterRevealInterval <= 0f)
+        {
+            CompleteCurrentLineInstantly();
+            return;
+        }
+
+        typingCoroutine = StartCoroutine(TypeLineRoutine(fullText));
+    }
+
+    private System.Collections.IEnumerator TypeLineRoutine(string fullText)
+    {
+        isTyping = true;
+
+        for (int i = 1; i <= fullText.Length; i++)
+        {
+            if (dialogueText != null)
+                dialogueText.text = fullText.Substring(0, i);
+
+            if (i < fullText.Length)
+                yield return new WaitForSecondsRealtime(characterRevealInterval);
+        }
+
+        typingCoroutine = null;
+        isTyping = false;
+    }
+
+    private void CompleteCurrentLineInstantly()
+    {
+        StopTypingCoroutine();
+
+        if (dialogueText != null)
+            dialogueText.text = currentFullText;
+    }
+
+    private void StopTypingCoroutine()
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+
+        isTyping = false;
+    }
+
+    private void EnsureDialogueSfxSource()
+    {
+        if (dialogueSfxSource == null)
+            dialogueSfxSource = GetComponent<AudioSource>();
+
+        if (dialogueSfxSource == null)
+            dialogueSfxSource = gameObject.AddComponent<AudioSource>();
+
+        dialogueSfxSource.playOnAwake = false;
+        dialogueSfxSource.loop = false;
+    }
+
+    private void PlayLineSfx(DialogueLineData line)
+    {
+        if (line == null || line.sfxClip == null)
+            return;
+
+        EnsureDialogueSfxSource();
+        AudioSettingsManager.ApplySfxVolume(dialogueSfxSource, dialogueSfxBaseVolume);
+        dialogueSfxSource.PlayOneShot(line.sfxClip, Mathf.Clamp01(line.sfxVolumeScale));
     }
 }

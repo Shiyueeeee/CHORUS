@@ -683,16 +683,108 @@ MonoBehaviour:
   arrivalThreshold: 0.05
   defaultSpeakerName: Shark
   travelDialogueLines:
+  - speaker: Sea Horse
+    text: "\u2026You really are taking me to the octopus?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shrauk the Shark
-    text: hi1
+    text: I said I would.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: I thought you hated this whole plan.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shrauk the Shark
-    text: hi2
+    text: I do.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shrauk the Shark
-    text: hi3
+    text: But I hate starving more.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "\u2026Is it really that bad?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shrauk the Shark
-    text: hi4
+    text: Fish scatter. Routes change. The weak die first. The lucky ones leave.
+      The unlucky ones become food.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shrauk the Shark
-    text: hi5
+    text: Even myself. I am...weaker than before.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: The acidified ocean is corroding my scales and teeth.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "I\u2019m swimming slower than I used to."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "So that\u2019s why you attack everything\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: I hunt what remains.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: The survival of the fittest.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Before I met you, I met crabs and dolphins.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Marine debris has completely blocked off the crabs' habitat, and sonar
+      has disrupted the dolphins' ability to navigate.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Do you think humans will really respond to our song?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: "Doubt slows you down. Out here\u2026that gets you killed."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Are you scared, kid?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: If that's the case, you'd better give up now.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: I won't.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Then stop questioning.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: We are here.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk the Shark
+    text: Go ahead.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   nextSceneName: OctopusAreaScene
 --- !u!4 &1188582673
 Transform:

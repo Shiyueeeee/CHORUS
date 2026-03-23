@@ -21,11 +21,15 @@ public class DyingOctopusInteraction : NpcDialogueInteractionBase
     [SerializeField] private DialogueBlockData[] randomAliveRepeatDialogueBlocks;
 
     [Header("After Oil Wells Are Closed")]
-    [SerializeField] private DialogueLineData[] deadRepeatDialogueLines =
+    [SerializeField] private DialogueLineData[] deadAfterTalkDialogueLines =
     {
         new DialogueLineData { text = "......" }
     };
-    [SerializeField] private DialogueBlockData[] randomDeadRepeatDialogueBlocks;
+    [SerializeField] private DialogueBlockData[] randomDeadAfterTalkDialogueBlocks;
+    [SerializeField] private DialogueLineData[] deadWithoutTalkDialogueLines =
+    {
+        new DialogueLineData { text = "......" }
+    };
 
     [Header("Visuals")]
     [SerializeField] private GameObject aliveVisualObject;
@@ -59,7 +63,11 @@ public class DyingOctopusInteraction : NpcDialogueInteractionBase
         if (oilWellsClosed)
         {
             activePhase = DialoguePhase.DeadRepeat;
-            return BuildRandomDialogueList(randomDeadRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(deadRepeatDialogueLines, speakerName);
+
+            if (GameProgress.octopusDyingNpcHintDialogueCompleted)
+                return BuildRandomDialogueList(randomDeadAfterTalkDialogueBlocks, speakerName) ?? BuildDialogueList(deadAfterTalkDialogueLines, speakerName);
+
+            return BuildDialogueList(deadWithoutTalkDialogueLines, speakerName);
         }
 
         if (!GameProgress.octopusDyingNpcHintDialogueCompleted)

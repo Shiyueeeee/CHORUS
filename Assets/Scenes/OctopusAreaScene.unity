@@ -988,16 +988,55 @@ MonoBehaviour:
   returnSpawnPointName: Spawn_OctopusReturn
   acceptQuestDialogueLines:
   - speaker: 'Oliver The Octopus '
-    text: please help me
+    text: Y-you there... cough D-don't come any closer! The w-water around here is
+      c-completely polluted!
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Hello, are you the chief here? I need your help to play a melody so humans
+      will stop this destruction!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: 'Oliver The Octopus '
+    text: I-I'm Oliver... I-if we can stop all this, w-we'd certainly love to help!
+      But look... that giant oil rig is leaking c-chemical waste and radiation. We
+      octopuses can't tolerate radiation at all... I-if we don't shut it down, w-we'll
+      all die here.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: I have a way! I can blow bubbles to protect myself from the radiation.
+      I'll go in and shut it down for you!
+    sfxClip: {fileID: 8300000, guid: b1f66267cfee0ff48b607e750ccf57b0, type: 3}
+    sfxVolumeScale: 1
   questInProgressDialogueLines:
   - speaker: 'Oliver The Octopus '
     text: not done yet
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   turnInQuestDialogueLines:
+  - speaker: Sea Horse
+    text: Oliver! The oil rig has been completely shut down, and the radiation source
+      is cut off! It's just... some of your kind inside didn't make it...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: 'Oliver The Octopus '
-    text: Thank you
+    text: By the Sea God... y-you actually did it! You saved our entire c-clan! They...
+      sacrificed themselves to protect our h-home, and we will absolutely not let
+      their sacrifice be in vain!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: 'Oliver The Octopus '
+    text: T-this is our clan's heirloom, the oboe. Its sound is extremely penetrating,
+      able to p-pierce through the murkiest polluted waters. We are w-willing to
+      join your team and play that melody together!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: 'Oliver The Octopus '
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   taskAreaPortal: {fileID: 137176118}
 --- !u!1 &903749412
@@ -1274,6 +1313,8 @@ MonoBehaviour:
   waitingDialogueLines:
   - speaker: Shrauk the Shark
     text: Are you done yet???
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!4 &1073172745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}

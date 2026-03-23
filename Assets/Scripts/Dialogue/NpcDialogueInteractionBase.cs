@@ -35,7 +35,9 @@ public abstract class NpcDialogueInteractionBase : MonoBehaviour, IInteractable
             lines.Add(new DialogueLineData
             {
                 speaker = string.IsNullOrWhiteSpace(line.speaker) ? fallbackSpeaker : line.speaker,
-                text = line.text
+                text = line.text,
+                sfxClip = line.sfxClip,
+                sfxVolumeScale = line.sfxVolumeScale
             });
         }
 

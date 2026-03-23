@@ -615,8 +615,12 @@ MonoBehaviour:
   unlockDialogueLines:
   - speaker: 
     text: This place is covered in radiation!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: 
     text: But I can use my bubble
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   bubbleShield: {fileID: 860514956}
   playerHealth: {fileID: 0}
   spacePromptObject: {fileID: 1867412105}
@@ -2387,16 +2391,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DyingOctopusInteraction
   speakerName: Octopus
   hintDialogueLines:
-  - speaker: Octopus
-    text: The switch is on the other side...
+  - speaker: Sea Horse
+    text: Finally here... this is the engine level! Wait, there's another octopus
+      on the left! Sir, are you okay?!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mutated Octopus
+    text: Cough... L-leave me be. The radiation... has already pierced through my
+      body...
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Hold on! Once the engine is off, the radiation will disappear. Dr. Luma
+      can definitely heal you! Where is the switch?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mutated Octopus
+    text: Go to the right... the button... is on the far right. It's a... red button...
+      Hurry... don't let... don't let the pollution spread any further...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aliveRepeatDialogueLines:
   - speaker: Octopus
     text: Please hurry...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomAliveRepeatDialogueBlocks: []
-  deadRepeatDialogueLines:
-  - speaker: Octopus
+  deadAfterTalkDialogueLines:
+  - speaker: Sea Horse
+    text: Sir! Did you hear that? The machine has stopped! The radiation in the water
+      is gone too, how are you feeling...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Sir? Wake up... No, how could this be...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  randomDeadAfterTalkDialogueBlocks: []
+  deadWithoutTalkDialogueLines:
+  - speaker: Mutated Octopus
     text: ......
-  randomDeadRepeatDialogueBlocks: []
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aliveVisualObject: {fileID: 0}
   deadVisualObject: {fileID: 0}
 --- !u!1001 &424947997
@@ -10229,12 +10265,23 @@ MonoBehaviour:
   speakerName: Narrator
   completeOilWellsDialogueLines:
   - speaker: Seahorse
-    text: I did it!
+    text: Found it, on the far right! It's this red button! Stop right now!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  completeOilWellsAfterDyingOctopusDialogueLines:
   - speaker: Seahorse
-    text: Must go check on that octopus
+    text: Found it, on the far right! It's this red button! Stop right now!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  - speaker: Seahorse
+    text: Must go check on that Octopus.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   repeatDialogueLines:
   - speaker: 
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   oilGroupObject: {fileID: 2005407905}
   radiationGroupObject: {fileID: 37974356}
@@ -10722,6 +10769,8 @@ MonoBehaviour:
   repeatDialogueLines:
   - speaker: Dead Octopus
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &2055816477
 PrefabInstance:

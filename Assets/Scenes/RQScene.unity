@@ -607,23 +607,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Octopus Ambassador
     text: cute base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Octopus Ambassador
     text: cute crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Octopus Ambassador
     text: cute dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Octopus Ambassador
     text: cute shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines: []
   aboutSeaCucumberDialogueLines:
   - speaker: Octopus Ambassador
     text: cute cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Octopus Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &434483020
 GameObject:
@@ -994,23 +1006,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
   repeatDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &1036169164
 GameObject:
@@ -1463,46 +1487,312 @@ MonoBehaviour:
   postCrabQuestDialogueLines:
   - speaker: Seahorse
     text: Mr. Jones!
+    sfxClip: {fileID: 8300000, guid: b1f66267cfee0ff48b607e750ccf57b0, type: 3}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: Mr. Jones?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: ...
-  - speaker: Mr. Jones
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
     text: "..\u2026\u2026(gasp)"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: MR.JONES!!!!
-  - speaker: Mr. Jones
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
     text: (The heavy movement of the moving belt stirred up sand, and Mr. Jones opened
       his eyes.)
+    sfxClip: {fileID: 8300000, guid: 4ba7d5e7329e3784fa426e48c2750c37, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: My house is falling apart! When I bought it, the developer promised me
+      it was built with the finest coral and would remain solid as a rock for thousands
+      of years. So why is it crumbling to pieces after just two years?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Yes...I can feel this......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: The ocean... Is getting warmer...and warmer......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "When the water changes\u2026 the algae leave the coral."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Without them\u2026 the coral cannot survive."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: But why is this happening now?!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "It wasn\u2019t like this before!"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Because...humans have started interfering again....
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Humans?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: What are they doing in our place?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: You will...find out......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Wait wait wait. So, how can I stop them? I need to save my house from falling
+      apart! It cost me greatly!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "There was once\u2026an agreement\u2026"
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Between the ocean\u2026 and humanity."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "If the ocean was ever in danger\u2026we had a way to call them\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: We play a symphony, and humans will help us...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "The melody was divided\u2026kept by different species."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Only when all parts are played together\u2026can humans understand us."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "Then\u2026 we just need to gather them, right?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "It won\u2019t be that simple...The ocean is no longer united..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Many species no longer trust each other\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: or humans...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "If you want their help\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: you must go find them.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "The crabs has a part\u2026You can start with them\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: They live not far from here...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "If the waters are polluted\u2026they must already be struggling..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Head right...and follow the current past the cliff to the waters where
+      they live...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "I\u2019ll convince them."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "\u2026Be careful."
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Not everyone will welcome you\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (And Mr.Jones closed his eyes, fall asleep again.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Mr. Jones
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   postDolphinQuestDialogueLines:
+  - speaker: Sea Horse
+    text: Mr. Jones, I'm back.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Mr. Jones opened his eyes.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: You saved the crabs!
+    text: You made it...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: Now go help the dophins
+    text: Good job...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Mr. Jones looked at Bob.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "\u2026Good...One piece\u2026found."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "They don\u2019t trust easily...You did well."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Where do I go next?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "\u2026The dolphins."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Ok. I'll go.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   postOctopusQuestDialogueLines:
+  - speaker: Sea Horse
+    text: "Mr. Jones\u2026 I\u2019m back."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: You saved the dophins!
+    text: "\u2026Mm. I can hear it..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: Now go help the octopus.
+    text: "\u2026A strong voice."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Now find the others. Before the ocean goes silent.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Who's next?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "\u2026The octopus."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Hurry up, time is running out.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "Their home\u2026 is being torn apart by machines..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "I understand. I\u2019ll help them."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   postSeaCucumberQuestDialogueLines:
+  - speaker: Sea Horse
+    text: "Mr. Jones\u2026 I\u2019m back."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: WOW you also found shark
+    text: "The rhythm\u2026 is stronger now."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: now go to sea cucumber
+    text: You found Shrauk...Good...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: let shark take you there
+    text: Then you'll only need one last piece...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: Who has it?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Dr. Luma...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: The sea cucumber.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "He heals\u2026what others cannot."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Let Shrauk take you there...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   afterSeaCucumberCompletedDialogueLines:
+  - speaker: Sea Horse
+    text: "Mr. Jones\u2026Everyone\u2019s here."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (Mr. Jones slowly opens his eyes.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
-    text: You did them all
+    text: "\u2026Yes. I can hear it clearly now."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: You did it.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: You brought them together.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   ensemblePromptDialogueLines:
   - speaker: Mr. Jones
     text: are you ready
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   ensembleYesLabel: Yes
   ensembleNoLabel: No
   endingSceneName: EndingScene
@@ -1802,16 +2092,32 @@ MonoBehaviour:
   firstEnterDialogueLines:
   - speaker: Seahorse
     text: Ughhhh!!! No!!!! My house!!!!!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: The coral is bleaching and falling apart!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: Even my plants are died!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: What should I do?!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Seahorse
+    text: "If this keeps going\u2026 everything here will die."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: I know! Mr.Jones must know what to do.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!4 &1605839789
 Transform:
   m_ObjectHideFlags: 0
@@ -1992,23 +2298,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice place
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines: []
   aboutSharkDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Dolphin Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &1877554224
 PrefabInstance:
@@ -2129,23 +2447,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Crab Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &1898014368
 PrefabInstance:
@@ -2258,27 +2588,43 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Shark Ambassador
     text: weak base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines:
   - speaker: Sea horse
     text: Please take me to sea cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shark Ambassador
     text: ok fine
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutCrabDialogueLines:
   - speaker: Shark Ambassador
     text: weak crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Shark Ambassador
     text: weak dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines: []
   aboutOctopusDialogueLines:
   - speaker: Shark Ambassador
     text: weak octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Shark Ambassador
     text: weak cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!4 &1898014372 stripped
 Transform:
