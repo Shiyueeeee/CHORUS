@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public static class SceneTransition
 {
     private const string SettingsResourcePath = "SceneTransitionSettings";
-    private const float DefaultFadeDuration = 1.35f;
+    private const float DefaultFadeDuration = 1.5f;
     private const int DefaultFadeCanvasSortOrder = short.MaxValue;
     private static readonly Color DefaultFadeColor = Color.black;
 
