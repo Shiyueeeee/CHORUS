@@ -49,7 +49,7 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
         GameProgress.dolphinCompleted = true;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-        SceneManager.LoadScene(returnSceneName);
+        SceneTransition.LoadScene(returnSceneName);
     }
 
     private enum DialoguePhase

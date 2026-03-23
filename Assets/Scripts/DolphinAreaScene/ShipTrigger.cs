@@ -21,7 +21,7 @@ public class ShipTrigger : MonoBehaviour
         if (other.CompareTag("Player") && followPositionController.isFollowing)
         {
             // load in ship scene
-            SceneManager.LoadScene(shipSceneName);
+            SceneTransition.LoadScene(shipSceneName);
         }
     }
 }

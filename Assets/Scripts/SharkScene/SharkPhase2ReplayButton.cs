@@ -7,6 +7,6 @@ public class SharkPhase2ReplayButton : MonoBehaviour
     {
         Time.timeScale = 1f;
         SharkEncounterManager.StartFromAttackPhaseOnLoad = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneTransition.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -14,7 +14,7 @@ public class TitleMenuController : MonoBehaviour
 
     public void OnClickStartGame()
     {
-        SceneManager.LoadScene(gameSceneName);
+        SceneTransition.LoadScene(gameSceneName);
     }
 
     

@@ -103,7 +103,7 @@ public class SharkEncounterManager : MonoBehaviour
     private void FinalizeEncounterCompletion()
     {
         GameProgress.sharkCompleted = true;
-        SceneManager.LoadScene(nextSceneName);
+        SceneTransition.LoadScene(nextSceneName);
     }
 
     private static List<DialogueLineData> BuildDialogueList(DialogueLineData[] sourceLines, string fallbackSpeaker)

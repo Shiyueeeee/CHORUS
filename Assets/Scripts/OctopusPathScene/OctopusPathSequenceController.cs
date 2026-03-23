@@ -46,7 +46,7 @@ public class OctopusPathSequenceController : MonoBehaviour
         }
 
         yield return MovePairToTarget(exitTarget, exitSpeed);
-        SceneManager.LoadScene(nextSceneName);
+        SceneTransition.LoadScene(nextSceneName);
     }
 
     private IEnumerator MovePairToTarget(Transform target, float moveSpeed)

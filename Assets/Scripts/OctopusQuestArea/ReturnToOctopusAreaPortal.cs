@@ -12,6 +12,6 @@ public class ReturnToOctopusAreaPortal : MonoBehaviour
             return;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-        SceneManager.LoadScene(targetSceneName);
+        SceneTransition.LoadScene(targetSceneName);
     }
 }

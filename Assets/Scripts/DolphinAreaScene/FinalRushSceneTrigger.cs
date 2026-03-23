@@ -21,7 +21,7 @@ public class FinalRushSceneTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
-            SceneManager.LoadScene(rushSceneName);
+            SceneTransition.LoadScene(rushSceneName);
         }
     }
 }
