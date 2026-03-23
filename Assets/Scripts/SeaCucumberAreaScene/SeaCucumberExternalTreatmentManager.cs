@@ -31,8 +31,10 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
     [SerializeField] private RectTransform tutorialArrow;
     [SerializeField] private RectTransform tutorialHintRoot;
     [SerializeField] private TMP_Text tutorialHintText;
-    [SerializeField] private Vector2 tutorialArrowOffset = new Vector2(0f, 80f);
-    [SerializeField] private Vector2 tutorialHintOffset = new Vector2(120f, 40f);
+    [SerializeField] private Vector2 clickToZoomArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 clickToZoomHintOffset = new Vector2(120f, 40f);
+    [SerializeField] private Vector2 dragTrashArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 dragTrashHintOffset = new Vector2(120f, 40f);
     [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
     [SerializeField] [TextArea] private string dragToTrashBinHintText = "Drag to the trash bin";
 
@@ -275,7 +277,7 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
         }
 
         tutorialStep = ExternalTutorialStep.ClickToZoom;
-        ShowTutorial(patientCase.CaseRectTransform, patientCase.CaseRectTransform, clickToZoomHintText);
+        ShowTutorial(patientCase.CaseRectTransform, patientCase.CaseRectTransform, clickToZoomHintText, clickToZoomArrowOffset, clickToZoomHintOffset);
     }
 
     private SeaCucumberExternalPatientCase GetTutorialPatientCase()
@@ -324,10 +326,10 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
         }
 
         RectTransform target = currentTrashPiece.TrashRectTransform;
-        ShowTutorial(target, target, dragToTrashBinHintText);
+        ShowTutorial(target, target, dragToTrashBinHintText, dragTrashArrowOffset, dragTrashHintOffset);
     }
 
-    private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText)
+    private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText, Vector2 arrowOffset, Vector2 hintOffset)
     {
         currentArrowTarget = arrowTarget;
         currentHintTarget = hintTarget;
@@ -358,10 +360,39 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
 
     private void RefreshTutorialVisualPositions()
     {
+        Vector2 arrowOffset = GetCurrentArrowOffset();
+        Vector2 hintOffset = GetCurrentHintOffset();
+
         if (tutorialArrow != null && tutorialArrow.gameObject.activeSelf && currentArrowTarget != null)
-            tutorialArrow.position = currentArrowTarget.position + (Vector3)tutorialArrowOffset;
+            tutorialArrow.position = currentArrowTarget.position + (Vector3)arrowOffset;
 
         if (tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf && currentHintTarget != null)
-            tutorialHintRoot.position = currentHintTarget.position + (Vector3)tutorialHintOffset;
+            tutorialHintRoot.position = currentHintTarget.position + (Vector3)hintOffset;
+    }
+
+    private Vector2 GetCurrentArrowOffset()
+    {
+        switch (tutorialStep)
+        {
+            case ExternalTutorialStep.ClickToZoom:
+                return clickToZoomArrowOffset;
+            case ExternalTutorialStep.DragTrashSequence:
+                return dragTrashArrowOffset;
+            default:
+                return Vector2.zero;
+        }
+    }
+
+    private Vector2 GetCurrentHintOffset()
+    {
+        switch (tutorialStep)
+        {
+            case ExternalTutorialStep.ClickToZoom:
+                return clickToZoomHintOffset;
+            case ExternalTutorialStep.DragTrashSequence:
+                return dragTrashHintOffset;
+            default:
+                return Vector2.zero;
+        }
     }
 }

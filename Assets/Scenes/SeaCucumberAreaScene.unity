@@ -1728,7 +1728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.39
+      value: -15.09
       objectReference: {fileID: 0}
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3004,32 +3004,36 @@ PrefabInstance:
       value: Shark
       objectReference: {fileID: 0}
     - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83a31948b72ea1545b6985101e1e0e22, type: 3}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Color.b
-      value: 0.38679248
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Color.g
-      value: 0.28438404
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Color.r
-      value: 0.093049124
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.x
@@ -3041,7 +3045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.65
+      value: -22.25
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3137,8 +3141,10 @@ MonoBehaviour:
   tutorialArrow: {fileID: 1161985143}
   tutorialHintRoot: {fileID: 640179119}
   tutorialHintText: {fileID: 640179120}
-  tutorialArrowOffset: {x: 0, y: 80}
-  tutorialHintOffset: {x: 120, y: 40}
+  clickToZoomArrowOffset: {x: 0, y: 150}
+  clickToZoomHintOffset: {x: 150, y: 170}
+  lesionArrowOffset: {x: 0, y: 95}
+  lesionHintOffset: {x: 155, y: 115}
   clickToZoomHintText: Click to zoom
   clickLesionHintText: Mark the lesion
 --- !u!4 &783525839
@@ -3214,8 +3220,12 @@ MonoBehaviour:
   tutorialHintText: {fileID: 640179120}
   previewCloseButtonTarget: {fileID: 42531922}
   previewHintTarget: {fileID: 0}
-  tutorialArrowOffset: {x: 0, y: 80}
-  tutorialHintOffset: {x: 120, y: 40}
+  clickToZoomArrowOffset: {x: 50, y: 45}
+  clickToZoomHintOffset: {x: 215, y: 68}
+  previewArrowOffset: {x: 0, y: 80}
+  previewHintOffset: {x: -220, y: 0}
+  dragToZoneArrowOffset: {x: 50, y: 45}
+  dragToZoneHintOffset: {x: 215, y: 68}
   clickToZoomHintText: Click to zoom
   previewDiagnosisHintText: This patient isn't tangled in trash. It should be an
     internal case.
@@ -3754,8 +3764,10 @@ MonoBehaviour:
   tutorialArrow: {fileID: 1161985143}
   tutorialHintRoot: {fileID: 640179119}
   tutorialHintText: {fileID: 640179120}
-  tutorialArrowOffset: {x: 0, y: 80}
-  tutorialHintOffset: {x: 120, y: 40}
+  clickToZoomArrowOffset: {x: 0, y: 150}
+  clickToZoomHintOffset: {x: 150, y: 170}
+  dragTrashArrowOffset: {x: 0, y: 95}
+  dragTrashHintOffset: {x: 155, y: 115}
   clickToZoomHintText: Click to zoom
   dragToTrashBinHintText: Drag to the trash bin
 --- !u!4 &918487897
@@ -4671,17 +4683,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161985142}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 757976533}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161985144
 MonoBehaviour:
@@ -4703,7 +4715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 77db18fe2ad0df64f9c049edc0ab4cfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01e20054e4e13e14bb1f4455da7527dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

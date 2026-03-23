@@ -43,8 +43,12 @@ public class SeaCucumberTriageManager : MonoBehaviour
     [SerializeField] private TMP_Text tutorialHintText;
     [SerializeField] private RectTransform previewCloseButtonTarget;
     [SerializeField] private RectTransform previewHintTarget;
-    [SerializeField] private Vector2 tutorialArrowOffset = new Vector2(0f, 80f);
-    [SerializeField] private Vector2 tutorialHintOffset = new Vector2(120f, 40f);
+    [SerializeField] private Vector2 clickToZoomArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 clickToZoomHintOffset = new Vector2(120f, 40f);
+    [SerializeField] private Vector2 previewArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 previewHintOffset = new Vector2(-220f, 0f);
+    [SerializeField] private Vector2 dragToZoneArrowOffset = new Vector2(0f, 80f);
+    [SerializeField] private Vector2 dragToZoneHintOffset = new Vector2(120f, 40f);
     [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
     [SerializeField] [TextArea] private string previewDiagnosisHintText = "This patient isn't tangled in trash. It should be an internal case.";
     [SerializeField] [TextArea] private string dragToCorrectZoneHintText = "Drag to the correct zone";
@@ -211,7 +215,9 @@ public class SeaCucumberTriageManager : MonoBehaviour
             ShowTutorial(
                 previewCloseButtonTarget,
                 previewHintTarget != null ? previewHintTarget : patientPreviewImage != null ? patientPreviewImage.rectTransform : null,
-                previewDiagnosisHintText);
+                previewDiagnosisHintText,
+                previewArrowOffset,
+                previewHintOffset);
         }
     }
 
@@ -232,7 +238,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
         {
             tutorialStep = TriageTutorialStep.DragToZone;
             RectTransform cardTarget = closedCard.CardRectTransform;
-            ShowTutorial(cardTarget, cardTarget, dragToCorrectZoneHintText);
+            ShowTutorial(cardTarget, cardTarget, dragToCorrectZoneHintText, dragToZoneArrowOffset, dragToZoneHintOffset);
         }
     }
 
@@ -312,7 +318,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         tutorialStep = TriageTutorialStep.ClickToZoom;
         RectTransform cardTarget = card.CardRectTransform;
-        ShowTutorial(cardTarget, cardTarget, clickToZoomHintText);
+        ShowTutorial(cardTarget, cardTarget, clickToZoomHintText, clickToZoomArrowOffset, clickToZoomHintOffset);
     }
 
     private SeaCucumberPatientCard GetTutorialPatientCard()
@@ -337,7 +343,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
         HideTutorialVisuals();
     }
 
-    private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText)
+    private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText, Vector2 arrowOffset, Vector2 hintOffset)
     {
         currentArrowTarget = arrowTarget;
         currentHintTarget = hintTarget;
@@ -368,10 +374,43 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
     private void RefreshTutorialVisualPositions()
     {
+        Vector2 arrowOffset = GetCurrentArrowOffset();
+        Vector2 hintOffset = GetCurrentHintOffset();
+
         if (tutorialArrow != null && tutorialArrow.gameObject.activeSelf && currentArrowTarget != null)
-            tutorialArrow.position = currentArrowTarget.position + (Vector3)tutorialArrowOffset;
+            tutorialArrow.position = currentArrowTarget.position + (Vector3)arrowOffset;
 
         if (tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf && currentHintTarget != null)
-            tutorialHintRoot.position = currentHintTarget.position + (Vector3)tutorialHintOffset;
+            tutorialHintRoot.position = currentHintTarget.position + (Vector3)hintOffset;
+    }
+
+    private Vector2 GetCurrentArrowOffset()
+    {
+        switch (tutorialStep)
+        {
+            case TriageTutorialStep.ClickToZoom:
+                return clickToZoomArrowOffset;
+            case TriageTutorialStep.PreviewHint:
+                return previewArrowOffset;
+            case TriageTutorialStep.DragToZone:
+                return dragToZoneArrowOffset;
+            default:
+                return Vector2.zero;
+        }
+    }
+
+    private Vector2 GetCurrentHintOffset()
+    {
+        switch (tutorialStep)
+        {
+            case TriageTutorialStep.ClickToZoom:
+                return clickToZoomHintOffset;
+            case TriageTutorialStep.PreviewHint:
+                return previewHintOffset;
+            case TriageTutorialStep.DragToZone:
+                return dragToZoneHintOffset;
+            default:
+                return Vector2.zero;
+        }
     }
 }
