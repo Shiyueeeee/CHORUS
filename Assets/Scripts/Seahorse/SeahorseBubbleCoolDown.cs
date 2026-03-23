@@ -23,7 +23,8 @@ public class SeahorseBubbleCoolDown : MonoBehaviour
         }
         if (bubbleShield.cooldownTimer > 0f)
         {
-            cooldownImage.fillAmount = bubbleShield.cooldownTimer / bubbleShield.reuseCooldown;
+            float progress = 1f - (bubbleShield.cooldownTimer / bubbleShield.reuseCooldown);
+            cooldownImage.fillAmount = Mathf.Clamp01(progress);
         }
     }
 
