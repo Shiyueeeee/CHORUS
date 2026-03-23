@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,12 @@ public class OctopusBubbleShield : MonoBehaviour
     public bool IsTutorialCompleted => tutorialCompleted;
 
     public event System.Action ShieldActivated;
+
+    [Header("Blink Effect")]
+    public SpriteRenderer spriteRenderer;
+    public float totalBlinkDuration = 1f;
+    public float blinkInterval = 0.1f;
+    private bool isBlinking = false;
 
     private void OnEnable()
     {
@@ -50,16 +57,22 @@ public class OctopusBubbleShield : MonoBehaviour
         if (canAcceptInput && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && cooldownTimer <= 0f)
         {
             ActivateShield();
+            isBlinking = true;
         }
 
         if (activeTimer > 0f)
         {
             activeTimer -= Time.deltaTime;
+            
             if (activeTimer <= 0f)
             {
                 activeTimer = 0f;
                 RefreshBubbleVisual();
             }
+        }
+        if (activeTimer <= 1 && isBlinking)
+        {
+            StartCoroutine(BlinkRoutine());
         }
 
         if (cooldownTimer > 0f)
@@ -97,5 +110,25 @@ public class OctopusBubbleShield : MonoBehaviour
     {
         if (bubbleVisual != null)
             bubbleVisual.SetActive(IsShieldActive);
+    }
+
+    private IEnumerator BlinkRoutine()
+    {
+        Debug.Log("Starting Blink Routine");
+
+        float endTime = Time.time + totalBlinkDuration;
+
+
+        while (Time.time < endTime)
+        {
+
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+
+
+            yield return new WaitForSeconds(blinkInterval);
+        }
+
+        isBlinking = false;
+
     }
 }

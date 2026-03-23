@@ -1762,11 +1762,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1319026688070532047, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 120.1
+      value: 125.5
       objectReference: {fileID: 0}
     - target: {fileID: 1319026688070532047, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4443,6 +4443,9 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   cooldownTimer: 0
   tutorialCompleted: 0
+  spriteRenderer: {fileID: 1001954414}
+  totalBlinkDuration: 1
+  blinkInterval: 0.1
 --- !u!114 &860514957
 MonoBehaviour:
   m_ObjectHideFlags: 0
