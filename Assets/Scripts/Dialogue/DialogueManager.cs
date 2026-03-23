@@ -67,9 +67,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (!IsDialogueActive) return;
         if (isChoiceActive) return;
+        if (GlobalUIRoot.Instance != null && GlobalUIRoot.Instance.IsSettingsOpen) return;
 
         var mouse = Mouse.current;
-        if (mouse != null && mouse.leftButton.wasPressedThisFrame)
+        if (mouse != null && mouse.leftButton.wasPressedThisFrame && IsPointerOverDialoguePanel(mouse.position.ReadValue()))
         {
             ShowNextLine();
         }
@@ -223,5 +224,17 @@ public class DialogueManager : MonoBehaviour
         onDialogueFinished = null;
         onYesSelected = null;
         onNoSelected = null;
+    }
+
+    private bool IsPointerOverDialoguePanel(Vector2 screenPosition)
+    {
+        if (dialoguePanel == null)
+            return false;
+
+        RectTransform panelRectTransform = dialoguePanel.transform as RectTransform;
+        if (panelRectTransform == null)
+            return false;
+
+        return RectTransformUtility.RectangleContainsScreenPoint(panelRectTransform, screenPosition);
     }
 }

@@ -131,9 +131,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeaCucumberLeader
       objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f4ece4e59dc62e48a5e7d4de4c6f7f4, type: 3}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.19
+      value: -4.84
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -170,6 +190,14 @@ PrefabInstance:
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027330457540393792, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Radius
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161255554172240813, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2140,6 +2168,8 @@ GameObject:
   - component: {fileID: 480364549}
   - component: {fileID: 480364551}
   - component: {fileID: 480364550}
+  - component: {fileID: 480364553}
+  - component: {fileID: 480364552}
   m_Layer: 5
   m_Name: ExternalTreatmentPanel
   m_TagString: Untagged
@@ -2214,6 +2244,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480364548}
   m_CullTransparentMesh: 1
+--- !u!114 &480364552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480364548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &480364553
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480364548}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &560121713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,6 +2912,8 @@ GameObject:
   m_Component:
   - component: {fileID: 757976533}
   - component: {fileID: 757976534}
+  - component: {fileID: 757976536}
+  - component: {fileID: 757976535}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -2879,6 +2951,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757976532}
   m_CullTransparentMesh: 1
+--- !u!114 &757976535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757976532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &757976536
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757976532}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 11
+  m_TargetDisplay: 0
 --- !u!1001 &760327401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5061,6 +5173,8 @@ GameObject:
   - component: {fileID: 1194699172}
   - component: {fileID: 1194699174}
   - component: {fileID: 1194699173}
+  - component: {fileID: 1194699176}
+  - component: {fileID: 1194699175}
   m_Layer: 5
   m_Name: TriagePanel
   m_TagString: Untagged
@@ -5132,6 +5246,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194699171}
   m_CullTransparentMesh: 1
+--- !u!114 &1194699175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194699171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1194699176
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194699171}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &1212815820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5474,6 +5628,8 @@ GameObject:
   - component: {fileID: 1306959052}
   - component: {fileID: 1306959054}
   - component: {fileID: 1306959053}
+  - component: {fileID: 1306959056}
+  - component: {fileID: 1306959055}
   m_Layer: 5
   m_Name: InternalTreatmentPanel
   m_TagString: Untagged
@@ -5546,6 +5702,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306959051}
   m_CullTransparentMesh: 1
+--- !u!114 &1306959055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306959051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1306959056
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306959051}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &1351959264
 GameObject:
   m_ObjectHideFlags: 0

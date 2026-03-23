@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d86f0d4808939a45986450b3c1583ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabRushManager
-  rushDuration: 30
+  rushDuration: 4
   sceneName: CrabAreaScene
 --- !u!4 &1441306238
 Transform:
@@ -1012,22 +1012,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashSpawner
   trashPrefab: {fileID: 2485569050749296742, guid: 81d36e05d8c24e344901ba2ad8c369f5, type: 3}
-  trashVisuals:
-  - sprite: {fileID: 21300000, guid: 3e94f800cd89c864781b55a7f76e9e73, type: 3}
-    scale: 0.2
-    offset: {x: 10, y: 0, z: 0}
-  - sprite: {fileID: 21300000, guid: 00851ae190a13e346892661667fcf3bf, type: 3}
-    scale: 0.2
-    offset: {x: 0, y: 0, z: 0}
-  - sprite: {fileID: 21300000, guid: 1ad5ab3556810d749a2f2b0d73383fc3, type: 3}
-    scale: 0.2
-    offset: {x: 0, y: 0, z: 0}
-  - sprite: {fileID: 21300000, guid: a54caccf42291524887eb2d433e1713f, type: 3}
-    scale: 0.5
-    offset: {x: -5, y: 0, z: 0}
-  - sprite: {fileID: 21300000, guid: 8b014bffaf1a0fc4ebc6c615b0929cc1, type: 3}
-    scale: 0.2
-    offset: {x: 5, y: 0, z: 0}
+  trashSprites:
+  - {fileID: 21300000, guid: 3e94f800cd89c864781b55a7f76e9e73, type: 3}
+  - {fileID: 21300000, guid: 9198f7e708adac34686142520a41ef32, type: 3}
+  - {fileID: 21300000, guid: 00851ae190a13e346892661667fcf3bf, type: 3}
+  - {fileID: 21300000, guid: 1ad5ab3556810d749a2f2b0d73383fc3, type: 3}
+  - {fileID: 21300000, guid: a54caccf42291524887eb2d433e1713f, type: 3}
+  targetHeight: 2
   spawnInterval: 2
   spawnX: 8
   laneYPositions:

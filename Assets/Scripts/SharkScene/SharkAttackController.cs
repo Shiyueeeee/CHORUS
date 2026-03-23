@@ -16,6 +16,7 @@ public class SharkAttackController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform sharkTransform;
+    [SerializeField] private Transform warningOrigin;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private SharkEncounterManager encounterManager;
     [SerializeField] private LineRenderer warningLine;
@@ -49,20 +50,25 @@ public class SharkAttackController : MonoBehaviour
     private Vector3 dashTargetPosition;
     private bool dashResolved;
     private int trashHitCount;
+    private float sharkBaseScaleX = 1f;
+    private Quaternion sharkBaseRotation = Quaternion.identity;
 
     private void Awake()
     {
         AutoAssignReferences();
+        CacheFacingScale();
         HideWarningLine();
     }
 
     private void OnEnable()
     {
         AutoAssignReferences();
+        CacheFacingScale();
         trashHitCount = 0;
         currentState = AttackState.Barrage;
         stateTimer = barrageDuration;
         dashResolved = false;
+        FaceLeft();
         HideWarningLine();
 
         if (barrageController != null)
@@ -181,7 +187,7 @@ public class SharkAttackController : MonoBehaviour
         if (sharkTransform == null || playerTransform == null)
             return;
 
-        Vector3 start = sharkTransform.position;
+        Vector3 start = GetWarningStartPosition();
         Vector3 playerPosition = playerTransform.position;
         Vector3 direction = (playerPosition - start).normalized;
         if (direction.sqrMagnitude <= 0.0001f)
@@ -193,6 +199,7 @@ public class SharkAttackController : MonoBehaviour
         float dashDistance = Mathf.Min(maxDashDistance, playerDistance + dashOvershootDistance);
         dashDistance = Mathf.Max(dashDistance, 2f);
         dashTargetPosition = start + direction * dashDistance;
+        UpdateFacing(direction);
 
         ShowWarningLine(start, playerPosition);
     }
@@ -347,5 +354,53 @@ public class SharkAttackController : MonoBehaviour
         {
             sharkHealth = GetComponent<SharkHealth>();
         }
+    }
+
+    private Vector3 GetWarningStartPosition()
+    {
+        if (warningOrigin != null)
+            return warningOrigin.position;
+
+        return sharkTransform != null ? sharkTransform.position : transform.position;
+    }
+
+    private void CacheFacingScale()
+    {
+        if (sharkTransform == null)
+            return;
+
+        sharkBaseScaleX = Mathf.Abs(sharkTransform.localScale.x);
+        if (sharkBaseScaleX <= 0.0001f)
+        {
+            sharkBaseScaleX = 1f;
+        }
+
+        sharkBaseRotation = sharkTransform.localRotation;
+    }
+
+    private void UpdateFacing(Vector3 direction)
+    {
+        if (sharkTransform == null || Mathf.Abs(direction.x) <= 0.0001f)
+            return;
+
+        Vector3 scale = sharkTransform.localScale;
+        bool facingLeft = direction.x < 0f;
+        Vector2 forward = facingLeft ? Vector2.left : Vector2.right;
+        float signedAngle = Vector2.SignedAngle(forward, direction);
+
+        scale.x = facingLeft ? sharkBaseScaleX : -sharkBaseScaleX;
+        sharkTransform.localScale = scale;
+        sharkTransform.localRotation = sharkBaseRotation * Quaternion.Euler(0f, 0f, signedAngle);
+    }
+
+    private void FaceLeft()
+    {
+        if (sharkTransform == null)
+            return;
+
+        Vector3 scale = sharkTransform.localScale;
+        scale.x = sharkBaseScaleX;
+        sharkTransform.localScale = scale;
+        sharkTransform.localRotation = sharkBaseRotation;
     }
 }

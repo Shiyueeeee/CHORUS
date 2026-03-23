@@ -2592,6 +2592,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrabLeader
       objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3150e06c1682efe4a82391f52d8ea9df, type: 3}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4669811
+      objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4669811
+      objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15

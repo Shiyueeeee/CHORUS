@@ -17,6 +17,7 @@ public class GlobalSceneMusicManager : MonoBehaviour
         Dolphin,
         Shark,
         Octopus,
+        OctopusPath,
         SeaCucumber,
         Title
     }
@@ -44,6 +45,7 @@ public class GlobalSceneMusicManager : MonoBehaviour
     [SerializeField] private AudioClip dolphinBgm;
     [SerializeField] private AudioClip sharkBgm;
     [SerializeField] private AudioClip octopusBgm;
+    [SerializeField] private AudioClip octopusPathBgm;
     [SerializeField] private AudioClip seaCucumberBgm;
 
     private AudioSource audioSource;
@@ -164,9 +166,11 @@ public class GlobalSceneMusicManager : MonoBehaviour
                 return MusicCue.Shark;
 
             case "OctopusAreaScene":
-            case "OctopusPathScene":
             case "OctopusQuestAreaScene":
                 return MusicCue.Octopus;
+
+            case "OctopusPathScene":
+                return MusicCue.OctopusPath;
 
             case "SeaCucumberAreaScene":
                 return MusicCue.SeaCucumber;
@@ -212,6 +216,8 @@ public class GlobalSceneMusicManager : MonoBehaviour
                 return sharkBgm;
             case MusicCue.Octopus:
                 return octopusBgm;
+            case MusicCue.OctopusPath:
+                return octopusPathBgm;
             case MusicCue.SeaCucumber:
                 return seaCucumberBgm;
             default:

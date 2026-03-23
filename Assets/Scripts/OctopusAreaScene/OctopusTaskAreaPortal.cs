@@ -7,7 +7,7 @@ public class OctopusTaskAreaPortal : MonoBehaviour
 
     private void Start()
     {
-        gameObject.SetActive(GameProgress.octopusQuestAccepted);
+        RefreshPortalState();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,5 +16,14 @@ public class OctopusTaskAreaPortal : MonoBehaviour
             return;
 
         SceneManager.LoadScene(targetSceneName);
+    }
+
+    private void RefreshPortalState()
+    {
+        bool shouldBeActive = GameProgress.octopusQuestAccepted &&
+                              !GameProgress.octopusTaskReadyToTurnIn &&
+                              !GameProgress.octopusCompleted;
+
+        gameObject.SetActive(shouldBeActive);
     }
 }
