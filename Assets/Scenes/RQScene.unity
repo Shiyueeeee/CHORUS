@@ -1500,7 +1500,9 @@ MonoBehaviour:
   afterSeaCucumberCompletedDialogueLines:
   - speaker: Mr. Jones
     text: You did them all
-  ensemblePromptDialogueLines: []
+  ensemblePromptDialogueLines:
+  - speaker: Mr. Jones
+    text: are you ready
   ensembleYesLabel: Yes
   ensembleNoLabel: No
   endingSceneName: EndingScene
