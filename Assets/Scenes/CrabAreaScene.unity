@@ -847,8 +847,7 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
-    text: "\uFF08A piece of trash drifted over and landed right on Kirby the Crab's
-      head.\uFF09"
+    text: (A piece of trash drifted over and landed right on Kirby the Crab's head.)
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab

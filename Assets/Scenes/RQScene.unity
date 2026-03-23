@@ -1689,7 +1689,7 @@ MonoBehaviour:
     text: "\u2026The dolphins."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
-  - speaker: Mr. Jones
+  - speaker: Sea Horse
     text: Ok. I'll go.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
