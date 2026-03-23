@@ -5,6 +5,8 @@ namespace Seahorse
 {
     public class SeahorseController : MonoBehaviour
     {
+        public static bool IsGameplayInputLocked => gameplayInputLockCount > 0;
+
         public Vector2 Move { get; private set; }
         public PlayerMovementMode MovementMode => movementMode;
 
@@ -13,6 +15,7 @@ namespace Seahorse
         [SerializeField] private PlayerHealth playerHealth;
 
         private PlayerMovementMode movementMode;
+        private static int gameplayInputLockCount;
 
         private void Awake()
         {
@@ -42,6 +45,12 @@ namespace Seahorse
                 return;
             }
             if (DialogueManager.IsDialogueActive)
+            {
+                Move = Vector2.zero;
+                return;
+            }
+
+            if (IsGameplayInputLocked)
             {
                 Move = Vector2.zero;
                 return;
@@ -80,6 +89,18 @@ namespace Seahorse
                 v.Normalize();
 
             Move = v;
+        }
+
+        public static void SetGameplayInputLocked(bool locked)
+        {
+            if (locked)
+            {
+                gameplayInputLockCount++;
+            }
+            else
+            {
+                gameplayInputLockCount = Mathf.Max(0, gameplayInputLockCount - 1);
+            }
         }
     }
 }

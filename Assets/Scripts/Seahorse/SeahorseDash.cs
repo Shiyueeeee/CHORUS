@@ -129,7 +129,19 @@ namespace Seahorse
                 playerHealth = GetComponent<PlayerHealth>();
 
             bool isGameOverVisible = playerHealth != null && playerHealth.IsGameOverVisible;
-            return !isGameOverVisible && !GlobalUIRoot.IsModalInputLocked && !DialogueManager.IsDialogueActive;
+            return !isGameOverVisible
+                && !GlobalUIRoot.IsModalInputLocked
+                && !DialogueManager.IsDialogueActive
+                && !SeahorseController.IsGameplayInputLocked;
+        }
+
+        public void ForceCancelDash()
+        {
+            if (rb == null)
+                rb = GetComponent<Rigidbody2D>();
+
+            cooldownTimer = Mathf.Max(cooldownTimer, 0f);
+            EndDash();
         }
 
         private void StartDash()

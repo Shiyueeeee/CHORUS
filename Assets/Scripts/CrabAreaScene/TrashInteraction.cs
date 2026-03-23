@@ -1,4 +1,5 @@
 using System.Collections;
+using Seahorse;
 using UnityEngine;
 
 public class TrashInteraction : MonoBehaviour, IInteractable
@@ -8,6 +9,10 @@ public class TrashInteraction : MonoBehaviour, IInteractable
     [SerializeField] private CrabTrashCleanupSettings cleanupSettings;
 
     private bool isCleaning;
+    private bool lockedPlayerInput;
+    private SeahorseController lockedPlayerController;
+    private SeahorseDash lockedPlayerDash;
+    private Rigidbody2D lockedPlayerRb;
 
     public void Interact()
     {
@@ -16,6 +21,7 @@ public class TrashInteraction : MonoBehaviour, IInteractable
 
         isCleaning = true;
         DisableInteraction();
+        LockPlayerForCleanup();
 
         CrabTrashCleanupSettings settings = ResolveSettings();
         if (settings == null || settings.Frames == null || settings.Frames.Length == 0 || settings.FramesPerSecond <= 0f)
@@ -92,9 +98,50 @@ public class TrashInteraction : MonoBehaviour, IInteractable
 
     private void FinishCleanup()
     {
+        UnlockPlayerAfterCleanup();
+
         if (CrabQuestManager.Instance != null)
             CrabQuestManager.Instance.ClearOneTrash();
 
         Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        UnlockPlayerAfterCleanup();
+    }
+
+    private void LockPlayerForCleanup()
+    {
+        if (lockedPlayerInput)
+            return;
+
+        lockedPlayerController = FindFirstObjectByType<SeahorseController>();
+        if (lockedPlayerController == null)
+            return;
+
+        lockedPlayerDash = lockedPlayerController.GetComponent<SeahorseDash>();
+        lockedPlayerRb = lockedPlayerController.GetComponent<Rigidbody2D>();
+
+        SeahorseController.SetGameplayInputLocked(true);
+        lockedPlayerInput = true;
+
+        if (lockedPlayerDash != null)
+            lockedPlayerDash.ForceCancelDash();
+
+        if (lockedPlayerRb != null)
+            lockedPlayerRb.linearVelocity = Vector2.zero;
+    }
+
+    private void UnlockPlayerAfterCleanup()
+    {
+        if (!lockedPlayerInput)
+            return;
+
+        SeahorseController.SetGameplayInputLocked(false);
+        lockedPlayerInput = false;
+        lockedPlayerController = null;
+        lockedPlayerDash = null;
+        lockedPlayerRb = null;
     }
 }
