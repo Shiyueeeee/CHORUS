@@ -86,6 +86,9 @@ namespace Seahorse
 
         private void Update()
         {
+            if (playerHealth == null)
+                playerHealth = GetComponent<PlayerHealth>();
+
             UpdateLastDashDirection();
 
             if (cooldownTimer > 0f)
@@ -122,6 +125,9 @@ namespace Seahorse
 
         private bool CanUseDash()
         {
+            if (playerHealth == null)
+                playerHealth = GetComponent<PlayerHealth>();
+
             bool isGameOverVisible = playerHealth != null && playerHealth.IsGameOverVisible;
             return !isGameOverVisible && !GlobalUIRoot.IsModalInputLocked && !DialogueManager.IsDialogueActive;
         }

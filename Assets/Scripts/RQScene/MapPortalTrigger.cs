@@ -11,7 +11,7 @@ public class MapPortalTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-            SceneManager.LoadScene(mapSceneName);
+            SceneTransition.LoadScene(mapSceneName);
         }
     }
 }

@@ -33,7 +33,7 @@ public class MapUI : MonoBehaviour
     public void OnClickClose()
     {
         Debug.Log("Close clicked");
-        SceneManager.LoadScene("RQScene");
+        SceneTransition.LoadScene("RQScene");
     }
 
     public void OnClickCrabArea()
@@ -41,12 +41,12 @@ public class MapUI : MonoBehaviour
         Debug.Log("Crab Area clicked");
         if (GameProgress.crabCompleted)
         {
-            SceneManager.LoadScene("CrabAreaScene");
+            SceneTransition.LoadScene("CrabAreaScene");
         }
         else
         {
             PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
-            SceneManager.LoadScene("CrabRushScene");
+            SceneTransition.LoadScene("CrabRushScene");
         }
     }
 
@@ -55,12 +55,12 @@ public class MapUI : MonoBehaviour
         Debug.Log("Dolphin Area clicked");
         if (GameProgress.dolphinCompleted)
         {
-            SceneManager.LoadScene("DolphinFinalAreaScene");
+            SceneTransition.LoadScene("DolphinFinalAreaScene");
         }
         else
         {
             PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
-            SceneManager.LoadScene("DolphinRushScene");
+            SceneTransition.LoadScene("DolphinRushScene");
         }
     }
 
@@ -70,16 +70,16 @@ public class MapUI : MonoBehaviour
         Debug.Log("Octopus Area clicked");
         if (GameProgress.sharkCompleted)
         {
-            SceneManager.LoadScene("OctopusAreaScene");
+            SceneTransition.LoadScene("OctopusAreaScene");
             return;
         }
 
-        SceneManager.LoadScene("SharkScene");
+        SceneTransition.LoadScene("SharkScene");
     }
 
     public void OnClickSeaCucumberArea()
     {
         Debug.Log("Sea Cucumber Area clicked");
-        SceneManager.LoadScene("SeaCucumberAreaScene");
+        SceneTransition.LoadScene("SeaCucumberAreaScene");
     }
 }

@@ -12,6 +12,6 @@ public class ReturnToRQPortal : MonoBehaviour
             return;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-        SceneManager.LoadScene(targetSceneName);
+        SceneTransition.LoadScene(targetSceneName);
     }
 }

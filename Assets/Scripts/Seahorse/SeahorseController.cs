@@ -27,6 +27,9 @@ namespace Seahorse
 
         private void Update()
         {
+            if (playerHealth == null)
+                playerHealth = GetComponent<PlayerHealth>();
+
             if (playerHealth != null && playerHealth.IsGameOverVisible)
             {
                 Move = Vector2.zero;

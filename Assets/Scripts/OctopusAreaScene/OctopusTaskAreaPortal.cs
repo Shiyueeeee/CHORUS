@@ -15,6 +15,6 @@ public class OctopusTaskAreaPortal : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        SceneManager.LoadScene(targetSceneName);
+        SceneTransition.LoadScene(targetSceneName);
     }
 }

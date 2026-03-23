@@ -137,7 +137,7 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         GameProgress.whaleEnsembleAccepted = true;
 
         if (!string.IsNullOrWhiteSpace(endingSceneName))
-            SceneManager.LoadScene(endingSceneName);
+            SceneTransition.LoadScene(endingSceneName);
     }
 
     private string GetLastDialogueText(DialogueLineData[] sourceLines, string fallbackText)
