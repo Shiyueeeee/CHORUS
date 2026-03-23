@@ -5,6 +5,6 @@ public class BackToMapScene : MonoBehaviour
 {
     public void BackToMap()
     {
-        SceneManager.LoadScene("MapScene");
+        SceneTransition.LoadScene("MapScene");
     }
 }

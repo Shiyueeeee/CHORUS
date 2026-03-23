@@ -56,7 +56,7 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
             return;
 
         GameProgress.seaCucumberCompleted = true;
-        SceneManager.LoadScene(returnSceneName);
+        SceneTransition.LoadScene(returnSceneName);
     }
 
     private enum SeaCucumberDialoguePhase

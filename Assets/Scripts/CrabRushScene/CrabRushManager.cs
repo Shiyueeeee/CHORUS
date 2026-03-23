@@ -31,6 +31,6 @@ public class CrabRushManager : MonoBehaviour
     private void EndRush()
     {
         PlayerEnterState.movementMode = PlayerMovementMode.Free;
-        SceneManager.LoadScene(sceneName);
+        SceneTransition.LoadScene(sceneName);
     }
 }

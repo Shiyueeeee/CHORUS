@@ -18,11 +18,21 @@ public class PlayerHealth : MonoBehaviour
 
     public bool IsGameOverVisible => gameOverPanel != null && gameOverPanel.activeSelf;
 
+    private void Awake()
+    {
+        ResolveHPFillImage();
+    }
+
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
-        currentHP = maxHP;
+        ResolveHPFillImage();
+        ResolveGameOverPanel();
+        string sceneName = SceneManager.GetActiveScene().name;
+        maxHP = DolphinSceneHealthState.GetStartingPlayerMaxHealth(sceneName, maxHP);
+        currentHP = DolphinSceneHealthState.GetStartingPlayerHealth(sceneName, maxHP);
         UpdateHPBar();
+        SyncPersistentHealth();
 
         if (gameOverPanel != null)
         {
@@ -41,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
             currentHP = 0;
 
         UpdateHPBar();
+        SyncPersistentHealth();
 
         if (currentHP <= 0)
         {
@@ -57,13 +68,88 @@ public class PlayerHealth : MonoBehaviour
             currentHP = maxHP;
 
         UpdateHPBar();
+        SyncPersistentHealth();
     }
 
     private void UpdateHPBar()
     {
+        ResolveHPFillImage();
+
         if (hpFillImage != null)
         {
             hpFillImage.fillAmount = (float)currentHP / maxHP;
+        }
+    }
+
+    private void ResolveHPFillImage()
+    {
+        if (IsValidFillImage(hpFillImage))
+            return;
+
+        if (TryResolveScreenSpaceFillImage(out Image resolvedScreenSpaceFill))
+        {
+            hpFillImage = resolvedScreenSpaceFill;
+            return;
+        }
+
+        if (hpFillImage == null)
+            return;
+
+        Image[] nearbyImages = hpFillImage.transform.GetComponentsInChildren<Image>(true);
+        for (int i = 0; i < nearbyImages.Length; i++)
+        {
+            if (IsValidFillImage(nearbyImages[i]))
+            {
+                hpFillImage = nearbyImages[i];
+                return;
+            }
+        }
+    }
+
+    private static bool IsValidFillImage(Image image)
+    {
+        return image != null && image.type == Image.Type.Filled;
+    }
+
+    private bool TryResolveScreenSpaceFillImage(out Image resolvedImage)
+    {
+        Image[] images = FindObjectsByType<Image>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        for (int i = 0; i < images.Length; i++)
+        {
+            Image candidate = images[i];
+            if (!IsValidFillImage(candidate))
+                continue;
+
+            Canvas candidateCanvas = candidate.canvas;
+            if (candidateCanvas == null || candidateCanvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                continue;
+
+            resolvedImage = candidate;
+            return true;
+        }
+
+        resolvedImage = null;
+        return false;
+    }
+
+    private void ResolveGameOverPanel()
+    {
+        if (gameOverPanel != null)
+            return;
+
+        Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        for (int i = 0; i < canvases.Length; i++)
+        {
+            Canvas canvas = canvases[i];
+            if (canvas == null || canvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                continue;
+
+            Transform panelTransform = canvas.transform.Find("GameOverPanel");
+            if (panelTransform == null)
+                continue;
+
+            gameOverPanel = panelTransform.gameObject;
+            return;
         }
     }
 
@@ -72,6 +158,7 @@ public class PlayerHealth : MonoBehaviour
         pendingCheckpointRespawn = HasCheckpointRespawnAvailable();
 
         isDead = true;
+        SyncPersistentHealth();
 
         if (gameOverPanel != null)
         {
@@ -91,7 +178,8 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        DolphinSceneHealthState.ResetAll();
+        SceneTransition.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private bool HasCheckpointRespawnAvailable()
@@ -120,10 +208,16 @@ public class PlayerHealth : MonoBehaviour
         isDead = false;
         pendingCheckpointRespawn = false;
         UpdateHPBar();
+        SyncPersistentHealth();
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
 
         Time.timeScale = 1f;
+    }
+
+    private void SyncPersistentHealth()
+    {
+        DolphinSceneHealthState.StorePlayerHealth(SceneManager.GetActiveScene().name, currentHP, maxHP);
     }
 }

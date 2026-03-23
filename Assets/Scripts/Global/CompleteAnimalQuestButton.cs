@@ -30,7 +30,7 @@ public class CompleteAnimalQuestButton : MonoBehaviour
                 return;
         }
 
-        SceneManager.LoadScene(returnSceneName);
+        SceneTransition.LoadScene(returnSceneName);
     }
 }
 

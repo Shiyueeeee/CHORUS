@@ -68,7 +68,7 @@ public class OctopusLeaderInteraction : NpcDialogueInteractionBase
             GameProgress.octopusTaskReadyToTurnIn = false;
             GameProgress.octopusCompleted = true;
             SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-            SceneManager.LoadScene(returnSceneName);
+            SceneTransition.LoadScene(returnSceneName);
         }
     }
 

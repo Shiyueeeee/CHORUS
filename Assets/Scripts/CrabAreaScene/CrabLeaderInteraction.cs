@@ -81,7 +81,7 @@ public class CrabLeaderInteraction : NpcDialogueInteractionBase
         GameProgress.crabCompleted = true;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
-        SceneManager.LoadScene(returnSceneName);
+        SceneTransition.LoadScene(returnSceneName);
     }
 
     private enum DialoguePhase

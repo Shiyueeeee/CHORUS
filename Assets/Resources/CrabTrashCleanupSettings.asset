@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71852afb1d1e4bc4bfa6d25f9f06ef9f, type: 3}
+  m_Name: CrabTrashCleanupSettings
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 3564648782754230481, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -8238933801513088696, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 7237875559870874924, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -7476701186500121624, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 6401823793560010394, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 3412529914229302495, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 6629531638634758193, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -6754035626350173249, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 2947306116731677170, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -7312825421872516854, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -3228935305015985440, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -2738816775749348504, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 3815124256748222540, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -7106488265113881277, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: 1671103375678530521, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  - {fileID: -4587490244238992992, guid: 30d283b32b57ec7498664157381dee2a, type: 3}
+  framesPerSecond: 12
+  effectOffset: {x: 0, y: 0, z: 0}
+  effectScale: {x: 0.05, y: 0.05, z: 1}
+  sortingOrderOffset: 1
