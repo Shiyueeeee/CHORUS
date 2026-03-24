@@ -16,8 +16,8 @@ public class ClickSpawner : MonoBehaviour
     {
         if (canvas == null)
         {
-            canvas = FindFirstObjectByType<Canvas>();
-            if (canvas == null) return;
+            GameObject canvasObj = GameObject.Find("Canvas-GlobalUI");
+            if (canvasObj != null) canvas = canvasObj.GetComponent<Canvas>();
         }
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -29,8 +29,11 @@ public class ClickSpawner : MonoBehaviour
 
             GameObject ripple = Instantiate(ripplePrefab, canvas.transform);
             ripple.GetComponent<RectTransform>().anchoredPosition = localPoint;
-            ripple.transform.SetAsLastSibling();
             ripple.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;
+
+            Canvas rippleCanvas = ripple.AddComponent<Canvas>();
+            rippleCanvas.overrideSorting = true;
+            rippleCanvas.sortingOrder = 9999;
         }
     }
 }
