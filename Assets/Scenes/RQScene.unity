@@ -6609,11 +6609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4027330457540393792, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Radius
-      value: 3.9854288
+      value: 4.347597
       objectReference: {fileID: 0}
     - target: {fileID: 4027330457540393792, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Offset.x
-      value: -0.4145708
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027330457540393792, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4161255554172240813, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.x
@@ -10928,6 +10932,14 @@ PrefabInstance:
     - target: {fileID: 2200405229942681927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      propertyPath: maxSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      propertyPath: acceleration
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8054778044272082927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_Name

@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickToComplete
       objectReference: {fileID: 0}
+    - target: {fileID: 8753575211164915382, guid: 4d8b73d34d47a784388c0aa718ef35dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

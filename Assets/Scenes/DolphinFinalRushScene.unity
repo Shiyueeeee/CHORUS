@@ -132,6 +132,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1225248554050771747, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225248554050771747, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: dashEnabled
       value: 0
       objectReference: {fileID: 0}

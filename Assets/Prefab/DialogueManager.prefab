@@ -46,3 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
+  speakerText: {fileID: 0}
+  yesNoChoicePanel: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
+  dialogueSfxSource: {fileID: 0}
+  dialogueSfxBaseVolume: 1
+  characterRevealInterval: 0.02
+  playTypewriterBlip: 1
+  typewriterBlipClip: {fileID: 0}
+  typewriterBlipVolume: 0.33
+  charactersPerBlip: 2
