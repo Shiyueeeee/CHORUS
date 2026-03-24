@@ -19,6 +19,7 @@ public class GlobalSceneMusicManager : MonoBehaviour
         Octopus,
         OctopusPath,
         SeaCucumber,
+        ChorusEnding,
         Title
     }
 
@@ -47,6 +48,7 @@ public class GlobalSceneMusicManager : MonoBehaviour
     [SerializeField] private AudioClip octopusBgm;
     [SerializeField] private AudioClip octopusPathBgm;
     [SerializeField] private AudioClip seaCucumberBgm;
+    [SerializeField] private AudioClip chorusEndingBgm;
 
     private AudioSource audioSource;
     private MusicCue currentCue = MusicCue.None;
@@ -175,6 +177,10 @@ public class GlobalSceneMusicManager : MonoBehaviour
             case "SeaCucumberAreaScene":
                 return MusicCue.SeaCucumber;
 
+            case "ChorusScene":
+            case "EndingScene":
+                return MusicCue.ChorusEnding;
+
             default:
                 return MusicCue.None;
         }
@@ -220,6 +226,8 @@ public class GlobalSceneMusicManager : MonoBehaviour
                 return octopusPathBgm;
             case MusicCue.SeaCucumber:
                 return seaCucumberBgm;
+            case MusicCue.ChorusEnding:
+                return chorusEndingBgm;
             default:
                 return null;
         }

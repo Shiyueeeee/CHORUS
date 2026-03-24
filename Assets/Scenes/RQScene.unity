@@ -6945,7 +6945,7 @@ MonoBehaviour:
     sfxVolumeScale: 1
   ensembleYesLabel: Yes
   ensembleNoLabel: No
-  endingSceneName: EndingScene
+  endingSceneName: ChorusScene
   objectToActivate: {fileID: 85474048}
 --- !u!4 &1389522806 stripped
 Transform:

@@ -184,8 +184,9 @@ MonoBehaviour:
   dolphinBgm: {fileID: 8300000, guid: 77c2331c95049b641baa891c5788112c, type: 3}
   sharkBgm: {fileID: 8300000, guid: e7880aede4f73db469aca0a3cbf4a25c, type: 3}
   octopusBgm: {fileID: 8300000, guid: 1082b76185d8b554f8d24fd2702ab2b9, type: 3}
-  octopusPathBgm: {fileID: 0}
+  octopusPathBgm: {fileID: 8300000, guid: c10ad678369af844aad0bc27fee0b22d, type: 3}
   seaCucumberBgm: {fileID: 8300000, guid: 394a1eefef2a83641a07e502cb383fc7, type: 3}
+  chorusEndingBgm: {fileID: 8300000, guid: 758cf3875233cd540a72d36bc24762cb, type: 3}
 --- !u!114 &26519445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4438,6 +4439,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScreenshotSystem
   captureKey: 105
   superSize: 1
+  feedbackAudioSource: {fileID: 0}
+  captureSound: {fileID: 8300000, guid: 57c9f0ee6abae09408850e2a52b9bccf, type: 3}
+  captureSoundVolume: 1
+  copyToClipboardAfterCapture: 1
   exceptInTargetScene: 1
   targetScenes:
   - TitleScene

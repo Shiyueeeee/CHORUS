@@ -16,6 +16,12 @@ public class ScreenshotSystem : MonoBehaviour
     [SerializeField] private Key captureKey = Key.F12;
     [SerializeField] private int superSize = 1;
 
+    [Header("Feedback")]
+    [SerializeField] private AudioSource feedbackAudioSource;
+    [SerializeField] private AudioClip captureSound;
+    [SerializeField] [Range(0f, 1f)] private float captureSoundVolume = 1f;
+    [SerializeField] private bool copyToClipboardAfterCapture = true;
+
     [Header("Scene Filter")]
     [SerializeField] private bool exceptInTargetScene = true;
     [SerializeField] private string[] targetScenes = { "RQScene", "TitleScene" };
@@ -42,6 +48,7 @@ public class ScreenshotSystem : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        EnsureFeedbackAudioSource();
     }
 
     private void Update()
@@ -79,6 +86,7 @@ public class ScreenshotSystem : MonoBehaviour
     private IEnumerator CaptureRoutine()
     {
         isCapturing = true;
+        PlayCaptureFeedback();
 
         yield return new WaitForEndOfFrame();
 
@@ -94,8 +102,45 @@ public class ScreenshotSystem : MonoBehaviour
             yield return null;
         }
 
-        if (File.Exists(fullPath)) ScreenshotSaved?.Invoke(fullPath);
+        if (File.Exists(fullPath))
+        {
+            TryCopyScreenshotToClipboard(fullPath);
+            ScreenshotSaved?.Invoke(fullPath);
+        }
 
         isCapturing = false;
+    }
+
+    private void EnsureFeedbackAudioSource()
+    {
+        if (feedbackAudioSource != null) return;
+
+        feedbackAudioSource = GetComponent<AudioSource>();
+        if (feedbackAudioSource == null)
+            feedbackAudioSource = gameObject.AddComponent<AudioSource>();
+
+        feedbackAudioSource.playOnAwake = false;
+        feedbackAudioSource.loop = false;
+        feedbackAudioSource.spatialBlend = 0f;
+        AudioSettingsManager.ApplySfxVolume(feedbackAudioSource);
+    }
+
+    private void PlayCaptureFeedback()
+    {
+        if (captureSound == null) return;
+
+        EnsureFeedbackAudioSource();
+        if (feedbackAudioSource == null) return;
+
+        AudioSettingsManager.ApplySfxVolume(feedbackAudioSource);
+        feedbackAudioSource.PlayOneShot(captureSound, captureSoundVolume);
+    }
+
+    private void TryCopyScreenshotToClipboard(string fullPath)
+    {
+        if (!copyToClipboardAfterCapture || !ClipboardImageUtility.IsCopySupported) return;
+
+        if (!ClipboardImageUtility.TryCopyImageFileToClipboard(fullPath))
+            Debug.LogWarning($"ScreenshotSystem: Failed to copy screenshot to clipboard. Path: {fullPath}");
     }
 }

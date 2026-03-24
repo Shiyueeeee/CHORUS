@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995199809}
   - component: {fileID: 1995199808}
+  - component: {fileID: 1995199810}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -308,9 +309,126 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1995199810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995199807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!1 &2127001204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127001205}
+  - component: {fileID: 2127001206}
+  m_Layer: 0
+  m_Name: ChorusSceneSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2127001205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127001204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.99031, y: 15.42178, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2127001206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127001204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f0aa0c47c54df2b8822ef83de1b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChorusSceneSequenceController
+  slideSprites:
+  - {fileID: 21300000, guid: ed49b2196c457414cb3164f4bc00c7c9, type: 3}
+  - {fileID: 21300000, guid: 427286e521a89a34f96d498ae9d04a15, type: 3}
+  - {fileID: 21300000, guid: d9e17f2c71b249d42bb8e23ef6a095b6, type: 3}
+  - {fileID: 21300000, guid: fac0d54ee0cb710408d51ee019868e00, type: 3}
+  - {fileID: 21300000, guid: 8ec1c25ec7dc3f842b5780e9e739c1c5, type: 3}
+  - {fileID: 21300000, guid: 5204a8a2cc6aa3d4d9197b74629f11b3, type: 3}
+  - {fileID: 21300000, guid: 00f4451a0b355d54396702ffc5304167, type: 3}
+  - {fileID: 21300000, guid: a20dbec39858c7f428775f6324ecfc96, type: 3}
+  - {fileID: 21300000, guid: 246e8ca2be951a14abd47a18ec1f0d66, type: 3}
+  - {fileID: 21300000, guid: e8d09034235f5ff448e56e7c307e2cc6, type: 3}
+  - {fileID: 21300000, guid: e8c1e89ed6274864aa424b82b27d12bd, type: 3}
+  - {fileID: 21300000, guid: 4aec932232460eb459e86eab2a60afa3, type: 3}
+  - {fileID: 21300000, guid: a6f0d72b6c28d46438acbaf975babb40, type: 3}
+  - {fileID: 21300000, guid: 498424eaa85eb7b4b942ef50d8b50fb5, type: 3}
+  - {fileID: 21300000, guid: fbbc330e1d3e6e84b8104a0219a000aa, type: 3}
+  - {fileID: 21300000, guid: 97d5fe37c823c8b4687b5bc1dd0a03c4, type: 3}
+  - {fileID: 21300000, guid: 91c020f2aaf7024419c2e39dd201c2d9, type: 3}
+  - {fileID: 21300000, guid: 656b4809025e9234ab5ab443b5bb57f1, type: 3}
+  - {fileID: 21300000, guid: e11700255ac818e4aa6a8221df127061, type: 3}
+  - {fileID: 21300000, guid: 50c7da8a79291f749af85184005521b7, type: 3}
+  - {fileID: 21300000, guid: 2986e62cd9753534cb512549dd573a67, type: 3}
+  - {fileID: 21300000, guid: a5b326854427c6f4e80a327c3f207b99, type: 3}
+  - {fileID: 21300000, guid: b9f2671503a95b94085740bf3cb603d5, type: 3}
+  - {fileID: 21300000, guid: 77e31aadec409094c9804e45a81a8c8c, type: 3}
+  - {fileID: 21300000, guid: 8ba100c0fe887ec48b2034a395706947, type: 3}
+  - {fileID: 21300000, guid: 1fd61500c10c55e4597159d5fc8ecf31, type: 3}
+  - {fileID: 21300000, guid: 33072d95b3e137d4ea40372407b5012a, type: 3}
+  - {fileID: 21300000, guid: 097d5878af3d6ef4c96a7d60b5e5b6c5, type: 3}
+  - {fileID: 21300000, guid: a0e9464dd5f41c14498f083a39aec92a, type: 3}
+  titleSprite: {fileID: 21300000, guid: c1b24904b85f6db459aea638dc6c7182, type: 3}
+  secondsPerSlide: 1.5
+  fadeToBlackDuration: 0.45
+  lastSlideExtraHold: 2
+  titleFadeDuration: 1.8
+  titleHoldDuration: 2.2
+  nextSceneName: EndingScene
+  useUnscaledTime: 1
+  backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+  titleAnchorMin: {x: 0.2, y: 0.08}
+  titleAnchorMax: {x: 0.8, y: 0.26}
+  titlePaddingMin: {x: 0, y: 0}
+  titlePaddingMax: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 307185097}
   - {fileID: 1995199809}
+  - {fileID: 2127001205}

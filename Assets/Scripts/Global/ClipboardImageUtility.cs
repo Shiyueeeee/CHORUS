@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -26,6 +27,31 @@ public static class ClipboardImageUtility
         Debug.LogWarning("ClipboardImageUtility: Copying images to clipboard is only implemented for Windows.");
         return false;
 #endif
+    }
+
+    public static bool TryCopyImageFileToClipboard(string imagePath)
+    {
+        if (string.IsNullOrWhiteSpace(imagePath) || !File.Exists(imagePath)) return false;
+
+        try
+        {
+            byte[] bytes = File.ReadAllBytes(imagePath);
+            Texture2D texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            if (!texture.LoadImage(bytes))
+            {
+                UnityEngine.Object.Destroy(texture);
+                return false;
+            }
+
+            bool copied = TryCopyTextureToClipboard(texture);
+            UnityEngine.Object.Destroy(texture);
+            return copied;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"ClipboardImageUtility: Failed to copy image file to clipboard. {ex.Message}");
+            return false;
+        }
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
