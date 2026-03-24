@@ -683,23 +683,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Octopus Ambassador
     text: cute base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Octopus Ambassador
     text: cute crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Octopus Ambassador
     text: cute dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Octopus Ambassador
     text: cute shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines: []
   aboutSeaCucumberDialogueLines:
   - speaker: Octopus Ambassador
     text: cute cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Octopus Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &426899642
 GameObject:
@@ -1205,23 +1217,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: healthy octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
   repeatDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &1036169164
 GameObject:
@@ -1697,40 +1721,70 @@ MonoBehaviour:
   postCrabQuestDialogueLines:
   - speaker: Seahorse
     text: Mr. Jones!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: Mr. Jones?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: "..\u2026\u2026(gasp)"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: MR.JONES!!!!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: (The heavy movement of the moving belt stirred up sand, and Mr. Jones opened
       his eyes.)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Mr. Jones
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   postDolphinQuestDialogueLines:
   - speaker: Mr. Jones
     text: You saved the crabs!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: Now go help the dophins
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   postOctopusQuestDialogueLines:
   - speaker: Mr. Jones
     text: You saved the dophins!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: Now go help the octopus.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   postSeaCucumberQuestDialogueLines:
   - speaker: Mr. Jones
     text: WOW you also found shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: now go to sea cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: let shark take you there
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   afterSeaCucumberCompletedDialogueLines: []
   ensemblePromptDialogueLines: []
   ensembleYesLabel: Yes
@@ -1891,16 +1945,28 @@ MonoBehaviour:
   firstEnterDialogueLines:
   - speaker: Seahorse
     text: Ughhhh!!! No!!!! My house!!!!!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: The coral is bleaching and falling apart!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: Even my plants are died!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: What should I do?!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Seahorse
     text: I know! Mr.Jones must know what to do.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
 --- !u!4 &1605839789
 Transform:
   m_ObjectHideFlags: 0
@@ -2062,23 +2128,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice place
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines: []
   aboutSharkDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Dolphin Ambassador
     text: nice cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Dolphin Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &1877554224
 PrefabInstance:
@@ -2171,23 +2249,35 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur shark
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Crab Ambassador
     text: luv ur cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Crab Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &1898014368
 PrefabInstance:
@@ -2280,27 +2370,43 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Shark Ambassador
     text: weak base
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines:
   - speaker: Sea horse
     text: Please take me to sea cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   - speaker: Shark Ambassador
     text: ok fine
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutCrabDialogueLines:
   - speaker: Shark Ambassador
     text: weak crab
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Shark Ambassador
     text: weak dolphin
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSharkDialogueLines: []
   aboutOctopusDialogueLines:
   - speaker: Shark Ambassador
     text: weak octopus
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Shark Ambassador
     text: weak cucumber
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &1988941340 stripped
 GameObject:
