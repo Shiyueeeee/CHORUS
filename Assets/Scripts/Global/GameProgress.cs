@@ -24,6 +24,7 @@ public static class GameProgress
     public static bool whaleEnsembleAccepted = false;
 
     public static bool crabAmbassadorIntroDialogueCompleted = false;
+    public static bool crabAmbassadorPostWhaleDialogueCompleted = false;
     public static bool crabAmbassadorPostDolphinDialogueCompleted = false;
     public static bool crabAmbassadorPostSharkDialogueCompleted = false;
     public static bool crabAmbassadorPostOctopusDialogueCompleted = false;
@@ -63,6 +64,7 @@ public static class GameProgress
         whaleEnsembleAccepted = false;
 
         crabAmbassadorIntroDialogueCompleted = false;
+        crabAmbassadorPostWhaleDialogueCompleted = false;
         crabAmbassadorPostDolphinDialogueCompleted = false;
         crabAmbassadorPostSharkDialogueCompleted = false;
         crabAmbassadorPostOctopusDialogueCompleted = false;

@@ -9,6 +9,9 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
     [Header("Base Dialogue")]
     [SerializeField] private DialogueLineData[] aboutBaseDialogueLines;
 
+    [Header("Whale Dialogue")]
+    [SerializeField] private DialogueLineData[] aboutWhaleDialogueLines;
+
     [Header("Priority Dialogue")]
     [SerializeField] private DialogueLineData[] requestSeaCucumberEscortDialogueLines;
 
@@ -18,6 +21,10 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
     [SerializeField] private DialogueLineData[] aboutSharkDialogueLines;
     [SerializeField] private DialogueLineData[] aboutOctopusDialogueLines;
     [SerializeField] private DialogueLineData[] aboutSeaCucumberDialogueLines;
+
+    [Header("Symphony Repeat Dialogue")]
+    [SerializeField] private DialogueLineData[] symphonyRepeatDialogueLines;
+    [SerializeField] private DialogueBlockData[] randomSymphonyRepeatDialogueBlocks;
 
     [Header("Repeat Dialogue")]
     [SerializeField] private DialogueLineData[] repeatDialogueLines =
@@ -60,6 +67,16 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
             {
                 activeTopic = ResidentDialogueTopic.AboutBase;
                 return baseLines;
+            }
+        }
+
+        if (!HasSeenTopic(ResidentDialogueTopic.AboutWhale))
+        {
+            List<DialogueLineData> whaleLines = BuildDialogueList(aboutWhaleDialogueLines, speakerName);
+            if (whaleLines != null && whaleLines.Count > 0)
+            {
+                activeTopic = ResidentDialogueTopic.AboutWhale;
+                return whaleLines;
             }
         }
 
@@ -114,6 +131,9 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
         }
 
         activeTopic = ResidentDialogueTopic.Repeat;
+        if (GameProgress.whalePostSeaCucumberDialogueCompleted && !GameProgress.whaleEnsembleAccepted)
+            return BuildRandomDialogueList(randomSymphonyRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(symphonyRepeatDialogueLines, speakerName) ?? BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
+
         return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
@@ -211,12 +231,13 @@ public enum ResidentDialogueTopic
 {
     Repeat = 0,
     AboutBase = 1 << 0,
-    AboutCrab = 1 << 1,
-    AboutDolphin = 1 << 2,
-    AboutShark = 1 << 3,
-    AboutOctopus = 1 << 4,
-    AboutSeaCucumber = 1 << 5,
-    RequestSeaCucumberEscort = 1 << 6
+    AboutWhale = 1 << 1,
+    AboutCrab = 1 << 2,
+    AboutDolphin = 1 << 3,
+    AboutShark = 1 << 4,
+    AboutOctopus = 1 << 5,
+    AboutSeaCucumber = 1 << 6,
+    RequestSeaCucumberEscort = 1 << 7
 }
 
 public enum RQResidentType

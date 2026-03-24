@@ -889,37 +889,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 3
-  speakerName: Octopus Ambassador
+  speakerName: Oliver
   aboutBaseDialogueLines:
-  - speaker: Octopus Ambassador
-    text: cute base
+  - speaker: Oliver
+    text: U-um, hi everyone...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines:
+  - speaker: Oliver
+    text: "T-that's Mr.Jones? He's m-my grandfather's friend\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
-  - speaker: Octopus Ambassador
-    text: cute crab
+  - speaker: Oliver
+    text: Hey B-Bob, did K-Kirby bully you?
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
-  - speaker: Octopus Ambassador
-    text: cute dolphin
+  - speaker: Oliver
+    text: "D-Dorothy, glad to see you here\u2026Don't worry now, t-the oil rig won't
+      bother you anymore."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
-  - speaker: Octopus Ambassador
-    text: cute shark
+  - speaker: Oliver
+    text: "S-Shrauk? That m-muscle\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines: []
   aboutSeaCucumberDialogueLines:
-  - speaker: Octopus Ambassador
-    text: cute cucumber
+  - speaker: Oliver
+    text: "Dr.Luma! Thank you so much-much! You healed m-my friends and f-family\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines:
+  - speaker: Oliver
+    text: I-I'm ready! Let's d-do it!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
-  - speaker: Octopus Ambassador
-    text: ......
+  - speaker: Oliver
+    text: "I need to p-practice this song b-before we preform\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -3531,37 +3543,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 4
-  speakerName: Sea Cucumber Ambassador
+  speakerName: Dr.Luma
   aboutBaseDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: healthy base
+  - speaker: Dr.Luma
+    text: Wow wow wow, Dr.Luma love your base! Such a lovely place. Dr.Luma loves
+      traveling.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines:
+  - speaker: Dr.Luma
+    text: "Jones! My old friend. Why are you always tired? Dr.Luma never gets tired!
+      I\u2019m full of enthusiasm for life, work, and my family\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: healthy crab
+  - speaker: Dr.Luma
+    text: "Bob! Glad to see you here. You guys must be busy! Last time Dr.Luma been
+      to your place was like\u2026when was that? You probably wasn't born yet. (Laugh)"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: healthy dolphin
+  - speaker: Dr.Luma
+    text: "Dorothy! Such a beautiful voice\u2026 When are you releasing new songs?
+      Dr. Luma can't wait to hear it!"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: healthy shark
+  - speaker: Dr.Luma
+    text: Hey Shrauk, you need to protect your teeth. Stop by at Dr.Luma's clinic,
+      Dr.Luma will give you free exam.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: healthy octopus
+  - speaker: Dr.Luma
+    text: "Oh poor Oliver\u2026Don't worry about your brothers. Dr.Luma already treat
+      them before I come. Oh, this little sea horse helped me a lot! Thank you little
+      guy."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
+  symphonyRepeatDialogueLines:
+  - speaker: Dr.Luma
+    text: "Dr. Luma can't wait to play! You didn't know but Dr.Luma is good at music!
+      I was playing in a band called\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
-  - speaker: Sea Cucumber Ambassador
-    text: ......
+  - speaker: Dr.Luma
+    text: "Dr.Luma loves the temperature today\u2026hmm, is coral lesser than before?"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -6633,7 +6664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86ae63c5b6f9b54291450cfca667b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WhaleInteraction
-  speakerName: Whale
+  speakerName: Mr. Jones
   postCrabQuestDialogueLines:
   - speaker: Seahorse
     text: Mr. Jones!
@@ -8317,6 +8348,11 @@ MonoBehaviour:
     text: The ocean is quiter, and louder...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines:
+  - speaker: Dorothy
+    text: Jones. Still likes to sleep. (Laugh)
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dorothy
@@ -8334,7 +8370,8 @@ MonoBehaviour:
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dorothy
-    text: Nice Octopus
+    text: "Oliver\u2026Thank goodness that oil rig stop working\u2026it was very
+      loud."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
@@ -8342,9 +8379,15 @@ MonoBehaviour:
     text: "Dr. Luma, thank you for everything you\u2019ve done for everyone."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines:
+  - speaker: Dorothy
+    text: Let human hear our voice.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dorothy
-    text: ......
+    text: "I stop singing a long time ago\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -9045,9 +9088,24 @@ MonoBehaviour:
   speakerName: Little Crab Bob
   aboutBaseDialogueLines:
   - speaker: Little Crab Bob
-    text: Is that Mr.Jones? He is huge...
+    text: This is such a nice place...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  - speaker: Little Crab Bob
+    text: I wish Boss won't fire me...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Little Crab Bob
+    text: Once we're done with this, I'll have to head back... There's a huge pile
+      of trash waiting to be cleaned up, and if I get back too late, the boss is
+      definitely going to be furious...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  aboutWhaleDialogueLines:
+  - speaker: Little Crab Bob
+    text: Is that Mr.Jones? He is huge...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
@@ -9070,6 +9128,12 @@ MonoBehaviour:
     text: Dr. Luma is the best doctor, just a little bit too talktive...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines:
+  - speaker: Little Crab Bob
+    text: "I'm so nervous\u2026what if I messed up?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Little Crab Bob
     text: ......
@@ -9183,45 +9247,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 2
-  speakerName: Shark Ambassador
+  speakerName: Shrauk
   aboutBaseDialogueLines:
-  - speaker: Shark Ambassador
-    text: weak base
+  - speaker: Shrauk
+    text: Heh.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines:
+  - speaker: Shrauk
+    text: Sleepy Whales.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines:
   - speaker: Sea horse
-    text: Please take me to sea cucumber
+    text: Please take me to sea cucumber.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
-  - speaker: Shark Ambassador
-    text: ok fine
+  - speaker: Shrauk
+    text: Ok fine.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutCrabDialogueLines:
-  - speaker: Shark Ambassador
-    text: weak crab
+  - speaker: Shrauk
+    text: Weak Crab.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
-  - speaker: Shark Ambassador
-    text: weak dolphin
+  - speaker: Shrauk
+    text: "Instead of lecturing me, you\u2019d be better off saving your breath and
+      taking care of your voice. Dorothy."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSharkDialogueLines: []
   aboutOctopusDialogueLines:
-  - speaker: Shark Ambassador
-    text: weak octopus
+  - speaker: Shrauk
+    text: Weak Octopus.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
-  - speaker: Shark Ambassador
-    text: weak cucumber
+  - speaker: Shrauk
+    text: Weak Sea Cucumber. And annoying.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines:
+  - speaker: Shrauk
+    text: Can we play that stupid song yet?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 0
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
-  - speaker: Shark Ambassador
-    text: ......
+  - speaker: Shrauk
+    text: Boring.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []

@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d86f0d4808939a45986450b3c1583ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabRushManager
-  rushDuration: 4
+  rushDuration: 30
   sceneName: DolphinFinalAreaScene
 --- !u!4 &1441306238
 Transform:

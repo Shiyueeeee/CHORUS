@@ -8,6 +8,9 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
     [Header("Post Crab Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postCrabQuestDialogueLines;
 
+    [Header("Post Whale Dialogue")]
+    [SerializeField] private DialogueLineData[] postWhaleDialogueLines;
+
     [Header("Post Dolphin Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postDolphinQuestDialogueLines;
 
@@ -19,6 +22,10 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
 
     [Header("Post Sea Cucumber Quest Dialogue")]
     [SerializeField] private DialogueLineData[] postSeaCucumberQuestDialogueLines;
+
+    [Header("Symphony Repeat Dialogue")]
+    [SerializeField] private DialogueLineData[] symphonyRepeatDialogueLines;
+    [SerializeField] private DialogueBlockData[] randomSymphonyRepeatDialogueBlocks;
 
     [Header("Repeat Dialogue")]
     [SerializeField] private DialogueLineData[] repeatDialogueLines =
@@ -40,6 +47,16 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
         {
             activePhase = DialoguePhase.PostCrabQuest;
             return BuildDialogueList(postCrabQuestDialogueLines, speakerName);
+        }
+
+        if (!GameProgress.crabAmbassadorPostWhaleDialogueCompleted)
+        {
+            List<DialogueLineData> lines = BuildDialogueList(postWhaleDialogueLines, speakerName);
+            if (lines != null && lines.Count > 0)
+            {
+                activePhase = DialoguePhase.PostWhaleQuest;
+                return lines;
+            }
         }
 
         if (GameProgress.dolphinCompleted && !GameProgress.crabAmbassadorPostDolphinDialogueCompleted)
@@ -67,6 +84,9 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
         }
 
         activePhase = DialoguePhase.Repeat;
+        if (GameProgress.whalePostSeaCucumberDialogueCompleted && !GameProgress.whaleEnsembleAccepted)
+            return BuildRandomDialogueList(randomSymphonyRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(symphonyRepeatDialogueLines, speakerName) ?? BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
+
         return BuildRandomDialogueList(randomRepeatDialogueBlocks, speakerName) ?? BuildDialogueList(repeatDialogueLines, speakerName);
     }
 
@@ -78,6 +98,9 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
         {
             case DialoguePhase.PostCrabQuest:
                 GameProgress.crabAmbassadorIntroDialogueCompleted = true;
+                break;
+            case DialoguePhase.PostWhaleQuest:
+                GameProgress.crabAmbassadorPostWhaleDialogueCompleted = true;
                 break;
             case DialoguePhase.PostDolphinQuest:
                 GameProgress.crabAmbassadorPostDolphinDialogueCompleted = true;
@@ -97,6 +120,7 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
     private enum DialoguePhase
     {
         PostCrabQuest,
+        PostWhaleQuest,
         PostDolphinQuest,
         PostSharkQuest,
         PostOctopusQuest,
