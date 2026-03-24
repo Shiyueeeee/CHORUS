@@ -81,6 +81,7 @@ public class CrabLeaderInteraction : NpcDialogueInteractionBase
         GameProgress.crabCompleted = true;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
+        GameSaveSystem.SaveCheckpoint(returnSceneName, returnSpawnPointName);
         SceneTransition.LoadScene(returnSceneName);
     }
 

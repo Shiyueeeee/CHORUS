@@ -36,4 +36,44 @@ public static class GameProgress
     public static int seaCucumberAmbassadorDialogueFlags = 0;
 
     public static bool rqIntroDialogueCompleted = false;
+
+    public static void ResetAll()
+    {
+        crabCompleted = false;
+        dolphinQuestAccepted = false;
+        dolphinCompleted = false;
+        sharkCompleted = false;
+        octopusQuestAccepted = false;
+        octopusTaskReadyToTurnIn = false;
+        octopusDyingNpcHintDialogueCompleted = false;
+        octopusCompleted = false;
+        sharkEscortToSeaCucumberRequested = false;
+        seaCucumberQuestAccepted = false;
+        seaCucumberTriageCompleted = false;
+        seaCucumberInternalTreatmentCompleted = false;
+        seaCucumberExternalTreatmentCompleted = false;
+        seaCucumberCompleted = false;
+
+        whaleIntroDialogueCompleted = false;
+        whalePostCrabDialogueCompleted = false;
+        whalePostDolphinDialogueCompleted = false;
+        whalePostSharkDialogueCompleted = false;
+        whalePostOctopusDialogueCompleted = false;
+        whalePostSeaCucumberDialogueCompleted = false;
+        whaleEnsembleAccepted = false;
+
+        crabAmbassadorIntroDialogueCompleted = false;
+        crabAmbassadorPostDolphinDialogueCompleted = false;
+        crabAmbassadorPostSharkDialogueCompleted = false;
+        crabAmbassadorPostOctopusDialogueCompleted = false;
+        crabAmbassadorPostSeaCucumberDialogueCompleted = false;
+
+        crabResidentAmbassadorDialogueFlags = 0;
+        dolphinAmbassadorDialogueFlags = 0;
+        sharkAmbassadorDialogueFlags = 0;
+        octopusAmbassadorDialogueFlags = 0;
+        seaCucumberAmbassadorDialogueFlags = 0;
+
+        rqIntroDialogueCompleted = false;
+    }
 }

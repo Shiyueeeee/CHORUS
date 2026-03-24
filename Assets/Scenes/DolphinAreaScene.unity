@@ -1918,8 +1918,10 @@ MonoBehaviour:
   movementAnimationThreshold: 0.01
   shipFollowHintOffset: {x: 0, y: 2.2, z: 0}
   shipFollowHintSize: {x: 120, y: 120}
+  shipFollowHintScale: 1.5
   shipFollowHintBlinkSpeed: 6
   shipFollowHintColor: {r: 0.2, g: 0.6, b: 1, a: 1}
+  shipFollowHintSprite: {fileID: 0}
 --- !u!212 &1632839073
 SpriteRenderer:
   serializedVersion: 2
@@ -2637,6 +2639,22 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 335672989}
+    - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipFollowHintScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipFollowHintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipFollowHintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740884931180976732, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipFollowHintColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1970624728873548316, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
       propertyPath: m_Size.x
       value: 15
