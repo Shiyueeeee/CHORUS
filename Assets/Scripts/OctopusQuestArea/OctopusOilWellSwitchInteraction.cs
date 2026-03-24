@@ -24,7 +24,19 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
     [SerializeField] private GameObject radiationGroupObject;
     [SerializeField] private GameObject wallObjectToDisable;
 
+    [Header("Completed Visual")]
+    [SerializeField] private SpriteRenderer switchSpriteRenderer;
+    [SerializeField] private Sprite completedSprite;
+
+    private Interactable interactable;
+
     private DialoguePhase activePhase = DialoguePhase.Repeat;
+
+    private void Start()
+    {
+        interactable = GetComponent<Interactable>();
+        RefreshSwitchVisualState();
+    }
 
     protected override string GetSpeakerName()
     {
@@ -62,5 +74,18 @@ public class OctopusOilWellSwitchInteraction : NpcDialogueInteractionBase
 
         if (wallObjectToDisable != null)
             wallObjectToDisable.SetActive(false);
+
+        RefreshSwitchVisualState();
+    }
+
+    private void RefreshSwitchVisualState()
+    {
+        bool oilWellsClosed = GameProgress.octopusTaskReadyToTurnIn || GameProgress.octopusCompleted;
+
+        if (interactable != null)
+            interactable.SetInteractionEnabled(!oilWellsClosed);
+
+        if (oilWellsClosed && switchSpriteRenderer != null && completedSprite != null)
+            switchSpriteRenderer.sprite = completedSprite;
     }
 }
