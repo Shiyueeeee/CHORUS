@@ -49,6 +49,7 @@ public class DolphinLeaderInteraction : NpcDialogueInteractionBase
         GameProgress.dolphinCompleted = true;
 
         SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
+        GameSaveSystem.SaveCheckpoint(returnSceneName, returnSpawnPointName);
         SceneTransition.LoadScene(returnSceneName);
     }
 

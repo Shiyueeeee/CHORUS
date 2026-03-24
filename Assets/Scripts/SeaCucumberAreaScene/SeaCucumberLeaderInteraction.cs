@@ -14,6 +14,7 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
     };
     [SerializeField] private DialogueBlockData[] randomRepeatDialogueBlocks;
     [SerializeField] private string returnSceneName = "RQScene";
+    [SerializeField] private string returnSpawnPointName = "Spawn_SeaCucumberReturn";
 
     private SeaCucumberDialoguePhase activePhase = SeaCucumberDialoguePhase.Repeat;
 
@@ -56,6 +57,8 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
             return;
 
         GameProgress.seaCucumberCompleted = true;
+        SceneSpawnData.returnSpawnPointName = returnSpawnPointName;
+        GameSaveSystem.SaveCheckpoint(returnSceneName, returnSpawnPointName);
         SceneTransition.LoadScene(returnSceneName);
     }
 
