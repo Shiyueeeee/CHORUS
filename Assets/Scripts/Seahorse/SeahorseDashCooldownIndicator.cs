@@ -30,6 +30,7 @@ namespace Seahorse
         [SerializeField] private Color readyColor = new(0.94f, 1f, 0.84f, 1f);
 
         private SpriteRenderer[] targetSprites = System.Array.Empty<SpriteRenderer>();
+        private SpriteRenderer primarySprite;
         private Material runtimeMaterial;
         private MaterialPropertyBlock backgroundBlock;
         private MaterialPropertyBlock fillBlock;
@@ -75,20 +76,32 @@ namespace Seahorse
 
         private void ResolveTarget()
         {
-            if (targetDash == null)
-                targetDash = FindFirstObjectByType<SeahorseDash>();
+            SeahorseDash resolvedDash = ResolveTargetDash();
+            if (resolvedDash != targetDash)
+                targetDash = resolvedDash;
 
             if (targetDash != cachedDash)
             {
                 cachedDash = targetDash;
+                followTarget = null;
+                sortingReference = null;
                 CacheTargetVisuals();
+                lastRadius = -1f;
+                lastThickness = -1f;
+                lastProgress = -1f;
+                lastSegmentCount = -1;
             }
 
             if (followTarget == null && targetDash != null)
                 followTarget = targetDash.transform;
 
-            if (sortingReference == null && targetSprites.Length > 0)
-                sortingReference = targetSprites[0];
+            if (sortingReference == null)
+            {
+                if (primarySprite != null)
+                    sortingReference = primarySprite;
+                else if (targetSprites.Length > 0)
+                    sortingReference = targetSprites[0];
+            }
         }
 
         private void CacheTargetVisuals()
@@ -96,13 +109,102 @@ namespace Seahorse
             if (targetDash == null)
             {
                 targetSprites = System.Array.Empty<SpriteRenderer>();
+                primarySprite = null;
                 sortingReference = null;
                 return;
             }
 
             targetSprites = targetDash.GetComponentsInChildren<SpriteRenderer>();
-            if (sortingReference == null && targetSprites.Length > 0)
-                sortingReference = targetSprites[0];
+            SeahorseVisual seahorseVisual = targetDash.GetComponentInChildren<SeahorseVisual>();
+            primarySprite = seahorseVisual != null ? seahorseVisual.GetComponent<SpriteRenderer>() : null;
+
+            if (sortingReference == null)
+            {
+                if (primarySprite != null)
+                    sortingReference = primarySprite;
+                else if (targetSprites.Length > 0)
+                    sortingReference = targetSprites[0];
+            }
+        }
+
+        private SeahorseDash ResolveTargetDash()
+        {
+            if (IsUsableDash(targetDash))
+                return targetDash;
+
+            SeahorseDash scopedDash = FindDashInLocalScope();
+            if (scopedDash != null)
+                return scopedDash;
+
+            SeahorseDash[] sceneDashes = FindObjectsByType<SeahorseDash>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
+
+            SeahorseDash sceneDash = SelectBestDash(sceneDashes);
+            return sceneDash != null ? sceneDash : targetDash;
+        }
+
+        private SeahorseDash FindDashInLocalScope()
+        {
+            for (Transform scope = transform.parent; scope != null; scope = scope.parent)
+            {
+                SeahorseDash[] scopedDashes = scope.GetComponentsInChildren<SeahorseDash>(true);
+                SeahorseDash bestDash = SelectBestDash(scopedDashes);
+                if (bestDash != null)
+                    return bestDash;
+            }
+
+            return null;
+        }
+
+        private SeahorseDash SelectBestDash(SeahorseDash[] candidates)
+        {
+            SeahorseDash bestDash = null;
+            int bestScore = int.MinValue;
+            float bestDistance = float.MaxValue;
+
+            for (int i = 0; i < candidates.Length; i++)
+            {
+                SeahorseDash candidate = candidates[i];
+                if (candidate == null)
+                    continue;
+
+                int score = GetDashScore(candidate);
+                float distance = (candidate.transform.position - transform.position).sqrMagnitude;
+                if (score < bestScore)
+                    continue;
+
+                if (score == bestScore && distance >= bestDistance)
+                    continue;
+
+                bestDash = candidate;
+                bestScore = score;
+                bestDistance = distance;
+            }
+
+            return bestDash;
+        }
+
+        private static bool IsUsableDash(SeahorseDash dash)
+        {
+            return dash != null && dash.isActiveAndEnabled;
+        }
+
+        private static int GetDashScore(SeahorseDash dash)
+        {
+            if (dash == null)
+                return int.MinValue;
+
+            if (dash.isActiveAndEnabled)
+                return 3;
+
+            if (dash.gameObject.activeInHierarchy)
+                return 2;
+
+            if (dash.enabled)
+                return 1;
+
+            return 0;
         }
 
         private void EnsureVisuals()
@@ -230,6 +332,18 @@ namespace Seahorse
 
         private bool TryGetTargetBounds(out Bounds bounds)
         {
+            if (primarySprite != null && primarySprite.enabled)
+            {
+                bounds = primarySprite.bounds;
+                return true;
+            }
+
+            if (sortingReference is SpriteRenderer referenceSprite && referenceSprite.enabled)
+            {
+                bounds = referenceSprite.bounds;
+                return true;
+            }
+
             bool hasBounds = false;
             bounds = default;
 

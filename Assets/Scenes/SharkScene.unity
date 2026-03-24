@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 712622230}
   - component: {fileID: 712622229}
   - component: {fileID: 712622228}
+  - component: {fileID: 712622234}
   m_Layer: 0
   m_Name: Seahorse_Phase2
   m_TagString: Player
@@ -1464,6 +1465,33 @@ Transform:
   - {fileID: 970422469}
   m_Father: {fileID: 251892125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712622234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712622227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4cb2681df54fa4a75bda3417d2ef16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseDash
+  dashEnabled: 1
+  seahorseController: {fileID: 0}
+  seahorseMotor: {fileID: 0}
+  rb: {fileID: 0}
+  bodyCollider: {fileID: 0}
+  oceanBound: {fileID: 0}
+  playerHealth: {fileID: 0}
+  dashDistance: 4
+  dashDuration: 0.08
+  dashCooldown: 1
+  longCooldown: 2.5
+  dashesBeforeLongCooldown: 2
+  chainedDashResetDelay: 4
+  defaultDashDirection: {x: 1, y: 0}
+  directionDeadzone: 0.01
 --- !u!1 &713695008
 GameObject:
   m_ObjectHideFlags: 0
