@@ -178,23 +178,34 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 57100e6adec69bf4b9afcf164082392c, type: 3}
   - {fileID: 21300000, guid: 434331e40213be544810301176dfd3a1, type: 3}
   creditsTitle: Credits
-  creditsTitleFontSize: 60
-  creditsRoleFontSize: 40
-  creditsNameFontSize: 34
-  creditsClosingHeading: CHORUS
-  creditsClosingFontSize: 60
-  creditsClosingText: Thank you for playing
+  creditsTitleFontSize: 80
+  creditsRoleFontSize: 50
+  creditsNameFontSize: 40
+  creditsClosingHeading: MESSAGE
+  creditsClosingFontSize: 40
+  creditsClosingText: 'Thank you for playing
+
+    CHORUS
+
+
+    Protect the Earth
+
+    Start
+    from us.'
   creditSections:
-  - heading: DESIGN / ART
+  - heading: NARRATIVE DESIGN
     names:
     - Olivia Wang
-  - heading: DESIGN
+  - heading: LEVEL DESIGN
     names:
-    - Alex
+    - Alex Guo
   - heading: PROGRAMMING
     names:
-    - Lucia
-    - Richard
+    - Lucia Liu
+    - Richard Qu
+  - heading: MUSIC
+    names:
+    - Olivia Wang
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
