@@ -46,8 +46,10 @@ public class DolphinFollowPositionController : MonoBehaviour
     [Header("Ship Follow Hint")]
     [SerializeField] private Vector3 shipFollowHintOffset = new Vector3(0f, 2.2f, 0f);
     [SerializeField] private Vector2 shipFollowHintSize = new Vector2(120f, 120f);
+    [SerializeField] private float shipFollowHintScale = 1.5f;
     [SerializeField] private float shipFollowHintBlinkSpeed = 6f;
     [SerializeField] private Color shipFollowHintColor = new Color(0.2f, 0.6f, 1f, 1f);
+    [SerializeField] private Sprite shipFollowHintSprite;
 
     private int horizontalSide = 1;
     private readonly Collider2D[] overlapResults = new Collider2D[16];
@@ -453,8 +455,6 @@ public class DolphinFollowPositionController : MonoBehaviour
         if (!showShipFollowHint || !canFollow || isFollowing || playerTransform == null)
             return;
 
-        EnsureShipFollowHintStyle();
-
         UnityEngine.Camera currentCamera = UnityEngine.Camera.main;
         Vector3 worldPosition = playerTransform.position + shipFollowHintOffset;
         Vector3 screenPoint = currentCamera != null
@@ -464,18 +464,65 @@ public class DolphinFollowPositionController : MonoBehaviour
         if (screenPoint.z < 0f)
             return;
 
+        Vector2 scaledHintSize = shipFollowHintSize * Mathf.Max(0.01f, shipFollowHintScale);
         Rect labelRect = new Rect(
-            screenPoint.x - (shipFollowHintSize.x * 0.5f),
-            Screen.height - screenPoint.y - (shipFollowHintSize.y * 0.5f),
-            shipFollowHintSize.x,
-            shipFollowHintSize.y);
+            screenPoint.x - (scaledHintSize.x * 0.5f),
+            Screen.height - screenPoint.y - (scaledHintSize.y * 0.5f),
+            scaledHintSize.x,
+            scaledHintSize.y);
 
         Color originalColor = GUI.color;
         Color hintColor = shipFollowHintColor;
         hintColor.a = Mathf.Lerp(0.25f, 1f, (Mathf.Sin(Time.unscaledTime * shipFollowHintBlinkSpeed) + 1f) * 0.5f);
         GUI.color = hintColor;
-        GUI.Label(labelRect, "F", shipFollowHintStyle);
+
+        if (shipFollowHintSprite != null)
+        {
+            DrawShipFollowHintSprite(labelRect);
+        }
+        else
+        {
+            EnsureShipFollowHintStyle();
+            GUI.Label(labelRect, "F", shipFollowHintStyle);
+        }
+
         GUI.color = originalColor;
+    }
+
+    private void DrawShipFollowHintSprite(Rect targetRect)
+    {
+        Texture2D texture = shipFollowHintSprite.texture;
+        if (texture == null)
+            return;
+
+        Rect spriteRect = shipFollowHintSprite.rect;
+        float aspect = spriteRect.height > 0f ? spriteRect.width / spriteRect.height : 1f;
+        Rect drawRect = GetAspectFittedRect(targetRect, aspect);
+        Rect uvRect = new Rect(
+            spriteRect.x / texture.width,
+            spriteRect.y / texture.height,
+            spriteRect.width / texture.width,
+            spriteRect.height / texture.height);
+
+        GUI.DrawTextureWithTexCoords(drawRect, texture, uvRect, true);
+    }
+
+    private Rect GetAspectFittedRect(Rect targetRect, float aspect)
+    {
+        if (aspect <= 0f)
+            return targetRect;
+
+        float targetAspect = targetRect.width / targetRect.height;
+        if (targetAspect > aspect)
+        {
+            float width = targetRect.height * aspect;
+            float x = targetRect.x + ((targetRect.width - width) * 0.5f);
+            return new Rect(x, targetRect.y, width, targetRect.height);
+        }
+
+        float height = targetRect.width / aspect;
+        float y = targetRect.y + ((targetRect.height - height) * 0.5f);
+        return new Rect(targetRect.x, y, targetRect.width, height);
     }
 
     private void EnsureShipFollowHintStyle()
