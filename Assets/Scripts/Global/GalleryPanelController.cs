@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GalleryPanelController : MonoBehaviour
 {
+    private const string BuiltinFontName = "LegacyRuntime.ttf";
+
     [Header("References")]
     [SerializeField] private RectTransform contentRoot;
 
@@ -20,14 +22,38 @@ public class GalleryPanelController : MonoBehaviour
     [SerializeField] private Vector2 deleteButtonSize = new Vector2(30f, 30f);
     [SerializeField] private Color deleteButtonColor = new Color(0.8f, 0.15f, 0.15f, 0.95f);
 
-    [Header("Preview")]
-    [SerializeField] private Vector2 previewSize = new Vector2(1000f, 560f);
+    [Header("Preview Overlay")]
+    [SerializeField] private Color previewOverlayColor = new Color(0f, 0f, 0f, 0f);
+
+    [Header("Preview Image")]
+    [SerializeField] private Vector2 previewImageSize = new Vector2(1000f, 560f);
+    [SerializeField] private Vector2 previewImagePosition = Vector2.zero;
+
+    [Header("Preview Close Button")]
     [SerializeField] private Vector2 previewCloseButtonSize = new Vector2(44f, 44f);
+    [SerializeField] private Vector2 previewCloseButtonPosition = new Vector2(-120f, -18f);
+    [SerializeField] private Color previewCloseButtonColor = new Color(0.95f, 0.95f, 0.95f, 0.95f);
+    [SerializeField] private string previewCloseButtonText = "X";
+    [SerializeField] private int previewCloseButtonFontSize = 26;
+    [SerializeField] private Color previewCloseButtonTextColor = Color.black;
+    [SerializeField] private Font previewCloseButtonFont;
+
+    [Header("Preview Copy Button")]
+    [SerializeField] private Vector2 previewCopyButtonSize = new Vector2(120f, 44f);
+    [SerializeField] private Vector2 previewCopyButtonPosition = new Vector2(-176f, -18f);
+    [SerializeField] private Color previewCopyButtonColor = new Color(0.86f, 0.96f, 1f, 0.95f);
+    [SerializeField] private string previewCopyButtonText = "Copy";
+    [SerializeField] private int previewCopyButtonFontSize = 20;
+    [SerializeField] private Color previewCopyButtonTextColor = new Color(0.08f, 0.08f, 0.08f, 1f);
+    [SerializeField] private Font previewCopyButtonFont;
 
     private readonly List<Texture2D> loadedTextures = new List<Texture2D>();
 
     private GameObject previewOverlay;
     private RawImage previewRawImage;
+    private Button previewCopyButton;
+    private Texture2D currentPreviewTexture;
+    private string currentPreviewPath;
 
     private void Awake()
     {
@@ -136,7 +162,7 @@ public class GalleryPanelController : MonoBehaviour
         overlayRt.offsetMax = Vector2.zero;
 
         Image overlayImage = previewOverlay.GetComponent<Image>();
-        overlayImage.color = new Color(0f, 0f, 0f, 0.82f);
+        overlayImage.color = previewOverlayColor;
 
         GameObject previewObj = new GameObject("PreviewImage", typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage));
         previewObj.transform.SetParent(previewOverlay.transform, false);
@@ -145,8 +171,8 @@ public class GalleryPanelController : MonoBehaviour
         previewRt.anchorMin = new Vector2(0.5f, 0.5f);
         previewRt.anchorMax = new Vector2(0.5f, 0.5f);
         previewRt.pivot = new Vector2(0.5f, 0.5f);
-        previewRt.sizeDelta = previewSize;
-        previewRt.anchoredPosition = Vector2.zero;
+        previewRt.sizeDelta = previewImageSize;
+        previewRt.anchoredPosition = previewImagePosition;
 
         previewRawImage = previewObj.GetComponent<RawImage>();
         previewRawImage.color = Color.white;
@@ -158,11 +184,11 @@ public class GalleryPanelController : MonoBehaviour
         closeRt.anchorMin = new Vector2(1f, 1f);
         closeRt.anchorMax = new Vector2(1f, 1f);
         closeRt.pivot = new Vector2(1f, 1f);
-        closeRt.anchoredPosition = new Vector2(-120f, -18f);
+        closeRt.anchoredPosition = previewCloseButtonPosition;
         closeRt.sizeDelta = previewCloseButtonSize;
 
         Image closeImage = closeObj.GetComponent<Image>();
-        closeImage.color = new Color(0.95f, 0.95f, 0.95f, 0.95f);
+        closeImage.color = previewCloseButtonColor;
 
         Button closeButton = closeObj.GetComponent<Button>();
         closeButton.onClick.AddListener(ClosePreview);
@@ -177,12 +203,46 @@ public class GalleryPanelController : MonoBehaviour
         textRt.offsetMax = Vector2.zero;
 
         Text t = xMark.GetComponent<Text>();
-        t.text = "X";
+        t.text = previewCloseButtonText;
         t.alignment = TextAnchor.MiddleCenter;
-        t.color = Color.black;
-        t.fontSize = 26;
-        t.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        t.color = previewCloseButtonTextColor;
+        t.fontSize = previewCloseButtonFontSize;
+        t.font = ResolveFont(previewCloseButtonFont);
         t.raycastTarget = false;
+
+        GameObject copyObj = new GameObject("Button-CopyPreview", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
+        copyObj.transform.SetParent(previewOverlay.transform, false);
+
+        RectTransform copyRt = copyObj.GetComponent<RectTransform>();
+        copyRt.anchorMin = new Vector2(1f, 1f);
+        copyRt.anchorMax = new Vector2(1f, 1f);
+        copyRt.pivot = new Vector2(1f, 1f);
+        copyRt.anchoredPosition = previewCopyButtonPosition;
+        copyRt.sizeDelta = previewCopyButtonSize;
+
+        Image copyImage = copyObj.GetComponent<Image>();
+        copyImage.color = previewCopyButtonColor;
+
+        previewCopyButton = copyObj.GetComponent<Button>();
+        previewCopyButton.targetGraphic = copyImage;
+        previewCopyButton.onClick.AddListener(CopyCurrentPreviewToClipboard);
+
+        GameObject copyTextObj = new GameObject("Text-Copy", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text));
+        copyTextObj.transform.SetParent(copyObj.transform, false);
+
+        RectTransform copyTextRt = copyTextObj.GetComponent<RectTransform>();
+        copyTextRt.anchorMin = Vector2.zero;
+        copyTextRt.anchorMax = Vector2.one;
+        copyTextRt.offsetMin = Vector2.zero;
+        copyTextRt.offsetMax = Vector2.zero;
+
+        Text copyText = copyTextObj.GetComponent<Text>();
+        copyText.text = previewCopyButtonText;
+        copyText.alignment = TextAnchor.MiddleCenter;
+        copyText.color = previewCopyButtonTextColor;
+        copyText.fontSize = previewCopyButtonFontSize;
+        copyText.font = ResolveFont(previewCopyButtonFont);
+        copyText.raycastTarget = false;
 
         previewOverlay.SetActive(false);
     }
@@ -203,6 +263,8 @@ public class GalleryPanelController : MonoBehaviour
 
         loadedTextures.Clear();
 
+        currentPreviewTexture = null;
+        currentPreviewPath = null;
         ClosePreview();
     }
 
@@ -233,7 +295,7 @@ public class GalleryPanelController : MonoBehaviour
 
         Button cardButton = card.GetComponent<Button>();
         cardButton.targetGraphic = bg;
-        cardButton.onClick.AddListener(() => OpenPreview(tex));
+        cardButton.onClick.AddListener(() => OpenPreview(tex, imagePath));
 
         GameObject preview = new GameObject("Preview", typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage));
         preview.transform.SetParent(card.transform, false);
@@ -289,19 +351,48 @@ public class GalleryPanelController : MonoBehaviour
         t.raycastTarget = false;
     }
 
-    private void OpenPreview(Texture2D tex)
+    private void OpenPreview(Texture2D tex, string imagePath)
     {
         EnsurePreviewOverlay();
         if (previewOverlay == null || previewRawImage == null || tex == null) return;
 
+        currentPreviewTexture = tex;
+        currentPreviewPath = imagePath;
         previewRawImage.texture = tex;
+        if (previewCopyButton != null)
+            previewCopyButton.interactable = ClipboardImageUtility.IsCopySupported;
         previewOverlay.SetActive(true);
     }
 
     public void ClosePreview()
     {
+        currentPreviewTexture = null;
+        currentPreviewPath = null;
         if (previewRawImage != null) previewRawImage.texture = null;
         if (previewOverlay != null) previewOverlay.SetActive(false);
+    }
+
+    private void CopyCurrentPreviewToClipboard()
+    {
+        if (currentPreviewTexture == null)
+        {
+            Debug.LogWarning("GalleryPanelController: No preview texture is open to copy.");
+            return;
+        }
+
+        bool copied = ClipboardImageUtility.TryCopyTextureToClipboard(currentPreviewTexture);
+        if (!copied)
+        {
+            Debug.LogWarning($"GalleryPanelController: Failed to copy preview image to clipboard. Path: {currentPreviewPath}");
+            return;
+        }
+
+        Debug.Log($"GalleryPanelController: Copied screenshot to clipboard. Path: {currentPreviewPath}");
+    }
+
+    private Font ResolveFont(Font preferredFont)
+    {
+        return preferredFont != null ? preferredFont : Resources.GetBuiltinResource<Font>(BuiltinFontName);
     }
 
     private void DeleteScreenshot(string imagePath, Texture2D tex, GameObject card)
