@@ -1275,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2617643741078180327, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d958f4f0abde9104880cd184bf95f7f1, type: 3}
     - target: {fileID: 5629338222060062848, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
       propertyPath: m_Size.x
       value: 14.570688
@@ -2300,7 +2304,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseVisual
   seahorseController: {fileID: 0}
   rb: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   deadzone: 0.03
+  animationSprites: []
+  animationFrameRate: 8
+  horizontalTiltAngle: 18
+  tiltSmoothSpeed: 180
   isFacingRight: 1
   positiveScaleFacesRight: 0
 --- !u!212 &970422471

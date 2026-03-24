@@ -8307,36 +8307,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 1
-  speakerName: Dolphin Ambassador
+  speakerName: Dorothy
   aboutBaseDialogueLines:
-  - speaker: Dolphin Ambassador
-    text: nice place
+  - speaker: Dorothy
+    text: I haven't been here for a while...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy
+    text: The ocean is quiter, and louder...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
-  - speaker: Dolphin Ambassador
-    text: nice crab
+  - speaker: Dorothy
+    text: "Hey little crab, Kirby may be a bit short-tempered, but he\u2019s a good
+      crab\u2014diligent and responsible. It\u2019s all thanks to him that the ocean
+      hasn\u2019t fallen even worse."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines: []
   aboutSharkDialogueLines:
-  - speaker: Dolphin Ambassador
-    text: nice shark
+  - speaker: Dorothy
+    text: "Shrauk, you\u2019re finally not keeping to yourself so much anymore. It
+      feels pretty good to be talking with everyone, doesn\u2019t it?"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
-  - speaker: Dolphin Ambassador
-    text: nice octopus
+  - speaker: Dorothy
+    text: Nice Octopus
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
-  - speaker: Dolphin Ambassador
-    text: nice cucumber
+  - speaker: Dorothy
+    text: "Dr. Luma, thank you for everything you\u2019ve done for everyone."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:
-  - speaker: Dolphin Ambassador
+  - speaker: Dorothy
     text: ......
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
@@ -9035,36 +9042,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 0
-  speakerName: Crab Ambassador
+  speakerName: Little Crab Bob
   aboutBaseDialogueLines:
-  - speaker: Crab Ambassador
-    text: luv ur base
+  - speaker: Little Crab Bob
+    text: Is that Mr.Jones? He is huge...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
-  - speaker: Crab Ambassador
-    text: luv ur dolphin
+  - speaker: Little Crab Bob
+    text: Dorothy? Isn't she the famous singer? I love her song...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
-  - speaker: Crab Ambassador
-    text: luv ur shark
+  - speaker: Little Crab Bob
+    text: Shrauk...I never met him before. He doesn't look like someone to mess with.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
-  - speaker: Crab Ambassador
-    text: luv ur octopus
+  - speaker: Little Crab Bob
+    text: That Octopus must been through a lot...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
-  - speaker: Crab Ambassador
-    text: luv ur cucumber
+  - speaker: Little Crab Bob
+    text: Dr. Luma is the best doctor, just a little bit too talktive...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:
-  - speaker: Crab Ambassador
+  - speaker: Little Crab Bob
     text: ......
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
@@ -9433,6 +9440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4cb2681df54fa4a75bda3417d2ef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseDash
+  dashEnabled: 1
   seahorseController: {fileID: 1931277876}
   seahorseMotor: {fileID: 1931277877}
   rb: {fileID: 1931277878}
@@ -10408,12 +10416,48 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 13247463}
     m_Modifications:
+    - target: {fileID: 27696743764985652, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 165307298988501007, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2496887108486128830, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496887108486128830, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496887108486128830, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496887108486128830, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993097444681036416, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993097444681036416, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993097444681036416, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2993097444681036416, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111110309838430094, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3845787786231308989, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
@@ -10496,9 +10540,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4618882042693559326, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618882042693559326, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618882042693559326, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618882042693559326, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5130966909707008802, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421029510604913695, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430019205438045248, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430019205438045248, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430019205438045248, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7430019205438045248, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
       propertyPath: m_AnchoredPosition.y
