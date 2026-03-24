@@ -181,7 +181,8 @@ public class RQPianoController : MonoBehaviour
                 continue;
 
             int capturedNoteIndex = noteButton.NoteIndex;
-            button.onClick.AddListener(() => PlayNote(capturedNoteIndex));
+            RQPianoNoteButton capturedNoteButton = noteButton;
+            button.onClick.AddListener(() => HandleNoteButtonPressed(capturedNoteButton, capturedNoteIndex));
             registeredButtons.Add(button);
         }
     }
@@ -248,6 +249,14 @@ public class RQPianoController : MonoBehaviour
 
         AudioSettingsManager.ApplySfxVolume(noteAudioSource, noteVolume);
         noteAudioSource.PlayOneShot(clip, 1f);
+    }
+
+    private void HandleNoteButtonPressed(RQPianoNoteButton noteButton, int noteIndex)
+    {
+        if (noteButton != null)
+            noteButton.PlayPressEffect();
+
+        PlayNote(noteIndex);
     }
 
     private void SetPromptVisible(bool visible)
