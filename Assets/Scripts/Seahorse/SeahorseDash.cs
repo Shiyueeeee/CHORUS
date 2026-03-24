@@ -8,6 +8,10 @@ namespace Seahorse
     [RequireComponent(typeof(SeahorseController))]
     public class SeahorseDash : MonoBehaviour
     {
+        [Header("Availability")]
+        [Tooltip("Override this on a scene instance to disable dashing in that scene.")]
+        [SerializeField] private bool dashEnabled = true;
+
         [Header("References")]
         [SerializeField] private SeahorseController seahorseController;
         [SerializeField] private SeahorseMotor seahorseMotor;
@@ -26,6 +30,7 @@ namespace Seahorse
         [SerializeField] private Vector2 defaultDashDirection = Vector2.right;
         [SerializeField] private float directionDeadzone = 0.01f;
 
+        public bool DashEnabled => dashEnabled;
         public bool IsDashing => dashTimer > 0f;
         public float CooldownRemaining => cooldownTimer;
         public float CooldownDuration => currentCooldownDuration;
@@ -86,6 +91,10 @@ namespace Seahorse
 
         private void Update()
         {
+            ApplyAvailabilityState();
+            if (!dashEnabled)
+                return;
+
             if (playerHealth == null)
                 playerHealth = GetComponent<PlayerHealth>();
 
@@ -108,6 +117,12 @@ namespace Seahorse
 
         private void FixedUpdate()
         {
+            if (!dashEnabled)
+            {
+                ApplyAvailabilityState();
+                return;
+            }
+
             if (!IsDashing || rb == null)
                 return;
 
@@ -129,7 +144,8 @@ namespace Seahorse
                 playerHealth = GetComponent<PlayerHealth>();
 
             bool isGameOverVisible = playerHealth != null && playerHealth.IsGameOverVisible;
-            return !isGameOverVisible
+            return dashEnabled
+                && !isGameOverVisible
                 && !GlobalUIRoot.IsModalInputLocked
                 && !DialogueManager.IsDialogueActive
                 && !SeahorseController.IsGameplayInputLocked;
@@ -180,12 +196,27 @@ namespace Seahorse
         private void EndDash()
         {
             dashTimer = 0f;
-            rb.linearVelocity = Vector2.zero;
+            if (rb != null)
+                rb.linearVelocity = Vector2.zero;
 
             if (disabledMotorForDash && seahorseMotor != null)
                 seahorseMotor.enabled = true;
 
             disabledMotorForDash = false;
+        }
+
+        private void ApplyAvailabilityState()
+        {
+            if (dashEnabled)
+                return;
+
+            if (IsDashing || disabledMotorForDash)
+                EndDash();
+
+            cooldownTimer = 0f;
+            currentCooldownDuration = 0f;
+            chainedDashes = 0;
+            lastDashTime = float.NegativeInfinity;
         }
 
         private void UpdateLastDashDirection()
