@@ -68,6 +68,10 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   playerController: {fileID: 0}
   playerRigidbody: {fileID: 0}
+  dolphinRigidbody: {fileID: 1339052348306151371}
+  dolphinSpriteRenderer: {fileID: 987615008266009859}
+  idleSprite: {fileID: 21300000, guid: 7fac030b00bfe1245bbbfb8244b86520, type: 3}
+  swimSprite: {fileID: 21300000, guid: cfe11a26b44367148a5c87b8d3f65ff6, type: 3}
   leftOffset: {x: -2.2, y: 0}
   rightOffset: {x: 2.2, y: 0}
   upLeftOffset: {x: -1.8, y: -1.8}
@@ -79,8 +83,13 @@ MonoBehaviour:
   followSmooth: 8
   inputThreshold: 0.1
   sideSwitchThreshold: 0.75
+  rushFollowDelay: 0.1
   oceanBound: {fileID: 0}
   bodyCollider: {fileID: 1970624728873548316}
+  wallCastPadding: 0.02
+  overlapResolutionIterations: 4
+  swimFrameRate: 6
+  movementAnimationThreshold: 0.01
 --- !u!114 &7516793908042002129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,8 +384,8 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7fac030b00bfe1245bbbfb8244b86520, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -13,6 +13,9 @@ public class DolphinFollowPositionController : MonoBehaviour
     [SerializeField] private SeahorseController playerController;
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private Rigidbody2D dolphinRigidbody;
+    [SerializeField] private SpriteRenderer dolphinSpriteRenderer;
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite swimSprite;
 
     [Header("Offsets")]
     [SerializeField] private Vector2 leftOffset = new Vector2(-2.2f, 0f);
@@ -36,6 +39,16 @@ public class DolphinFollowPositionController : MonoBehaviour
     [SerializeField] private float wallCastPadding = 0.02f;
     [SerializeField] private int overlapResolutionIterations = 4;
 
+    [Header("Animation")]
+    [SerializeField] private float swimFrameRate = 6f;
+    [SerializeField] private float movementAnimationThreshold = 0.01f;
+
+    [Header("Ship Follow Hint")]
+    [SerializeField] private Vector3 shipFollowHintOffset = new Vector3(0f, 2.2f, 0f);
+    [SerializeField] private Vector2 shipFollowHintSize = new Vector2(120f, 120f);
+    [SerializeField] private float shipFollowHintBlinkSpeed = 6f;
+    [SerializeField] private Color shipFollowHintColor = new Color(0.2f, 0.6f, 1f, 1f);
+
     private int horizontalSide = 1;
     private readonly Collider2D[] overlapResults = new Collider2D[16];
     private readonly RaycastHit2D[] castResults = new RaycastHit2D[16];
@@ -43,10 +56,14 @@ public class DolphinFollowPositionController : MonoBehaviour
     private ContactFilter2D solidWallFilter;
     private bool useDelayedVerticalFollow;
     private bool useRushTrailFollow;
+    private bool showShipFollowHint;
+    private float swimAnimationTimer;
+    private GUIStyle shipFollowHintStyle;
 
     private void Awake()
     {
         string sceneName = SceneManager.GetActiveScene().name;
+        showShipFollowHint = sceneName == "ShipScene";
         AutoAssignReferences();
         ConfigureRigidbody();
         ConfigureCollisionFilter();
@@ -55,11 +72,14 @@ public class DolphinFollowPositionController : MonoBehaviour
         useDelayedVerticalFollow = !useRushTrailFollow;
         isFollowing = sceneName != "DolphinAreaScene";
         canFollow = sceneName != "DolphinAreaScene";
+        UpdateSpriteAnimation(false);
     }
     
 
     private void Update()
     {
+        AutoAssignReferences();
+
         if (!canFollow) return;
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -72,16 +92,26 @@ public class DolphinFollowPositionController : MonoBehaviour
         AutoAssignReferences();
 
         if (playerTransform == null || bodyCollider == null || dolphinRigidbody == null)
+        {
+            UpdateSpriteAnimation(false);
             return;
+        }
 
         RecordFollowSample();
         ResolveCurrentWallOverlaps();
 
         Vector2 move = GetMoveDirection();
         UpdateHorizontalSide(move);
+        if (isFollowing)
+        {
+            UpdateSpriteFacing(move);
+        }
 
         if (!isFollowing)
+        {
+            UpdateSpriteAnimation(false);
             return;
+        }
 
         Vector2 currentPosition = dolphinRigidbody.position;
         Vector2 targetPosition = GetFollowTargetPosition(move);
@@ -93,6 +123,7 @@ public class DolphinFollowPositionController : MonoBehaviour
         desiredPosition = PreventWallPenetration(currentPosition, desiredPosition);
 
         dolphinRigidbody.MovePosition(desiredPosition);
+        UpdateSpriteAnimation((desiredPosition - currentPosition).sqrMagnitude > movementAnimationThreshold * movementAnimationThreshold);
     }
 
     private void AutoAssignReferences()
@@ -134,6 +165,14 @@ public class DolphinFollowPositionController : MonoBehaviour
 
             if (dolphinRigidbody == null)
                 dolphinRigidbody = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        if (dolphinSpriteRenderer == null)
+        {
+            dolphinSpriteRenderer = GetComponent<SpriteRenderer>();
+
+            if (dolphinSpriteRenderer == null)
+                dolphinSpriteRenderer = transform.Find("Body")?.GetComponent<SpriteRenderer>();
         }
     }
 
@@ -368,6 +407,88 @@ public class DolphinFollowPositionController : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    private void UpdateSpriteAnimation(bool isMoving)
+    {
+        if (dolphinSpriteRenderer == null || idleSprite == null)
+            return;
+
+        if (!isMoving || swimSprite == null || swimFrameRate <= 0f)
+        {
+            swimAnimationTimer = 0f;
+            dolphinSpriteRenderer.sprite = idleSprite;
+            return;
+        }
+
+        swimAnimationTimer += Time.fixedDeltaTime;
+        float frameDuration = 1f / swimFrameRate;
+        bool useSwimSprite = Mathf.FloorToInt(swimAnimationTimer / frameDuration) % 2 == 1;
+        dolphinSpriteRenderer.sprite = useSwimSprite ? swimSprite : idleSprite;
+    }
+
+    private void UpdateSpriteFacing(Vector2 move)
+    {
+        if (dolphinSpriteRenderer == null)
+            return;
+
+        if (PlayerFacingUtility.TryGetCurrentFacing(playerTransform, out bool playerFacingRight))
+        {
+            dolphinSpriteRenderer.flipX = playerFacingRight;
+            return;
+        }
+
+        if (move.x > inputThreshold)
+        {
+            dolphinSpriteRenderer.flipX = true;
+        }
+        else if (move.x < -inputThreshold)
+        {
+            dolphinSpriteRenderer.flipX = false;
+        }
+    }
+
+    private void OnGUI()
+    {
+        if (!showShipFollowHint || !canFollow || isFollowing || playerTransform == null)
+            return;
+
+        EnsureShipFollowHintStyle();
+
+        UnityEngine.Camera currentCamera = UnityEngine.Camera.main;
+        Vector3 worldPosition = playerTransform.position + shipFollowHintOffset;
+        Vector3 screenPoint = currentCamera != null
+            ? currentCamera.WorldToScreenPoint(worldPosition)
+            : new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f);
+
+        if (screenPoint.z < 0f)
+            return;
+
+        Rect labelRect = new Rect(
+            screenPoint.x - (shipFollowHintSize.x * 0.5f),
+            Screen.height - screenPoint.y - (shipFollowHintSize.y * 0.5f),
+            shipFollowHintSize.x,
+            shipFollowHintSize.y);
+
+        Color originalColor = GUI.color;
+        Color hintColor = shipFollowHintColor;
+        hintColor.a = Mathf.Lerp(0.25f, 1f, (Mathf.Sin(Time.unscaledTime * shipFollowHintBlinkSpeed) + 1f) * 0.5f);
+        GUI.color = hintColor;
+        GUI.Label(labelRect, "F", shipFollowHintStyle);
+        GUI.color = originalColor;
+    }
+
+    private void EnsureShipFollowHintStyle()
+    {
+        if (shipFollowHintStyle != null)
+            return;
+
+        shipFollowHintStyle = new GUIStyle(GUI.skin.label)
+        {
+            alignment = TextAnchor.MiddleCenter,
+            fontSize = 72,
+            fontStyle = FontStyle.Bold
+        };
     }
 
     private readonly struct FollowSample
