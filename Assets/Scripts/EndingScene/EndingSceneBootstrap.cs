@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class EndingSceneBootstrap : MonoBehaviour
@@ -35,6 +37,11 @@ public class EndingSceneBootstrap : MonoBehaviour
         new CreditSection { heading = "DESIGN", names = new[] { "Alex" } },
         new CreditSection { heading = "PROGRAMMING", names = new[] { "Lucia", "Richard" } }
     };
+
+    [Header("Back Button")]
+    [SerializeField] private string backButtonText = "Back to Title";
+    [SerializeField] private float backButtonFontSize = 28f;
+    [SerializeField] private Vector2 backButtonSize = new Vector2(260f, 72f);
 
     private readonly List<Object> runtimeAssets = new List<Object>();
 
@@ -96,6 +103,8 @@ public class EndingSceneBootstrap : MonoBehaviour
 
         BuildSlideshowPanel(leftPanel);
         BuildCreditsPanel(rightPanel);
+        Button backButton = BuildBackButton(canvas.transform);
+        EnsureEventSystem(backButton.gameObject);
 
         // TMP_Text footer = CreateText(canvas.transform, "FooterText", "Thank you for playing", 30f, FontStyles.Bold, TextAlignmentOptions.Center, new Color(0.88f, 0.98f, 0.95f, 0.9f));
         // Stretch(footer.rectTransform, new Vector2(0.28f, 0.02f), new Vector2(0.72f, 0.09f), Vector2.zero, Vector2.zero);
@@ -104,6 +113,43 @@ public class EndingSceneBootstrap : MonoBehaviour
         Stretch(fadeOverlay.rectTransform, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
         EndingSceneFadeIn fadeIn = fadeOverlay.gameObject.AddComponent<EndingSceneFadeIn>();
         fadeIn.Configure(fadeOverlay, fadeDuration);
+    }
+
+    private Button BuildBackButton(Transform parent)
+    {
+        GameObject buttonObject = new GameObject("BackToTitleButton", typeof(RectTransform), typeof(Image), typeof(Button));
+        buttonObject.transform.SetParent(parent, false);
+
+        RectTransform buttonRect = buttonObject.GetComponent<RectTransform>();
+        buttonRect.anchorMin = new Vector2(0.96f, 0.03f);
+        buttonRect.anchorMax = new Vector2(0.96f, 0.03f);
+        buttonRect.pivot = new Vector2(1f, 0f);
+        buttonRect.anchoredPosition = Vector2.zero;
+        buttonRect.sizeDelta = backButtonSize;
+
+        Image buttonImage = buttonObject.GetComponent<Image>();
+        buttonImage.sprite = whiteSprite;
+        buttonImage.type = Image.Type.Simple;
+        buttonImage.color = new Color(0.17f, 0.59f, 0.87f, 0.96f);
+        buttonImage.raycastTarget = true;
+        AddOutline(buttonImage, new Color(0.9f, 0.98f, 1f, 0.2f), new Vector2(2f, -2f));
+
+        Button button = buttonObject.GetComponent<Button>();
+        button.targetGraphic = buttonImage;
+        button.transition = Selectable.Transition.ColorTint;
+        ColorBlock colors = button.colors;
+        colors.normalColor = new Color(0.17f, 0.59f, 0.87f, 0.96f);
+        colors.highlightedColor = new Color(0.24f, 0.68f, 0.95f, 1f);
+        colors.pressedColor = new Color(0.12f, 0.46f, 0.72f, 1f);
+        colors.selectedColor = new Color(0.24f, 0.68f, 0.95f, 1f);
+        colors.disabledColor = new Color(0.17f, 0.59f, 0.87f, 0.45f);
+        button.colors = colors;
+        button.onClick.AddListener(ReturnToTitleScene);
+
+        TMP_Text label = CreateText(buttonObject.transform, "BackToTitleLabel", backButtonText, backButtonFontSize, FontStyles.Bold, TextAlignmentOptions.Center, new Color(0.96f, 0.99f, 1f, 1f));
+        Stretch(label.rectTransform, Vector2.zero, Vector2.one, new Vector2(20f, 10f), new Vector2(-20f, -10f));
+
+        return button;
     }
 
     private void BuildSlideshowPanel(RectTransform panel)
@@ -266,6 +312,23 @@ public class EndingSceneBootstrap : MonoBehaviour
         return canvas;
     }
 
+    private void EnsureEventSystem(GameObject firstSelected)
+    {
+        EventSystem existingEventSystem = EventSystem.current;
+        if (existingEventSystem != null)
+        {
+            existingEventSystem.firstSelectedGameObject = firstSelected;
+            existingEventSystem.SetSelectedGameObject(firstSelected);
+            return;
+        }
+
+        GameObject eventSystemObject = new GameObject("EventSystem");
+        EventSystem eventSystem = eventSystemObject.AddComponent<EventSystem>();
+        eventSystemObject.AddComponent<InputSystemUIInputModule>();
+        eventSystem.firstSelectedGameObject = firstSelected;
+        eventSystem.SetSelectedGameObject(firstSelected);
+    }
+
     private RectTransform CreatePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Color color)
     {
         Image panel = CreateImage(parent, name, color);
@@ -345,6 +408,11 @@ public class EndingSceneBootstrap : MonoBehaviour
         outline.effectColor = color;
         outline.effectDistance = distance;
         outline.useGraphicAlpha = true;
+    }
+
+    private void ReturnToTitleScene()
+    {
+        SceneTransition.LoadScene("TitleScene");
     }
 
     private TMP_FontAsset ResolveFont()
