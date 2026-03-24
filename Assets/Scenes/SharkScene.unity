@@ -802,24 +802,36 @@ MonoBehaviour:
   - {fileID: 1558396985}
   - {fileID: 1967864629}
   questions:
-  - question: 1+1=?
+  - question: Why chase those notes? Speak clearly.
     answers:
-    - 1
-    - 2
-    - 0
+    - To become stronger.
+    - To reach the humans.
+    - To explore the ocean.
     correctAnswerIndex: 1
-  - question: 1x1=?
+  - question: "And why speak to them? They don\u2019t listen."
     answers:
-    - 1
-    - 2
-    - 0
+    - To reduce the pollution.
+    - To make peace with them.
+    - To learn from them.
     correctAnswerIndex: 0
-  - question: 1-1=?
+  - question: "Then tell me \u2014 what do you need from me?"
     answers:
-    - 1
-    - 2
-    - 0
+    - Give us your strength.
+    - Fight for us.
+    - Guide us to the octopus.
     correctAnswerIndex: 2
+  - question: Who put this idea in your head?
+    answers:
+    - The dolphins told me.
+    - I decided myself.
+    - Mr. Jones.
+    correctAnswerIndex: 2
+  - question: And why should I care?
+    answers:
+    - 'If the ocean dies, your prey dies with it. '
+    - You are a nice shark inside.
+    - Mr. Jones will make you.
+    correctAnswerIndex: 0
   correctMessage: Correct.
   successMessage: You passed the shark's test.
   failMessage: Wrong answer. Think carefully and try again.
@@ -1791,8 +1803,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
+  m_sharedMaterial: {fileID: 2983743211873995362, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2724,8 +2736,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
+  m_sharedMaterial: {fileID: 2983743211873995362, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2861,8 +2873,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
+  m_sharedMaterial: {fileID: 2983743211873995362, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3322,8 +3334,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
+  m_sharedMaterial: {fileID: 2983743211873995362, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4180,8 +4192,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
+  m_sharedMaterial: {fileID: 2983743211873995362, guid: 96bd8334bba2a4143b60660fcf20aa89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
