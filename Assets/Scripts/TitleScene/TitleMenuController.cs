@@ -3,20 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenuController : MonoBehaviour
 {
-    
-
     [Header("Scene")]
     [SerializeField] private string gameSceneName = "RQScene"; 
 
-    private void Start()
-    {
-    }
-
     public void OnClickStartGame()
     {
-        SceneTransition.LoadScene(gameSceneName);
+        GameSaveSystem.StartNewGame(gameSceneName);
     }
 
-    
+    public void OnClickStartFromSave()
+    {
+        if (!GameSaveSystem.LoadSaveAndEnterScene())
+            GameSaveSystem.StartNewGame(gameSceneName);
+    }
 
 }
