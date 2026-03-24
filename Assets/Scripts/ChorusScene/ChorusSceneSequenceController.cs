@@ -13,8 +13,6 @@ public class ChorusSceneSequenceController : MonoBehaviour
     [SerializeField] private float secondsPerSlide = 1.5f;
     [SerializeField] private float fadeToBlackDuration = 0.45f;
     [SerializeField] private float lastSlideExtraHold = 2f;
-    [SerializeField] private float titleFadeDuration = 1.8f;
-    [SerializeField] private float titleHoldDuration = 2.2f;
     [SerializeField] private float finalFadeToBlackDuration = 1.2f;
 
     [Header("Scene Flow")]
@@ -23,10 +21,15 @@ public class ChorusSceneSequenceController : MonoBehaviour
 
     [Header("Layout")]
     [SerializeField] private Color backgroundColor = Color.black;
-    [SerializeField] private Vector2 titleAnchorMin = new Vector2(0.08f, 0.04f);
-    [SerializeField] private Vector2 titleAnchorMax = new Vector2(0.92f, 0.34f);
-    [SerializeField] private Vector2 titlePaddingMin = new Vector2(0f, 0f);
-    [SerializeField] private Vector2 titlePaddingMax = new Vector2(0f, 0f);
+
+    [Header("Title Animation")]
+    [SerializeField] private Vector2 titleScreenPosition = new Vector2(0.5f, 0.5f);
+    [SerializeField] private Vector2 titleMinSize = new Vector2(220f, 124f);
+    [SerializeField] private Vector2 titleMaxSize = new Vector2(3200f, 1800f);
+    [SerializeField] private float titleAnimationDuration = 5f;
+    [SerializeField] private float titleMaxSizeHoldDuration = 0f;
+    [SerializeField] private float titleFadeDuration = 1.2f;
+    [SerializeField] private AnimationCurve titleScaleCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
     private readonly List<Object> runtimeAssets = new List<Object>();
 
@@ -101,12 +104,13 @@ public class ChorusSceneSequenceController : MonoBehaviour
         slideImage.preserveAspect = true;
 
         titleImage = CreateImage(rootCanvas.transform, "TitleImage", Color.white);
-        Stretch(titleImage.rectTransform, titleAnchorMin, titleAnchorMax, titlePaddingMin, titlePaddingMax);
+        ConfigureTitleRect(titleImage.rectTransform, titleScreenPosition, titleMinSize);
         titleImage.preserveAspect = true;
         SetImageAlpha(titleImage, 0f);
 
         fadeOverlay = CreateImage(rootCanvas.transform, "FadeOverlay", Color.clear);
         Stretch(fadeOverlay.rectTransform, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
+        titleImage.rectTransform.SetAsLastSibling();
     }
 
     private IEnumerator PlaySequence()
@@ -136,15 +140,17 @@ public class ChorusSceneSequenceController : MonoBehaviour
         if (slideSprites.Length == 1)
             yield return Wait(lastSlideExtraHold);
 
+        float finalPhaseDuration = finalFadeToBlackDuration;
         if (titleSprite != null)
         {
             titleImage.sprite = titleSprite;
             titleImage.enabled = true;
-            yield return FadeGraphic(titleImage, 0f, 1f, titleFadeDuration);
-            yield return Wait(titleHoldDuration);
+            StartCoroutine(PlayTitleAnimation());
+            finalPhaseDuration = Mathf.Max(finalPhaseDuration, titleAnimationDuration + titleMaxSizeHoldDuration + titleFadeDuration);
         }
 
-        yield return FadeOverlay(0f, 1f, finalFadeToBlackDuration);
+        StartCoroutine(FadeOverlay(0f, 1f, finalFadeToBlackDuration));
+        yield return Wait(finalPhaseDuration);
 
         if (!string.IsNullOrWhiteSpace(nextSceneName))
             SceneTransition.LoadScene(nextSceneName);
@@ -226,6 +232,57 @@ public class ChorusSceneSequenceController : MonoBehaviour
         rectTransform.offsetMax = offsetMax;
         rectTransform.localScale = Vector3.one;
         rectTransform.localRotation = Quaternion.identity;
+    }
+
+    private void ConfigureTitleRect(RectTransform rectTransform, Vector2 normalizedPosition, Vector2 size)
+    {
+        if (rectTransform == null)
+            return;
+
+        rectTransform.anchorMin = normalizedPosition;
+        rectTransform.anchorMax = normalizedPosition;
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        rectTransform.anchoredPosition = Vector2.zero;
+        rectTransform.sizeDelta = size;
+        rectTransform.localScale = Vector3.one;
+        rectTransform.localRotation = Quaternion.identity;
+    }
+
+    private IEnumerator PlayTitleAnimation()
+    {
+        if (titleImage == null)
+            yield break;
+
+        RectTransform titleRect = titleImage.rectTransform;
+        ConfigureTitleRect(titleRect, titleScreenPosition, titleMinSize);
+        SetImageAlpha(titleImage, 1f);
+
+        float duration = Mathf.Max(0f, titleAnimationDuration);
+        if (duration <= 0f)
+        {
+            titleRect.sizeDelta = titleMaxSize;
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += GetDeltaTime();
+            float t = Mathf.Clamp01(elapsed / duration);
+            float curveT = titleScaleCurve != null ? titleScaleCurve.Evaluate(t) : t;
+            titleRect.sizeDelta = Vector2.LerpUnclamped(titleMinSize, titleMaxSize, curveT);
+            yield return null;
+        }
+
+        titleRect.sizeDelta = titleMaxSize;
+        if (titleMaxSizeHoldDuration > 0f)
+            yield return Wait(titleMaxSizeHoldDuration);
+
+        float fadeDuration = Mathf.Max(0f, titleFadeDuration);
+        if (fadeDuration > 0f)
+            yield return FadeGraphic(titleImage, 1f, 0f, fadeDuration);
+        else
+            SetImageAlpha(titleImage, 0f);
     }
 
     private void SetImageAlpha(Image image, float alpha)
