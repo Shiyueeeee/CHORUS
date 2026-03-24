@@ -589,7 +589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &325593713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,9 +668,23 @@ MonoBehaviour:
   maxRows: 4
   deleteButtonSize: {x: 30, y: 30}
   deleteButtonColor: {r: 0.8, g: 0.15, b: 0.15, a: 0.95}
-  previewSize: {x: 1440, y: 810}
+  previewOverlayColor: {r: 1, g: 1, b: 1, a: 0}
+  previewImageSize: {x: 1280, y: 720}
+  previewImagePosition: {x: 50, y: -50}
   previewCloseButtonSize: {x: 60, y: 60}
-  previewCopyButtonSize: {x: 120, y: 44}
+  previewCloseButtonPosition: {x: -170, y: -150}
+  previewCloseButtonColor: {r: 0.95, g: 0.95, b: 0.95, a: 0.95}
+  previewCloseButtonText: X
+  previewCloseButtonFontSize: 36
+  previewCloseButtonTextColor: {r: 0, g: 0, b: 0, a: 1}
+  previewCloseButtonFont: {fileID: 12800000, guid: ee252c8ec6acf88419a41ec87fd9177c, type: 3}
+  previewCopyButtonSize: {x: 120, y: 60}
+  previewCopyButtonPosition: {x: -240, y: -150}
+  previewCopyButtonColor: {r: 0.86, g: 0.96, b: 1, a: 0.95}
+  previewCopyButtonText: Copy
+  previewCopyButtonFontSize: 36
+  previewCopyButtonTextColor: {r: 0.08, g: 0.08, b: 0.08, a: 1}
+  previewCopyButtonFont: {fileID: 12800000, guid: ee252c8ec6acf88419a41ec87fd9177c, type: 3}
 --- !u!223 &325593717
 Canvas:
   m_ObjectHideFlags: 0
