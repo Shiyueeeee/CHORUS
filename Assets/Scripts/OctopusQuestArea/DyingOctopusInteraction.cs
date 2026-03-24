@@ -32,8 +32,9 @@ public class DyingOctopusInteraction : NpcDialogueInteractionBase
     };
 
     [Header("Visuals")]
-    [SerializeField] private GameObject aliveVisualObject;
-    [SerializeField] private GameObject deadVisualObject;
+    [SerializeField] private SpriteRenderer characterSpriteRenderer;
+    [SerializeField] private Sprite aliveSprite;
+    [SerializeField] private Sprite deadSprite;
 
     private DialoguePhase activePhase;
     private bool lastOilWellsClosedState;
@@ -96,10 +97,12 @@ public class DyingOctopusInteraction : NpcDialogueInteractionBase
         bool oilWellsClosed = AreOilWellsClosed();
         lastOilWellsClosedState = oilWellsClosed;
 
-        if (aliveVisualObject != null)
-            aliveVisualObject.SetActive(!oilWellsClosed);
+        if (characterSpriteRenderer == null)
+            return;
 
-        if (deadVisualObject != null)
-            deadVisualObject.SetActive(oilWellsClosed);
+        if (oilWellsClosed && deadSprite != null)
+            characterSpriteRenderer.sprite = deadSprite;
+        else if (!oilWellsClosed && aliveSprite != null)
+            characterSpriteRenderer.sprite = aliveSprite;
     }
 }
