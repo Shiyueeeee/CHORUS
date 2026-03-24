@@ -23,6 +23,10 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Typewriter")]
     [SerializeField] [Min(0f)] private float characterRevealInterval = 0.02f;
+    [SerializeField] private bool playTypewriterBlip = true;
+    [SerializeField] private AudioClip typewriterBlipClip;
+    [SerializeField] [Range(0f, 1f)] private float typewriterBlipVolume = 0.15f;
+    [SerializeField] [Min(1)] private int charactersPerBlip = 2;
 
     private readonly List<DialogueLineData> currentLines = new List<DialogueLineData>();
     private int currentLineIndex = 0;
@@ -36,6 +40,7 @@ public class DialogueManager : MonoBehaviour
     private System.Action onYesSelected;
     private System.Action onNoSelected;
     private bool isChoiceActive;
+    private AudioClip generatedTypewriterBlipClip;
 
     private void Awake()
     {
@@ -292,6 +297,9 @@ public class DialogueManager : MonoBehaviour
             if (dialogueText != null)
                 dialogueText.text = fullText.Substring(0, i);
 
+            if (ShouldPlayTypewriterBlip(fullText, i))
+                PlayTypewriterBlip();
+
             if (i < fullText.Length)
                 yield return new WaitForSecondsRealtime(characterRevealInterval);
         }
@@ -339,5 +347,57 @@ public class DialogueManager : MonoBehaviour
         EnsureDialogueSfxSource();
         AudioSettingsManager.ApplySfxVolume(dialogueSfxSource, dialogueSfxBaseVolume);
         dialogueSfxSource.PlayOneShot(line.sfxClip, Mathf.Clamp01(line.sfxVolumeScale));
+    }
+
+    private bool ShouldPlayTypewriterBlip(string fullText, int revealedCharacterCount)
+    {
+        if (!playTypewriterBlip || string.IsNullOrEmpty(fullText))
+            return false;
+
+        int charIndex = revealedCharacterCount - 1;
+        if (charIndex < 0 || charIndex >= fullText.Length)
+            return false;
+
+        char currentChar = fullText[charIndex];
+        if (char.IsWhiteSpace(currentChar))
+            return false;
+
+        return revealedCharacterCount % Mathf.Max(1, charactersPerBlip) == 0 || revealedCharacterCount == 1;
+    }
+
+    private void PlayTypewriterBlip()
+    {
+        EnsureDialogueSfxSource();
+
+        AudioClip clipToPlay = typewriterBlipClip != null ? typewriterBlipClip : GetGeneratedTypewriterBlipClip();
+        if (clipToPlay == null)
+            return;
+
+        AudioSettingsManager.ApplySfxVolume(dialogueSfxSource, dialogueSfxBaseVolume);
+        dialogueSfxSource.PlayOneShot(clipToPlay, Mathf.Clamp01(typewriterBlipVolume));
+    }
+
+    private AudioClip GetGeneratedTypewriterBlipClip()
+    {
+        if (generatedTypewriterBlipClip != null)
+            return generatedTypewriterBlipClip;
+
+        const int sampleRate = 44100;
+        const float durationSeconds = 0.035f;
+        const float frequency = 880f;
+
+        int sampleCount = Mathf.CeilToInt(sampleRate * durationSeconds);
+        float[] samples = new float[sampleCount];
+
+        for (int i = 0; i < sampleCount; i++)
+        {
+            float t = i / (float)sampleRate;
+            float envelope = 1f - (i / (float)sampleCount);
+            samples[i] = Mathf.Sin(2f * Mathf.PI * frequency * t) * envelope * 0.25f;
+        }
+
+        generatedTypewriterBlipClip = AudioClip.Create("DialogueTypewriterBlip", sampleCount, 1, sampleRate, false);
+        generatedTypewriterBlipClip.SetData(samples, 0);
+        return generatedTypewriterBlipClip;
     }
 }
