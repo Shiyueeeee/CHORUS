@@ -90,6 +90,8 @@ MonoBehaviour:
   overlapResolutionIterations: 4
   swimFrameRate: 6
   movementAnimationThreshold: 0.01
+  shipFollowHintScale: 1.5
+  shipFollowHintSprite: {fileID: 21300000, guid: f252659fd87a1ce45a6eaedac64d1eda, type: 3}
 --- !u!114 &7516793908042002129
 MonoBehaviour:
   m_ObjectHideFlags: 0
