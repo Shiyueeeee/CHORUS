@@ -119,6 +119,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15337135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15337137}
+  - component: {fileID: 15337136}
+  m_Layer: 0
+  m_Name: StateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &15337136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15337135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be746b9a1fa1f51488ebec97a4181cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DolphinFinalAreaPortalStateController
+  portalObject: {fileID: 1208108177}
+--- !u!4 &15337137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15337135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.89609, y: -5.94228, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &21450407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +416,12 @@ MonoBehaviour:
   overlapResolutionIterations: 4
   swimFrameRate: 6
   movementAnimationThreshold: 0.01
+  shipFollowHintOffset: {x: 0, y: 2.2, z: 0}
+  shipFollowHintSize: {x: 120, y: 120}
+  shipFollowHintScale: 1.5
+  shipFollowHintBlinkSpeed: 6
+  shipFollowHintColor: {r: 0.2, g: 0.6, b: 1, a: 1}
+  shipFollowHintSprite: {fileID: 0}
 --- !u!50 &21450414
 Rigidbody2D:
   serializedVersion: 5
@@ -1355,6 +1406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 5569579411161339952, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1363,6 +1418,11 @@ PrefabInstance:
 --- !u!4 &1208108176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2941047616390631042, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
+  m_PrefabInstance: {fileID: 1208108175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1208108177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5569579411161339952, guid: dc34b857c4cde7541a5b95b92f3ff161, type: 3}
   m_PrefabInstance: {fileID: 1208108175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714159578
@@ -2096,3 +2156,4 @@ SceneRoots:
   - {fileID: 1208108175}
   - {fileID: 599023847}
   - {fileID: 82041796}
+  - {fileID: 15337137}
