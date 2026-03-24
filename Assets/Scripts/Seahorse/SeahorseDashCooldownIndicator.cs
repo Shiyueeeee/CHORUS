@@ -7,6 +7,10 @@ namespace Seahorse
         private static readonly int ColorPropertyId = Shader.PropertyToID("_Color");
         private static readonly int BaseColorPropertyId = Shader.PropertyToID("_BaseColor");
 
+        [Header("Availability")]
+        [Tooltip("Override this on a scene instance to hide the dash cooldown indicator in that scene.")]
+        [SerializeField] private bool indicatorEnabled = true;
+
         [Header("Target")]
         [SerializeField] private SeahorseDash targetDash;
         [SerializeField] private Transform followTarget;
@@ -62,6 +66,11 @@ namespace Seahorse
 
             if (runtimeMaterial != null)
                 Destroy(runtimeMaterial);
+        }
+
+        private void OnDisable()
+        {
+            SetVisible(false);
         }
 
         private void ResolveTarget()
@@ -149,7 +158,7 @@ namespace Seahorse
             if (backgroundRenderer == null || fillRenderer == null)
                 return;
 
-            if (targetDash == null || followTarget == null)
+            if (!indicatorEnabled || targetDash == null || followTarget == null || !targetDash.DashEnabled)
             {
                 SetVisible(false);
                 return;
@@ -261,8 +270,11 @@ namespace Seahorse
 
         private void SetVisible(bool visible)
         {
-            backgroundRenderer.enabled = visible;
-            fillRenderer.enabled = visible && lastProgress > 0.001f;
+            if (backgroundRenderer != null)
+                backgroundRenderer.enabled = visible;
+
+            if (fillRenderer != null)
+                fillRenderer.enabled = visible && lastProgress > 0.001f;
         }
 
         private static void BuildRingMesh(Mesh mesh, float radius, float thickness, float fillAmount, int segmentCount)
