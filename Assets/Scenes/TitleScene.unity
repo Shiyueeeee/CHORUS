@@ -831,6 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickSpawner
   ripplePrefab: {fileID: 6738649288190641157, guid: fca7079c5ba708e45a4678f947629903, type: 3}
+  canvas: {fileID: 1596182129}
 --- !u!4 &346054359
 Transform:
   m_ObjectHideFlags: 0

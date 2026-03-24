@@ -1,31 +1,30 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ripple : MonoBehaviour
 {
     [Header("Ripple Settings")]
-    public float expandSpeed = 3f; // How fast the circle grows
-    public float fadeSpeed = 2f;   // How fast the circle becomes invisible
+    public float expandSpeed = 3f;
+    public float fadeSpeed = 2f;
 
-    private SpriteRenderer spriteRenderer;
+    private RectTransform rectTransform;
+    private Image image;
     private Color rippleColor;
 
     void Start()
     {
-        // Grab the SpriteRenderer and its starting color
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rippleColor = spriteRenderer.color;
+        rectTransform = GetComponent<RectTransform>();
+        image = GetComponent<Image>();
+        rippleColor = image.color;
     }
 
     void Update()
     {
-        // 1. Expand the size (Scale) over time
-        transform.localScale += Vector3.one * expandSpeed * Time.deltaTime;
+        rectTransform.localScale += Vector3.one * expandSpeed * Time.unscaledDeltaTime;
 
-        // 2. Fade the transparency (Alpha) over time
-        rippleColor.a -= fadeSpeed * Time.deltaTime;
-        spriteRenderer.color = rippleColor;
+        rippleColor.a -= fadeSpeed * Time.unscaledDeltaTime;
+        image.color = rippleColor;
 
-        // 3. Destroy the object once it is completely invisible to save memory
         if (rippleColor.a <= 0f)
         {
             Destroy(gameObject);
