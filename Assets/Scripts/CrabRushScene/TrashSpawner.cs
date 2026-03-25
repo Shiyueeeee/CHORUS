@@ -20,9 +20,16 @@ public class TrashSpawner : MonoBehaviour
     [Tooltip("Y")]
     [SerializeField] private float[] laneYPositions = new float[4];
 
+    [SerializeField] private bool startOnSceneLoad = true;
+
+    private Coroutine spawnRoutineCoroutine;
+
     private void Start()
     {
-        StartCoroutine(SpawnRoutine());
+        if (startOnSceneLoad)
+        {
+            BeginSpawning();
+        }
     }
 
     private IEnumerator SpawnRoutine()
@@ -92,5 +99,15 @@ public class TrashSpawner : MonoBehaviour
             float uniformScale = targetHeight / spriteHeight;
             trashInstance.transform.localScale = new Vector3(uniformScale, uniformScale, 1f);
         }
+    }
+
+    public void BeginSpawning()
+    {
+        if (spawnRoutineCoroutine != null)
+        {
+            return;
+        }
+
+        spawnRoutineCoroutine = StartCoroutine(SpawnRoutine());
     }
 }
