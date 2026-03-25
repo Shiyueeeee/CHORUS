@@ -58,6 +58,12 @@ public class QuestGuideWorldArrowController : MonoBehaviour
             return;
         }
 
+        if (TryResolveCrabTrashHintTarget(out Transform trashHintTarget))
+        {
+            PointArrowAtTarget(trashHintTarget);
+            return;
+        }
+
         if (!QuestGuideObjectiveResolver.TryGetCurrentObjective(out QuestGuideObjective objective) || !objective.IsTalkObjective)
         {
             SetArrowVisible(false);
@@ -65,6 +71,17 @@ public class QuestGuideWorldArrowController : MonoBehaviour
         }
 
         if (!TryResolveTargetTransform(objective, out Transform targetTransform))
+        {
+            SetArrowVisible(false);
+            return;
+        }
+
+        PointArrowAtTarget(targetTransform);
+    }
+
+    private void PointArrowAtTarget(Transform targetTransform)
+    {
+        if (targetTransform == null)
         {
             SetArrowVisible(false);
             return;
@@ -97,6 +114,17 @@ public class QuestGuideWorldArrowController : MonoBehaviour
         arrowTransform.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
 
         SetArrowVisible(true);
+    }
+
+    private bool TryResolveCrabTrashHintTarget(out Transform targetTransform)
+    {
+        targetTransform = null;
+
+        CrabQuestManager crabQuestManager = CrabQuestManager.Instance;
+        if (crabQuestManager == null)
+            return false;
+
+        return crabQuestManager.TryGetTrashHintTarget(out targetTransform);
     }
 
     private bool TryResolveTargetTransform(QuestGuideObjective objective, out Transform targetTransform)
