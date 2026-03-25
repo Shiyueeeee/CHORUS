@@ -27,6 +27,7 @@ public class ChorusSceneSequenceController : MonoBehaviour
     [SerializeField] private Vector2 titleMinSize = new Vector2(220f, 124f);
     [SerializeField] private Vector2 titleMaxSize = new Vector2(3200f, 1800f);
     [SerializeField] private float titleAnimationDuration = 5f;
+    [SerializeField] private float titleOpacityAnimationDuration = 1.2f;
     [SerializeField] private float titleMaxSizeHoldDuration = 0f;
     [SerializeField] private float titleFadeDuration = 1.2f;
     [SerializeField] private AnimationCurve titleScaleCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
@@ -146,7 +147,7 @@ public class ChorusSceneSequenceController : MonoBehaviour
             titleImage.sprite = titleSprite;
             titleImage.enabled = true;
             StartCoroutine(PlayTitleAnimation());
-            finalPhaseDuration = Mathf.Max(finalPhaseDuration, titleAnimationDuration + titleMaxSizeHoldDuration + titleFadeDuration);
+            finalPhaseDuration = Mathf.Max(finalPhaseDuration, Mathf.Max(titleAnimationDuration, titleOpacityAnimationDuration) + titleMaxSizeHoldDuration + titleFadeDuration);
         }
 
         StartCoroutine(FadeOverlay(0f, 1f, finalFadeToBlackDuration));
@@ -255,26 +256,34 @@ public class ChorusSceneSequenceController : MonoBehaviour
 
         RectTransform titleRect = titleImage.rectTransform;
         ConfigureTitleRect(titleRect, titleScreenPosition, titleMinSize);
-        SetImageAlpha(titleImage, 1f);
+        SetImageAlpha(titleImage, 0f);
 
-        float duration = Mathf.Max(0f, titleAnimationDuration);
-        if (duration <= 0f)
+        float scaleDuration = Mathf.Max(0f, titleAnimationDuration);
+        float opacityDuration = Mathf.Max(0f, titleOpacityAnimationDuration);
+        float appearanceDuration = Mathf.Max(scaleDuration, opacityDuration);
+
+        if (appearanceDuration <= 0f)
         {
             titleRect.sizeDelta = titleMaxSize;
+            SetImageAlpha(titleImage, 1f);
             yield break;
         }
 
         float elapsed = 0f;
-        while (elapsed < duration)
+        while (elapsed < appearanceDuration)
         {
             elapsed += GetDeltaTime();
-            float t = Mathf.Clamp01(elapsed / duration);
-            float curveT = titleScaleCurve != null ? titleScaleCurve.Evaluate(t) : t;
+            float scaleT = scaleDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / scaleDuration);
+            float opacityT = opacityDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / opacityDuration);
+            float curveT = titleScaleCurve != null ? titleScaleCurve.Evaluate(scaleT) : scaleT;
+
             titleRect.sizeDelta = Vector2.LerpUnclamped(titleMinSize, titleMaxSize, curveT);
+            SetImageAlpha(titleImage, opacityT);
             yield return null;
         }
 
         titleRect.sizeDelta = titleMaxSize;
+        SetImageAlpha(titleImage, 1f);
         if (titleMaxSizeHoldDuration > 0f)
             yield return Wait(titleMaxSizeHoldDuration);
 

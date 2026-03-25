@@ -167,16 +167,25 @@ MonoBehaviour:
   secondsPerSlide: 3
   creditsScrollSpeed: 46
   slideshowSprites:
-  - {fileID: 21300000, guid: c78c8ff41072374418b6e7650ce80976, type: 3}
-  - {fileID: 21300000, guid: eddc5b806ac39244d81cf4158583ebaa, type: 3}
-  - {fileID: 21300000, guid: 34c412abf78ab6c4f812fc82015448d1, type: 3}
-  - {fileID: 21300000, guid: ca10e6ea55ad1de4a9f33528ac4c2be8, type: 3}
-  - {fileID: 21300000, guid: 9f4922d5d9f4e4847b645d00afc0aef0, type: 3}
-  - {fileID: 21300000, guid: b89f20db5bf01644db3bb8313279098f, type: 3}
-  - {fileID: 21300000, guid: ed5037495c384b045b2596b920cbd22e, type: 3}
-  - {fileID: 21300000, guid: 9f9c47c30b08c5342aa2e85ea54575ea, type: 3}
-  - {fileID: 21300000, guid: 57100e6adec69bf4b9afcf164082392c, type: 3}
-  - {fileID: 21300000, guid: 434331e40213be544810301176dfd3a1, type: 3}
+  - {fileID: 21300000, guid: 9ae62ca8fcff06d418fcef4df60367c5, type: 3}
+  - {fileID: 21300000, guid: d7794726db7df6f4b8bf693678278a62, type: 3}
+  - {fileID: 21300000, guid: ff86302d02a4d3440bc8417b611c6cc6, type: 3}
+  - {fileID: 21300000, guid: 51eda3f9e935e744d85737889fe03c8e, type: 3}
+  - {fileID: 21300000, guid: 14dd25a7630a6f74e8e774dc72fddc35, type: 3}
+  - {fileID: 21300000, guid: 2c2fb9354cd635a43a4d670fe5af1d86, type: 3}
+  - {fileID: 21300000, guid: 1072cd09e218c494b858014663153991, type: 3}
+  - {fileID: 21300000, guid: 97dc02deacb96d14fa9afb30f7a76c64, type: 3}
+  - {fileID: 21300000, guid: 83b517e164692c046ba6b97c95b50c80, type: 3}
+  - {fileID: 21300000, guid: 85c95c2fc32ca61459bf979cb768b20a, type: 3}
+  - {fileID: 21300000, guid: ea7ba8c0b9b39a740aded4d194a7a3aa, type: 3}
+  - {fileID: 21300000, guid: fcf206902ad28f24f91fa95414594333, type: 3}
+  - {fileID: 21300000, guid: 3d56d6376291d4e42a1d622040d577f6, type: 3}
+  - {fileID: 21300000, guid: 18d3a7963b5445842bcacef3ba962829, type: 3}
+  - {fileID: 21300000, guid: c094685cf2f45d541b2a146ed99561f0, type: 3}
+  - {fileID: 21300000, guid: 17124db7964af9c4e9bca8420f02b5fe, type: 3}
+  - {fileID: 21300000, guid: fc99167a49f46564887c4ee36089988e, type: 3}
+  - {fileID: 21300000, guid: 6244e4199c92e99438563fee9aca026c, type: 3}
+  - {fileID: 21300000, guid: f374b404b58d2344abdf8ef621798e2c, type: 3}
   creditsTitle: Credits
   creditsTitleFontSize: 80
   creditsRoleFontSize: 50
@@ -206,6 +215,9 @@ MonoBehaviour:
   - heading: MUSIC
     names:
     - Olivia Wang
+  backButtonText: Back to Title
+  backButtonFontSize: 28
+  backButtonSize: {x: 260, y: 72}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

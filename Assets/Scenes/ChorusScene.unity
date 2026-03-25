@@ -458,9 +458,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 097d5878af3d6ef4c96a7d60b5e5b6c5, type: 3}
   - {fileID: 21300000, guid: a0e9464dd5f41c14498f083a39aec92a, type: 3}
   titleSprite: {fileID: 21300000, guid: abdda909e8b8fce41866544316cf4a1e, type: 3}
-  secondsPerSlide: 3
+  secondsPerSlide: 2
   fadeToBlackDuration: 1
-  lastSlideExtraHold: 3
+  lastSlideExtraHold: 2
   finalFadeToBlackDuration: 5
   nextSceneName: EndingScene
   useUnscaledTime: 1
@@ -469,6 +469,7 @@ MonoBehaviour:
   titleMinSize: {x: 220, y: 124}
   titleMaxSize: {x: 1600, y: 900}
   titleAnimationDuration: 5
+  titleOpacityAnimationDuration: 3
   titleMaxSizeHoldDuration: 1
   titleFadeDuration: 3
   titleScaleCurve:
