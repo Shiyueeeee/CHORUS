@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Camera;
 using UnityEngine;
 
 public class SharkAttackController : MonoBehaviour
@@ -44,6 +45,10 @@ public class SharkAttackController : MonoBehaviour
 
     [Header("Progression")]
     [SerializeField] private int trashHitsToEndPhase = 3;
+
+    [Header("Screen Shake")]
+    [SerializeField] private float shakeDuration = 0.25f;
+    [SerializeField] private float shakeMagnitude = 0.2f;
 
     private AttackState currentState = AttackState.Barrage;
     private float stateTimer;
@@ -240,6 +245,9 @@ public class SharkAttackController : MonoBehaviour
                 playerHealth.TakeDamage(playerDamage);
             }
 
+            if (CameraShake.Instance != null)
+                CameraShake.Instance.Shake(shakeDuration, shakeMagnitude);
+
             EndDash();
             return;
         }
@@ -253,6 +261,9 @@ public class SharkAttackController : MonoBehaviour
             {
                 sharkHealth.TakeDamage(1);
             }
+
+            if (CameraShake.Instance != null)
+                CameraShake.Instance.Shake(shakeDuration * 1.1f, shakeMagnitude * 1.5f);
 
             Debug.Log("Shark hit trash. Hurt count: " + trashHitCount + "/" + trashHitsToEndPhase);
 
