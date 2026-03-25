@@ -25,6 +25,7 @@ public class EndingSceneBootstrap : MonoBehaviour
 
     [Header("Credits")]
     [SerializeField] private string creditsTitle = "Credits";
+    [SerializeField] private bool loopCredits = true;
     [SerializeField] private float creditsTitleFontSize = 40f;
     [SerializeField] private float creditsRoleFontSize = 22f;
     [SerializeField] private float creditsNameFontSize = 34f;
@@ -200,7 +201,7 @@ public class EndingSceneBootstrap : MonoBehaviour
         creditsRect.sizeDelta = new Vector2(500f, creditsText.preferredHeight + 60f);
 
         EndingSceneCreditsRoll creditsRoll = viewport.gameObject.AddComponent<EndingSceneCreditsRoll>();
-        creditsRoll.Configure(viewport.rectTransform, creditsRect, creditsScrollSpeed);
+        creditsRoll.Configure(viewport.rectTransform, creditsRect, creditsScrollSpeed, loopCredits);
     }
 
     private EndingSceneSlideshow.SlideData[] CreateSlides()
