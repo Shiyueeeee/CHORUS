@@ -107,7 +107,7 @@ public static class QuestGuideObjectiveResolver
                 return true;
             }
 
-            objective = QuestGuideObjective.CreateNonTalk("Close the Oil Wells");
+            objective = QuestGuideObjective.CreateNonTalk("Close the Oil Rigs");
             return true;
         }
 
@@ -141,19 +141,19 @@ public static class QuestGuideObjectiveResolver
             bool needsExternalTreatment = !GameProgress.seaCucumberExternalTreatmentCompleted;
             if (needsInternalTreatment && needsExternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat Internal Patients\nTreat External Patients");
+                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Sick pile\n-Hurt pile");
                 return true;
             }
 
             if (needsInternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat Internal Patients");
+                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Sick pile");
                 return true;
             }
 
             if (needsExternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat External Patients");
+                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Hurt pile");
                 return true;
             }
 

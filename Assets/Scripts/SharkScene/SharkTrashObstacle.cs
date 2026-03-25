@@ -12,7 +12,6 @@ public class SharkTrashObstacle : MonoBehaviour
             return false;
 
         hasBeenHit = true;
-        Debug.Log("Shark collided with trash obstacle: " + gameObject.name);
 
         if (disableOnHit)
         {

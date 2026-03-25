@@ -88,12 +88,9 @@ public class WhaleInteraction : NpcDialogueInteractionBase
 
     protected override void OnDialogueFinished()
     {
-        Debug.Log("Whale dialogue finished");
-
         if (activePhase == DialoguePhase.PostCrabQuest)
         {
             GameProgress.whaleIntroDialogueCompleted = true;
-            Debug.Log("Crab quest accepted. Placeholder only.");
 
             if (objectToActivate != null)
             {
@@ -103,17 +100,14 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         else if (activePhase == DialoguePhase.PostDolphinQuest)
         {
             GameProgress.whalePostCrabDialogueCompleted = true;
-            Debug.Log("Dolphin quest accepted. Placeholder only.");
         }
         else if (activePhase == DialoguePhase.PostOctopusQuest)
         {
             GameProgress.whalePostDolphinDialogueCompleted = true;
-            Debug.Log("Octopus route task accepted. Shark encounter on the way. Placeholder only.");
         }
         else if (activePhase == DialoguePhase.PostSeaCucumberQuest)
         {
             GameProgress.whalePostOctopusDialogueCompleted = true;
-            Debug.Log("Sea cucumber quest accepted. Placeholder only.");
         }
         else if (activePhase == DialoguePhase.AfterSeaCucumberCompleted)
         {

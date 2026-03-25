@@ -9620,7 +9620,7 @@ MonoBehaviour:
   oceanBound: {fileID: 1694403618}
   playerHealth: {fileID: 0}
   dashDistance: 3
-  dashDuration: 0.1
+  dashDuration: 0.14
   dashCooldown: 1
   longCooldown: 2.5
   dashesBeforeLongCooldown: 2

@@ -6660,7 +6660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1194699172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6700,7 +6700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6961,7 +6961,7 @@ MonoBehaviour:
     text: Dr. Luma always keeps his word! This harp melody, representing life and
       healing, is now yours. If old Mr. Jones's plan can really make the humans stop
       this blasted destruction...
-    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   - speaker: Dr.Luma
     text: Let's go, take me to your base. The environment here is getting worse,

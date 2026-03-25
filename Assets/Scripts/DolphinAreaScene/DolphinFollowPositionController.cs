@@ -30,7 +30,6 @@ public class DolphinFollowPositionController : MonoBehaviour
     public bool canFollow = false;
     [SerializeField] private float followSmooth = 8f;
     [SerializeField] private float inputThreshold = 0.1f;
-    [SerializeField] private float sideSwitchThreshold = 0.75f;
     [SerializeField] private float rushFollowDelay = 0.1f;
     
     [Header("Bounds")]

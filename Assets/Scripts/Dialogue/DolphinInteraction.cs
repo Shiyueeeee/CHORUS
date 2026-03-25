@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,33 +28,73 @@ public class DolphinInteraction : NpcDialogueInteractionBase
 
     [SerializeField] private GameObject objectToActivate;
 
+    [Header("Scene Load")]
+    [SerializeField] private bool triggerCurrentPhaseOnSceneLoad;
+    [SerializeField] private float sceneLoadTriggerDelaySeconds = 0f;
+    [SerializeField] private bool startRushSceneSystemsAfterDialogue = true;
+
     private DialoguePhase activePhase = DialoguePhase.Init;
-    
+    private bool hasTriggeredCurrentPhaseOnSceneLoad;
+
     private DolphinFollowPositionController dolphinFollowPositionController;
     private Interactable interactable;
+    private CrabRushManager rushManager;
+    private TrashSpawner rushTrashSpawner;
+
+    private void OnValidate()
+    {
+        sceneLoadTriggerDelaySeconds = Mathf.Max(0f, sceneLoadTriggerDelaySeconds);
+    }
 
     private void Awake()
     {
         dolphinFollowPositionController = GetComponent<DolphinFollowPositionController>();
         interactable = GetComponent<Interactable>();
+        activePhase = ResolveDialoguePhaseForActiveScene();
 
-        if (SceneManager.GetActiveScene().name == "DolphinAreaScene")
+        if (activePhase == DialoguePhase.Rush)
         {
-            activePhase = DialoguePhase.Init;
-        }
-        else if (SceneManager.GetActiveScene().name == "ShipScene")
-        {
-            activePhase = DialoguePhase.Ship;
-        }
-        else
-        {
-            activePhase = DialoguePhase.Repeat;
+            rushManager = FindFirstObjectByType<CrabRushManager>();
+            rushTrashSpawner = FindFirstObjectByType<TrashSpawner>();
         }
 
         if (GameProgress.dolphinQuestAccepted)
         {
             DisableInteraction();
         }
+    }
+
+    private void Start()
+    {
+        if (!triggerCurrentPhaseOnSceneLoad || hasTriggeredCurrentPhaseOnSceneLoad)
+        {
+            return;
+        }
+
+        hasTriggeredCurrentPhaseOnSceneLoad = true;
+
+        if (!HasDialogueForCurrentState())
+        {
+            StartRushSceneSystemsIfNeeded();
+            return;
+        }
+
+        StartCoroutine(TriggerDialogueOnSceneLoad());
+    }
+
+    private IEnumerator TriggerDialogueOnSceneLoad()
+    {
+        yield return null;
+
+        if (sceneLoadTriggerDelaySeconds > 0f)
+        {
+            yield return new WaitForSecondsRealtime(sceneLoadTriggerDelaySeconds);
+        }
+
+        yield return new WaitUntil(() => DialogueManager.Instance != null);
+        yield return new WaitUntil(() => !DialogueManager.IsDialogueActive);
+
+        Interact();
     }
 
     protected override string GetSpeakerName()
@@ -104,7 +145,50 @@ public class DolphinInteraction : NpcDialogueInteractionBase
             dolphinFollowPositionController.isFollowing = true;
             DisableInteraction();
         }
+
+        StartRushSceneSystemsIfNeeded();
         activePhase = DialoguePhase.Repeat;
+    }
+
+    private DialoguePhase ResolveDialoguePhaseForActiveScene()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "DolphinAreaScene":
+                return DialoguePhase.Init;
+            case "ShipScene":
+                return DialoguePhase.Ship;
+            case "DolphinFinalRushScene":
+                return DialoguePhase.Rush;
+            case "DolphinFinalAreaScene":
+                return DialoguePhase.End;
+            default:
+                return DialoguePhase.Repeat;
+        }
+    }
+
+    private bool HasDialogueForCurrentState()
+    {
+        List<DialogueLineData> lines = GetDialogueLinesForCurrentState();
+        return lines != null && lines.Count > 0;
+    }
+
+    private void StartRushSceneSystemsIfNeeded()
+    {
+        if (!startRushSceneSystemsAfterDialogue || activePhase != DialoguePhase.Rush)
+        {
+            return;
+        }
+
+        if (rushManager != null)
+        {
+            rushManager.BeginRush();
+        }
+
+        if (rushTrashSpawner != null)
+        {
+            rushTrashSpawner.BeginSpawning();
+        }
     }
 
     private void DisableInteraction()

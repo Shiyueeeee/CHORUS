@@ -386,8 +386,6 @@ public class GalleryPanelController : MonoBehaviour
             Debug.LogWarning($"GalleryPanelController: Failed to copy preview image to clipboard. Path: {currentPreviewPath}");
             return;
         }
-
-        Debug.Log($"GalleryPanelController: Copied screenshot to clipboard. Path: {currentPreviewPath}");
     }
 
     private Font ResolveFont(Font preferredFont)

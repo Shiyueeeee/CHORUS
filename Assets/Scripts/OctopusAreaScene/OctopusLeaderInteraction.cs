@@ -59,7 +59,6 @@ public class OctopusLeaderInteraction : NpcDialogueInteractionBase
         {
             GameProgress.octopusQuestAccepted = true;
             RefreshPortalState();
-            Debug.Log("Octopus quest accepted. Placeholder only.");
             return;
         }
 

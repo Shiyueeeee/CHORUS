@@ -92,8 +92,6 @@ public class CrabAmbassadorInteraction : NpcDialogueInteractionBase
 
     protected override void OnDialogueFinished()
     {
-        Debug.Log("Crab Ambassador dialogue finished");
-
         switch (activePhase)
         {
             case DialoguePhase.PostCrabQuest:

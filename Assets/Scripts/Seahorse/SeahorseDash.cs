@@ -21,17 +21,19 @@ namespace Seahorse
         [SerializeField] private PlayerHealth playerHealth;
 
         [Header("Dash")]
-        [SerializeField] private float dashDistance = 4f;
-        [SerializeField] private float dashDuration = 0.08f;
+        [SerializeField] private float dashDistance = 3.25f;
+        [SerializeField] private float dashDuration = 0.14f;
         [SerializeField] private float dashCooldown = 1f;
         [SerializeField] private float longCooldown = 2.5f;
         [SerializeField] private int dashesBeforeLongCooldown = 2;
         [SerializeField] private float chainedDashResetDelay = 4f;
         [SerializeField] private Vector2 defaultDashDirection = Vector2.right;
         [SerializeField] private float directionDeadzone = 0.01f;
+        [Tooltip("Normalized travel profile for the dash. X = elapsed time, Y = distance covered.")]
+        [SerializeField] private AnimationCurve dashTravelProfile = null;
 
         public bool DashEnabled => dashEnabled;
-        public bool IsDashing => dashTimer > 0f;
+        public bool IsDashing => activeDashDuration > 0f;
         public float CooldownRemaining => cooldownTimer;
         public float CooldownDuration => currentCooldownDuration;
         public float CooldownProgress01 => cooldownTimer > 0f && currentCooldownDuration > 0f
@@ -40,7 +42,10 @@ namespace Seahorse
 
         private Vector2 lastDashDirection = Vector2.right;
         private Vector2 dashDirection = Vector2.right;
-        private float dashTimer;
+        private Vector2 dashStartPosition;
+        private Vector2 dashTargetPosition;
+        private float dashElapsed;
+        private float activeDashDuration;
         private float cooldownTimer;
         private float currentCooldownDuration;
         private float lastDashTime = float.NegativeInfinity;
@@ -58,13 +63,28 @@ namespace Seahorse
             if (oceanBound == null)
                 oceanBound = FindFirstObjectByType<OceanBound>();
 
+            EnsureDashTravelProfile();
             lastDashDirection = GetDefaultDirection();
             dashDirection = lastDashDirection;
         }
 
+        private void OnValidate()
+        {
+            dashDistance = Mathf.Max(0f, dashDistance);
+            dashDuration = Mathf.Max(0.01f, dashDuration);
+            dashCooldown = Mathf.Max(0f, dashCooldown);
+            longCooldown = Mathf.Max(0f, longCooldown);
+            chainedDashResetDelay = Mathf.Max(0f, chainedDashResetDelay);
+            directionDeadzone = Mathf.Max(0f, directionDeadzone);
+            EnsureDashTravelProfile();
+        }
+
         private void OnEnable()
         {
-            dashTimer = 0f;
+            dashStartPosition = Vector2.zero;
+            dashTargetPosition = Vector2.zero;
+            dashElapsed = 0f;
+            activeDashDuration = 0f;
             cooldownTimer = 0f;
             currentCooldownDuration = 0f;
             chainedDashes = 0;
@@ -82,7 +102,8 @@ namespace Seahorse
                 seahorseMotor.enabled = true;
 
             disabledMotorForDash = false;
-            dashTimer = 0f;
+            dashElapsed = 0f;
+            activeDashDuration = 0f;
             currentCooldownDuration = 0f;
 
             if (wasDashing && rb != null)
@@ -126,15 +147,14 @@ namespace Seahorse
             if (!IsDashing || rb == null)
                 return;
 
-            float safeDuration = Mathf.Max(0.01f, dashDuration);
-            float stepTime = Mathf.Min(Time.fixedDeltaTime, dashTimer);
-            float dashSpeed = dashDistance / safeDuration;
-            Vector2 nextPosition = rb.position + dashDirection * dashSpeed * stepTime;
+            dashElapsed = Mathf.Min(activeDashDuration, dashElapsed + Time.fixedDeltaTime);
+            float dashProgress = activeDashDuration > 0f ? dashElapsed / activeDashDuration : 1f;
+            float travelProgress = EvaluateDashTravel(dashProgress);
+            Vector2 nextPosition = Vector2.LerpUnclamped(dashStartPosition, dashTargetPosition, travelProgress);
 
             rb.MovePosition(ClampInsideOceanBounds(nextPosition));
-            dashTimer -= Time.fixedDeltaTime;
 
-            if (dashTimer <= 0f)
+            if (dashElapsed >= activeDashDuration)
                 EndDash();
         }
 
@@ -165,11 +185,16 @@ namespace Seahorse
             if (rb == null)
                 return;
 
+            EnsureDashTravelProfile();
+
             if (Time.time - lastDashTime > chainedDashResetDelay)
                 chainedDashes = 0;
 
             dashDirection = ResolveDashDirection();
-            dashTimer = Mathf.Max(0.01f, dashDuration);
+            dashStartPosition = rb.position;
+            dashTargetPosition = ClampInsideOceanBounds(dashStartPosition + dashDirection * dashDistance);
+            dashElapsed = 0f;
+            activeDashDuration = Mathf.Max(0.01f, dashDuration);
             lastDashTime = Time.time;
             chainedDashes++;
 
@@ -195,7 +220,10 @@ namespace Seahorse
 
         private void EndDash()
         {
-            dashTimer = 0f;
+            dashElapsed = 0f;
+            activeDashDuration = 0f;
+            dashStartPosition = rb != null ? rb.position : Vector2.zero;
+            dashTargetPosition = dashStartPosition;
             if (rb != null)
                 rb.linearVelocity = Vector2.zero;
 
@@ -217,6 +245,22 @@ namespace Seahorse
             currentCooldownDuration = 0f;
             chainedDashes = 0;
             lastDashTime = float.NegativeInfinity;
+        }
+
+        private void EnsureDashTravelProfile()
+        {
+            if (dashTravelProfile != null && dashTravelProfile.length > 0)
+                return;
+
+            dashTravelProfile = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+        }
+
+        private float EvaluateDashTravel(float normalizedTime)
+        {
+            if (dashTravelProfile == null || dashTravelProfile.length == 0)
+                return Mathf.Clamp01(normalizedTime);
+
+            return Mathf.Clamp01(dashTravelProfile.Evaluate(Mathf.Clamp01(normalizedTime)));
         }
 
         private void UpdateLastDashDirection()

@@ -43,6 +43,10 @@ public class SharkAttackController : MonoBehaviour
     [SerializeField] private float dashOvershootDistance = 1.5f;
     [SerializeField] private int playerDamage = 50;
 
+    [Header("Aim Stability")]
+    [SerializeField] private float closeAimLockDistance = 0.6f;
+    [SerializeField] private float facingFlipThreshold = 0.2f;
+
     [Header("Progression")]
     [SerializeField] private int trashHitsToEndPhase = 3;
 
@@ -57,6 +61,8 @@ public class SharkAttackController : MonoBehaviour
     private int trashHitCount;
     private float sharkBaseScaleX = 1f;
     private Quaternion sharkBaseRotation = Quaternion.identity;
+    private Vector3 lastStableAimDirection = Vector3.left;
+    private bool isFacingLeft = true;
 
     private void Awake()
     {
@@ -73,6 +79,8 @@ public class SharkAttackController : MonoBehaviour
         currentState = AttackState.Barrage;
         stateTimer = barrageDuration;
         dashResolved = false;
+        lastStableAimDirection = Vector3.left;
+        isFacingLeft = true;
         FaceLeft();
         HideWarningLine();
 
@@ -194,13 +202,8 @@ public class SharkAttackController : MonoBehaviour
 
         Vector3 start = GetWarningStartPosition();
         Vector3 playerPosition = playerTransform.position;
-        Vector3 direction = (playerPosition - start).normalized;
-        if (direction.sqrMagnitude <= 0.0001f)
-        {
-            direction = Vector3.left;
-        }
-
         float playerDistance = Vector3.Distance(start, playerPosition);
+        Vector3 direction = GetStableAimDirection(playerPosition - start, playerDistance);
         float dashDistance = Mathf.Min(maxDashDistance, playerDistance + dashOvershootDistance);
         dashDistance = Mathf.Max(dashDistance, 2f);
         dashTargetPosition = start + direction * dashDistance;
@@ -237,6 +240,19 @@ public class SharkAttackController : MonoBehaviour
         if (currentState != AttackState.Dashing || dashResolved)
             return;
 
+        HandleDashCollision(other);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (currentState != AttackState.Dashing || dashResolved)
+            return;
+
+        HandleDashCollision(other);
+    }
+
+    private void HandleDashCollision(Collider2D other)
+    {
         if (other.CompareTag("Player"))
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
@@ -264,8 +280,6 @@ public class SharkAttackController : MonoBehaviour
 
             if (CameraShake.Instance != null)
                 CameraShake.Instance.Shake(shakeDuration * 1.1f, shakeMagnitude * 1.5f);
-
-            Debug.Log("Shark hit trash. Hurt count: " + trashHitCount + "/" + trashHitsToEndPhase);
 
             if (trashHitCount >= trashHitsToEndPhase)
             {
@@ -389,17 +403,39 @@ public class SharkAttackController : MonoBehaviour
         sharkBaseRotation = sharkTransform.localRotation;
     }
 
+    private Vector3 GetStableAimDirection(Vector3 rawDirection, float playerDistance)
+    {
+        if (playerDistance <= closeAimLockDistance)
+            return lastStableAimDirection;
+
+        if (rawDirection.sqrMagnitude <= 0.0001f)
+            return lastStableAimDirection;
+
+        lastStableAimDirection = rawDirection.normalized;
+        return lastStableAimDirection;
+    }
+
     private void UpdateFacing(Vector3 direction)
     {
-        if (sharkTransform == null || Mathf.Abs(direction.x) <= 0.0001f)
+        if (sharkTransform == null || direction.sqrMagnitude <= 0.0001f)
             return;
 
+        direction.Normalize();
+
+        if (direction.x <= -facingFlipThreshold)
+        {
+            isFacingLeft = true;
+        }
+        else if (direction.x >= facingFlipThreshold)
+        {
+            isFacingLeft = false;
+        }
+
         Vector3 scale = sharkTransform.localScale;
-        bool facingLeft = direction.x < 0f;
-        Vector2 forward = facingLeft ? Vector2.left : Vector2.right;
+        Vector2 forward = isFacingLeft ? Vector2.left : Vector2.right;
         float signedAngle = Vector2.SignedAngle(forward, direction);
 
-        scale.x = facingLeft ? sharkBaseScaleX : -sharkBaseScaleX;
+        scale.x = isFacingLeft ? sharkBaseScaleX : -sharkBaseScaleX;
         sharkTransform.localScale = scale;
         sharkTransform.localRotation = sharkBaseRotation * Quaternion.Euler(0f, 0f, signedAngle);
     }
@@ -408,6 +444,9 @@ public class SharkAttackController : MonoBehaviour
     {
         if (sharkTransform == null)
             return;
+
+        isFacingLeft = true;
+        lastStableAimDirection = Vector3.left;
 
         Vector3 scale = sharkTransform.localScale;
         scale.x = sharkBaseScaleX;
