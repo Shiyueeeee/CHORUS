@@ -890,7 +890,7 @@ MonoBehaviour:
     text: Oh hi little Sea Horse, you brought my child back...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
-  - speaker: Seahorse
+  - speaker: Sea Horse
     text: "I\u2019m gathering a melody\u2026to call for help."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1

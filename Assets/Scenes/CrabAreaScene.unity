@@ -1063,7 +1063,11 @@ MonoBehaviour:
     sfxVolumeScale: 1
   questInProgressDialogueLines:
   - speaker: Kirby The Crab
-    text: Bro not done yet nigga
+    text: Wut? You done already?
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Kirby The Crab
+    text: "No? Then stop standin\u2019 there."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   turnInQuestDialogueLines:
@@ -1179,7 +1183,7 @@ MonoBehaviour:
     sfxVolumeScale: 1
   invalidDialogueLines:
   - speaker: Kirby The Crab
-    text: Hi my lovely soldier!
+    text: Wish I could fire half this crew.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!1 &575188053
