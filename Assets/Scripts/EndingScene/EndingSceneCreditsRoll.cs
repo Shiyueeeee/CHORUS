@@ -50,11 +50,12 @@ public class EndingSceneCreditsRoll : MonoBehaviour
         content.anchoredPosition = position;
     }
 
-    public void Configure(RectTransform viewportRect, RectTransform contentRect, float speed)
+    public void Configure(RectTransform viewportRect, RectTransform contentRect, float speed, bool shouldLoop)
     {
         viewport = viewportRect;
         content = contentRect;
         scrollSpeed = speed;
+        loop = shouldLoop;
         hasCompleted = false;
         isInitialized = false;
         TryInitialize();
