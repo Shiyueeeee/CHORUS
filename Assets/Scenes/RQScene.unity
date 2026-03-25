@@ -3648,52 +3648,53 @@ MonoBehaviour:
   - speaker: Dr.Luma
     text: Wow wow wow, Dr.Luma love your base! Such a lovely place. Dr.Luma loves
       traveling.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Dr.Luma
     text: "Jones! My old friend. Why are you always tired? Dr.Luma never gets tired!
       I\u2019m full of enthusiasm for life, work, and my family\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dr.Luma
     text: "Bob! Glad to see you here. You guys must be busy! Last time Dr.Luma been
       to your place was like\u2026when was that? You probably wasn't born yet. (Laugh)"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Dr.Luma
     text: "Dorothy! Such a beautiful voice\u2026 When are you releasing new songs?
       Dr. Luma can't wait to hear it!"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Dr.Luma
     text: Hey Shrauk, you need to protect your teeth. Stop by at Dr.Luma's clinic,
       Dr.Luma will give you free exam.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dr.Luma
     text: "Oh poor Oliver\u2026Don't worry about your brothers. Dr.Luma already treat
       them before I come. Oh, this little sea horse helped me a lot! Thank you little
       guy."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
   symphonyRepeatDialogueLines:
   - speaker: Dr.Luma
     text: "Dr. Luma can't wait to play! You didn't know but Dr.Luma is good at music!
       I was playing in a band called\u2026"
-    sfxClip: {fileID: 0}
-    sfxVolumeScale: 0
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
+    sfxVolumeScale: 1
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dr.Luma
-    text: "Dr.Luma loves the temperature today\u2026hmm, is coral lesser than before?"
-    sfxClip: {fileID: 0}
+    text: "Dr.Luma loves the temperature today\u2026hmm, is coral lesser than before?
+      Oh Dr.Luma's goodness!! They are bleaching! Dr.Luma don't like this..."
+    sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &1022867533
@@ -9655,6 +9656,30 @@ MonoBehaviour:
   chainedDashResetDelay: 4
   defaultDashDirection: {x: 1, y: 0}
   directionDeadzone: 0.01
+  dashTravelProfile:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1931277876 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2165891866971566691, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
@@ -10405,7 +10430,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.6}
+  m_Offset: {x: -0.45177794, y: -2.0311172}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10415,7 +10440,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4, y: 2.4}
+  m_Size: {x: 13.254836, y: 8.493029}
   m_EdgeRadius: 0
 --- !u!82 &7000000000000005
 AudioSource:

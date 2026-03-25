@@ -2023,8 +2023,8 @@ MonoBehaviour:
   verticalFrequency: 0.5
   horizontalFrequency: 0.45
   phaseOffset: 0.15
-  rotationAmplitude: 0
-  rotationFrequency: 1
+  rotationAmplitude: 0.2
+  rotationFrequency: 0.5
   useUnscaledTime: 1
 --- !u!114 &768419118
 MonoBehaviour:
@@ -2853,8 +2853,8 @@ MonoBehaviour:
   targetGraphic: {fileID: 945733587}
   minAlpha: 0.2
   maxAlpha: 1
-  pulseFrequency: 0.45
-  secondaryWaveStrength: 0.15
+  pulseFrequency: 0.2
+  secondaryWaveStrength: 0.3
   animateScale: 1
   scalePulseAmount: 0.06
   scaleFrequency: 0.35
