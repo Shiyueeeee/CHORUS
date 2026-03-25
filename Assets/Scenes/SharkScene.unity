@@ -360,14 +360,14 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   barrageDuration: 10
-  initialDelay: 0.75
-  attackCooldown: 1.25
-  warningDuration: 0.8
-  recoveryDuration: 0.4
-  dashSpeed: 16
+  initialDelay: 0.9
+  attackCooldown: 1.8
+  warningDuration: 1
+  recoveryDuration: 0.75
+  dashSpeed: 14
   maxDashDistance: 18
   dashOvershootDistance: 1.5
-  playerDamage: 50
+  playerDamage: 35
   trashHitsToEndPhase: 3
 --- !u!212 &183485213
 SpriteRenderer:

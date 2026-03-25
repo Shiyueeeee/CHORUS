@@ -839,9 +839,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      propertyPath: maxSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: oceanBound
       value: 
       objectReference: {fileID: 680618020}
+    - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
+      propertyPath: acceleration
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8054778044272082927, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: m_Name
       value: ---PLAYER---

@@ -893,6 +893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_16
@@ -1115,6 +1119,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_5
@@ -1820,6 +1828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_10
@@ -3470,6 +3482,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.0874
       objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
       value: 45
@@ -3686,6 +3706,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_12
@@ -4560,6 +4584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_6
@@ -4992,6 +5020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_3
@@ -5890,6 +5922,14 @@ PrefabInstance:
     - target: {fileID: 6429705762613698819, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.1223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
@@ -7144,6 +7184,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_1
@@ -8039,6 +8083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_2
@@ -8812,6 +8860,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_4
@@ -8956,6 +9008,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_17
@@ -9077,6 +9133,14 @@ PrefabInstance:
     - target: {fileID: 3904944571299277548, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.1745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
@@ -9734,6 +9798,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_8
@@ -10355,6 +10423,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.1446
       objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
       value: 45
@@ -10939,6 +11015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_18
@@ -11048,6 +11128,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_14
@@ -11304,6 +11388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_9
@@ -12306,6 +12394,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_15
@@ -12519,6 +12611,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_7
@@ -15123,6 +15219,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -5.1156
       objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
       value: 45
@@ -15310,6 +15414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_11
@@ -15703,6 +15811,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 37974357}
     m_Modifications:
+    - target: {fileID: 659945294649184808, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
+      propertyPath: damagePerSecond
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1825046277918643324, guid: d47e86ffdb034e34d900e31b13f704bf, type: 3}
       propertyPath: m_Name
       value: RadiationZone_13
@@ -16153,6 +16265,14 @@ PrefabInstance:
     - target: {fileID: 6429705762613698819, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.1548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
@@ -18308,6 +18428,14 @@ PrefabInstance:
     - target: {fileID: 2463014561563693910, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.0454
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: slamSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044581379122002789, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
+      propertyPath: retractSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7346750107230994095, guid: e053373899a3f664fa4ec9054648c55d, type: 3}
       propertyPath: slamSpeed
