@@ -455,11 +455,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ba100c0fe887ec48b2034a395706947, type: 3}
   - {fileID: 21300000, guid: 1fd61500c10c55e4597159d5fc8ecf31, type: 3}
   - {fileID: 21300000, guid: 33072d95b3e137d4ea40372407b5012a, type: 3}
+  - {fileID: 21300000, guid: c528e405e9817194381bd1baa63489b3, type: 3}
+  - {fileID: 21300000, guid: 8782ea2dd60f845448acbab1a0a060dc, type: 3}
+  - {fileID: 21300000, guid: 107556a281638e546955a0b65621fae3, type: 3}
+  - {fileID: 21300000, guid: 02ebca706d670fb45a6f7863586aff5e, type: 3}
+  - {fileID: 21300000, guid: 51ce6f4fb428c514686518a2f79d4f1e, type: 3}
+  - {fileID: 21300000, guid: 96d8e386eca6ada45954092f72f2f1c6, type: 3}
+  - {fileID: 21300000, guid: 6d09900eee772144fb3c6e537269e73e, type: 3}
+  - {fileID: 21300000, guid: 5d1fcc6e5ac684e49980618670999e24, type: 3}
+  - {fileID: 21300000, guid: 4d2038ed9403dcd4c8a082939feb101c, type: 3}
+  - {fileID: 21300000, guid: d97cb785a87417e44b1d3ff01eec3fae, type: 3}
+  - {fileID: 21300000, guid: 903b2ab80323aae4badc28ee0fc47f44, type: 3}
+  - {fileID: 21300000, guid: e1e7452f2007af64f8c7301134353e5a, type: 3}
+  - {fileID: 21300000, guid: 091265ab9d096054a9c2fb847b8c9824, type: 3}
   - {fileID: 21300000, guid: 097d5878af3d6ef4c96a7d60b5e5b6c5, type: 3}
   - {fileID: 21300000, guid: a0e9464dd5f41c14498f083a39aec92a, type: 3}
   titleSprite: {fileID: 21300000, guid: abdda909e8b8fce41866544316cf4a1e, type: 3}
-  secondsPerSlide: 2
-  fadeToBlackDuration: 1
+  secondsPerSlide: 1.5
+  fadeToBlackDuration: 0.8
   lastSlideExtraHold: 2
   finalFadeToBlackDuration: 5
   nextSceneName: EndingScene
