@@ -63,7 +63,14 @@ public class SweepingSpotlightHazard2D : MonoBehaviour
             return;
         }
 
-        int hitCount = Physics2D.OverlapCircleNonAlloc(detectionOrigin.position, detectionDistance, overlapResults);
+        ContactFilter2D filter = new ContactFilter2D
+        {
+            useTriggers = true,
+            useLayerMask = false,
+            useDepth = false
+        };
+
+        int hitCount = Physics2D.OverlapCircle(detectionOrigin.position, detectionDistance, filter, overlapResults);
         for (int i = 0; i < hitCount; i++)
         {
             Collider2D hit = overlapResults[i];

@@ -39,7 +39,6 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Player entered interaction");
             ShowPrompt();
         }
     }
@@ -74,7 +73,6 @@ public class Interactable : MonoBehaviour
     {
         if (promptObject != null)
         {
-            Debug.Log("Showing prompt");
             promptObject.SetActive(true);
         }
     }

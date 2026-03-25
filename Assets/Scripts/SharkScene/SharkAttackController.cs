@@ -281,8 +281,6 @@ public class SharkAttackController : MonoBehaviour
             if (CameraShake.Instance != null)
                 CameraShake.Instance.Shake(shakeDuration * 1.1f, shakeMagnitude * 1.5f);
 
-            Debug.Log("Shark hit trash. Hurt count: " + trashHitCount + "/" + trashHitsToEndPhase);
-
             if (trashHitCount >= trashHitsToEndPhase)
             {
                 FinishAttackPhase();

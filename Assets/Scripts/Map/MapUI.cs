@@ -32,13 +32,11 @@ public class MapUI : MonoBehaviour
 
     public void OnClickClose()
     {
-        Debug.Log("Close clicked");
         SceneTransition.LoadScene("RQScene");
     }
 
     public void OnClickCrabArea()
     {
-        Debug.Log("Crab Area clicked");
         if (GameProgress.crabCompleted)
         {
             SceneTransition.LoadScene("CrabAreaScene");
@@ -52,7 +50,6 @@ public class MapUI : MonoBehaviour
 
     public void OnClickDolphinArea()
     {
-        Debug.Log("Dolphin Area clicked");
         if (GameProgress.dolphinCompleted)
         {
             SceneTransition.LoadScene("DolphinFinalAreaScene");
@@ -67,7 +64,6 @@ public class MapUI : MonoBehaviour
 
     public void OnClickOctopusArea()
     {
-        Debug.Log("Octopus Area clicked");
         if (GameProgress.sharkCompleted)
         {
             SceneTransition.LoadScene("OctopusAreaScene");
@@ -79,7 +75,6 @@ public class MapUI : MonoBehaviour
 
     public void OnClickSeaCucumberArea()
     {
-        Debug.Log("Sea Cucumber Area clicked");
         SceneTransition.LoadScene("SeaCucumberAreaScene");
     }
 }
