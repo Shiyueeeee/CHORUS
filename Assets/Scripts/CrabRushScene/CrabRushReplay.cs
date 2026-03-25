@@ -9,6 +9,7 @@ public class CrabRushReplay : MonoBehaviour
     {
         Time.timeScale = 1f;
         PlayerEnterState.movementMode = PlayerMovementMode.VerticalOnly;
+        DolphinSceneHealthState.ResetAll();
         SceneTransition.LoadScene(sceneName);
     }
 }

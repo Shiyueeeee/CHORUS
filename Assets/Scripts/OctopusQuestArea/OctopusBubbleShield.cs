@@ -115,7 +115,6 @@ public class OctopusBubbleShield : MonoBehaviour
     private IEnumerator BlinkRoutine()
     {
         isBlinking = false;
-        Debug.Log("Starting Blink Routine");
 
         float endTime = Time.time + totalBlinkDuration;
 

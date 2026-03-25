@@ -849,14 +849,79 @@ MonoBehaviour:
   returnSceneName: RQScene
   returnSpawnPointName: Spawn_DolphinReturn
   repeatDialogueLines:
-  - speaker: Dorothy's Mom
-    text: ......
+  - speaker: Dorothy The Dolphin
+    text: ...
     sfxClip: {fileID: 0}
-    sfxVolumeScale: 1
+    sfxVolumeScale: 0
   randomRepeatDialogueBlocks: []
   finishedDialogueLines:
-  - speaker: Dorothy's Mom
-    text: Thank you...
+  - speaker: Baby Dolphin
+    text: Mommy!
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "Oh my poor baby... I\u2019ve been looking everywhere\u2026"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Baby Dolphin
+    text: "I couldn\u2019t hear you\u2026Everything was too loud\u2026Then nothing..."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "Shh\u2026 it\u2019s alright now. You\u2019re safe. Mommy's here."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "\u2026The noise again. It\u2019s getting worse."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Seahorse
+    text: "Oh, my, Ocean! You are Dorothy! I\u2019ve heard you before\u2026Your songs\u2026they
+      travel across the whole reef."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Seahorse
+    text: "If anyone can reach others\u2026it\u2019s you."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: Oh hi little Sea Horse, you brought my child back...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Seahorse
+    text: "I\u2019m gathering a melody\u2026to call for help."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "\u2026The old melody."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: I remember it.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "If voices still matter\u2026we should try."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: (A clear, resonant note spreads through the water.)
+    sfxClip: {fileID: 8300000, guid: a479e6bd0a099f64a89be595a1e4652a, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "This is my note. It carries far\u2026 when the waters allow it."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: But a melody needs more than one voice.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Dorothy The Dolphin
+    text: "We\u2019ll come with you."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Baby Dolphin
+    text: "I\u2019ll stay close this time."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!1001 &599023847
@@ -1260,6 +1325,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9198317628701626539, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
   m_PrefabInstance: {fileID: 914177818}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &914177822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9139613970128878820, guid: 140ff8c517bcc53459c08adfd270b780, type: 3}
+  m_PrefabInstance: {fileID: 914177818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &949269892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+      propertyPath: speakerText
+      value: 
+      objectReference: {fileID: 914177822}
     - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
       propertyPath: dialogueText
       value: 

@@ -56,8 +56,6 @@ public class CrabQuestManager : MonoBehaviour
 
         lastTrashProgressTime = Time.time;
         cachedHintTrash = null;
-
-        Debug.Log("Crab quest accepted. " + initialTrashCount + " trash remaining.");
     }
 
     public void ClearOneTrash()
@@ -70,13 +68,6 @@ public class CrabQuestManager : MonoBehaviour
 
         lastTrashProgressTime = Time.time;
         cachedHintTrash = null;
-
-        Debug.Log("Trash cleared. Remaining: " + remainingTrash);
-
-        if (remainingTrash == 0)
-        {
-            Debug.Log("All trash cleared. Return to the Crab Leader.");
-        }
     }
 
     public void CompleteQuest()
@@ -84,7 +75,6 @@ public class CrabQuestManager : MonoBehaviour
         if (!AllTrashCleared) return;
 
         GameProgress.crabCompleted = true;
-        Debug.Log("Crab quest completed!");
     }
 
     public bool TryGetTrashHintTarget(out Transform target)

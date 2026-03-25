@@ -49,7 +49,6 @@ public class SeaCucumberLeaderInteraction : NpcDialogueInteractionBase
         if (activePhase == SeaCucumberDialoguePhase.AcceptQuest && !GameProgress.seaCucumberQuestAccepted)
         {
             GameProgress.seaCucumberQuestAccepted = true;
-            Debug.Log("Sea cucumber quest accepted. Placeholder only.");
             return;
         }
 

@@ -145,7 +145,6 @@ public class RQResidentAmbassadorInteraction : NpcDialogueInteractionBase
         if (activeTopic == ResidentDialogueTopic.RequestSeaCucumberEscort)
         {
             GameProgress.sharkEscortToSeaCucumberRequested = true;
-            Debug.Log("Shark escort to Sea Cucumber requested. Placeholder only.");
             return;
         }
 

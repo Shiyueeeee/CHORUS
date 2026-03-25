@@ -24,7 +24,6 @@ public class Switch : MonoBehaviour
 
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Switched");
             if (door != null) door.SetActive(false);
             _interactable.SetInteractionEnabled(false);
             isInteracted = true;
@@ -38,7 +37,6 @@ public class Switch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            Debug.Log("Player entered switch zone");
         }
     }
     
@@ -47,7 +45,6 @@ public class Switch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            Debug.Log("Player left switch zone");
         }
     }
 }

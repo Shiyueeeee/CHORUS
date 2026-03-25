@@ -1498,8 +1498,8 @@ MonoBehaviour:
   bodyCollider: {fileID: 0}
   oceanBound: {fileID: 0}
   playerHealth: {fileID: 0}
-  dashDistance: 4
-  dashDuration: 0.08
+  dashDistance: 3.25
+  dashDuration: 0.14
   dashCooldown: 1
   longCooldown: 2.5
   dashesBeforeLongCooldown: 2

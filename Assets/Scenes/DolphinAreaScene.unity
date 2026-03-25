@@ -2351,6 +2351,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+--- !u!1 &2086893001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086893002}
+  - component: {fileID: 2086893003}
+  m_Layer: 0
+  m_Name: Narrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2086893002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086893001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2086893003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086893001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be2b01900ec4fa2ba53c3748f846e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NarratorInteraction
+  speakerName: Narrator
+  dialogueLines:
+  - speaker: Narrator
+    text: 'The sound of intermittent sobbing could be heard in the distance. '
+    sfxClip: {fileID: 8300000, guid: 3a6f426037e7df043a4f589baf0698f7, type: 3}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: 'The little seahorse followed the sound and swam a little closer to its
+      source. '
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: And a little closer.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Narrator
+    text: ...
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  triggerOnSceneLoad: 1
+  triggerDelaySeconds: 0
 --- !u!1001 &8184910967399442894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2502,6 +2567,166 @@ PrefabInstance:
     - target: {fileID: 3344185811298270637, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 9.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: endDialogueLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[0].text
+      value: "Wahhh\u2026! Mommy!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[1].text
+      value: "I can\u2019t find her\u2026I can\u2019t hear her anymore\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[2].text
+      value: "Hey\u2014 hey, it\u2019s okay. Did you got separated from your mom?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[3].text
+      value: "There was so much noise\u2026Everything got loud\u2026 then quiet\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[4].text
+      value: "Hey\u2026 it\u2019s okay. I\u2019ll help you find her."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[5].text
+      value: "Stay close to me. Don\u2019t swim off, okay?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[6].text
+      value: "Okay\u2026 I\u2019ll follow you."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.data[0].text
+      value: We are almost there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.data[1].text
+      value: (Sobbing).
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[0].text
+      value: "It\u2019s\u2026 scary here\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[1].text
+      value: "I know. It's okay, you\u2019re not alone."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[0].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a6f426037e7df043a4f589baf0698f7, type: 3}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[0].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[1].sfxClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[1].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[2].sfxClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[2].speaker
+      value: Seahorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[3].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[4].speaker
+      value: Seahorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[5].speaker
+      value: Seahorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[6].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a6f426037e7df043a4f589baf0698f7, type: 3}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[6].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.data[0].speaker
+      value: Seahorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.data[1].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[0].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a6f426037e7df043a4f589baf0698f7, type: 3}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[0].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[1].sfxClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[1].speaker
+      value: Seahorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: repeatDialogueLines.Array.data[0].speaker
+      value: Baby Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[2].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[3].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[4].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[5].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: initDialogueLines.Array.data[6].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: rushDialogueLines.Array.data[1].sfxVolumeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516793908042002129, guid: 1e4d995a4bae2f74598f4327c1f2c06d, type: 3}
+      propertyPath: shipDialogueLines.Array.data[1].sfxVolumeScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2658,3 +2883,4 @@ SceneRoots:
   - {fileID: 8184910967399442894}
   - {fileID: 993531528}
   - {fileID: 709780937}
+  - {fileID: 2086893002}

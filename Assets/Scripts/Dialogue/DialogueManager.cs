@@ -177,8 +177,6 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
         currentFullText = "";
 
-        Debug.Log($"Dialogue with {currentSpeaker} ended");
-
         onDialogueFinished?.Invoke();
     }
 

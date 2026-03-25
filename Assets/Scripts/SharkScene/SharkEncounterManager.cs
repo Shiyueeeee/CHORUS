@@ -49,7 +49,6 @@ public class SharkEncounterManager : MonoBehaviour
 
         CurrentPhase = SharkEncounterPhase.AttackChallenge;
         ApplyPhaseState();
-        Debug.Log("Shark encounter entered Phase 2: Attack Challenge.");
     }
 
     public void BeginQuizPhase()
@@ -59,7 +58,6 @@ public class SharkEncounterManager : MonoBehaviour
 
         CurrentPhase = SharkEncounterPhase.Quiz;
         ApplyPhaseState();
-        Debug.Log("Shark encounter entered Phase 3: Quiz.");
     }
 
     public void CompleteEncounter()
@@ -69,7 +67,6 @@ public class SharkEncounterManager : MonoBehaviour
 
         CurrentPhase = SharkEncounterPhase.Completed;
         ApplyPhaseState();
-        Debug.Log("Shark encounter completed.");
 
         StartCompletionSequence();
     }

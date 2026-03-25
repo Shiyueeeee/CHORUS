@@ -6,18 +6,28 @@ public class CrabRushManager : MonoBehaviour
 {
     [SerializeField] private float rushDuration = 60f;
     [SerializeField] private String sceneName;
+    [SerializeField] private bool startOnSceneLoad = true;
 
     private float timer;
     private bool finished = false;
+    private bool isRunning;
 
-    private void Start()
+    private void Awake()
     {
         timer = rushDuration;
     }
 
+    private void Start()
+    {
+        if (startOnSceneLoad)
+        {
+            BeginRush();
+        }
+    }
+
     private void Update()
     {
-        if (finished) return;
+        if (finished || !isRunning) return;
 
         timer -= Time.deltaTime;
 
@@ -32,5 +42,15 @@ public class CrabRushManager : MonoBehaviour
     {
         PlayerEnterState.movementMode = PlayerMovementMode.Free;
         SceneTransition.LoadScene(sceneName);
+    }
+
+    public void BeginRush()
+    {
+        if (finished || isRunning)
+        {
+            return;
+        }
+
+        isRunning = true;
     }
 }
