@@ -40,6 +40,8 @@ public class EndingSceneBootstrap : MonoBehaviour
 
     [Header("Back Button")]
     [SerializeField] private string backButtonText = "Back to Title";
+    [SerializeField] private TMP_FontAsset backButtonFontAsset;
+    [SerializeField] private Sprite backButtonBackgroundSprite;
     [SerializeField] private float backButtonFontSize = 28f;
     [SerializeField] private Vector2 backButtonSize = new Vector2(260f, 72f);
 
@@ -128,7 +130,7 @@ public class EndingSceneBootstrap : MonoBehaviour
         buttonRect.sizeDelta = backButtonSize;
 
         Image buttonImage = buttonObject.GetComponent<Image>();
-        buttonImage.sprite = whiteSprite;
+        buttonImage.sprite = backButtonBackgroundSprite != null ? backButtonBackgroundSprite : whiteSprite;
         buttonImage.type = Image.Type.Simple;
         buttonImage.color = new Color(0.17f, 0.59f, 0.87f, 0.96f);
         buttonImage.raycastTarget = true;
@@ -147,6 +149,8 @@ public class EndingSceneBootstrap : MonoBehaviour
         button.onClick.AddListener(ReturnToTitleScene);
 
         TMP_Text label = CreateText(buttonObject.transform, "BackToTitleLabel", backButtonText, backButtonFontSize, FontStyles.Bold, TextAlignmentOptions.Center, new Color(0.96f, 0.99f, 1f, 1f));
+        if (backButtonFontAsset != null)
+            label.font = backButtonFontAsset;
         Stretch(label.rectTransform, Vector2.zero, Vector2.one, new Vector2(20f, 10f), new Vector2(-20f, -10f));
 
         return button;

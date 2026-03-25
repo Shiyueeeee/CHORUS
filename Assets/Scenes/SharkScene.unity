@@ -3467,7 +3467,7 @@ MonoBehaviour:
   introDialogueLines:
   - speaker: Shrauk the Shark
     text: Heh, so small...and weak.
-    sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
+    sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
     text: And you dare wander into my waters.

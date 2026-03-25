@@ -125,7 +125,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 54224203}
     m_Modifications:
     - target: {fileID: 4436106742940478, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_Name
@@ -153,11 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.84
+      value: -7.28
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.22
+      value: 6.09
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -169,15 +169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -496,6 +496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1073172745}
+  - {fileID: 23253780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &64340522
@@ -574,6 +575,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64340522}
   m_CullTransparentMesh: 1
+--- !u!114 &68569254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5728293639072632108, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &72204541
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +723,17 @@ MonoBehaviour:
   openButton: {fileID: 72204543}
   zoomPanel: {fileID: 948269594}
   requiredLesionCount: 3
+--- !u!114 &82605030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2434510558579085785, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &101795490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1494,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177294111}
   m_CullTransparentMesh: 1
+--- !u!114 &185480422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3867703415082997724, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &200218113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 678040216173260, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &202030130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1758,7 @@ RectTransform:
   - {fileID: 1306959052}
   - {fileID: 480364549}
   - {fileID: 757976533}
+  - {fileID: 1557119173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1995,6 +2041,281 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1319026688070532047, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
   m_PrefabInstance: {fileID: 335672985}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &349652126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1649593846684548286, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!1001 &349865248
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1002497894}
+    m_Modifications:
+    - target: {fileID: 592240510162798144, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Name
+      value: RQPiano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: panelRoot
+      value: 
+      objectReference: {fileID: 1557119172}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 685273115}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1425965175}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 401419472}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 350460767}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[3]'
+      value: 
+      objectReference: {fileID: 200218113}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1168011086}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1710685793}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[6]'
+      value: 
+      objectReference: {fileID: 82605030}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[7]'
+      value: 
+      objectReference: {fileID: 570213107}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1880158964}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[9]'
+      value: 
+      objectReference: {fileID: 634611560}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1144536912}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[11]'
+      value: 
+      objectReference: {fileID: 349652126}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[12]'
+      value: 
+      objectReference: {fileID: 1979733545}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[13]'
+      value: 
+      objectReference: {fileID: 2076691615}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[14]'
+      value: 
+      objectReference: {fileID: 1735963800}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[15]'
+      value: 
+      objectReference: {fileID: 1024076180}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[16]'
+      value: 
+      objectReference: {fileID: 1853072257}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1702483964}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[18]'
+      value: 
+      objectReference: {fileID: 68569254}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[19]'
+      value: 
+      objectReference: {fileID: 1977530930}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[20]'
+      value: 
+      objectReference: {fileID: 372431109}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[21]'
+      value: 
+      objectReference: {fileID: 2062930044}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[22]'
+      value: 
+      objectReference: {fileID: 866823628}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[23]'
+      value: 
+      objectReference: {fileID: 1370605845}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[24]'
+      value: 
+      objectReference: {fileID: 582054532}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[25]'
+      value: 
+      objectReference: {fileID: 1828398135}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[26]'
+      value: 
+      objectReference: {fileID: 390620584}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[27]'
+      value: 
+      objectReference: {fileID: 1939642091}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[28]'
+      value: 
+      objectReference: {fileID: 584733532}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[29]'
+      value: 
+      objectReference: {fileID: 531266049}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[30]'
+      value: 
+      objectReference: {fileID: 1977053683}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[31]'
+      value: 
+      objectReference: {fileID: 185480422}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[32]'
+      value: 
+      objectReference: {fileID: 797689706}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[33]'
+      value: 
+      objectReference: {fileID: 1789034902}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[34]'
+      value: 
+      objectReference: {fileID: 1503400835}
+    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: 'noteButtons.Array.data[35]'
+      value: 
+      objectReference: {fileID: 1683919651}
+    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Size.x
+      value: 20.671177
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Size.y
+      value: 12.309097
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08096123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.3192005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 20.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860319351067304610, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876727046629065414, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475395451012830263, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60cd4ad062a208245a27968781bc51ab, type: 3}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.37759998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35281113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6250331
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+--- !u!114 &350460767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7969069834556630277, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &354966191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4436106742940478, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
@@ -2019,6 +2340,17 @@ MonoBehaviour:
     text: Careful now! Move all the trashes away from them!
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
+--- !u!114 &372431109 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541691827417779715, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &375062935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2592,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390064021}
   m_CullTransparentMesh: 1
+--- !u!114 &390620584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1859878337869390543, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &399205820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,6 +2682,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399205820}
   m_CullTransparentMesh: 1
+--- !u!114 &401419472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4126946474178250350, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1001 &441237142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3059,6 +3413,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &531266049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1449089269802063568, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &547763329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,6 +3543,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560121713}
   m_CullTransparentMesh: 1
+--- !u!114 &570213107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8227952113503040023, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &582054532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2229229296550368642, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &584733532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876463211308147295, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &604347262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,6 +3862,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0000039339, y: -11.8}
   m_SizeDelta: {x: 140.0947, y: 88.0892}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &634611560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5215640390477250780, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &640179118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +4155,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3efc7927b85e9e4daa4a2a9213ae5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Environments.Ocean.OceanBound
+--- !u!114 &685273115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2295720316722736313, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!224 &717321471 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7654761171264283106, guid: 7cfa40c6dad849b4dadd5f7316b90bd1, type: 3}
@@ -4190,6 +4610,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797689706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8261452237219015499, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &822246468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,6 +5248,17 @@ MonoBehaviour:
   topLeftPadding: {x: 24, y: 24}
   cellSpacing: {x: 120, y: 120}
   columns: 4
+--- !u!114 &866823628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874807368896548169, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &883894092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,6 +5730,119 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948269594}
   m_CullTransparentMesh: 1
+--- !u!1001 &954851728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 301705559}
+    m_Modifications:
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553433947928324852, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7870564
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553433947928324852, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553433947928324852, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4660377
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148796397398534352, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_Name
+      value: PianoPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148796397398534352, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
 --- !u!1 &974578632
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,6 +6049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2038879784}
   - {fileID: 441237143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5502,6 +6058,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7654761171264283106, guid: 7cfa40c6dad849b4dadd5f7316b90bd1, type: 3}
   m_PrefabInstance: {fileID: 1061567813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1024076180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3270114213778563399, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1028860115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,6 +6671,17 @@ MonoBehaviour:
       of them for a complete cure!
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
+--- !u!114 &1144536912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 294163988079449558, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1161985142
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,6 +6894,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165700413}
   m_CullTransparentMesh: 1
+--- !u!114 &1168011086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3238890241995672237, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1001 &1178012513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7773,6 +8362,28 @@ MonoBehaviour:
   dragVisual: {fileID: 1361245278}
   canvasGroup: {fileID: 1361245279}
   previewSourceImage: {fileID: 1357633453}
+--- !u!114 &1370605845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 382182553514984292, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &1425965175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2585983660589627296, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1434356654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8078,6 +8689,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 587812836830526338, guid: 25354aaf5a26df348b8c3ddb6a59c6f9, type: 3}
   m_PrefabInstance: {fileID: 1475559728}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1503400835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4331512498648498033, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1001 &1513385020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8259,6 +8881,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -800, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1557119172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8148796397398534352, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1557119173 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3336524491488973303, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1564294683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8559,6 +9191,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1683919651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1891424232611516589, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1001 &1685410056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8661,6 +9304,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7654761171264283106, guid: 7cfa40c6dad849b4dadd5f7316b90bd1, type: 3}
   m_PrefabInstance: {fileID: 1685410056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1702483964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6948372848692988480, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &1710685793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9103649430033124100, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1714159578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8815,6 +9480,17 @@ MonoBehaviour:
   oceanBound: {fileID: 680618020}
   smoothTime: 0.12
   followOffset: {x: 0, y: 0}
+--- !u!114 &1735963800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5540800625858198373, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1001 &1746636045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9054,6 +9730,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1789034902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3708623098290147025, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1793612551
 GameObject:
   m_ObjectHideFlags: 0
@@ -9445,6 +10132,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811572863}
   m_CullTransparentMesh: 1
+--- !u!114 &1828398135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8844504026743519004, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1848726750
 GameObject:
   m_ObjectHideFlags: 0
@@ -9626,6 +10324,17 @@ MonoBehaviour:
   dragVisual: {fileID: 1850065576}
   canvasGroup: {fileID: 1850065577}
   previewSourceImage: {fileID: 29644869}
+--- !u!114 &1853072257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2145822466878305720, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1862947506
 GameObject:
   m_ObjectHideFlags: 0
@@ -9763,6 +10472,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862947506}
   m_CullTransparentMesh: 1
+--- !u!114 &1880158964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 805585010949331544, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1890728122
 GameObject:
   m_ObjectHideFlags: 0
@@ -10372,6 +11092,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+--- !u!114 &1939642091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3459273700906619158, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &1977053683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 848156207013227745, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
+--- !u!114 &1977530930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8442662909234527852, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1978118292
 GameObject:
   m_ObjectHideFlags: 0
@@ -10449,6 +11202,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978118292}
   m_CullTransparentMesh: 1
+--- !u!114 &1979733545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7093221972269814861, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &1987186161
 GameObject:
   m_ObjectHideFlags: 0
@@ -10828,6 +11592,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!4 &2038879784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
+  m_PrefabInstance: {fileID: 349865248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2062930044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6645935444241036118, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &2064137841
 GameObject:
   m_ObjectHideFlags: 0
@@ -10872,6 +11652,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064137841}
   m_CullTransparentMesh: 1
+--- !u!114 &2076691615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8112909530492465199, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
+  m_PrefabInstance: {fileID: 954851728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
 --- !u!1 &2077622450
 GameObject:
   m_ObjectHideFlags: 0
@@ -11665,7 +12456,6 @@ SceneRoots:
   - {fileID: 335672985}
   - {fileID: 680618019}
   - {fileID: 1934523754}
-  - {fileID: 23253779}
   - {fileID: 661597594}
   - {fileID: 2118977184}
   - {fileID: 830555409}
