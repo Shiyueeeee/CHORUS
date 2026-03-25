@@ -904,9 +904,7 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: 'Oliver The Octopus '
-    text: T-this is our clan's heirloom, the oboe. Its sound is extremely penetrating,
-      able to p-pierce through the murkiest polluted waters. We are w-willing to
-      join your team and play that melody together!
+    text: I am w-willing to join your team and play that melody together!
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:

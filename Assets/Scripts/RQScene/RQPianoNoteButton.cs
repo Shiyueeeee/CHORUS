@@ -55,7 +55,7 @@ public class RQPianoNoteButton : MonoBehaviour
 
         Vector3 worldSpawnPosition = spawnRoot.TransformPoint(new Vector3(Random.Range(horizontalJitter.x, horizontalJitter.y), 0f, 0f));
         trailRect.position = worldSpawnPosition;
-        trailRect.SetAsLastSibling();
+        trailRect.SetAsFirstSibling();
 
         Image image = trailObject.GetComponent<Image>();
         image.sprite = effectSprite;

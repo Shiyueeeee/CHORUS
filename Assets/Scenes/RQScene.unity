@@ -779,6 +779,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a367edcff976b33468ce1a52064f1213, type: 3}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7176471
+      objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -890,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 3
-  speakerName: Oliver
+  speakerName: Oliver The Octopus
   aboutBaseDialogueLines:
   - speaker: Oliver
     text: U-um, hi everyone...
@@ -905,35 +913,35 @@ MonoBehaviour:
   aboutCrabDialogueLines:
   - speaker: Oliver
     text: Hey B-Bob, did K-Kirby bully you?
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Oliver
     text: "D-Dorothy, glad to see you here\u2026Don't worry now, t-the oil rig won't
       bother you anymore."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Oliver
     text: "S-Shrauk? That m-muscle\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines: []
   aboutSeaCucumberDialogueLines:
   - speaker: Oliver
     text: "Dr.Luma! Thank you so much-much! You healed m-my friends and f-family\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Oliver
     text: I-I'm ready! Let's d-do it!
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Oliver
     text: "I need to p-practice this song b-before we preform\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &251531867
@@ -6964,7 +6972,7 @@ MonoBehaviour:
     sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: "\u2026The dolphins."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Sea Horse
     text: Ok. I'll go.
@@ -6997,7 +7005,7 @@ MonoBehaviour:
     sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: Hurry up, time is running out.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
     text: "Their home\u2026 is being torn apart by machines..."
@@ -7064,6 +7072,22 @@ MonoBehaviour:
   - speaker: Mr. Jones
     text: You brought them together.
     sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Sea Horse
+    text: "So\u2026 we can start?"
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "\u2026Yes. "
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: "The symphony\u2026 is ready."
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Mr. Jones
+    text: Let them hear us.
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   ensemblePromptDialogueLines:
   - speaker: Mr. Jones
@@ -8434,20 +8458,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 1
-  speakerName: Dorothy
+  speakerName: Dorothy The Dolphin
   aboutBaseDialogueLines:
   - speaker: Dorothy
     text: I haven't been here for a while...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   - speaker: Dorothy
     text: The ocean is quiter, and louder...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Dorothy
     text: Jones. Still likes to sleep. (Laugh)
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
@@ -8455,36 +8479,36 @@ MonoBehaviour:
     text: "Hey little crab, Kirby may be a bit short-tempered, but he\u2019s a good
       crab\u2014diligent and responsible. It\u2019s all thanks to him that the ocean
       hasn\u2019t fallen even worse."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines: []
   aboutSharkDialogueLines:
   - speaker: Dorothy
     text: "Shrauk, you\u2019re finally not keeping to yourself so much anymore. It
       feels pretty good to be talking with everyone, doesn\u2019t it?"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dorothy
     text: "Oliver\u2026Thank goodness that oil rig stop working\u2026it was very
       loud."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Dorothy
     text: "Dr. Luma, thank you for everything you\u2019ve done for everyone."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Dorothy
     text: Let human hear our voice.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dorothy
     text: "I stop singing a long time ago\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1 &1814056574
@@ -9185,55 +9209,55 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Little Crab Bob
     text: This is such a nice place...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
     text: I wish Boss won't fire me...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
     text: Once we're done with this, I'll have to head back... There's a huge pile
       of trash waiting to be cleaned up, and if I get back too late, the boss is
       definitely going to be furious...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Little Crab Bob
     text: Is that Mr.Jones? He is huge...
-    sfxClip: {fileID: 0}
-    sfxVolumeScale: 0
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
+    sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
   - speaker: Little Crab Bob
     text: Dorothy? Isn't she the famous singer? I love her song...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Little Crab Bob
     text: Shrauk...I never met him before. He doesn't look like someone to mess with.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Little Crab Bob
     text: That Octopus must been through a lot...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Little Crab Bob
     text: Dr. Luma is the best doctor, just a little bit too talktive...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Little Crab Bob
     text: "I'm so nervous\u2026what if I messed up?"
-    sfxClip: {fileID: 0}
-    sfxVolumeScale: 0
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
+    sfxVolumeScale: 1
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Little Crab Bob
-    text: ......
-    sfxClip: {fileID: 0}
+    text: "I hope there will be less trash after we play this\u2026"
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!1001 &1898014368
@@ -9343,11 +9367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQResidentAmbassadorInteraction
   residentType: 2
-  speakerName: Shrauk
+  speakerName: Shrauk The Shark
   aboutBaseDialogueLines:
   - speaker: Shrauk
     text: Heh.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Shrauk
@@ -9360,7 +9384,11 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk
-    text: Ok fine.
+    text: Heh. Lazy Jones.
+    sfxClip: {fileID: 0}
+    sfxVolumeScale: 1
+  - speaker: Shrauk
+    text: Fine.
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutCrabDialogueLines:
@@ -9372,7 +9400,7 @@ MonoBehaviour:
   - speaker: Shrauk
     text: "Instead of lecturing me, you\u2019d be better off saving your breath and
       taking care of your voice. Dorothy."
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines: []
   aboutOctopusDialogueLines:
@@ -9388,13 +9416,13 @@ MonoBehaviour:
   symphonyRepeatDialogueLines:
   - speaker: Shrauk
     text: Can we play that stupid song yet?
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Shrauk
     text: Boring.
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
 --- !u!4 &1898014372 stripped
@@ -10277,9 +10305,9 @@ Transform:
   m_GameObject: {fileID: 7000000000000001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.45, y: -13.21, z: 0}
-  m_LocalScale: {x: 0.604128, y: 0.5644679, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 24.27, y: -9.9, z: 0}
+  m_LocalScale: {x: 1.18, y: 1.1025348, z: 1.9532284}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 84822813}
   m_Father: {fileID: 0}
