@@ -200,12 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -685,6 +685,7 @@ MonoBehaviour:
     text: cute base
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines: []
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Octopus Ambassador
@@ -707,6 +708,8 @@ MonoBehaviour:
     text: cute cucumber
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines: []
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Octopus Ambassador
     text: ......
@@ -1219,6 +1222,7 @@ MonoBehaviour:
     text: healthy base
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines: []
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Sea Cucumber Ambassador
@@ -1241,6 +1245,8 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
+  symphonyRepeatDialogueLines: []
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Sea Cucumber Ambassador
     text: ......
@@ -2130,6 +2136,7 @@ MonoBehaviour:
     text: nice place
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines: []
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dolphin Ambassador
@@ -2152,6 +2159,8 @@ MonoBehaviour:
     text: nice cucumber
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines: []
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dolphin Ambassador
     text: ......
@@ -2251,6 +2260,7 @@ MonoBehaviour:
     text: luv ur base
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines: []
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
@@ -2273,6 +2283,8 @@ MonoBehaviour:
     text: luv ur cucumber
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines: []
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Crab Ambassador
     text: ......
@@ -2372,6 +2384,7 @@ MonoBehaviour:
     text: weak base
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  aboutWhaleDialogueLines: []
   requestSeaCucumberEscortDialogueLines:
   - speaker: Sea horse
     text: Please take me to sea cucumber
@@ -2402,6 +2415,8 @@ MonoBehaviour:
     text: weak cucumber
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
+  symphonyRepeatDialogueLines: []
+  randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Shark Ambassador
     text: ......
@@ -2829,6 +2844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4cb2681df54fa4a75bda3417d2ef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Seahorse.SeahorseDash
+  dashEnabled: 1
   seahorseController: {fileID: 0}
   seahorseMotor: {fileID: 0}
   rb: {fileID: 0}
@@ -2843,6 +2859,30 @@ MonoBehaviour:
   chainedDashResetDelay: 4
   defaultDashDirection: {x: 1, y: 0}
   directionDeadzone: 0.01
+  dashTravelProfile:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &6955178374368005372
 PrefabInstance:
   m_ObjectHideFlags: 0
