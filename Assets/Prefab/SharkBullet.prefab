@@ -233,6 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a436fed14b26d084cbba4933a77a37a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SharkBulletProjectile
-  moveSpeed: 4
+  moveSpeed: 6
   lifetime: 6
   damage: 10
