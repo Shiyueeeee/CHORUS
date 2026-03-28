@@ -2052,259 +2052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285ed260f93640cd8bca5c2e7aa81a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RQPianoNoteButton
---- !u!1001 &349865248
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1002497894}
-    m_Modifications:
-    - target: {fileID: 592240510162798144, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Name
-      value: RQPiano
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: panelRoot
-      value: 
-      objectReference: {fileID: 1557119172}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: closeButton
-      value: 
-      objectReference: {fileID: 685273115}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1425965175}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[1]'
-      value: 
-      objectReference: {fileID: 401419472}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[2]'
-      value: 
-      objectReference: {fileID: 350460767}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[3]'
-      value: 
-      objectReference: {fileID: 200218113}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1168011086}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[5]'
-      value: 
-      objectReference: {fileID: 1710685793}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[6]'
-      value: 
-      objectReference: {fileID: 82605030}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[7]'
-      value: 
-      objectReference: {fileID: 570213107}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[8]'
-      value: 
-      objectReference: {fileID: 1880158964}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[9]'
-      value: 
-      objectReference: {fileID: 634611560}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[10]'
-      value: 
-      objectReference: {fileID: 1144536912}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[11]'
-      value: 
-      objectReference: {fileID: 349652126}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[12]'
-      value: 
-      objectReference: {fileID: 1979733545}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[13]'
-      value: 
-      objectReference: {fileID: 2076691615}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[14]'
-      value: 
-      objectReference: {fileID: 1735963800}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[15]'
-      value: 
-      objectReference: {fileID: 1024076180}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[16]'
-      value: 
-      objectReference: {fileID: 1853072257}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[17]'
-      value: 
-      objectReference: {fileID: 1702483964}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[18]'
-      value: 
-      objectReference: {fileID: 68569254}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[19]'
-      value: 
-      objectReference: {fileID: 1977530930}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[20]'
-      value: 
-      objectReference: {fileID: 372431109}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[21]'
-      value: 
-      objectReference: {fileID: 2062930044}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[22]'
-      value: 
-      objectReference: {fileID: 866823628}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[23]'
-      value: 
-      objectReference: {fileID: 1370605845}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[24]'
-      value: 
-      objectReference: {fileID: 582054532}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[25]'
-      value: 
-      objectReference: {fileID: 1828398135}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[26]'
-      value: 
-      objectReference: {fileID: 390620584}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[27]'
-      value: 
-      objectReference: {fileID: 1939642091}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[28]'
-      value: 
-      objectReference: {fileID: 584733532}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[29]'
-      value: 
-      objectReference: {fileID: 531266049}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[30]'
-      value: 
-      objectReference: {fileID: 1977053683}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[31]'
-      value: 
-      objectReference: {fileID: 185480422}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[32]'
-      value: 
-      objectReference: {fileID: 797689706}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[33]'
-      value: 
-      objectReference: {fileID: 1789034902}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[34]'
-      value: 
-      objectReference: {fileID: 1503400835}
-    - target: {fileID: 1563560822722032433, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: 'noteButtons.Array.data[35]'
-      value: 
-      objectReference: {fileID: 1683919651}
-    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Size.x
-      value: 20.671177
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Size.y
-      value: 12.309097
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.08096123
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Offset.y
-      value: 2.3192005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689260825213287252, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 20.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3860319351067304610, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876727046629065414, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475395451012830263, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 60cd4ad062a208245a27968781bc51ab, type: 3}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.37759998
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35281113
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6250331
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
 --- !u!114 &350460767 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7969069834556630277, guid: 76512423d5c30dd4b809e682dd02c58d, type: 3}
@@ -11594,8 +11341,8 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!4 &2038879784 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8687282215082664892, guid: 2c15f92a906b29f45b7f2ba09fe750ec, type: 3}
-  m_PrefabInstance: {fileID: 349865248}
+  m_CorrespondingSourceObject: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+  m_PrefabInstance: {fileID: 4625813372751764731}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2062930044 stripped
 MonoBehaviour:
@@ -12347,6 +12094,215 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 587812836830526338, guid: 25354aaf5a26df348b8c3ddb6a59c6f9, type: 3}
   m_PrefabInstance: {fileID: 2880080456306979303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4625813372751764731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1002497894}
+    m_Modifications:
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: panelRoot
+      value: 
+      objectReference: {fileID: 1557119172}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: closeButton
+      value: 
+      objectReference: {fileID: 685273115}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1425965175}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 401419472}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 350460767}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[3]'
+      value: 
+      objectReference: {fileID: 200218113}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1168011086}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1710685793}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[6]'
+      value: 
+      objectReference: {fileID: 82605030}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[7]'
+      value: 
+      objectReference: {fileID: 570213107}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1880158964}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[9]'
+      value: 
+      objectReference: {fileID: 634611560}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1144536912}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[11]'
+      value: 
+      objectReference: {fileID: 349652126}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[12]'
+      value: 
+      objectReference: {fileID: 1979733545}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[13]'
+      value: 
+      objectReference: {fileID: 2076691615}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[14]'
+      value: 
+      objectReference: {fileID: 1735963800}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[15]'
+      value: 
+      objectReference: {fileID: 1024076180}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[16]'
+      value: 
+      objectReference: {fileID: 1853072257}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1702483964}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[18]'
+      value: 
+      objectReference: {fileID: 68569254}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[19]'
+      value: 
+      objectReference: {fileID: 1977530930}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[20]'
+      value: 
+      objectReference: {fileID: 372431109}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[21]'
+      value: 
+      objectReference: {fileID: 2062930044}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[22]'
+      value: 
+      objectReference: {fileID: 866823628}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[23]'
+      value: 
+      objectReference: {fileID: 1370605845}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[24]'
+      value: 
+      objectReference: {fileID: 582054532}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[25]'
+      value: 
+      objectReference: {fileID: 1828398135}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[26]'
+      value: 
+      objectReference: {fileID: 390620584}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[27]'
+      value: 
+      objectReference: {fileID: 1939642091}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[28]'
+      value: 
+      objectReference: {fileID: 584733532}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[29]'
+      value: 
+      objectReference: {fileID: 531266049}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[30]'
+      value: 
+      objectReference: {fileID: 1977053683}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[31]'
+      value: 
+      objectReference: {fileID: 185480422}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[32]'
+      value: 
+      objectReference: {fileID: 797689706}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[33]'
+      value: 
+      objectReference: {fileID: 1789034902}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[34]'
+      value: 
+      objectReference: {fileID: 1503400835}
+    - target: {fileID: 841337961061103949, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: 'noteButtons.Array.data[35]'
+      value: 
+      objectReference: {fileID: 1683919651}
+    - target: {fileID: 1596497173842807868, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_Name
+      value: RQPiano
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390555448415054272, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60df759cbc501654a8860b675c5c0c59, type: 3}
 --- !u!1001 &5105466744862305634
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 11407783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.79, y: -9.98, z: 0}
+  m_LocalPosition: {x: 8.79, y: -13.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 54195999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.69, y: -12.51, z: 0}
+  m_LocalPosition: {x: -1.01, y: -12.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 165053596}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.83, y: -6.51, z: 0}
+  m_LocalPosition: {x: -9.79, y: -6.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -538,7 +538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.39
+      value: -12.85
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -627,12 +627,12 @@ MonoBehaviour:
   aboutBaseDialogueLines:
   - speaker: Oliver
     text: U-um, hi everyone...
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Oliver
     text: "T-that's Mr.Jones? He's m-my grandfather's friend\u2026"
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
@@ -825,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 627642943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.46, y: -9.79, z: 0}
+  m_LocalPosition: {x: 11.48, y: -13.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -930,7 +930,7 @@ Transform:
   m_GameObject: {fileID: 631482911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.43, y: -8.84, z: 0}
+  m_LocalPosition: {x: 0.19, y: -13, z: 0}
   m_LocalScale: {x: 0.62, y: 0.62, z: 0.62}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -987,7 +987,7 @@ Transform:
   m_GameObject: {fileID: 760714099}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17, y: -6.72, z: 0}
+  m_LocalPosition: {x: -13.96, y: -9.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1030,7 +1030,7 @@ Transform:
   m_GameObject: {fileID: 908295317}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.14, y: 12.57, z: 0}
+  m_LocalPosition: {x: -5.65, y: 12.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1176,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1820,7 +1820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.28
+      value: -8.4
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2239,7 +2239,7 @@ MonoBehaviour:
   ensemblePromptDialogueLines:
   - speaker: Mr. Jones
     text: are you ready
-    sfxClip: {fileID: 0}
+    sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   ensembleYesLabel: Yes
   ensembleNoLabel: No
@@ -2292,7 +2292,7 @@ Transform:
   m_GameObject: {fileID: 1430363826}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.83, y: -15.83, z: 0}
+  m_LocalPosition: {x: -16.54, y: -15.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2699,6 +2699,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7fac030b00bfe1245bbbfb8244b86520, type: 3}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.45882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 701188766629523714, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.96862745
+      objectReference: {fileID: 0}
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2714,6 +2726,14 @@ PrefabInstance:
     - target: {fileID: 3250406829768351867, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3957268038353274540, guid: 1638a147ee62dc54aa2556b58895e66c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3644,11 +3664,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 548037068131200556, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 548037068131200556, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.69568
       objectReference: {fileID: 0}
     - target: {fileID: 548037068131200556, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8841
+      objectReference: {fileID: 0}
+    - target: {fileID: 548037068131200556, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 649203180925979523, guid: 2e07a5d011fdc6b44b613d4362b4fc55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4154,7 +4182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: maxSpeed
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7734036981727574222, guid: db36dc9e6d672344ebe4a14bf38b829e, type: 3}
       propertyPath: acceleration

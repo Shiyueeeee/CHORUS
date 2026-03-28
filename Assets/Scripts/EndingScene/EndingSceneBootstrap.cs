@@ -18,6 +18,7 @@ public class EndingSceneBootstrap : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float fadeDuration = 1.35f;
     [SerializeField] private float secondsPerSlide = 3f;
+    [SerializeField] private float slideFadeDuration = 0.35f;
     [SerializeField] private float creditsScrollSpeed = 46f;
 
     [Header("Slideshow")]
@@ -168,7 +169,7 @@ public class EndingSceneBootstrap : MonoBehaviour
         Stretch(slideImage.rectTransform, Vector2.zero, Vector2.one, new Vector2(12f, 12f), new Vector2(-12f, -12f));
 
         EndingSceneSlideshow slideshow = panel.gameObject.AddComponent<EndingSceneSlideshow>();
-        slideshow.Configure(slideImage, null, null, secondsPerSlide);
+        slideshow.Configure(slideImage, null, null, secondsPerSlide, slideFadeDuration);
         slideshow.SetSlides(CreateSlides());
     }
 

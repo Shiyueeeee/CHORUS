@@ -13,7 +13,7 @@ public class ScreenshotSystem : MonoBehaviour
     public static event Action<string> ScreenshotSaved;
 
     [Header("Capture")]
-    [SerializeField] private Key captureKey = Key.F12;
+    [SerializeField] private Key captureKey = Key.V;
     [SerializeField] private int superSize = 1;
 
     [Header("Feedback")]

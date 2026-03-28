@@ -163,9 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab11d4f6b4f64c63ae9f41039a8aef01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingSceneBootstrap
-  fadeDuration: 1.35
-  secondsPerSlide: 3
-  creditsScrollSpeed: 46
+  fadeDuration: 1
+  secondsPerSlide: 2.3
+  slideFadeDuration: 0.5
+  creditsScrollSpeed: 40
   slideshowSprites:
   - {fileID: 21300000, guid: 9ae62ca8fcff06d418fcef4df60367c5, type: 3}
   - {fileID: 21300000, guid: d7794726db7df6f4b8bf693678278a62, type: 3}
@@ -186,6 +187,27 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc99167a49f46564887c4ee36089988e, type: 3}
   - {fileID: 21300000, guid: 6244e4199c92e99438563fee9aca026c, type: 3}
   - {fileID: 21300000, guid: f374b404b58d2344abdf8ef621798e2c, type: 3}
+  - {fileID: 21300000, guid: 215fa5e3f07bfe446af19aa1a91bc05e, type: 3}
+  - {fileID: 21300000, guid: 0bedb5c5f27a0164781426971dafe446, type: 3}
+  - {fileID: 21300000, guid: 38b681e33bb2c564981567e7a5a67d2c, type: 3}
+  - {fileID: 21300000, guid: 605b906ac6225854e94c070baa0d2a26, type: 3}
+  - {fileID: 21300000, guid: a9a3eeb0ae58aca48b6f0aa31fb1dbf1, type: 3}
+  - {fileID: 21300000, guid: eea0f8ca0d162fc4483d28923db52120, type: 3}
+  - {fileID: 21300000, guid: 5d2a77557ca27064f9817f084dee99a0, type: 3}
+  - {fileID: 21300000, guid: 760cc8e1717b19c42ae5bbef46ef03a4, type: 3}
+  - {fileID: 21300000, guid: 5da861bbfcf64b647aae94cdb5857062, type: 3}
+  - {fileID: 21300000, guid: 0a887b79479642f4b92d6cf3e04a723f, type: 3}
+  - {fileID: 21300000, guid: b3d05859f82da5c43a0be150b227b8ab, type: 3}
+  - {fileID: 21300000, guid: b2dac37ad58ca864e9fa765f2733060a, type: 3}
+  - {fileID: 21300000, guid: a740058dea45d2947bcd61b0c6782480, type: 3}
+  - {fileID: 21300000, guid: 982c72e802ffae1489eb9a79999108f6, type: 3}
+  - {fileID: 21300000, guid: 6027352534cc8224a8bdce5ab3086ccb, type: 3}
+  - {fileID: 21300000, guid: c1f066d5358b7d04194a2e3dd57e61b5, type: 3}
+  - {fileID: 21300000, guid: 2dd2e59070f2eae41adcd190927967d7, type: 3}
+  - {fileID: 21300000, guid: 138384f0d1b5db5429c06c295f436444, type: 3}
+  - {fileID: 21300000, guid: 6ac4141562a1fd14698276f4f3dac7c6, type: 3}
+  - {fileID: 21300000, guid: 13d2c9291bc2fb047bb0d2fb5ce523c9, type: 3}
+  - {fileID: 21300000, guid: a17375643a6ea314fac48d8f5994a9b1, type: 3}
   creditsTitle: Credits
   loopCredits: 1
   creditsTitleFontSize: 80
@@ -216,6 +238,30 @@ MonoBehaviour:
   - heading: MUSIC
     names:
     - Olivia Wang
+  - heading: Actors
+    names:
+    - Sea Horse - Seahorse
+    - Mr.Jones - Whale
+    - Kirby - Crab
+    - Bob -Crab
+    - Dorothy - Dolpnin
+    - Lizzy - Baby Dolphin
+    - Shrauk -Shark
+    - Oliver - Octopus
+    - Timmy - Dead Octopus
+    - Dr.Luma - Sea Cucumber
+    - Johnny - Sea Turtle
+    - Andrew - Fish
+    - Coral - Sea Horse's house
+  - heading: Symphony
+    names:
+    - Sea Horse - Flute
+    - Mr.Jones - Cello
+    - Bob -Maracas
+    - Dorothy - Vocal
+    - Shrauk -Drum
+    - Oliver - Clarinet
+    - 'Dr.Luma - Bell '
   backButtonText: Back to Title
   backButtonFontAsset: {fileID: 11400000, guid: ad5ee0e2be9619148909ca8dc4a00b9c, type: 2}
   backButtonBackgroundSprite: {fileID: 0}
