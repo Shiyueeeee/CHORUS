@@ -3963,9 +3963,9 @@ MonoBehaviour:
   randomDeadAfterTalkDialogueBlocks: []
   deadWithoutTalkDialogueLines:
   - speaker: Dead Octopus
-    translatedSpeaker: 
+    translatedSpeaker: "\u611F\u67D3\u7684\u7AE0\u9C7C"
     text: ......
-    translatedText: 
+    translatedText: "\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   characterSpriteRenderer: {fileID: 495203137}

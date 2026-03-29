@@ -651,7 +651,7 @@ MonoBehaviour:
     translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "D-Dorothy, glad to see you here\u2026Don't worry now, t-the oil rig won't
       bother you anymore."
-    translatedText: "\u6843\u4E50\u4E1D\u3001\u5F88\u9AD8\u3001\u9AD8\u5174\u5728\u8FD9\u89C1\uFF0C\u89C1\u5230\u4F60\u2026\u522B"
+    translatedText: "\u6843\u4E50\u4E1D\u3001\u5F88\u9AD8\u3001\u9AD8\u5174\u5728\u8FD9\u89C1\uFF0C\u89C1\u5230\u4F60\u2026\u522B\u3001\u522B\u62C5\u5FC3\uFF0C\u6CB9\u4E95\u4E0D\u4F1A\u518D\u5435\u5230\u4F60\u4E86\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:

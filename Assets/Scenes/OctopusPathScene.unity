@@ -688,7 +688,7 @@ MonoBehaviour:
   - speaker: Shrauk the Shark
     translatedSpeaker: "\u6C99\u514B"
     text: We are here.
-    translatedText: "\u6211\u4EEC\u5230\u4E86"
+    translatedText: "\u6211\u4EEC\u5230\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
