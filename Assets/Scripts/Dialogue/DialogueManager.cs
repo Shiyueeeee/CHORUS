@@ -16,10 +16,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject yesNoChoicePanel;
     [SerializeField] private Button yesButton;
     [SerializeField] private Button noButton;
+    [SerializeField] private TMP_Text yesButtonText;
+    [SerializeField] private TMP_Text noButtonText;
 
     [Header("Dialogue SFX")]
     [SerializeField] private AudioSource dialogueSfxSource;
     [SerializeField] [Range(0f, 1f)] private float dialogueSfxBaseVolume = 1f;
+
+    [Header("Localization")]
+    [SerializeField] private TMP_FontAsset chineseFont;
 
     [Header("Typewriter")]
     [SerializeField] [Min(0f)] private float characterRevealInterval = 0.02f;
@@ -41,6 +46,12 @@ public class DialogueManager : MonoBehaviour
     private System.Action onNoSelected;
     private bool isChoiceActive;
     private AudioClip generatedTypewriterBlipClip;
+    private TMP_FontAsset defaultDialogueFont;
+    private TMP_FontAsset defaultSpeakerFont;
+    private string currentYesLabelEnglish = "Yes";
+    private string currentNoLabelEnglish = "No";
+    private string currentYesLabelChinese = "是";
+    private string currentNoLabelChinese = "否";
 
     private void Awake()
     {
@@ -69,15 +80,34 @@ public class DialogueManager : MonoBehaviour
         {
             yesButton.onClick.RemoveAllListeners();
             yesButton.onClick.AddListener(ChooseYes);
+
+            if (yesButtonText == null)
+                yesButtonText = yesButton.GetComponentInChildren<TMP_Text>(true);
         }
 
         if (noButton != null)
         {
             noButton.onClick.RemoveAllListeners();
             noButton.onClick.AddListener(ChooseNo);
+
+            if (noButtonText == null)
+                noButtonText = noButton.GetComponentInChildren<TMP_Text>(true);
         }
 
+        defaultDialogueFont = dialogueText != null ? dialogueText.font : null;
+        defaultSpeakerFont = speakerText != null ? speakerText.font : null;
+
         EnsureDialogueSfxSource();
+    }
+
+    private void OnEnable()
+    {
+        LanguageSettingsManager.LanguageChanged += HandleLanguageChanged;
+    }
+
+    private void OnDisable()
+    {
+        LanguageSettingsManager.LanguageChanged -= HandleLanguageChanged;
     }
 
     private void Update()
@@ -144,8 +174,10 @@ public class DialogueManager : MonoBehaviour
             return;
 
         DialogueLineData line = currentLines[currentLineIndex];
-        currentSpeaker = line != null ? line.speaker : string.Empty;
-        currentFullText = line != null ? line.text ?? string.Empty : string.Empty;
+        currentSpeaker = line != null ? line.GetLocalizedSpeaker() : string.Empty;
+        currentFullText = line != null ? line.GetLocalizedText() : string.Empty;
+
+        ApplyLocalizedFonts();
 
         if (speakerText != null)
             speakerText.text = currentSpeaker;
@@ -173,6 +205,8 @@ public class DialogueManager : MonoBehaviour
         if (speakerText != null)
             speakerText.text = "";
 
+        ApplyLocalizedFonts();
+
         currentLines.Clear();
         currentLineIndex = 0;
         currentFullText = "";
@@ -180,7 +214,15 @@ public class DialogueManager : MonoBehaviour
         onDialogueFinished?.Invoke();
     }
 
-    public void StartYesNoChoice(string speaker, string question, System.Action onYes, System.Action onNo = null, string yesLabel = "Yes", string noLabel = "No")
+    public void StartYesNoChoice(
+        string speaker,
+        string question,
+        System.Action onYes,
+        System.Action onNo = null,
+        string yesLabel = "Yes",
+        string noLabel = "No",
+        string yesLabelChinese = "是",
+        string noLabelChinese = "否")
     {
         if (IsDialogueActive)
             return;
@@ -188,6 +230,10 @@ public class DialogueManager : MonoBehaviour
         IsDialogueActive = true;
         isChoiceActive = true;
         currentSpeaker = speaker ?? string.Empty;
+        currentYesLabelEnglish = string.IsNullOrWhiteSpace(yesLabel) ? "Yes" : yesLabel;
+        currentNoLabelEnglish = string.IsNullOrWhiteSpace(noLabel) ? "No" : noLabel;
+        currentYesLabelChinese = string.IsNullOrWhiteSpace(yesLabelChinese) ? "是" : yesLabelChinese;
+        currentNoLabelChinese = string.IsNullOrWhiteSpace(noLabelChinese) ? "否" : noLabelChinese;
         onDialogueFinished = null;
         onYesSelected = onYes;
         onNoSelected = onNo;
@@ -195,11 +241,15 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
 
+        ApplyLocalizedFonts();
+
         if (speakerText != null)
             speakerText.text = currentSpeaker;
 
         if (dialogueText != null)
             dialogueText.text = question ?? string.Empty;
+
+        ApplyChoiceLabels();
 
         if (yesNoChoicePanel != null)
             yesNoChoicePanel.SetActive(true);
@@ -241,6 +291,9 @@ public class DialogueManager : MonoBehaviour
 
         if (speakerText != null)
             speakerText.text = "";
+
+        ApplyLocalizedFonts();
+        ApplyChoiceLabels();
 
         onDialogueFinished = null;
         onYesSelected = null;
@@ -397,5 +450,70 @@ public class DialogueManager : MonoBehaviour
         generatedTypewriterBlipClip = AudioClip.Create("DialogueTypewriterBlip", sampleCount, 1, sampleRate, false);
         generatedTypewriterBlipClip.SetData(samples, 0);
         return generatedTypewriterBlipClip;
+    }
+
+    private void HandleLanguageChanged(SupportedLanguage language)
+    {
+        ApplyLocalizedFonts();
+
+        if (!IsDialogueActive)
+            return;
+
+        if (isChoiceActive)
+        {
+            if (speakerText != null)
+                speakerText.text = currentSpeaker;
+
+            ApplyChoiceLabels();
+
+            return;
+        }
+
+        if (currentLineIndex < 0 || currentLineIndex >= currentLines.Count)
+            return;
+
+        DialogueLineData line = currentLines[currentLineIndex];
+        currentSpeaker = line != null ? line.GetLocalizedSpeaker() : string.Empty;
+        currentFullText = line != null ? line.GetLocalizedText() : string.Empty;
+
+        if (speakerText != null)
+            speakerText.text = currentSpeaker;
+
+        StartTypewriter(currentFullText);
+    }
+
+    private void ApplyLocalizedFonts()
+    {
+        TMP_FontAsset activeFont = null;
+        if (LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese)
+            activeFont = chineseFont != null ? chineseFont : LanguageSettingsManager.GetChineseUiFontOrNull();
+
+        if (dialogueText != null)
+            dialogueText.font = activeFont != null ? activeFont : defaultDialogueFont;
+
+        if (speakerText != null)
+            speakerText.font = activeFont != null ? activeFont : defaultSpeakerFont;
+    }
+
+    private void ApplyChoiceLabels()
+    {
+        string localizedYes = LanguageSettingsManager.GetLocalizedText(currentYesLabelEnglish, currentYesLabelChinese);
+        string localizedNo = LanguageSettingsManager.GetLocalizedText(currentNoLabelEnglish, currentNoLabelChinese);
+
+        if (yesButtonText != null)
+            yesButtonText.text = localizedYes;
+
+        if (noButtonText != null)
+            noButtonText.text = localizedNo;
+
+        TMP_FontAsset activeFont = LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese
+            ? (chineseFont != null ? chineseFont : LanguageSettingsManager.GetChineseUiFontOrNull())
+            : null;
+
+        if (yesButtonText != null && defaultDialogueFont != null)
+            yesButtonText.font = activeFont != null ? activeFont : defaultDialogueFont;
+
+        if (noButtonText != null && defaultDialogueFont != null)
+            noButtonText.font = activeFont != null ? activeFont : defaultDialogueFont;
     }
 }

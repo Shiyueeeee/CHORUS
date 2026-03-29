@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,12 @@ public class SettingsAudioTabBinder : MonoBehaviour
     [Header("Optional Labels")]
     [SerializeField] private Text musicValueText;
     [SerializeField] private Text sfxValueText;
+
+    [Header("Language")]
+    [SerializeField] private Button languageToggleButton;
+    [SerializeField] private TMP_Text languageToggleLabel;
+    [SerializeField] private string englishLanguageLabel = "Language: English";
+    [SerializeField] private string chineseLanguageLabel = "Language: 中文";
 
     private void Awake()
     {
@@ -32,6 +39,7 @@ public class SettingsAudioTabBinder : MonoBehaviour
     {
         AudioSettingsManager.MusicVolumeChanged += HandleMusicVolumeChanged;
         AudioSettingsManager.SfxVolumeChanged += HandleSfxVolumeChanged;
+        LanguageSettingsManager.LanguageChanged += HandleLanguageChanged;
 
         SyncFromSettings();
 
@@ -40,24 +48,32 @@ public class SettingsAudioTabBinder : MonoBehaviour
 
         if (sfxSlider != null)
             sfxSlider.onValueChanged.AddListener(HandleSfxSliderChanged);
+
+        if (languageToggleButton != null)
+            languageToggleButton.onClick.AddListener(HandleLanguageToggleClicked);
     }
 
     private void OnDisable()
     {
         AudioSettingsManager.MusicVolumeChanged -= HandleMusicVolumeChanged;
         AudioSettingsManager.SfxVolumeChanged -= HandleSfxVolumeChanged;
+        LanguageSettingsManager.LanguageChanged -= HandleLanguageChanged;
 
         if (musicSlider != null)
             musicSlider.onValueChanged.RemoveListener(HandleMusicSliderChanged);
 
         if (sfxSlider != null)
             sfxSlider.onValueChanged.RemoveListener(HandleSfxSliderChanged);
+
+        if (languageToggleButton != null)
+            languageToggleButton.onClick.RemoveListener(HandleLanguageToggleClicked);
     }
 
     private void SyncFromSettings()
     {
         HandleMusicVolumeChanged(AudioSettingsManager.GetMusicVolumeOrDefault());
         HandleSfxVolumeChanged(AudioSettingsManager.GetSfxVolumeOrDefault());
+        HandleLanguageChanged(LanguageSettingsManager.CurrentLanguage);
     }
 
     private void HandleMusicSliderChanged(float value)
@@ -96,5 +112,16 @@ public class SettingsAudioTabBinder : MonoBehaviour
     {
         if (target == null) return;
         target.text = $"{Mathf.RoundToInt(Mathf.Clamp01(value) * 100f)}%";
+    }
+
+    private void HandleLanguageToggleClicked()
+    {
+        LanguageSettingsManager.ToggleLanguage();
+    }
+
+    private void HandleLanguageChanged(SupportedLanguage language)
+    {
+        if (languageToggleLabel != null)
+            languageToggleLabel.text = language == SupportedLanguage.Chinese ? chineseLanguageLabel : englishLanguageLabel;
     }
 }

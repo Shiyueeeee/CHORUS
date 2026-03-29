@@ -42,6 +42,7 @@ public class EndingSceneBootstrap : MonoBehaviour
 
     [Header("Back Button")]
     [SerializeField] private string backButtonText = "Back to Title";
+    [SerializeField] private string backButtonTextChinese = "返回标题";
     [SerializeField] private TMP_FontAsset backButtonFontAsset;
     [SerializeField] private Sprite backButtonBackgroundSprite;
     [SerializeField] private float backButtonFontSize = 28f;
@@ -150,9 +151,22 @@ public class EndingSceneBootstrap : MonoBehaviour
         button.colors = colors;
         button.onClick.AddListener(ReturnToTitleScene);
 
-        TMP_Text label = CreateText(buttonObject.transform, "BackToTitleLabel", backButtonText, backButtonFontSize, FontStyles.Bold, TextAlignmentOptions.Center, new Color(0.96f, 0.99f, 1f, 1f));
+        TMP_Text label = CreateText(
+            buttonObject.transform,
+            "BackToTitleLabel",
+            LanguageSettingsManager.GetLocalizedText(backButtonText, backButtonTextChinese),
+            backButtonFontSize,
+            FontStyles.Bold,
+            TextAlignmentOptions.Center,
+            new Color(0.96f, 0.99f, 1f, 1f));
         if (backButtonFontAsset != null)
             label.font = backButtonFontAsset;
+        else
+        {
+            TMP_FontAsset chineseFont = LanguageSettingsManager.GetChineseUiFontOrNull();
+            if (LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese && chineseFont != null)
+                label.font = chineseFont;
+        }
         Stretch(label.rectTransform, Vector2.zero, Vector2.one, new Vector2(20f, 10f), new Vector2(-20f, -10f));
 
         return button;

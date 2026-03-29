@@ -142,8 +142,12 @@ public class WhaleInteraction : NpcDialogueInteractionBase
         for (int i = sourceLines.Length - 1; i >= 0; i--)
         {
             DialogueLineData line = sourceLines[i];
-            if (line != null && !string.IsNullOrWhiteSpace(line.text))
-                return line.text;
+            if (line == null)
+                continue;
+
+            string localizedText = line.GetLocalizedText();
+            if (!string.IsNullOrWhiteSpace(localizedText))
+                return localizedText;
         }
 
         return fallbackText;

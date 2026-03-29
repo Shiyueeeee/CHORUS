@@ -546,105 +546,155 @@ MonoBehaviour:
   defaultSpeakerName: Shark
   travelDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "\u2026You really are taking me to the octopus?"
+    translatedText: "\u4F60\u771F\u7684\u51C6\u5907\u5E26\u6211\u53BB\u627E\u7AE0\u9C7C\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: I said I would.
+    translatedText: "\u5E9F\u8BDD\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: I thought you hated this whole plan.
+    translatedText: "\u6211\u4EE5\u4E3A\u4F60\u4E00\u70B9\u90FD\u77A7\u4E0D\u8D77\u8FD9\u4E2A\u8BA1\u5212\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: I do.
+    translatedText: "\u55EF\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: But I hate starving more.
+    translatedText: "\u4E0D\u8FC7\u9965\u997F\u6BD4\u4F60\u7684\u83BD\u649E\u66F4\u96BE\u4EE5\u5FCD\u53D7\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "\u2026Is it really that bad?"
+    translatedText: "\u2026\u2026\u60C5\u51B5\u771F\u7684\u8FD9\u4E48\u7CDF\u4E86\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Fish scatter. Routes change. The weak die first. The lucky ones leave.
       The unlucky ones become food.
+    translatedText: "\u9C7C\u7FA4\u56DB\u6563\u3002\u8DEF\u7EBF\u53D8\u6362\u3002\u5F31\u8005\u5148\u6B7B\u3002\u5E78\u8FD0\u8005\u9003\u79BB\u3002\u4E0D\u5E78\u8005\u5219\u6CA6\u4E3A\u730E\u7269\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Even myself. I am...weaker than before.
+    translatedText: "\u5C31\u8FDE\u6211\u81EA\u5DF1\u4E5F\u662F\u3002\u6211\u2026\u2026\u6BD4\u4EE5\u524D\u66F4\u5F31\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: The acidified ocean is corroding my scales and teeth.
+    translatedText: "\u9178\u5316\u7684\u5927\u6D77\u6B63\u5728\u8150\u8680\u6211\u7684\u9CDE\u7247\u548C\u7259\u9F7F\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "I\u2019m swimming slower than I used to."
+    translatedText: "\u6211\u6BD4\u4EE5\u524D\u6E38\u5F97\u66F4\u6162\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
-  - speaker: Shrauk the Shark
+  - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "So that\u2019s why you attack everything\u2026"
+    translatedText: "\u8FD9\u5C31\u662F\u4F60\u4E3A\u4EC0\u4E48\u65E0\u5DEE\u522B\u653B\u51FB\u6240\u6709\u95EF\u5165\u4F60\u9886\u57DF\u7684\u9C7C\u7C7B\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: I hunt what remains.
+    translatedText: "\u6211\u6CA1\u8D44\u683C\u6311\u98DF\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: The survival of the fittest.
+    translatedText: "\u5F31\u8089\u5F3A\u98DF\uFF0C\u9002\u8005\u751F\u5B58\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Before I met you, I met crabs and dolphins.
+    translatedText: "\u5728\u9047\u89C1\u4F60\u4E4B\u524D\uFF0C\u6211\u9047\u89C1\u4E86\u8783\u87F9\u548C\u6D77\u8C5A\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u753B\u9762"
     text: Marine debris has completely blocked off the crabs' habitat, and sonar
       has disrupted the dolphins' ability to navigate.
+    translatedText: "\u6D77\u6D0B\u5783\u573E\u5DF2\u5B8C\u5168\u963B\u65AD\u4E86\u8783\u87F9\u7684\u6816\u606F\u5730\uFF0C\u800C\u58F0\u5450\u5219\u5E72\u6270\u4E86\u6D77\u8C5A\u7684\u5BFC\u822A\u80FD\u529B\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Do you think humans will really respond to our song?
+    translatedText: "\u4F60\u89C9\u5F97\u4EBA\u7C7B\u771F\u7684\u4F1A\u5BF9\u6211\u4EEC\u7684\u65CB\u5F8B\u6709\u6240\u56DE\u5E94\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "Doubt slows you down. Out here\u2026that gets you killed."
+    translatedText: "\u72B9\u8C6B\u4F1A\u62D6\u6162\u4F60\u7684\u811A\u6B65\u3002\u5728\u8FD9\u7247\u8352\u91CE\u2026\u2026\u90A3\u4F1A\u8981\u4E86\u4F60\u7684\u547D\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Are you scared, kid?
+    translatedText: "\u4F60\u5BB3\u6015\u4E86\u5417\uFF0C\u5B69\u5B50\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: If that's the case, you'd better give up now.
+    translatedText: "\u5982\u679C\u662F\u90A3\u6837\u7684\u8BDD\uFF0C\u4F60\u8FD8\u662F\u73B0\u5728\u5C31\u653E\u5F03\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: I won't.
+    translatedText: "\u6211\u4E0D\u4F1A\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Then stop questioning.
+    translatedText: "\u90A3\u5C31\u5C11\u5E9F\u8BDD\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: We are here.
+    translatedText: "\u6211\u4EEC\u5230\u4E86"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Go ahead.
+    translatedText: "\u8D70\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   nextSceneName: OctopusAreaScene

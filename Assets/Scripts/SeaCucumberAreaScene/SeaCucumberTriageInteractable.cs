@@ -41,7 +41,9 @@ public class SeaCucumberTriageInteractable : MonoBehaviour, IInteractable
             lines.Add(new DialogueLineData
             {
                 speaker = string.IsNullOrWhiteSpace(line.speaker) ? fallbackSpeaker : line.speaker,
-                text = line.text
+                translatedSpeaker = line.translatedSpeaker,
+                text = line.text,
+                translatedText = line.translatedText
             });
         }
 

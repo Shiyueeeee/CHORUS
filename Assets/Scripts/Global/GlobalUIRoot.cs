@@ -46,6 +46,9 @@ public class GlobalUIRoot : MonoBehaviour
         if (FindFirstObjectByType<ScreenshotSystem>() == null)
             gameObject.AddComponent<ScreenshotSystem>();
 
+        if (GetComponent<StaticUiLocalizationController>() == null)
+            gameObject.AddComponent<StaticUiLocalizationController>();
+
         SetSettingsOpen(false);
     }
 

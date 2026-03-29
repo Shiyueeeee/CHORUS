@@ -22,9 +22,13 @@ public class QuestTrackerPanelController : MonoBehaviour
     private bool hasInitializedVisibility;
     private bool hasLoggedMissingReferences;
     private bool hasConfiguredRaycasts;
+    private TMP_FontAsset defaultQuestFont;
 
     private void Start()
     {
+        if (questText != null)
+            defaultQuestFont = questText.font;
+
         Refresh();
     }
 
@@ -50,6 +54,7 @@ public class QuestTrackerPanelController : MonoBehaviour
 
         if (shouldShow && questLabel != lastQuestText)
         {
+            ApplyLocalizedFont();
             questText.text = questLabel;
             lastQuestText = questLabel;
         }
@@ -108,5 +113,16 @@ public class QuestTrackerPanelController : MonoBehaviour
 
         questLabel = objective.Label;
         return !string.IsNullOrEmpty(questLabel);
+    }
+
+    private void ApplyLocalizedFont()
+    {
+        if (questText == null)
+            return;
+
+        TMP_FontAsset chineseFont = LanguageSettingsManager.GetChineseUiFontOrNull();
+        questText.font = LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese && chineseFont != null
+            ? chineseFont
+            : defaultQuestFont;
     }
 }

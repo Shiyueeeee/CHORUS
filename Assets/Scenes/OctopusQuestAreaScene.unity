@@ -811,11 +811,15 @@ MonoBehaviour:
   speakerName: Seahorse
   unlockDialogueLines:
   - speaker: 
+    translatedSpeaker: "\u6D77\u9A6C"
     text: This place is covered in radiation!
+    translatedText: "\u8FD9\u5730\u65B9\u88AB\u8F90\u5C04\u7167\u6EE1\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: 
+    translatedSpeaker: "\u6D77\u9A6C"
     text: But I can use my bubble
+    translatedText: "\u4E0D\u8FC7\u6211\u53EF\u4EE5\u7528\u6CE1\u6CE1"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   bubbleShield: {fileID: 860514956}
@@ -3907,45 +3911,61 @@ MonoBehaviour:
   speakerName: Octopus
   hintDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: 
     text: Finally here... this is the engine level! Wait, there's another octopus
       on the left! Sir, are you okay?!
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mutated Octopus
+    translatedSpeaker: "\u611F\u67D3\u7684\u7AE0\u9C7C"
     text: Cough... L-leave me be. The radiation... has already pierced through my
       body...
+    translatedText: "\u54B3\u54B3\u2026\u2026\u522B\u7BA1\u6211\u2026\u2026\u8F90\u5C04\u2026\u5DF2\u7ECF\u4FB5\u8680\u6211\u7684\u5168\u8EAB\u4E86\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: 
     text: Hold on! Once the engine is off, the radiation will disappear. Dr. Luma
       can definitely heal you! Where is the switch?
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mutated Octopus
+    translatedSpeaker: "\u611F\u67D3\u7684\u7AE0\u9C7C"
     text: Go to the right... the button... is on the far right. It's a... green button...
       Hurry... don't let... don't let the pollution spread any further...
+    translatedText: "\u5411\u53F3\u8D70\u2026\u6309\u94AE\u2026\u2026\u5728\u53F3\u8FB9\u2026\u2026\u5FEB\u2026\u2026\u522B\u8BA9\u8F90\u5C04\u518D\u4F20\u64AD\u7684\u2026\u66F4\u8FDC\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aliveRepeatDialogueLines:
-  - speaker: Octopus
+  - speaker: Mutated Octopus
+    translatedSpeaker: "\u611F\u67D3\u7684\u7AE0\u9C7C"
     text: Please hurry...
+    translatedText: "\u6C42\u4F60\u2026\u5FEB\u70B9\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomAliveRepeatDialogueBlocks: []
   deadAfterTalkDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Sir! Did you hear that? The machine has stopped! The radiation in the water
       is gone too, how are you feeling...
+    translatedText: "\u4F60\u542C\u5230\u4E86\u5417\uFF1F\u673A\u5668\u5DF2\u7ECF\u5173\u6389\u4E86\uFF0C\u6838\u6C61\u6C34\u4E5F\u6CA1\u4E86\u2026\u2026\u4F60\u611F\u89C9\u600E\u4E48\u6837\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Sir? Wake up... No, how could this be...
+    translatedText: "\u5582\u2026\u9192\u9192\u2026\u2026\uFF01\u4E0D\u2026\u600E\u4E48\u4F1A\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomDeadAfterTalkDialogueBlocks: []
   deadWithoutTalkDialogueLines:
   - speaker: Dead Octopus
+    translatedSpeaker: 
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   characterSpriteRenderer: {fileID: 495203137}
@@ -16738,21 +16758,29 @@ MonoBehaviour:
   speakerName: Narrator
   completeOilWellsDialogueLines:
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Found it, on the far right! It's this red button! Stop right now!
+    translatedText: "\u627E\u5230\u4E86\uFF01\u5C31\u5728\u8FD9\u91CC\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   completeOilWellsAfterDyingOctopusDialogueLines:
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Found it, on the far right! It's this red button! Stop right now!
+    translatedText: "\u627E\u5230\u4E86\uFF01\u5C31\u5728\u8FD9\u91CC\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Must go check on that Octopus.
+    translatedText: "\u5F97\u53BB\u770B\u770B\u90A3\u53EA\u7AE0\u9C7C\u600E\u4E48\u6837\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
   repeatDialogueLines:
   - speaker: 
+    translatedSpeaker: 
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -17632,7 +17660,9 @@ MonoBehaviour:
   speakerName: Octopus
   repeatDialogueLines:
   - speaker: Dead Octopus
+    translatedSpeaker: "\u6B7B\u7AE0\u9C7C"
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []

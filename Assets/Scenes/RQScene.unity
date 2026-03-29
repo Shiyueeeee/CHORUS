@@ -626,46 +626,62 @@ MonoBehaviour:
   speakerName: Oliver The Octopus
   aboutBaseDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: U-um, hi everyone...
+    translatedText: "\u5927\u3001\u5927\u5BB6\u597D\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "T-that's Mr.Jones? He's m-my grandfather's friend\u2026"
+    translatedText: "\u90A3\u662F\u743C\u3001\u743C\u65AF\u5148\u751F\uFF1F\u4ED6\u3001\u4ED6\u662F\u6211\u7237\u7237\u7684\u670B\uFF0C\u670B\u53CB\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: Hey B-Bob, did K-Kirby bully you?
+    translatedText: "\u563F\u9C8D\u52C3\uFF0C\u67EF\u6BD4\u53C8\u6B3A\u3001\u6B3A\u8D1F\u4F60\u4E86\u5417\uFF1F"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "D-Dorothy, glad to see you here\u2026Don't worry now, t-the oil rig won't
       bother you anymore."
+    translatedText: "\u6843\u4E50\u4E1D\u3001\u5F88\u9AD8\u3001\u9AD8\u5174\u5728\u8FD9\u89C1\uFF0C\u89C1\u5230\u4F60\u2026\u522B"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "S-Shrauk? That m-muscle\u2026"
+    translatedText: "\u6C99\u514B\u3001\u4F60\u7684\u808C\u3001\u808C\u8089\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines: []
   aboutSeaCucumberDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "Dr.Luma! Thank you so much-much! You healed m-my friends and f-family\u2026"
+    translatedText: "\u9646\u739B\u533B\u751F\uFF01\u8C22\u3001\u8C22\u8C22\u4F60\uFF01\u4F60\u6CBB\u597D\u4E86\u6211\u7684\u670B\u53CB\u548C\u6211\u7684\u5BB6\u3001\u5BB6\u4EBA\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: I-I'm ready! Let's d-do it!
+    translatedText: "\u6211\u51C6\u3001\u51C6\u5907\u597D\u4E86\uFF01"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Oliver
+    translatedSpeaker: "\u5965\u5229\u7EF4\u5C14"
     text: "I need to p-practice this song b-before we preform\u2026"
+    translatedText: "\u6211\u5F97\u5728\u6F14\u51FA\u524D\u591A\u3001\u7EC3\u7EC3\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -1260,54 +1276,70 @@ MonoBehaviour:
   speakerName: Dr.Luma
   aboutBaseDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: Wow wow wow, Dr.Luma love your base! Such a lovely place. Dr.Luma loves
       traveling.
+    translatedText: "\u54C7\u585E\u54C7\u585E\u54C7\u585E\uFF0C\u9646\u739B\u533B\u751F\u7231\u6B7B\u4F60\u7684\u57FA\u5730\u4E86\uFF01\u591A\u4E48\u7F8E\u5999\u7684\u5730\u65B9\u554A\uFF01\u9646\u739B\u533B\u751F\u53EF\u559C\u6B22\u65C5\u6E38\u4E86\uFF01"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Jones! My old friend. Why are you always tired? Dr.Luma never gets tired!
       I\u2019m full of enthusiasm for life, work, and my family\u2026"
+    translatedText: "\u743C\u65AF\uFF01\u6211\u7684\u8001\u670B\u53CB\u3002\u4F60\u600E\u4E48\u603B\u662F\u770B\u8D77\u6765\u8FD9\u4E48\u75B2\u60EB\uFF1F\u662F\u4E0D\u662F\u71AC\u591C\u4E86\uFF1F\u9646\u739B\u533B\u751F\u4ECE\u6765\u4E0D\u4F1A\u611F\u5230\u75B2\u60EB\u3002\u9646\u739B\u533B\u751F\u5BF9\u751F\u6D3B\uFF0C\u5DE5\u4F5C\u548C\u5BB6\u5EAD\u90FD\u5145\u6EE1\u70ED\u60C5\u2026"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Bob! Glad to see you here. You guys must be busy! Last time Dr.Luma been
       to your place was like\u2026when was that? You probably wasn't born yet. (Laugh)"
+    translatedText: "\u563F\uFF0C\u9C8D\u52C3\uFF01\u4F60\u4EEC\u4E00\u5B9A\u5FD9\u574F\u4E86\u5427\uFF01\u4E0A\u6B21\u53BB\u4F60\u4EEC\u7684\u6D77\u57DF\u662F\u4EC0\u4E48\u65F6\u5019\u6765\u7740\uFF1F\u5662\u2026\u2026\u4F60\u5E94\u8BE5\u8FD8\u6CA1\u51FA\u751F\u5427\u3002\uFF08\u7B11\uFF09"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Dorothy! Such a beautiful voice\u2026 When are you releasing new songs?
       Dr. Luma can't wait to hear it!"
+    translatedText: "\u6843\u4E50\u4E1D\uFF01\u5929\u7C41\u4E4B\u58F0\u2026\u2026\u4F60\u4EC0\u4E48\u65F6\u5019\u53D1\u65B0\u6B4C\uFF1F"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: Hey Shrauk, you need to protect your teeth. Stop by at Dr.Luma's clinic,
       Dr.Luma will give you free exam.
+    translatedText: "\u563F\u6C99\u514B\uFF0C\u5662\u4F60\u5E94\u8BE5\u5B66\u7740\u4FDD\u62A4\u4F60\u7684\u7259\u9F7F\u3002\u4E0B\u6B21\u6765\u9646\u739B\u533B\u751F\u7684\u8BCA\u6240\uFF0C\u9001\u4F60\u4E00\u4EFD\u514D\u8D39\u7684\u68C0\u67E5\u3002"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Oh poor Oliver\u2026Don't worry about your brothers. Dr.Luma already treat
       them before I come. Oh, this little sea horse helped me a lot! Thank you little
       guy."
+    translatedText: "\u53EF\u601C\u7684\u5965\u5229\u7EF4\u5C14\u2026\u2026\u522B\u62C5\u5FC3\u4F60\u7684\u5144\u5F1F\u4EEC\u4E86\uFF0C\u9646\u739B\u533B\u751F\u5728\u6765\u4E4B\u524D\u5DF2\u7ECF\u5E2E\u4ED6\u4EEC\u5305\u624E\u597D\u4E86\u3002\u5662\uFF0C\u8FD9\u4E2A\u5C0F\u6D77\u9A6C\u53EF\u5E2E\u4E86\u9646\u739B\u533B\u751F\u4E0D\u5C11\u5FD9\u3002\u8C22\u8C22\u4F60\uFF0C\u5C0F\u5BB6\u4F19\u3002"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines: []
   symphonyRepeatDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Dr. Luma can't wait to play! You didn't know but Dr.Luma is good at music!
       I was playing in a band called\u2026"
+    translatedText: "\u9646\u739B\u533B\u751F\u5DF2\u7ECF\u7B49\u4E0D\u53CA\u8981\u6F14\u594F\u4E86\uFF01\u4F60\u4E0D\u77E5\u9053\u9646\u739B\u533B\u751F\u5176\u5B9E\u5F88\u64C5\u957F\u4E50\u5668\u5427\uFF1F\u6211\u66FE\u7ECF\u5728\u4E00\u4E2A\u4E50\u961F\u91CC\u5F53\u6253\u51FB\u4E50\u624B\uFF0C\u90A3\u4E2A\u4E50\u961F\u53EB\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dr.Luma
+    translatedSpeaker: "\u9646\u739B\u533B\u751F"
     text: "Dr.Luma loves the temperature today\u2026hmm, is coral lesser than before?
       Oh Dr.Luma's goodness!! They are bleaching! Dr.Luma don't like this..."
+    translatedText: "\u9646\u739B\u533B\u751F\u559C\u6B22\u4ECA\u5929\u7684\u6E29\u5EA6\uFF01\u5443\u2026\u2026\u8FD9\u91CC\u7684\u73CA\u745A\u662F\u4E0D\u662F\u6BD4\u4EE5\u5F80\u5C11\u4E86\u4E00\u4E9B\u2026\u2026\uFF1F\u5662\u5929\u554A\uFF01\u5B83\u4EEC\u90FD\u767D\u5316\u4E86\uFF01\u8FD9\u53EF\u4E0D\u597D\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: 584766cdc20f4fb4088cf44c0e514ee1, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -1918,327 +1950,483 @@ MonoBehaviour:
   speakerName: Mr. Jones
   postCrabQuestDialogueLines:
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Mr. Jones!
+    translatedText: "\u743C\u65AF\u5148\u751F\uFF01"
     sfxClip: {fileID: 8300000, guid: b1f66267cfee0ff48b607e750ccf57b0, type: 3}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: ...
+    translatedText: ...
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Mr. Jones?
+    translatedText: "\u743C\u65AF\u5148\u751F\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "..\u2026\u2026(gasp)"
+    translatedText: "\u2026\u2026\uFF08\u5438\u6C14\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: MR.JONES!!!!
+    translatedText: "\u743C\uFF01\u65AF\uFF01\u5148\uFF01\u751F\uFF01\uFF01\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (The heavy movement of the moving belt stirred up sand, and Mr. Jones opened
       his eyes.)
+    translatedText: "\uFF08\u6C89\u91CD\u7684\u79FB\u52A8\u58F0\u5E26\u8D77\u6D6E\u6C99\uFF0C\u743C\u65AF\u5148\u751F\u7741\u5F00\u4E86\u773C\u775B\uFF09"
     sfxClip: {fileID: 8300000, guid: 4ba7d5e7329e3784fa426e48c2750c37, type: 3}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: My house is falling apart! When I bought it, the developer promised me
       it was built with the finest coral and would remain solid as a rock for thousands
       of years. So why is it crumbling to pieces after just two years?
+    translatedText: "\u6211\u7684\u623F\u5B50\u574D\u584C\u4E86\uFF01\u5F53\u521D\u6211\u8D2D\u4E70\u5B83\u65F6\uFF0C\u5F00\u53D1\u5546\u5411\u6211\u4FDD\u8BC1\u8FD9\u623F\u5B50\u7528\u5F97\u662F\u6700\u597D\u7684\u73CA\u745A\uFF0C\u5C31\u7B97\u8FC7\u4E2A\u51E0\u5343\u5E74\u4E5F\u7167\u6837\u7ED3\u7ED3\u5B9E\u5B9E\u3002\u600E\u4E48\u8FD9\u624D\u6CA1\u8FC7\u4E24\u5E74\u5C31\u5657\u5657\u5F80\u4E0B\u843D\u7070\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Yes...I can feel this......
+    translatedText: "\u662F\u7684\u2026\u6211\u80FD\u611F\u89C9\u5230\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: The ocean... Is getting warmer...and warmer......
+    translatedText: "\u6D77\u6D0B\u2026\u2026\u53D8\u5F97\u8D8A\u6765\u8D8A\u70ED\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "When the water changes\u2026 the algae leave the coral."
+    translatedText: "\u5F53\u6C34\u6E29\u53D1\u751F\u53D8\u5316\u65F6\u2026\u2026\u85FB\u7C7B\u5C31\u4F1A\u79BB\u5F00\u73CA\u745A\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Without them\u2026 the coral cannot survive."
+    translatedText: "\u6CA1\u6709\u5B83\u4EEC...\u73CA\u745A\u5C31\u4F1A\u67AF\u6B7B\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: But why is this happening now?!
+    translatedText: "\u53EF\u662F\u4E3A\u4EC0\u4E48\u4F1A\u53D8\u6210\u8FD9\u6837\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "It wasn\u2019t like this before!"
+    translatedText: "\u4EE5\u524D\u53EF\u4E0D\u662F\u8FD9\u6837\u7684\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Because...humans have started interfering again....
+    translatedText: "\u56E0\u4E3A...\u4EBA\u7C7B...\u53C8\u5F00\u59CB\u5E72\u6D89\u4E86..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Humans?
+    translatedText: "\u4EBA\u7C7B...\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: What are they doing in our place?
+    translatedText: "\u4ED6\u4EEC\u5728\u6211\u4EEC\u7684\u5730\u76D8\u505A\u4EC0\u4E48\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: You will...find out......
+    translatedText: "\u4F60\u4F1A...\u660E\u767D\u7684..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
-    text: Wait wait wait. So, how can I stop them? I need to save my house from falling
+    translatedSpeaker: "\u6D77\u9A6C"
+    text: Anyways. So, how can I stop them? I need to save my house from falling
       apart! It cost me greatly!
+    translatedText: "\u4E0D\u7BA1\u600E\u4E48\u8BF4\uFF0C\u6211\u8981\u600E\u4E48\u963B\u6B62\u4ED6\u4EEC\uFF1F\u6211\u5FC5\u987B\u5F97\u633D\u6551\u6211\u7684\u623F\u5B50\uFF0C\u90A3\u53EF\u662F\u82B1\u4E86\u6211\u6574\u6574\u4E00\u5E74\u7684\u5DE5\u8D44..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "There was once\u2026an agreement\u2026"
+    translatedText: "\u5F88\u4E45\u5F88\u4E45\u4EE5\u524D..."
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Between the ocean\u2026 and humanity."
+    translatedText: "\u4EBA\u7C7B\u548C\u6D77\u6D0B\u6709\u4E2A\u5951\u7EA6\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "If the ocean was ever in danger\u2026we had a way to call them\u2026"
+    translatedText: "\u5982\u679C\u6D77\u6D0B\u9700\u8981\u5E2E\u52A9...\u6211\u4EEC\u53EF\u4EE5\u5411\u4EBA\u7C7B\u547C\u6551\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: We play a symphony, and humans will help us...
+    translatedText: "\u6211\u4EEC\u5411\u4ED6\u4EEC\u6F14\u594F\u4E00\u9996\u7279\u522B\u7684\u4EA4\u54CD\u66F2...\u4ED6\u4EEC\u5C31\u4F1A\u6765\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "The melody was divided\u2026kept by different species."
+    translatedText: "\u65CB\u5F8B\u548C\u4E50\u5668\u88AB\u5206\u5F00...\u7531\u4E0D\u540C\u7684\u79CD\u65CF\u638C\u7BA1\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Only when all parts are played together\u2026can humans understand us."
+    translatedText: "\u53EA\u6709\u5F53\u4E00\u8D77\u6F14\u594F\u5B8C\u6574\u7684\u65CB\u5F8B\u65F6...\u4EBA\u7C7B\u65B9\u80FD\u542C\u61C2\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Then\u2026 we just need to gather them, right?"
+    translatedText: "\u90A3\u6211\u53EA\u9700\u8981\u6536\u96C6\u6240\u6709\u7684\u65CB\u5F8B\u5C31\u884C\u4E86\uFF0C\u5BF9\u5427\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "It won\u2019t be that simple...The ocean is no longer united..."
+    translatedText: "\u6CA1\u4F60\u60F3\u5F97\u90A3\u4E48\u7B80\u5355...\u6D77\u6D0B...\u5DF2\u7ECF\u4E0D\u518D\u56E2\u7ED3\u4E86..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Many species no longer trust each other\u2026"
+    translatedText: "\u79CD\u65CF\u76F4\u63A5\u4E92\u76F8\u731C\u5FCC...\u6050\u60E7\u548C\u7EDD\u671B\u586B\u6EE1\u4E86\u8FD9\u7247\u6D77\u57DF...\u5927\u5BB6\u4E0D\u518D\u76F8\u4FE1\u5BF9\u65B9\u4E86..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: or humans...
+    translatedText: "\u4EBA\u7C7B\u4E5F\u88AB\u89C6\u4E3A\u80CC\u4FE1\u5F03\u4E49\u7684\u5BB6\u4F19..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "If you want their help\u2026"
+    translatedText: "\u5982\u679C\u4F60\u60F3\u8981\u4ECE\u522B\u7684\u79CD\u65CF\u8EAB\u4E0A\u5F97\u5230\u4ED6\u4EEC\u638C\u63A7\u7684\u65CB\u5F8B..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: you must go find them.
+    translatedText: "\u5C31\u53BB\u627E\u4ED6\u4EEC\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "The crabs has a part\u2026You can start with them\u2026"
+    translatedText: "\u8783\u87F9\u65CF\u6709\u4E00\u6BB5\u65CB\u5F8B...\u4F60\u53EF\u4EE5\u4ECE\u5B83\u4EEC\u5F00\u59CB..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: They live not far from here...
+    translatedText: "\u4ED6\u4EEC\u4F4F\u7684\u4E0D\u8FDC..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "If the waters are polluted\u2026they must already be struggling..."
+    translatedText: "\u5982\u679C\u8FD9\u7247\u6D77\u57DF\u4E5F\u88AB\u6C61\u67D3\u4E86...\u4ED6\u4EEC\u80AF\u5B9A\u5DF2\u7ECF\u4E3E\u6B65\u7EF4\u8270\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Head right...and follow the current past the cliff to the waters where
       they live...
+    translatedText: "\u5411\u53F3\u8D70...\u4F7F\u7528\u6D0B\u6D41\u524D\u5F80\u4ED6\u4EEC\u5C45\u4F4F\u7684\u5730\u65B9..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "I\u2019ll convince them."
+    translatedText: "\u6211\u4F1A\u8BF4\u670D\u4ED6\u4EEC\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026Be careful."
+    translatedText: "...\u5C0F\u5FC3\u70B9\u3002"
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Not everyone will welcome you\u2026"
+    translatedText: "\u6DF1\u6D77\u5904\u5904\u662F\u5371\u9669...\u4E0D\u662F\u6240\u6709\u4EBA\u90FD\u6B22\u8FCE\u4F60..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (And Mr.Jones closed his eyes, fall asleep again.)
+    translatedText: "\uFF08\u743C\u65AF\u5148\u751F\u95ED\u4E0A\u4E86\u773C\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   postDolphinQuestDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Mr. Jones, I'm back.
+    translatedText: "\u743C\u65AF\u5148\u751F\uFF0C\u6211\u56DE\u6765\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Mr. Jones opened his eyes.)
+    translatedText: "\uFF08\u743C\u65AF\u5148\u751F\u7741\u5F00\u4E86\u773C\u775B\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: You made it...
+    translatedText: "\u4F60\u505A\u5230\u4E86\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Good job...
+    translatedText: "\u5E72\u5F97\u4E0D\u9519\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Mr. Jones looked at Bob.)
+    translatedText: "\uFF08\u743C\u65AF\u5148\u751F\u770B\u4E86\u770B\u9C8D\u52C3\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026Good...One piece\u2026found."
+    translatedText: "\u5F88\u597D...\u627E\u5230\u4E00\u90E8\u5206\u4E86..."
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "They don\u2019t trust easily...You did well."
+    translatedText: "\u4ED6\u4EEC\u4E0D\u5BB9\u6613\u4FE1\u4EFB\u4ED6\u4EBA\u2026\u2026\u505A\u5F97\u597D\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Where do I go next?
+    translatedText: "\u6211\u63A5\u4E0B\u6765\u5E94\u8BE5\u53BB\u54EA\u91CC\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026The dolphins."
+    translatedText: "\u53BB\u627E\u6D77\u8C5A\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Ok. I'll go.
+    translatedText: "\u597D\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   postOctopusQuestDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Mr. Jones\u2026 I\u2019m back."
+    translatedText: "\u743C\u65AF\u5148\u751F\u2026\u2026\u6211\u56DE\u6765\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026Mm. I can hear it..."
+    translatedText: "\u6211\u80FD\u542C\u89C1\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026A strong voice."
+    translatedText: "\u2026\u2026\u6709\u529B\u91CF\u7684\u6B4C\u58F0\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Now find the others. Before the ocean goes silent.
+    translatedText: "\u73B0\u5728\u2026\u53BB\u627E\u5176\u4ED6\u4EBA\u3002\u5728\u6D77\u6D0B\u5F7B\u5E95\u6C89\u5BC2\u4E4B\u524D\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Who's next?
+    translatedText: "\u4E0B\u4E2A\u662F\u8C01\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026The octopus."
+    translatedText: "\u2026\u7AE0\u9C7C\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Hurry up, time is running out.
+    translatedText: "\u5FEB\u70B9\u2026\u65F6\u95F4\u4E0D\u591A\u4E86\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "Their home\u2026 is being torn apart by machines..."
+    translatedText: "\u4ED6\u4EEC\u7684\u5BB6\u2026\u5C31\u8981\u88AB\u94A2\u7B4B\u94F8\u6210\u7684\u91CE\u517D\u6495\u788E\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "I understand. I\u2019ll help them."
+    translatedText: "\u6211\u660E\u767D\u4E86\u3002\u6211\u4F1A\u5E2E\u52A9\u4ED6\u4EEC\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   postSeaCucumberQuestDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Mr. Jones\u2026 I\u2019m back."
+    translatedText: "\u743C\u65AF\u5148\u751F\u2026\u6211\u56DE\u6765\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "The rhythm\u2026 is stronger now."
+    translatedText: "\u65CB\u5F8B\u2026\u2026\u3001\u8D8A\u6765\u8D8A\u54CD\u4EAE\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: You found Shrauk...Good...
+    translatedText: "\u4F60\u627E\u5230\u4E86\u6C99\u514B\u2026\u2026\u5F88\u597D\u2026\u2026\u7701\u4E86\u4E0D\u5C11\u4E8B\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Then you'll only need one last piece...
+    translatedText: "\u90A3\u4E48\u2026\u4F60\u53EA\u9700\u8981\u2026\u6700\u540E\u4E00\u4E2A\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Who has it?
+    translatedText: "\u6211\u8BE5\u53BB\u627E\u8C01\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Dr. Luma...
+    translatedText: "\u9646\u739B\u533B\u751F\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: The sea cucumber.
+    translatedText: "\u90A3\u4E2A\u6D77\u53C2\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "He heals\u2026what others cannot."
+    translatedText: "\u4ED6\u80FD\u6CBB\u6108\u2026\u65C1\u4EBA\u6240\u4E0D\u80FD\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Let Shrauk take you there...
+    translatedText: "\u8BA9\u6C99\u514B\u5E26\u4F60\u8FC7\u53BB\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   afterSeaCucumberCompletedDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Mr. Jones\u2026Everyone\u2019s here."
+    translatedText: "\u743C\u65AF\u5148\u751F\uFF0C\u5927\u5BB6\u90FD\u5230\u9F50\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: 
     text: (Mr. Jones slowly opens his eyes.)
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: 
     text: "\u2026Yes. I can hear it clearly now."
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: 
     text: You did it.
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: You brought them together.
+    translatedText: "\u4F60\u628A\u5927\u5BB6\u805A\u5230\u4E00\u8D77\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "So\u2026 we can start?"
+    translatedText: "\u6240\u4EE5\u2026\u6211\u4EEC\u53EF\u4EE5\u5F00\u59CB\u4E86\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026Yes. "
+    translatedText: "\u2026\u662F\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "The symphony\u2026 is ready."
+    translatedText: "\u4EA4\u54CD\u66F2\u2026\u5DF2\u7ECF\u51C6\u5907\u597D\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: Let them hear us.
+    translatedText: "\u8BA9\u4EBA\u7C7B\u542C\u89C1\u6211\u4EEC\u3002"
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   ensemblePromptDialogueLines:
   - speaker: Mr. Jones
-    text: are you ready
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
+    text: Are you ready?
+    translatedText: "\u4F60\u51C6\u5907\u597D\u4E86\u5417\uFF1F"
     sfxClip: {fileID: 8300000, guid: 69c1c5afb8222f3438a94c00ed97a47e, type: 3}
     sfxVolumeScale: 1
   ensembleYesLabel: Yes
@@ -2572,31 +2760,45 @@ MonoBehaviour:
   seahorseSpeakerName: Seahorse
   firstEnterDialogueLines:
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Ughhhh!!! No!!!! My house!!!!!
+    translatedText: "\u554A\u554A\u554A\u554A\u554A\u554A\uFF01\uFF01\u6211\u7684\u623F\u5B50\uFF01\uFF01\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: The coral is bleaching and falling apart!
+    translatedText: "\u73CA\u745A\u5728\u767D\u5316\uFF01\u53D8\u6210\u788E\u5757\u5F80\u4E0B\u6389\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Even my plants are died!
+    translatedText: "\u5929\u554A\uFF0C\u5C31\u8FDE\u6211\u517B\u5728\u9633\u53F0\u7684\u7EFF\u690D\u4E5F\u67AF\u840E\u4E86\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: What should I do?!
+    translatedText: "\u8FD9\u7A76\u7ADF\u662F\u600E\u4E48\u4E00\u56DE\u4E8B\uFF1F\u6211\u8BE5\u600E\u4E48\u529E\u624D\u597D\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "If this keeps going\u2026 everything here will die."
+    translatedText: "\u5982\u679C\u7EE7\u7EED\u4E0B\u53BB\u2026\u2026\u4E00\u5207\u90FD\u4F1A\u6BC1\u6389\u7684\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: I know! Mr.Jones must know what to do.
+    translatedText: "\u6211\u77E5\u9053\u4E86\uFF01\u743C\u65AF\u5148\u751F\u80AF\u5B9A\u6709\u529E\u6CD5\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!4 &1605839789
@@ -2809,53 +3011,71 @@ MonoBehaviour:
   speakerName: Dorothy The Dolphin
   aboutBaseDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: I haven't been here for a while...
+    translatedText: "\u6211\u5F88\u4E45\u6CA1\u6765\u8FC7\u8FD9\u91CC\u4E86\u2026\u2026"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: The ocean is quiter, and louder...
+    translatedText: "\u6D77\u6D0B\u53D8\u5F97\u66F4\u5B89\u9759\u4E86...\u4E5F\u66F4\u5608\u6742\u4E86\u3002"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Dorothy
-    text: Jones. Still likes to sleep. (Laugh)
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
+    text: Jones. Still likes to sleep. Just like when we were young. (Laugh)
+    translatedText: "\u743C\u65AF\uFF0C\u4F60\u8FD8\u548C\u5E74\u8F7B\u65F6\u4E00\u6837\uFF0C\u65F6\u4E0D\u65F6\u6253\u9F3E\u3002\uFF08\u7B11\uFF09"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Hey little crab, Kirby may be a bit short-tempered, but he\u2019s a good
       crab\u2014diligent and responsible. It\u2019s all thanks to him that the ocean
       hasn\u2019t fallen even worse."
+    translatedText: "\u563F\uFF0C\u5C0F\u8783\u87F9\uFF0C\u67EF\u6BD4\u867D\u7136\u6709\u70B9\u6025\u813E\u6C14\uFF0C\u4F46\u4ED6\u662F\u4E2A\u597D\u8783\u87F9\u2014\u2014\u52E4\u594B\u53C8\u8D1F\u8D23\u4EFB\u3002\u591A\u4E8F\u4E86\u4ED6\uFF0C\u5927\u6D77\u624D\u6CA1\u6709\u53D8\u5F97\u66F4\u7CDF\u3002"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines: []
   aboutSharkDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Shrauk, you\u2019re finally not keeping to yourself so much anymore. It
       feels pretty good to be talking with everyone, doesn\u2019t it?"
+    translatedText: "\u6C99\u514B\uFF0C\u4F60\u7EC8\u4E8E\u4E0D\u518D\u90A3\u4E48\u72EC\u6765\u72EC\u5F80\u4E86\u3002\u548C\u522B\u4EBA\u8BF4\u8BDD\u7684\u611F\u89C9\u4E0D\u9519\u5427\uFF1F"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Oliver\u2026Thank goodness that oil rig stop working\u2026it was very
       loud."
+    translatedText: "\u5965\u5229\u7EF4\u5C14...\u6CB9\u4E95\u88AB\u5173\u95ED\u4E86\uFF0C\u771F\u662F\u592A\u597D\u4E86\u3002\u90A3\u4E2A\u4E1C\u897F\u5B9E\u5728\u662F\u592A\u5435\u4E86...\u54E6\u5BF9\u4E86\uFF0C\u5E0C\u671B\u4F60\u4E00\u5207\u90FD\u597D\u3002"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Dr. Luma, thank you for everything you\u2019ve done for everyone."
+    translatedText: "\u9646\u739B\u533B\u751F\uFF0C\u611F\u8C22\u4F60\u4E3A\u5927\u5BB6\u505A\u7684\u4E00\u5207\u3002"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: Let human hear our voice.
+    translatedText: "\u8BA9\u4EBA\u7C7B\u542C\u89C1\u6211\u4EEC\u7684\u58F0\u97F3\u5427\u3002"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Dorothy
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "I stop singing a long time ago\u2026"
+    translatedText: "\u6211\u5F88\u4E45\u4EE5\u524D\u5C31\u4E0D\u518D\u6B4C\u5531\u4E86..."
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -3010,55 +3230,75 @@ MonoBehaviour:
   speakerName: Little Crab Bob
   aboutBaseDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: This is such a nice place...
+    translatedText: "\u4F60\u7684\u57FA\u5730\u771F\u6F02\u4EAE..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: I wish Boss won't fire me...
+    translatedText: "\u6211\u5E0C\u671B\u8001\u677F\u4E0D\u4F1A\u7092\u4E86\u6211..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: Once we're done with this, I'll have to head back... There's a huge pile
       of trash waiting to be cleaned up, and if I get back too late, the boss is
       definitely going to be furious...
+    translatedText: "\u6211\u4EEC\u6F14\u594F\u5B8C\u4E4B\u540E\uFF0C\u6211\u5F97\u7ACB\u9A6C\u8D76\u56DE\u53BB...\u8FD8\u6709\u597D\u591A\u5783\u573E\u6CA1\u5904\u7406\u5462...\u5982\u679C\u56DE\u53BB\u665A\u4E86\u8001\u677F\u80AF\u5B9A\u4F1A\u5927\u53D1\u96F7\u9706\u7684..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: Is that Mr.Jones? He is huge...
+    translatedText: "\u90A3\u5C31\u662F\u743C\u65AF\u5148\u751F\u5417\uFF1F\u4ED6\u53EF\u771F\u5927..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   requestSeaCucumberEscortDialogueLines: []
   aboutCrabDialogueLines: []
   aboutDolphinDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: Dorothy? Isn't she the famous singer? I love her song...
+    translatedText: "\u6843\u4E50\u4E1D\uFF1F\u5929\u554A\uFF0C\u662F\u90A3\u4E2A\u5927\u6B4C\u661F\u6843\u4E50\u4E1D\u5417\uFF1F\u6211\u7231\u6B7B\u5979\u7684\u6B4C\u4E86..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: Shrauk...I never met him before. He doesn't look like someone to mess with.
+    translatedText: "\u6C99\u514B...\u6211\u4ECE\u6765\u6CA1\u6709\u89C1\u8FC7\u4ED6\uFF0C\u4ED6\u770B\u8D77\u6765\u53EF\u4E0D\u597D\u60F9\u3002"
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutOctopusDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: That Octopus must been through a lot...
+    translatedText: "\u90A3\u53EA\u7AE0\u9C7C\u4E00\u5B9A\u7ECF\u5386\u4E86\u4E0D\u5C11..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: Dr. Luma is the best doctor, just a little bit too talktive...
+    translatedText: "\u9646\u739B\u533B\u751F\u662F\u6574\u7247\u6D77\u6D0B\u91CC\u6700\u597D\u7684\u533B\u751F...\u5C31\u662F\u8BDD\u6709\u70B9\u591A\u3002"
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: "I'm so nervous\u2026what if I messed up?"
+    translatedText: "\u6211\u597D\u7D27\u5F20...\u4E07\u4E00\u6211\u641E\u7838\u4E86\u600E\u4E48\u529E\uFF1F"
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u5C0F\u8783\u87F9\u9C8D\u52C3"
     text: "I hope there will be less trash after we play this\u2026"
+    translatedText: "\u5E0C\u671B\u6F14\u594F\u5B8C\u4E4B\u540E\u6D77\u91CC\u80FD\u5C11\u70B9\u5783\u573E..."
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -3172,58 +3412,80 @@ MonoBehaviour:
   speakerName: Shrauk The Shark
   aboutBaseDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Heh.
+    translatedText: "\u5475\u3002"
     sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   aboutWhaleDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Sleepy Whales.
+    translatedText: "\u55DC\u7761\u7684\u9CB8\u9C7C\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
   requestSeaCucumberEscortDialogueLines:
   - speaker: Sea horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Please take me to sea cucumber.
+    translatedText: "\u8BF7\u5E26\u6211\u53BB\u6D77\u53C2\u90A3\u91CC\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Heh. Lazy Jones.
+    translatedText: "\u5475\uFF0C\u61D2\u60F0\u7684\u9CB8\u9C7C\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Fine.
+    translatedText: "\u884C\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutCrabDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Weak Crab.
+    translatedText: "\u8783\u87F9\uFF0C\u771F\u5F31\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutDolphinDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: "Instead of lecturing me, you\u2019d be better off saving your breath and
       taking care of your voice. Dorothy."
+    translatedText: "\u6843\u4E50\u4E1D\uFF0C\u5C11\u628A\u773C\u73E0\u5B50\u653E\u5728\u6211\u8EAB\u4E0A\uFF0C\u7BA1\u597D\u4F60\u81EA\u5DF1\u3002"
     sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   aboutSharkDialogueLines: []
   aboutOctopusDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Weak Octopus.
+    translatedText: "\u7AE0\u9C7C\uFF0C\u771F\u5F31\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   aboutSeaCucumberDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Weak Sea Cucumber. And annoying.
+    translatedText: "\u6D77\u53C2\uFF0C\u771F\u5F31\u3002\u8FD8\u5570\u55E6\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   symphonyRepeatDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Can we play that stupid song yet?
+    translatedText: "\u8FD8\u80FD\u4E0D\u80FD\u6F14\u594F\u4E86\uFF1F"
     sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 0
   randomSymphonyRepeatDialogueBlocks: []
   repeatDialogueLines:
   - speaker: Shrauk
+    translatedSpeaker: "\u6C99\u514B"
     text: Boring.
+    translatedText: "\u65E0\u804A\u3002"
     sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -4422,6 +4684,10 @@ PrefabInstance:
       propertyPath: yesButton
       value: 
       objectReference: {fileID: 51250664451568045}
+    - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
+      propertyPath: chineseFont
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6c8b8c6f2288441a6ced1d7d2ceec3, type: 2}
     - target: {fileID: 6532698203394478647, guid: eb5356ab38fd25c4784d8aeb080032b0, type: 3}
       propertyPath: speakerText
       value: 

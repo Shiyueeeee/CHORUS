@@ -103,7 +103,6 @@ public class WebGLCursorController : MonoBehaviour
 
         scaledCursorTexture = new Texture2D(webCursorSize, webCursorSize, TextureFormat.RGBA32, false);
         scaledCursorTexture.name = sourceTexture.name + "_WebGLScaled";
-        scaledCursorTexture.alphaIsTransparency = true;
         scaledCursorTexture.wrapMode = TextureWrapMode.Clamp;
         scaledCursorTexture.filterMode = FilterMode.Bilinear;
 

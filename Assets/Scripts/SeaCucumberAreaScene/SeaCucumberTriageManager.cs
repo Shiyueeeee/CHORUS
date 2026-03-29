@@ -50,8 +50,13 @@ public class SeaCucumberTriageManager : MonoBehaviour
     [SerializeField] private Vector2 dragToZoneArrowOffset = new Vector2(0f, 80f);
     [SerializeField] private Vector2 dragToZoneHintOffset = new Vector2(120f, 40f);
     [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
+    [SerializeField] [TextArea] private string clickToZoomHintTextChinese = "点击查看";
     [SerializeField] [TextArea] private string previewDiagnosisHintText = "This patient isn't tangled in trash. It should be an internal case.";
+    [SerializeField] [TextArea] private string previewDiagnosisHintTextChinese = "这个病人没有被垃圾缠住，应该归到内部病症。";
     [SerializeField] [TextArea] private string dragToCorrectZoneHintText = "Drag to the correct zone";
+    [SerializeField] [TextArea] private string dragToCorrectZoneHintTextChinese = "拖到正确区域";
+    [SerializeField] private string completionTextValue = "Complete";
+    [SerializeField] private string completionTextValueChinese = "完成";
 
     private int sortedCardCount;
     private bool isCompleting;
@@ -60,6 +65,8 @@ public class SeaCucumberTriageManager : MonoBehaviour
     private TriageTutorialStep tutorialStep = TriageTutorialStep.None;
     private RectTransform currentArrowTarget;
     private RectTransform currentHintTarget;
+    private TMP_FontAsset defaultCompletionFont;
+    private TMP_FontAsset defaultTutorialHintFont;
 
     public bool IsPuzzleOpen => puzzlePanel != null && puzzlePanel.activeSelf;
     public bool IsPreviewOpen => patientPreviewPanel != null && patientPreviewPanel.activeSelf;
@@ -68,6 +75,23 @@ public class SeaCucumberTriageManager : MonoBehaviour
     private void Update()
     {
         RefreshTutorialVisualPositions();
+    }
+
+    private void Awake()
+    {
+        defaultCompletionFont = completionText != null ? completionText.font : null;
+        defaultTutorialHintFont = tutorialHintText != null ? tutorialHintText.font : null;
+    }
+
+    private void OnEnable()
+    {
+        LanguageSettingsManager.LanguageChanged += HandleLanguageChanged;
+        ApplyLocalizedFonts();
+    }
+
+    private void OnDisable()
+    {
+        LanguageSettingsManager.LanguageChanged -= HandleLanguageChanged;
     }
 
     private void Start()
@@ -142,7 +166,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
         if (completionText != null)
         {
             completionText.gameObject.SetActive(false);
-            completionText.text = "Complete";
+            completionText.text = GetLocalizedCompletionText();
         }
 
         if (patientPreviewPanel != null)
@@ -215,7 +239,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
             ShowTutorial(
                 previewCloseButtonTarget,
                 previewHintTarget != null ? previewHintTarget : patientPreviewImage != null ? patientPreviewImage.rectTransform : null,
-                previewDiagnosisHintText,
+                LanguageSettingsManager.GetLocalizedText(previewDiagnosisHintText, previewDiagnosisHintTextChinese),
                 previewArrowOffset,
                 previewHintOffset);
         }
@@ -238,7 +262,12 @@ public class SeaCucumberTriageManager : MonoBehaviour
         {
             tutorialStep = TriageTutorialStep.DragToZone;
             RectTransform cardTarget = closedCard.CardRectTransform;
-            ShowTutorial(cardTarget, cardTarget, dragToCorrectZoneHintText, dragToZoneArrowOffset, dragToZoneHintOffset);
+            ShowTutorial(
+                cardTarget,
+                cardTarget,
+                LanguageSettingsManager.GetLocalizedText(dragToCorrectZoneHintText, dragToCorrectZoneHintTextChinese),
+                dragToZoneArrowOffset,
+                dragToZoneHintOffset);
         }
     }
 
@@ -318,7 +347,12 @@ public class SeaCucumberTriageManager : MonoBehaviour
 
         tutorialStep = TriageTutorialStep.ClickToZoom;
         RectTransform cardTarget = card.CardRectTransform;
-        ShowTutorial(cardTarget, cardTarget, clickToZoomHintText, clickToZoomArrowOffset, clickToZoomHintOffset);
+        ShowTutorial(
+            cardTarget,
+            cardTarget,
+            LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese),
+            clickToZoomArrowOffset,
+            clickToZoomHintOffset);
     }
 
     private SeaCucumberPatientCard GetTutorialPatientCard()
@@ -357,6 +391,7 @@ public class SeaCucumberTriageManager : MonoBehaviour
         if (tutorialHintText != null)
             tutorialHintText.text = hintText;
 
+        ApplyLocalizedFonts();
         RefreshTutorialVisualPositions();
     }
 
@@ -411,6 +446,49 @@ public class SeaCucumberTriageManager : MonoBehaviour
                 return dragToZoneHintOffset;
             default:
                 return Vector2.zero;
+        }
+    }
+
+    private void HandleLanguageChanged(SupportedLanguage language)
+    {
+        if (completionText != null)
+            completionText.text = GetLocalizedCompletionText();
+
+        if (tutorialHintText != null && tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf)
+            tutorialHintText.text = GetCurrentLocalizedTutorialHint();
+
+        ApplyLocalizedFonts();
+    }
+
+    private void ApplyLocalizedFonts()
+    {
+        TMP_FontAsset chineseFont = LanguageSettingsManager.GetChineseUiFontOrNull();
+        bool useChineseFont = LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese && chineseFont != null;
+
+        if (completionText != null)
+            completionText.font = useChineseFont ? chineseFont : defaultCompletionFont;
+
+        if (tutorialHintText != null)
+            tutorialHintText.font = useChineseFont ? chineseFont : defaultTutorialHintFont;
+    }
+
+    private string GetLocalizedCompletionText()
+    {
+        return LanguageSettingsManager.GetLocalizedText(completionTextValue, completionTextValueChinese);
+    }
+
+    private string GetCurrentLocalizedTutorialHint()
+    {
+        switch (tutorialStep)
+        {
+            case TriageTutorialStep.ClickToZoom:
+                return LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese);
+            case TriageTutorialStep.PreviewHint:
+                return LanguageSettingsManager.GetLocalizedText(previewDiagnosisHintText, previewDiagnosisHintTextChinese);
+            case TriageTutorialStep.DragToZone:
+                return LanguageSettingsManager.GetLocalizedText(dragToCorrectZoneHintText, dragToCorrectZoneHintTextChinese);
+            default:
+                return string.Empty;
         }
     }
 }

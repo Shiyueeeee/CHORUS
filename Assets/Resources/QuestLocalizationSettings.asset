@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cb22593d924184b9fa934ec6f7a9a0, type: 3}
+  m_Name: QuestLocalizationSettings
+  m_EditorClassIdentifier: 
+  talkToWhale:
+    english: Talk to Whale
+    chinese: "\u548C\u9CB8\u9C7C\u5BF9\u8BDD"
+  playTheSymphony:
+    english: Play the Symphony
+    chinese: "\u6F14\u594F\u4EA4\u54CD\u4E50"
+  talkToCrab:
+    english: Talk to Crab (Press Shift to Dash)
+    chinese: "\u548C\u8783\u87F9\u5BF9\u8BDD\uFF08\u6309shift\u51B2\u523A\uFF09"
+  collectTrash:
+    english: Collect Trash ({0}/{1})
+    chinese: "\u6536\u96C6\u5783\u573E ({0}/{1})"
+  findTheirMom:
+    english: Find Her Mom
+    chinese: "\u627E\u5230\u6D77\u8C5A\u7684\u5988\u5988"
+  talkToDolphin:
+    english: Talk to Dolphin
+    chinese: "\u548C\u6D77\u8C5A\u5BF9\u8BDD"
+  talkToShark:
+    english: Talk to Shark
+    chinese: "\u548C\u9CA8\u9C7C\u5BF9\u8BDD"
+  fightTheShark:
+    english: Fight the Shark
+    chinese: "\u548C\u9CA8\u9C7C\u6218\u6597"
+  answerToTheShark:
+    english: Answer to the Shark
+    chinese: "\u56DE\u7B54\u9CA8\u9C7C\u7684\u95EE\u9898"
+  talkToOctopus:
+    english: Talk to Octopus
+    chinese: "\u548C\u7AE0\u9C7C\u5BF9\u8BDD"
+  closeTheOilRigs:
+    english: Close the Oil Rigs
+    chinese: "\u5173\u95ED\u91C7\u6CB9\u4E95"
+  talkToSeaCucumber:
+    english: Talk to Sea Cucumber
+    chinese: "\u548C\u6D77\u53C2\u5BF9\u8BDD"
+  sortThePatients:
+    english: Sort the Patients
+    chinese: "\u7ED9\u75C5\u4EBA\u5206\u7C7B"
+  treatSickAndHurt:
+    english: 'Treat
+
+      -Sick pile
+
+      -Hurt pile'
+    chinese: "\u6CBB\u7597\n-\u75C5\u60A3\u5806\n-\u4F24\u60A3\u5806"
+  treatSick:
+    english: 'Treat
+
+      -Sick pile'
+    chinese: "\u6CBB\u7597\n-\u75C5\u60A3\u5806"
+  treatHurt:
+    english: 'Treat
+
+      -Hurt pile'
+    chinese: "\u6CBB\u7597\n-\u4F24\u60A3\u5806"

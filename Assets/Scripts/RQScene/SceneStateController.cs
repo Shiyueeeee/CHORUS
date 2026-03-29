@@ -92,7 +92,9 @@ public class RQSceneStateController : MonoBehaviour
             lines.Add(new DialogueLineData
             {
                 speaker = string.IsNullOrWhiteSpace(line.speaker) ? seahorseSpeakerName : line.speaker,
-                text = line.text
+                translatedSpeaker = line.translatedSpeaker,
+                text = line.text,
+                translatedText = line.translatedText
             });
         }
 

@@ -695,26 +695,36 @@ MonoBehaviour:
   speakerName: Dolphin
   initDialogueLines:
   - speaker: 
+    translatedSpeaker: 
     text: 
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: 
+    translatedSpeaker: 
     text: 
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: 
+    translatedSpeaker: 
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
   shipDialogueLines:
   - speaker: Baby Dolphin
+    translatedSpeaker: "\u6D77\u8C5A\u5B9D\u5B9D"
     text: "It\u2019s\u2026 scary here\u2026"
+    translatedText: "\u8FD9\u91CC\u597D\u53EF\u6015\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "I know. It's okay, you\u2019re not alone."
+    translatedText: "\u6211\u77E5\u9053\uFF0C\u6CA1\u4E8B\u7684\uFF0C\u6211\u5728\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   rushDialogueLines: []

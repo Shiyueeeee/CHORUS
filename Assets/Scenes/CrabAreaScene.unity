@@ -980,210 +980,310 @@ MonoBehaviour:
   returnSpawnPointName: Spawn_CrabReturn
   acceptQuestDialogueLines:
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Move it! Move it! Pick it up! Hurry Bob! I didn't pay you to stare at the
       trash!
+    translatedText: "\u52A8\u8D77\u6765\u52A8\u8D77\u6765\uFF01\u6361\u8D77\u6765\uFF01\u5FEB\u70B9\u9C8D\u52C3\uFF01\u6211\u7ED9\u4F60\u53D1\u5DE5\u8D44\u53EF\u4E0D\u662F\u4E3A\u4E86\u8BA9\u4F60\u7AD9\u5728\u90A3\u76EF\u7740\u5783\u573E\u53D1\u5446\u7684\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u9C8D\u52C3"
     text: "Boss\u2026 I swear it looked clean a second ago\u2026"
+    translatedText: "\u8001\u677F\uFF0C\u6211\u53D1\u8A93\u4E00\u79D2\u949F\u524D\u8FD9\u91CC\u770B\u8D77\u6765\u8FD8\u662F\u5E72\u51C0\u7684\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "You call that clean?! There\u2019s still junk everywhere!"
+    translatedText: "\u4F60\u7BA1\u8FD9\u53EB\u5E72\u51C0\uFF1F\uFF01\u8FD9\u5230\u5904\u662F\u5783\u573E\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Left side! LEFT SIDE! Use your claws, not your eyes! You bunch of freeloaders!
+    translatedText: "\u5DE6\u8FB9\uFF01\u5DE6\uFF01\u8FB9\uFF01\u7528\u4F60\u7684\u94B3\u5B50\u800C\u4E0D\u662F\u773C\u775B\uFF01\u4F60\u4EEC\u8FD9\u7FA4\u5403\u767D\u996D\u7684\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Um\u2026Hello?"
+    translatedText: "\u90A3\u4E2A\u2026\u54C8\u55BD\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "Wut! Who are you, the blue guy? Can\u2019t ya see we\u2019re busy here?"
+    translatedText: "\u5E72\u5565\uFF1F\u4F60\u8C01\u554A\uFF0C\u84DD\u4E0D\u5566\u53FD\u7684\u5BB6\u4F19\uFF0C\u7785\u5565\uFF1F\u770B\u4E0D\u89C1\u6211\u4EEC\u5728\u5FD9\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Hi, I'm here to\u2026"
+    translatedText: "\u4F60\u597D\u2026\u6211\u6765\u662F\u4E3A\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (A piece of trash drifted over and landed right on Kirby the Crab's head.)
+    translatedText: "\uFF08\u4E00\u5757\u5783\u573E\u98D8\u6765\uFF0C\u6B63\u597D\u843D\u5728\u4E86\u8783\u87F9\u67EF\u6BD4\u7684\u5934\u4E0A\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Bob.
+    translatedText: "\u9C8D\u52C3\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "BOB\u2014\u2014\u2014\u2014!!!!!!!"
+    translatedText: "\u9C8D\u52C3\uFF01\uFF01\uFF01"
     sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Little Crab Bob
+    translatedSpeaker: "\u9C8D\u52C3"
     text: "I, I, I'm sorry boss!! I couldn't see well, I didn't have my glasses today\u2026"
+    translatedText: "\u5BF9\u3001\u5BF9\u4E0D\u8D77\u8001\u677F\uFF01\u6211\u770B\u4E0D\u89C1\uFF0C\u6211\u4ECA\u5929\u6CA1\u6234\u773C\u955C\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Kirby stared at Bob madly.)
+    translatedText: "\uFF08\u67EF\u6BD4\u6124\u6012\u5730\u77AA\u7740\u9C8D\u52C3\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Hold on hold on. I think I can help. I can see these trash very clearly!
+    translatedText: "\u4E14\u6162\u4E14\u6162\uFF0C\u6211\u80FD\u5E2E\u4E0A\u5FD9\u3002\u6211\u89C6\u529B\u6D4B\u8BD55.0\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: You?
+    translatedText: "\u4F60\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Kirby looked the seahorse up and down.)
+    translatedText: "\uFF08\u67EF\u6BD4\u4E0A\u4E0B\u6253\u91CF\u7740\u6D77\u9A6C\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "We don\u2019t see well. Never did. Half this junk? Might as well be invisible."
+    translatedText: "\u6211\u4EEC\u773C\u795E\u4E0D\u597D\uFF0C\u5565\u4E5F\u7785\u4E0D\u7740\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: You spot it. We smash it. Simple.
+    translatedText: "\u4F60\u628A\u5783\u573E\u6807\u8BB0\u51FA\u6765\uFF0C\u6211\u4EEC\u6D3E\u8783\u87F9\u53BB\u6E05\u7406\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Help us clean this up. Then we talk. After our job is done for today, I'll
       have time to talk with ya about whatever reason make ya here.
+    translatedText: "\u5E2E\u6211\u4EEC\u6536\u62FE\u5B8C\u5783\u573E\u4E4B\u540E\uFF0C\u6211\u4EEC\u53EF\u4EE5\u804A\u804A\u4F60\u6765\u7684\u76EE\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "So\u2026 I just need to point them out?"
+    translatedText: "\u53EA\u9700\u8981\u6307\u51FA\u6765\u5C31\u597D\u4E86\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Exactly.
+    translatedText: "\u6CA1\u9519\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   questInProgressDialogueLines:
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Wut? You done already?
+    translatedText: "\u5E72\u5565\uFF1F\u4F60\u6574\u5B8C\u4E86\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: 
     text: "No? Then stop standin\u2019 there."
+    translatedText: "\u6CA1\u6709\uFF1F\u90A3\u8FD8\u78E8\u53FD\u5565\uFF0C\u5E72\u6D3B\u53BB\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   turnInQuestDialogueLines:
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: I cleaned everything I could find.
+    translatedText: "\u6211\u5168\u90FD\u6E05\u7406\u5B8C\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "\u2026Took ya long enough."
+    translatedText: "\u771F\u591F\u6162\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Kirby looks around the area.)
+    translatedText: "\uFF08\u67EF\u6BD4\u73AF\u987E\u56DB\u5468\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Huh.
+    translatedText: "\u54FC\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Cleaner than usual.
+    translatedText: "\u8FD8\u51D1\u5408\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "\u2026Alright. You did the work."
+    translatedText: "\u662F\u6BD4\u5E73\u65F6\u5E72\u51C0\u4E9B\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "So let\u2019s hear it. Why are ya really here?"
+    translatedText: "\u90A3\u4F60\u8BF4\u8BF4\u5427\uFF0C\u4F60\u6765\u5E72\u5565\u7684\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "I\u2019m looking for help\u2026 My home is being destroyed."
+    translatedText: "\u6211\u9700\u8981\u5E2E\u52A9\u2026\u2026\u6211\u7684\u623F\u5B50\u5FEB\u584C\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "Yeah? Look around, kid. Ya think you\u2019re the only one?"
+    translatedText: "\u56DB\u5904\u770B\u770B\u5427\u3002\u4F60\u4EE5\u4E3A\u4F60\u662F\u552F\u4E00\u4E00\u4E2A\u53D7\u82E6\u53D7\u96BE\u7684\u5417\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "Trash everywhere. Water\u2019s getting worse every day."
+    translatedText: "\u5230\u5904\u90FD\u662F\u5783\u573E\uFF0C\u6C61\u67D3\u4E00\u5929\u6BD4\u4E00\u5929\u4E25\u91CD\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: ' Mr. Jones told me you might be able to help.'
+    translatedText: "\u743C\u65AF\u5148\u751F\u544A\u8BC9\u6211\u2026\u2026\u4E5F\u8BB8\u4F60\u53EF\u4EE5\u5E2E\u6211\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: " \u2026Jones, huh?"
+    translatedText: "\u743C\u65AF\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: That old whale still talking, huh.
+    translatedText: "\u90A3\u8001\u9CB8\u9C7C\u8FD8\u6401\u90A3\u53ED\u53ED\u5462\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "\u2026Heh. Still believe that story, huh?"
+    translatedText: "\u8FD8\u76F8\u4FE1\u90A3\u4E2A\u4EC0\u4E48\u9B3C\u5951\u7EA6\u5462\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Most of us gave up on that a long time ago.
+    translatedText: "\u6211\u4EEC\u5F88\u65E9\u4E4B\u524D\u5C31\u653E\u5F03\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "Those humans, throwin\u2019 trash every day, and you expect \u2019em to
       help us. Huh. "
+    translatedText: "\u90A3\u4E9B\u4EBA\u7C7B\uFF0C\u5929\u5929\u5F80\u6D77\u91CC\u4E22\u5783\u573E\uFF0C\u4F60\u5C45\u7136\u8FD8\u6307\u671B\u4ED6\u4EEC\u5E2E\u5FD9\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Stubborn little thing.
+    translatedText: "\u56FA\u6267\u7684\u5BB6\u4F19\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: 'Fine. Take it. '
+    translatedText: "\u884C\u5427\uFF0C\u62FF\u8D70\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (Kirby taps the ground. A low rhythmic sound echoes through the water.)
-    sfxClip: {fileID: 0}
+    translatedText: "\uFF08\u5361\u6BD4\u8F7B\u6572\u5730\u9762\u3002\u4F4E\u6C89\u800C\u6709\u8282\u594F\u7684\u58F0\u97F3\u5728\u6C34\u4E2D\u56DE\u8361\u3002\uFF09"
+    sfxClip: {fileID: 8300000, guid: d7b32c96de19a6649a0e4f4b4391bf62, type: 3}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "This is our part of the melody. Don\u2019t waste it."
-    sfxClip: {fileID: 0}
+    translatedText: "\u8FD9\u662F\u6211\u4EEC\u7684\u65CB\u5F8B\uFF0C\u522B\u6D6A\u8D39\u4E86\u3002"
+    sfxClip: {fileID: 8300000, guid: b6526d4dc0e5e0d448a923fa1bcd1103, type: 3}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: I know you can't play it on your own. Bob, go with this little dude.
+    translatedText: "\u4F60\u80AF\u5B9A\u6574\u4E0D\u6765\u8FD9\u73A9\u610F\u513F\u3002\u53BB\u5427\uFF0C\u9C8D\u52C3\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "Come back and tell me what a pitiful sight he\u2019ll be when he cries
       because humans ignored him. Hehe."
+    translatedText: "\u56DE\u6765\u4E86\u4E4B\u540E\u544A\u8BC9\u6211\u8FD9\u5C0F\u6D77\u9A6C\u88AB\u4EBA\u7C7B\u51B7\u843D\u4EE5\u540E\u54ED\u9F3B\u5B50\u662F\u4EC0\u4E48\u6837\u5B50\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "If you\u2019re serious\u2026Go find the others."
+    translatedText: "\u4F60\u5982\u679C\u662F\u8BA4\u771F\u7684\uFF0C\u5C31\u628A\u5176\u4ED6\u65CB\u5F8B\u4E5F\u96C6\u9F50\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: See if they still believe in your little song.
+    translatedText: "\u6211\u5012\u8981\u770B\u770B\u90A3\u7FA4\u4EBA\u4F1A\u4E0D\u4F1A\u56DE\u5E94\u4F60\u8FD9\u611A\u8822\u7684\u5408\u594F\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   invalidDialogueLines:
   - speaker: Kirby The Crab
+    translatedSpeaker: "\u67EF\u6BD4"
     text: Wish I could fire half this crew.
+    translatedText: "\u771F\u5E0C\u671B\u6211\u80FD\u628A\u8FD9\u4E9B\u6CA1\u7528\u7684\u5BB6\u4F19\u5168\u90FD\u7092\u9C7F\u9C7C\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!1 &575188053

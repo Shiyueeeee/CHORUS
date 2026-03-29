@@ -332,31 +332,45 @@ MonoBehaviour:
   sharkSpeakerName: Shark
   phase2EndDialogueLines:
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Heh, you did survive.
+    translatedText: "\u5475\uFF0C\u8EAB\u624B\u4E0D\u9519\u3002"
     sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
     sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "Kid, I\u2019ll give you credit for that..."
+    translatedText: "\u5B69\u5B50\uFF0C\u7B97\u4F60\u6709\u70B9\u4E1C\u897F\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: You got some skills..
+    translatedText: "\u4E0D\u9519\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Not useless.
+    translatedText: "\u4E0D\u7B97\u5E9F\u7269\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "But survival isn\u2019t enough."
+    translatedText: "\u4E0D\u591F\uFF0C\u5149\u662F\u6D3B\u4E0B\u6765\u8FD8\u8FDC\u8FDC\u4E0D\u591F\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Words matter now.
+    translatedText: "\u4F60\u4E0D\u4EC5\u8981\u6709\u5065\u7855\u7684\u808C\u8089\uFF0C\u8FD8\u8981\u6709\u806A\u660E\u7684\u5927\u8111\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Convince me.
+    translatedText: "\u8BF4\u670D\u6211\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   barrageDuration: 10
@@ -807,38 +821,70 @@ MonoBehaviour:
   - {fileID: 1967864629}
   questions:
   - question: Why chase those notes? Speak clearly.
+    translatedQuestion: "\u8BB2\u6E05\u695A\uFF0C\u4E3A\u4EC0\u4E48\u9700\u8981\u90A3\u4E9B\u65CB\u5F8B\uFF1F"
     answers:
     - To become stronger.
     - To reach the humans.
     - To explore the ocean.
+    translatedAnswers:
+    - "\u4E3A\u4E86\u53D8\u5F3A"
+    - "\u4E3A\u4E86\u5411\u4EBA\u7C7B\u6C42\u52A9"
+    - "\u4E3A\u4E86\u63A2\u7D22\u6D77\u6D0B"
     correctAnswerIndex: 1
   - question: "And why speak to them? They don\u2019t listen."
+    translatedQuestion: "\u90A3\u4E3A\u4EC0\u4E48\u8981\u5411\u4EBA\u7C7B\u6C42\u52A9\uFF1F\u4ED6\u4EEC\u4E0D\u4F1A\u56DE\u5E94\u7684\u3002"
     answers:
     - To reduce the pollution.
     - To make peace with them.
     - To learn from them.
+    translatedAnswers:
+    - "\u51CF\u5C11\u6C61\u67D3"
+    - "\u548C\u4EBA\u7C7B\u505C\u6218"
+    - "\u5411\u4EBA\u7C7B\u5B66\u4E60"
     correctAnswerIndex: 0
   - question: "Then tell me \u2014 what do you need from me?"
+    translatedQuestion: "\u4F60\u60F3\u8BA9\u6211\u505A\u4E9B\u4EC0\u4E48\uFF1F"
     answers:
-    - Give us your strength.
+    - Give me your strength.
     - Fight for us.
-    - Guide us to the octopus.
+    - Guide me to the octopus.
+    translatedAnswers:
+    - "\u7ED9\u6211\u4F60\u7684\u529B\u91CF"
+    - "\u4E3A\u6211\u4EEC\u6218\u6597"
+    - "\u5E26\u6211\u53BB\u627E\u7AE0\u9C7C"
     correctAnswerIndex: 2
   - question: Who put this idea in your head?
+    translatedQuestion: "\u8C01\u628A\u8FD9\u4E9B\u60F3\u6CD5\u653E\u8FDB\u4F60\u8111\u888B\u91CC\u7684\uFF1F"
     answers:
     - The dolphins told me.
     - I decided myself.
     - Mr. Jones.
+    translatedAnswers:
+    - "\u6D77\u8C5A\u544A\u8BC9\u6211\u7684"
+    - "\u6211\u81EA\u5DF1\u51B3\u5B9A\u7684"
+    - "\u662F\u743C\u65AF\u5148\u751F"
     correctAnswerIndex: 2
   - question: And why should I care?
+    translatedQuestion: "\u6211\u4E3A\u4EC0\u4E48\u8981\u5728\u4E4E\uFF1F"
     answers:
     - 'If the ocean dies, your prey dies with it. '
     - You are a nice shark inside.
     - Mr. Jones will make you.
+    translatedAnswers:
+    - "\u5982\u679C\u6D77\u6D0B\u8986\u706D\u4E86\uFF0C\u4F60\u7684\u730E\u7269\u4E5F\u4F1A\u968F\u4E4B\u8986\u706D"
+    - "\u4F60\u662F\u4E00\u53EA\u597D\u9CA8\u9C7C"
+    - "\u4F60\u4E0D\u5F97\u4E0D"
     correctAnswerIndex: 0
   correctMessage: Correct.
+  correctMessageChinese: "\u56DE\u7B54\u6B63\u786E\u3002"
   successMessage: You passed the shark's test.
+  successMessageChinese: "\u4F60\u901A\u8FC7\u4E86\u9CA8\u9C7C\u7684\u8BD5\u70BC\u3002"
   failMessage: Wrong answer. Think carefully and try again.
+  failMessageChinese: "\u56DE\u7B54\u9519\u8BEF\u3002\u518D\u4ED4\u7EC6\u60F3\u60F3\u3002"
+  noQuestionsConfiguredMessage: No quiz questions configured.
+  noQuestionsConfiguredMessageChinese: "\u8FD8\u6CA1\u6709\u914D\u7F6E\u95EE\u7B54\u9898\u76EE\u3002"
+  missingQuestionDataMessage: Question data is missing.
+  missingQuestionDataMessageChinese: "\u9898\u76EE\u6570\u636E\u7F3A\u5931\u3002"
   correctMessageDuration: 0.8
   successMessageDuration: 1.2
 --- !u!222 &309142071
@@ -2505,46 +2551,66 @@ MonoBehaviour:
   completedDialogueSpeakerName: Shrauk the Shark
   completedDialogueLines:
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "\u2026So. You can think."
+    translatedText: "\u770B\u6765\u4F60\u957F\u4E86\u8111\u5B50\u3002"
     sfxClip: {fileID: 8300000, guid: d70ff2240b045894a8c77aa8685ed6dd, type: 3}
     sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Not just swim.
+    translatedText: "\u4E0D\u662F\u53EA\u4F1A\u6E38\u6CF3\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: You understand the ocean. Enough.
+    translatedText: "\u4F60\u8DB3\u591F\u4E86\u89E3\u6D77\u6D0B\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "If the waters rot\u2026everything starves."
+    translatedText: "\u5982\u679C\u6D77\u6D0B\u88AB\u6BC1\u4E86\u2026\u4E07\u7269\u7EC8\u5C06\u51CB\u96F6\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "\u2026Fine. I\u2019ll join your hunt."
+    translatedText: "\u2026\u884C\u5427\u3002\u6211\u52A0\u5165\u4F60\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: The octopus is far. Too far for you.
+    translatedText: "\u7AE0\u9C7C\u7684\u5730\u76D8\u5BF9\u4F60\u6765\u8BF4\u8FD8\u662F\u592A\u8FDC\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Follow me.
+    translatedText: "\u8DDF\u6211\u6765\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: If you can keep up.
+    translatedText: "\u5982\u679C\u4F60\u8DDF\u5F97\u4E0A\u7684\u8BDD\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   nextSceneName: OctopusPathScene
   sceneIntroDialogueSpeakerName: Sea horse
   sceneIntroDialogueLines:
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (The water suddenly shifts. A force pulls you deeper.)
+    translatedText: "\uFF08\u6C34\u6D41\u7A81\u7136\u53D1\u751F\u53D8\u5316\u3002\u4E00\u80A1\u529B\u91CF\u5C06\u4F60\u5411\u6DF1\u5904\u62C9\u53BB\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
   - speaker: Sea horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: What's happening?!
+    translatedText: "\u600E\u4E48\u56DE\u4E8B\uFF1F\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
 --- !u!4 &1079634191
@@ -3466,69 +3532,101 @@ MonoBehaviour:
   encounterManager: {fileID: 1079634190}
   introDialogueLines:
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Heh, so small...and weak.
+    translatedText: "\u5475\uFF0C\u53C8\u5C0F\u53C8\u5F31\u3002"
     sfxClip: {fileID: 8300000, guid: ad3e5973256fa3d42af3e0e769089381, type: 3}
     sfxVolumeScale: 0.8
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: And you dare wander into my waters.
+    translatedText: "\u7ADF\u7136\u80C6\u6562\u95EF\u5165\u6211\u7684\u9886\u5730\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Wait\u2014 I\u2019m not here to fight\u2014"
+    translatedText: "\u7B49\u7B49\uFF0C\u6211\u4E0D\u662F\u6765\u6253\u67B6\u7684\u2014\u2014"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "Everything that enters\u2026is prey."
+    translatedText: "\u4EFB\u4F55\u8FDB\u5165\u8FD9\u7247\u6C34\u57DF\u7684\u2026\u2026\u90FD\u662F\u730E\u7269\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: 'No no no wait wait, I''m just passing by, I''m looking for the Octopus
       to get their melody, so we can play a symphony to call for human. '
+    translatedText: "\u4E0D\u4E0D\u4E0D\u7B49\u7B49\u7B49\u7B49\uFF0C\u6211\u53EA\u662F\u8DEF\u8FC7\u2026\uFF01\u6211\u6B63\u5728\u627E\u7AE0\u9C7C\uFF0C\u60F3\u5F97\u5230\u5B83\u4EEC\u7684\u65CB\u5F8B\uFF0C\u8FD9\u6837\u6211\u4EEC\u5C31\u80FD\u6F14\u594F\u4E00\u9996\u4EA4\u54CD\u4E50\u2026\u2026\u6765\u5411\u4EBA\u7C7B\u6C42\u52A9\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: That stupid song...? Still believe in it?
+    translatedText: "\u5475\uFF0C\u611A\u8822\u7684\u6B4C\uFF0C\u96BE\u9053\u4F60\u8FD8\u76F8\u4FE1\u90A3\u4E2A\u7AE5\u8BDD\u6545\u4E8B\uFF1F\u9A97\u5C0F\u5B69\u513F\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Even I do held a part...
+    translatedText: "\u5C31\u8FDE\u6211\u4E5F\u6709\u90A3\u4E2A\u65CB\u5F8B\u7684\u4E00\u90E8\u5206\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: 
     text: Wait, that means you could join us, we need your melody to save the ocean!
       And my house...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: You think a song will save you?
+    translatedText: "\u4F60\u96BE\u9053\u89C9\u5F97\u4E00\u9996\u6B4C\u5C31\u80FD\u62EF\u6551\u4F60\uFF1F\u7B80\u76F4\u662F\u5728\u505A\u68A6\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Strength decides survival. Not sound.
+    translatedText: "\u5F3A\u5927\u7684\u529B\u91CF\u624D\u80FD\u4FDD\u8BC1\u4F60\u6D3B\u7740\uFF0C\u4E00\u9996\u7834\u6B4C\u4E0D\u884C\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: You want my part? Earn it.
+    translatedText: "\u4F60\u60F3\u8981\u6211\u7684\u90E8\u5206\uFF1F\u5802\u5802\u6B63\u6B63\u7684\u5F97\u5230\u5B83\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: How...?
+    translatedText: "\u6211\u8981\u600E\u4E48\u505A\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: Survive my hunt.
+    translatedText: "\u5728\u6211\u7684\u72E9\u730E\u4E2D\u6D3B\u4E0B\u6765\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "Fail\u2026 and you feed the ocean."
+    translatedText: "\u5931\u8D25\u4E86\u2026\u4F60\u5C31\u53D8\u6210\u8FD9\u7247\u6D77\u6D0B\u7684\u796D\u54C1\u5427\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "\u2026Fine. I\u2019ll prove it."
+    translatedText: "\u2026\u597D\u5427\u3002\u6211\u4F1A\u8BC1\u660E\u7ED9\u4F60\u770B\u7684\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Shrauk the Shark
+    translatedSpeaker: "\u6C99\u514B"
     text: "\u2026Good. At least you\u2019re not boring."
+    translatedText: "\u2026\u5F88\u597D\uFF0C\u81F3\u5C11\u4F60\u6CA1\u6709\u90A3\u4E48\u65E0\u8DA3\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!1001 &1877640090

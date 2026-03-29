@@ -33,7 +33,13 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
     [SerializeField] private Vector2 lesionArrowOffset = new Vector2(0f, 80f);
     [SerializeField] private Vector2 lesionHintOffset = new Vector2(120f, 40f);
     [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
+    [SerializeField] [TextArea] private string clickToZoomHintTextChinese = "点击查看";
     [SerializeField] [TextArea] private string clickLesionHintText = "Click the lesion";
+    [SerializeField] [TextArea] private string clickLesionHintTextChinese = "点击病灶";
+    [SerializeField] private string remainingTextFormat = "Remaining: {0}";
+    [SerializeField] private string remainingTextFormatChinese = "剩余：{0}";
+    [SerializeField] private string completionTextValue = "Complete";
+    [SerializeField] private string completionTextValueChinese = "完成";
 
     private SeaCucumberInternalPatientCase currentCase;
     private int clickedLesionCount;
@@ -43,12 +49,33 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
     private int tutorialLesionIndex;
     private RectTransform currentArrowTarget;
     private RectTransform currentHintTarget;
+    private TMP_FontAsset defaultRemainingFont;
+    private TMP_FontAsset defaultCompletionFont;
+    private TMP_FontAsset defaultTutorialHintFont;
 
     public bool IsTreatmentOpen => treatmentPanel != null && treatmentPanel.activeSelf;
 
     private void Update()
     {
         RefreshTutorialVisualPositions();
+    }
+
+    private void Awake()
+    {
+        defaultRemainingFont = lesionsRemainingText != null ? lesionsRemainingText.font : null;
+        defaultCompletionFont = completionText != null ? completionText.font : null;
+        defaultTutorialHintFont = tutorialHintText != null ? tutorialHintText.font : null;
+    }
+
+    private void OnEnable()
+    {
+        LanguageSettingsManager.LanguageChanged += HandleLanguageChanged;
+        ApplyLocalizedFonts();
+    }
+
+    private void OnDisable()
+    {
+        LanguageSettingsManager.LanguageChanged -= HandleLanguageChanged;
     }
 
     private void Start()
@@ -59,7 +86,10 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
             treatmentPanel.SetActive(false);
 
         if (completionText != null)
+        {
             completionText.gameObject.SetActive(false);
+            completionText.text = LanguageSettingsManager.GetLocalizedText(completionTextValue, completionTextValueChinese);
+        }
     }
 
     public void TryOpenPanel()
@@ -231,7 +261,7 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
             return;
 
         int remaining = Mathf.Max(0, currentCase.RequiredLesionCount - clickedLesionCount);
-        lesionsRemainingText.text = "Remaining: " + remaining;
+        lesionsRemainingText.text = string.Format(LanguageSettingsManager.GetLocalizedText(remainingTextFormat, remainingTextFormatChinese), remaining);
     }
 
     private bool AreAllCasesCompleted()
@@ -256,7 +286,12 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
         }
 
         tutorialStep = InternalTutorialStep.ClickToZoom;
-        ShowTutorial(patientCase.CaseRectTransform, patientCase.CaseRectTransform, clickToZoomHintText, clickToZoomArrowOffset, clickToZoomHintOffset);
+        ShowTutorial(
+            patientCase.CaseRectTransform,
+            patientCase.CaseRectTransform,
+            LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese),
+            clickToZoomArrowOffset,
+            clickToZoomHintOffset);
     }
 
     private SeaCucumberInternalPatientCase GetTutorialPatientCase()
@@ -305,7 +340,12 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
         }
 
         RectTransform target = currentSpot.SpotRectTransform;
-        ShowTutorial(target, target, clickLesionHintText, lesionArrowOffset, lesionHintOffset);
+        ShowTutorial(
+            target,
+            target,
+            LanguageSettingsManager.GetLocalizedText(clickLesionHintText, clickLesionHintTextChinese),
+            lesionArrowOffset,
+            lesionHintOffset);
     }
 
     private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText, Vector2 arrowOffset, Vector2 hintOffset)
@@ -322,6 +362,7 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
         if (tutorialHintText != null)
             tutorialHintText.text = hintText;
 
+        ApplyLocalizedFonts();
         RefreshTutorialVisualPositions();
     }
 
@@ -372,6 +413,48 @@ public class SeaCucumberInternalTreatmentManager : MonoBehaviour
                 return lesionHintOffset;
             default:
                 return Vector2.zero;
+        }
+    }
+
+    private void HandleLanguageChanged(SupportedLanguage language)
+    {
+        if (completionText != null)
+            completionText.text = LanguageSettingsManager.GetLocalizedText(completionTextValue, completionTextValueChinese);
+
+        if (currentCase != null)
+            RefreshRemainingText();
+
+        if (tutorialHintText != null && tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf)
+            tutorialHintText.text = GetCurrentLocalizedTutorialHint();
+
+        ApplyLocalizedFonts();
+    }
+
+    private void ApplyLocalizedFonts()
+    {
+        TMP_FontAsset chineseFont = LanguageSettingsManager.GetChineseUiFontOrNull();
+        bool useChineseFont = LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese && chineseFont != null;
+
+        if (lesionsRemainingText != null)
+            lesionsRemainingText.font = useChineseFont ? chineseFont : defaultRemainingFont;
+
+        if (completionText != null)
+            completionText.font = useChineseFont ? chineseFont : defaultCompletionFont;
+
+        if (tutorialHintText != null)
+            tutorialHintText.font = useChineseFont ? chineseFont : defaultTutorialHintFont;
+    }
+
+    private string GetCurrentLocalizedTutorialHint()
+    {
+        switch (tutorialStep)
+        {
+            case InternalTutorialStep.ClickToZoom:
+                return LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese);
+            case InternalTutorialStep.ClickLesionSequence:
+                return LanguageSettingsManager.GetLocalizedText(clickLesionHintText, clickLesionHintTextChinese);
+            default:
+                return string.Empty;
         }
     }
 }

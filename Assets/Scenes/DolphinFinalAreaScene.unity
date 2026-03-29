@@ -374,16 +374,22 @@ MonoBehaviour:
   speakerName: Dolphin
   initDialogueLines:
   - speaker: 
+    translatedSpeaker: 
     text: 
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: 
+    translatedSpeaker: 
     text: 
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   repeatDialogueLines:
   - speaker: 
+    translatedSpeaker: 
     text: ......
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   randomRepeatDialogueBlocks: []
@@ -1043,78 +1049,114 @@ MonoBehaviour:
   returnSpawnPointName: Spawn_DolphinReturn
   repeatDialogueLines:
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: ...
+    translatedText: 
     sfxClip: {fileID: 0}
     sfxVolumeScale: 0
   randomRepeatDialogueBlocks: []
   finishedDialogueLines:
   - speaker: Baby Dolphin
+    translatedSpeaker: "\u6D77\u8C5A\u5B9D\u5B9D"
     text: Mommy!
+    translatedText: "\u5988\u5988\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Oh my poor baby... I\u2019ve been looking everywhere\u2026"
+    translatedText: "\u5662\u6211\u53EF\u601C\u7684\u5B9D\u8D1D\u2026\u2026\u6211\u62C5\u5FC3\u6B7B\u4E86\u3002\u5728\u5230\u5904\u627E\u4F60\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Baby Dolphin
+    translatedSpeaker: "\u6D77\u8C5A\u5B9D\u5B9D"
     text: "I couldn\u2019t hear you\u2026Everything was too loud\u2026Then nothing..."
+    translatedText: "\u6211\u3001\u6211\u542C\u4E0D\u5230\u4F60\u8BF4\u8BDD\u4E86\u2026\u2026\u5230\u5904\u90FD\u592A\u5435\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "Shh\u2026 it\u2019s alright now. You\u2019re safe. Mommy's here."
+    translatedText: "\u597D\u4E86\u597D\u4E86\uFF0C\u6CA1\u4E8B\u4E86\u4E56\u4E56\uFF0C\u5DF2\u7ECF\u6CA1\u4E8B\u4E86\u3002\u4F60\u5B89\u5168\u4E86\u3002\u5988\u5988\u5728\u8FD9\u5462\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "\u2026The noise again. It\u2019s getting worse."
+    translatedText: "\u2026\u53C8\u662F\u90A3\u4E9B\u566A\u97F3\u3002\u8D8A\u6765\u8D8A\u7CDF\u7CD5\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "Oh, my, Ocean! You are Dorothy! I\u2019ve heard you before\u2026Your songs\u2026they
       travel across the whole reef."
+    translatedText: "\u6211\uFF01\u7684\uFF01\u5929\uFF01\uFF01\u4F60\u662F\u6843\u4E50\u4E1D\uFF01\u6211\u542C\u8FC7\u4F60\u5531\u6B4C\u2026\u2026\u90A3\u6B4C\u58F0\u7A7F\u900F\u4E86\u6574\u7247\u73CA\u745A\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Seahorse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "If anyone can reach others\u2026it\u2019s you."
+    translatedText: "\u5982\u679C\u6709\u8C01\u80FD\u8BA9\u90A3\u9996\u4EA4\u54CD\u66F2\u4F20\u5230\u5CB8\u8FB9\u2026\u2026\u90A3\u4E00\u5B9A\u662F\u4F60\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: Oh hi little Sea Horse, you brought my child back...
+    translatedText: "\u5662\uFF0C\u5C0F\u6D77\u9A6C\uFF0C\u4F60\u597D\u3002\u4F60\u628A\u6211\u7684\u5B69\u5B50\u5E26\u56DE\u6765\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Sea Horse
+    translatedSpeaker: "\u6D77\u9A6C"
     text: "I\u2019m gathering a melody\u2026to call for help."
+    translatedText: "\u6211\u5728\u6536\u96C6\u65CB\u5F8B\u2026\u2026\u6765\u5411\u4EBA\u7C7B\u6C42\u52A9\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "\u2026The old melody."
+    translatedText: "\u90A3\u4E2A\u53E4\u8001\u7684\u65CB\u5F8B\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: I remember it.
+    translatedText: "\u6211\u8BB0\u5F97\u5B83\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "If voices still matter\u2026we should try."
+    translatedText: "\u5982\u679C\u58F0\u97F3\u8FD8\u6709\u5B58\u5728\u7684\u610F\u4E49\u2026\u6211\u4EEC\u5C31\u5E94\u8BE5\u8BD5\u8BD5\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
+    translatedSpeaker: "\u65C1\u767D"
     text: (A clear, resonant note spreads through the water.)
+    translatedText: "\uFF08\u6E05\u8106\u60A6\u8033\u7684\u58F0\u54CD\u5728\u6C34\u4E2D\u56DE\u8361\u3002\uFF09"
     sfxClip: {fileID: 8300000, guid: 2255922b1de63c94dbaa14dc1a9371b3, type: 3}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "This is my note. It carries far\u2026 when the waters allow it."
+    translatedText: "\u8FD9\u662F\u6211\u7684\u97F3\u7B26\u3002\u5B83\u80FD\u4F20\u5411\u8FDC\u65B9\u2026\u4ECE\u8FD9\u91CC\u5230\u6D77\u6D0B\u7684\u8FB9\u7F18\u90A3\u4E48\u8FDC\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: But a melody needs more than one voice.
+    translatedText: "\u4F46\u4E00\u6BB5\u65CB\u5F8B\u53EA\u6709\u6B4C\u58F0\u8FDC\u8FDC\u4E0D\u591F\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Dorothy The Dolphin
+    translatedSpeaker: "\u6843\u4E50\u4E1D"
     text: "We\u2019ll come with you."
+    translatedText: "\u6211\u4EEC\u4F1A\u8DDF\u4F60\u56DE\u53BB\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Baby Dolphin
+    translatedSpeaker: "\u6D77\u8C5A\u5B9D\u5B9D"
     text: "I\u2019ll stay close this time."
+    translatedText: "\u6211\u4F1A\u8DDF\u7D27\u7684\u2026\u2026\uFF08\u561F\u56D4\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
 --- !u!114 &531335487 stripped

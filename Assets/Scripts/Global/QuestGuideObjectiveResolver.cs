@@ -3,6 +3,20 @@ using UnityEngine.SceneManagement;
 
 public static class QuestGuideObjectiveResolver
 {
+    private const string SettingsResourcePath = "QuestLocalizationSettings";
+    private static QuestLocalizationSettings cachedSettings;
+
+    private static QuestLocalizationSettings Settings
+    {
+        get
+        {
+            if (cachedSettings == null)
+                cachedSettings = Resources.Load<QuestLocalizationSettings>(SettingsResourcePath);
+
+            return cachedSettings;
+        }
+    }
+
     public static bool TryGetCurrentObjective(out QuestGuideObjective objective)
     {
         objective = QuestGuideObjective.None;
@@ -16,13 +30,13 @@ public static class QuestGuideObjectiveResolver
 
         if (!GameProgress.whaleIntroDialogueCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToWhale.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 
         if (GameProgress.crabCompleted && !GameProgress.whalePostCrabDialogueCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToWhale.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 
@@ -31,7 +45,7 @@ public static class QuestGuideObjectiveResolver
         {
             if (crabQuestManager == null || !crabQuestManager.QuestAccepted)
             {
-                objective = QuestGuideObjective.CreateTalk("Talk to Crab", QuestGuideAnchorId.Crab, "CrabAreaScene");
+                objective = QuestGuideObjective.CreateTalk(Settings.talkToCrab.GetText(), QuestGuideAnchorId.Crab, "CrabAreaScene");
                 return true;
             }
 
@@ -39,11 +53,11 @@ public static class QuestGuideObjectiveResolver
             {
                 int totalTrash = Mathf.Max(crabQuestManager.InitialTrashCount, 1);
                 int collectedTrash = Mathf.Clamp(totalTrash - crabQuestManager.RemainingTrash, 0, totalTrash);
-                objective = QuestGuideObjective.CreateNonTalk("Collect Trash (" + collectedTrash + "/" + totalTrash + ")");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.collectTrash.GetFormattedText(collectedTrash, totalTrash));
                 return true;
             }
 
-            objective = QuestGuideObjective.CreateTalk("Talk to Crab", QuestGuideAnchorId.Crab, "CrabAreaScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToCrab.GetText(), QuestGuideAnchorId.Crab, "CrabAreaScene");
             return true;
         }
 
@@ -51,17 +65,17 @@ public static class QuestGuideObjectiveResolver
         {
             if (GameProgress.dolphinQuestAccepted)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Find Their Mom");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.findTheirMom.GetText());
                 return true;
             }
 
-            objective = QuestGuideObjective.CreateTalk("Talk to Dolphin", QuestGuideAnchorId.Dolphin, "DolphinAreaScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToDolphin.GetText(), QuestGuideAnchorId.Dolphin, "DolphinAreaScene");
             return true;
         }
 
         if (!GameProgress.whalePostDolphinDialogueCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToWhale.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 
@@ -70,32 +84,32 @@ public static class QuestGuideObjectiveResolver
         {
             if (sharkEncounterManager == null || sharkEncounterManager.CurrentPhase == SharkEncounterPhase.WaitingForInteraction)
             {
-                objective = QuestGuideObjective.CreateTalk("Talk to Shark", QuestGuideAnchorId.Shark, "SharkScene");
+                objective = QuestGuideObjective.CreateTalk(Settings.talkToShark.GetText(), QuestGuideAnchorId.Shark, "SharkScene");
                 return true;
             }
 
             if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.AttackChallenge)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Fight the Shark");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.fightTheShark.GetText());
                 return true;
             }
 
             if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.Quiz)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Answer to the Shark");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.answerToTheShark.GetText());
                 return true;
             }
 
             if (sharkEncounterManager.CurrentPhase == SharkEncounterPhase.Completed)
             {
-                objective = QuestGuideObjective.CreateTalk("Talk to Octopus", QuestGuideAnchorId.Octopus, "OctopusAreaScene");
+                objective = QuestGuideObjective.CreateTalk(Settings.talkToOctopus.GetText(), QuestGuideAnchorId.Octopus, "OctopusAreaScene");
                 return true;
             }
         }
 
         if (!GameProgress.sharkCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Octopus", QuestGuideAnchorId.Octopus, "OctopusAreaScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToOctopus.GetText(), QuestGuideAnchorId.Octopus, "OctopusAreaScene");
             return true;
         }
 
@@ -103,23 +117,23 @@ public static class QuestGuideObjectiveResolver
         {
             if (!GameProgress.octopusQuestAccepted || GameProgress.octopusTaskReadyToTurnIn)
             {
-                objective = QuestGuideObjective.CreateTalk("Talk to Octopus", QuestGuideAnchorId.Octopus, "OctopusAreaScene");
+                objective = QuestGuideObjective.CreateTalk(Settings.talkToOctopus.GetText(), QuestGuideAnchorId.Octopus, "OctopusAreaScene");
                 return true;
             }
 
-            objective = QuestGuideObjective.CreateNonTalk("Close the Oil Rigs");
+            objective = QuestGuideObjective.CreateNonTalk(Settings.closeTheOilRigs.GetText());
             return true;
         }
 
         if (!GameProgress.whalePostOctopusDialogueCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToWhale.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 
         if (!GameProgress.sharkEscortToSeaCucumberRequested)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Shark", QuestGuideAnchorId.Shark, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToShark.GetText(), QuestGuideAnchorId.Shark, "RQScene");
             return true;
         }
 
@@ -127,13 +141,13 @@ public static class QuestGuideObjectiveResolver
         {
             if (!GameProgress.seaCucumberQuestAccepted)
             {
-                objective = QuestGuideObjective.CreateTalk("Talk to Sea Cucumber", QuestGuideAnchorId.SeaCucumber, "SeaCucumberAreaScene");
+                objective = QuestGuideObjective.CreateTalk(Settings.talkToSeaCucumber.GetText(), QuestGuideAnchorId.SeaCucumber, "SeaCucumberAreaScene");
                 return true;
             }
 
             if (!GameProgress.seaCucumberTriageCompleted)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Sort the Patients");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.sortThePatients.GetText());
                 return true;
             }
 
@@ -141,35 +155,35 @@ public static class QuestGuideObjectiveResolver
             bool needsExternalTreatment = !GameProgress.seaCucumberExternalTreatmentCompleted;
             if (needsInternalTreatment && needsExternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Sick pile\n-Hurt pile");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.treatSickAndHurt.GetText());
                 return true;
             }
 
             if (needsInternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Sick pile");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.treatSick.GetText());
                 return true;
             }
 
             if (needsExternalTreatment)
             {
-                objective = QuestGuideObjective.CreateNonTalk("Treat\n-Hurt pile");
+                objective = QuestGuideObjective.CreateNonTalk(Settings.treatHurt.GetText());
                 return true;
             }
 
-            objective = QuestGuideObjective.CreateTalk("Talk to Sea Cucumber", QuestGuideAnchorId.SeaCucumber, "SeaCucumberAreaScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToSeaCucumber.GetText(), QuestGuideAnchorId.SeaCucumber, "SeaCucumberAreaScene");
             return true;
         }
 
         if (!GameProgress.whalePostSeaCucumberDialogueCompleted)
         {
-            objective = QuestGuideObjective.CreateTalk("Talk to Whale", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.talkToWhale.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 
         if (!GameProgress.whaleEnsembleAccepted)
         {
-            objective = QuestGuideObjective.CreateTalk("Play the Symphony", QuestGuideAnchorId.Whale, "RQScene");
+            objective = QuestGuideObjective.CreateTalk(Settings.playTheSymphony.GetText(), QuestGuideAnchorId.Whale, "RQScene");
             return true;
         }
 

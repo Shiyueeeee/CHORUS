@@ -36,7 +36,13 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
     [SerializeField] private Vector2 dragTrashArrowOffset = new Vector2(0f, 80f);
     [SerializeField] private Vector2 dragTrashHintOffset = new Vector2(120f, 40f);
     [SerializeField] [TextArea] private string clickToZoomHintText = "Click to zoom";
+    [SerializeField] [TextArea] private string clickToZoomHintTextChinese = "点击查看";
     [SerializeField] [TextArea] private string dragToTrashBinHintText = "Drag to the trash bin";
+    [SerializeField] [TextArea] private string dragToTrashBinHintTextChinese = "拖到垃圾桶";
+    [SerializeField] private string remainingTextFormat = "Remaining: {0}";
+    [SerializeField] private string remainingTextFormatChinese = "剩余：{0}";
+    [SerializeField] private string completionTextValue = "Complete";
+    [SerializeField] private string completionTextValueChinese = "完成";
 
     private SeaCucumberExternalPatientCase currentCase;
     private int removedTrashCount;
@@ -47,6 +53,9 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
     private int tutorialTrashIndex;
     private RectTransform currentArrowTarget;
     private RectTransform currentHintTarget;
+    private TMP_FontAsset defaultRemainingFont;
+    private TMP_FontAsset defaultCompletionFont;
+    private TMP_FontAsset defaultTutorialHintFont;
 
     public bool IsTreatmentOpen => treatmentPanel != null && treatmentPanel.activeSelf;
     public RectTransform DragLayer => dragLayer;
@@ -54,6 +63,24 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
     private void Update()
     {
         RefreshTutorialVisualPositions();
+    }
+
+    private void Awake()
+    {
+        defaultRemainingFont = trashRemainingText != null ? trashRemainingText.font : null;
+        defaultCompletionFont = completionText != null ? completionText.font : null;
+        defaultTutorialHintFont = tutorialHintText != null ? tutorialHintText.font : null;
+    }
+
+    private void OnEnable()
+    {
+        LanguageSettingsManager.LanguageChanged += HandleLanguageChanged;
+        ApplyLocalizedFonts();
+    }
+
+    private void OnDisable()
+    {
+        LanguageSettingsManager.LanguageChanged -= HandleLanguageChanged;
     }
 
     private void Start()
@@ -64,7 +91,10 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
             treatmentPanel.SetActive(false);
 
         if (completionText != null)
+        {
             completionText.gameObject.SetActive(false);
+            completionText.text = LanguageSettingsManager.GetLocalizedText(completionTextValue, completionTextValueChinese);
+        }
 
         if (trashBinDropZone != null)
             trashBinDropZone.Initialize(this);
@@ -246,7 +276,7 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
             return;
 
         int remaining = Mathf.Max(0, requiredTrashCount - removedTrashCount);
-        trashRemainingText.text = "Remaining: " + remaining;
+        trashRemainingText.text = string.Format(LanguageSettingsManager.GetLocalizedText(remainingTextFormat, remainingTextFormatChinese), remaining);
     }
 
     private bool AreAllCasesCompleted()
@@ -277,7 +307,12 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
         }
 
         tutorialStep = ExternalTutorialStep.ClickToZoom;
-        ShowTutorial(patientCase.CaseRectTransform, patientCase.CaseRectTransform, clickToZoomHintText, clickToZoomArrowOffset, clickToZoomHintOffset);
+        ShowTutorial(
+            patientCase.CaseRectTransform,
+            patientCase.CaseRectTransform,
+            LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese),
+            clickToZoomArrowOffset,
+            clickToZoomHintOffset);
     }
 
     private SeaCucumberExternalPatientCase GetTutorialPatientCase()
@@ -326,7 +361,12 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
         }
 
         RectTransform target = currentTrashPiece.TrashRectTransform;
-        ShowTutorial(target, target, dragToTrashBinHintText, dragTrashArrowOffset, dragTrashHintOffset);
+        ShowTutorial(
+            target,
+            target,
+            LanguageSettingsManager.GetLocalizedText(dragToTrashBinHintText, dragToTrashBinHintTextChinese),
+            dragTrashArrowOffset,
+            dragTrashHintOffset);
     }
 
     private void ShowTutorial(RectTransform arrowTarget, RectTransform hintTarget, string hintText, Vector2 arrowOffset, Vector2 hintOffset)
@@ -343,6 +383,7 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
         if (tutorialHintText != null)
             tutorialHintText.text = hintText;
 
+        ApplyLocalizedFonts();
         RefreshTutorialVisualPositions();
     }
 
@@ -393,6 +434,48 @@ public class SeaCucumberExternalTreatmentManager : MonoBehaviour
                 return dragTrashHintOffset;
             default:
                 return Vector2.zero;
+        }
+    }
+
+    private void HandleLanguageChanged(SupportedLanguage language)
+    {
+        if (completionText != null)
+            completionText.text = LanguageSettingsManager.GetLocalizedText(completionTextValue, completionTextValueChinese);
+
+        if (currentCase != null)
+            RefreshRemainingText();
+
+        if (tutorialHintText != null && tutorialHintRoot != null && tutorialHintRoot.gameObject.activeSelf)
+            tutorialHintText.text = GetCurrentLocalizedTutorialHint();
+
+        ApplyLocalizedFonts();
+    }
+
+    private void ApplyLocalizedFonts()
+    {
+        TMP_FontAsset chineseFont = LanguageSettingsManager.GetChineseUiFontOrNull();
+        bool useChineseFont = LanguageSettingsManager.CurrentLanguage == SupportedLanguage.Chinese && chineseFont != null;
+
+        if (trashRemainingText != null)
+            trashRemainingText.font = useChineseFont ? chineseFont : defaultRemainingFont;
+
+        if (completionText != null)
+            completionText.font = useChineseFont ? chineseFont : defaultCompletionFont;
+
+        if (tutorialHintText != null)
+            tutorialHintText.font = useChineseFont ? chineseFont : defaultTutorialHintFont;
+    }
+
+    private string GetCurrentLocalizedTutorialHint()
+    {
+        switch (tutorialStep)
+        {
+            case ExternalTutorialStep.ClickToZoom:
+                return LanguageSettingsManager.GetLocalizedText(clickToZoomHintText, clickToZoomHintTextChinese);
+            case ExternalTutorialStep.DragTrashSequence:
+                return LanguageSettingsManager.GetLocalizedText(dragToTrashBinHintText, dragToTrashBinHintTextChinese);
+            default:
+                return string.Empty;
         }
     }
 }
