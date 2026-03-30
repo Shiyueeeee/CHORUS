@@ -263,7 +263,8 @@ MonoBehaviour:
     - Oliver - Clarinet
     - 'Dr.Luma - Bell '
   backButtonText: Back to Title
-  backButtonFontAsset: {fileID: 11400000, guid: ad5ee0e2be9619148909ca8dc4a00b9c, type: 2}
+  backButtonTextChinese: "\u4E3B\u83DC\u5355"
+  backButtonFontAsset: {fileID: 11400000, guid: 7e6c8b8c6f2288441a6ced1d7d2ceec3, type: 2}
   backButtonBackgroundSprite: {fileID: 0}
   backButtonFontSize: 28
   backButtonSize: {x: 260, y: 72}

@@ -2375,9 +2375,9 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Narrator
-    translatedSpeaker: 
+    translatedSpeaker: "\u65C1\u767D"
     text: (Mr. Jones slowly opens his eyes.)
-    translatedText: 
+    translatedText: "\uFF08\u743C\u65AF\u5148\u751F\u7F13\u7F13\u7741\u5F00\u4E86\u773C\u775B\u3002\uFF09"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones

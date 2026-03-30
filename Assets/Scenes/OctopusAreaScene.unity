@@ -1087,10 +1087,10 @@ MonoBehaviour:
     sfxVolumeScale: 1
   turnInQuestDialogueLines:
   - speaker: Sea Horse
-    translatedSpeaker: 
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Oliver! The oil rig has been completely shut down, and the radiation source
       is cut off! It's just... some of your kind inside didn't make it...
-    translatedText: "\u5965\u5229\u5F17\uFF01\u94BB\u4E95\u5E73\u53F0\u5DF2\u7ECF\u5B8C\u5168\u5173\u95ED\uFF0C\u8F90\u5C04\u6E90\u4E5F\u88AB\u5207\u65AD\u4E86\uFF01\u53EA\u662F\u2026\u2026\u91CC\u9762\u6709\u51E0\u4E2A\u2026\u2026\u6CA1\u80FD\u6D3B\u4E0B\u6765\u2026\u2026"
+    translatedText: "\u5965\u5229\u7EF4\u5C14\uFF01\u94BB\u4E95\u5E73\u53F0\u5DF2\u7ECF\u5B8C\u5168\u5173\u95ED\uFF0C\u8F90\u5C04\u6E90\u4E5F\u88AB\u5207\u65AD\u4E86\uFF01\u53EA\u662F\u2026\u2026\u91CC\u9762\u6709\u51E0\u4E2A\u2026\u2026\u6CA1\u80FD\u6D3B\u4E0B\u6765\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: 'Oliver The Octopus '

@@ -3911,10 +3911,10 @@ MonoBehaviour:
   speakerName: Octopus
   hintDialogueLines:
   - speaker: Sea Horse
-    translatedSpeaker: 
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Finally here... this is the engine level! Wait, there's another octopus
       on the left! Sir, are you okay?!
-    translatedText: 
+    translatedText: "\u7EC8\u4E8E\u5230\u4E86\u2026\u2026\uFF01\u7B49\u7B49\uFF0C\u5DE6\u8FB9\u8FD8\u6709\u4E00\u53EA\u7AE0\u9C7C\uFF01\u60A8\u8FD8\u597D\u5417\uFF1F\uFF01"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mutated Octopus
@@ -3925,10 +3925,10 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: eaada9af74e14474ab780c7b4837a879, type: 3}
     sfxVolumeScale: 1
   - speaker: Sea Horse
-    translatedSpeaker: 
+    translatedSpeaker: "\u6D77\u9A6C"
     text: Hold on! Once the engine is off, the radiation will disappear. Dr. Luma
       can definitely heal you! Where is the switch?
-    translatedText: 
+    translatedText: "\u6491\u4F4F\uFF01\u4E00\u65E6\u5F15\u64CE\u505C\u4E0B\u6765\uFF0C\u8F90\u5C04\u5C31\u4F1A\u6D88\u5931\u3002\u9646\u739B\u533B\u751F\u4E00\u5B9A\u80FD\u6CBB\u597D\u4F60\uFF01\u5F00\u5173\u5728\u54EA\u91CC\uFF1F"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mutated Octopus
