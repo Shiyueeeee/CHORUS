@@ -2381,15 +2381,15 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
-    translatedSpeaker: 
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: "\u2026Yes. I can hear it clearly now."
-    translatedText: 
+    translatedText: "\u2026\u2026\u6CA1\u9519\uFF0C\u6211\u80FD\u542C\u6E05\u4E86\u3002"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones
-    translatedSpeaker: 
+    translatedSpeaker: "\u743C\u65AF\u5148\u751F"
     text: You did it.
-    translatedText: 
+    translatedText: "\u4F60\u505A\u5230\u4E86\u2026\u2026"
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Mr. Jones

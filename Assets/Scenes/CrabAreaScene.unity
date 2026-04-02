@@ -1109,7 +1109,7 @@ MonoBehaviour:
     sfxClip: {fileID: 0}
     sfxVolumeScale: 1
   - speaker: Kirby The Crab
-    translatedSpeaker: 
+    translatedSpeaker: "\u67EF\u6BD4"
     text: "No? Then stop standin\u2019 there."
     translatedText: "\u6CA1\u6709\uFF1F\u90A3\u8FD8\u78E8\u53FD\u5565\uFF0C\u5E72\u6D3B\u53BB\u3002"
     sfxClip: {fileID: 0}
